@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python -m pytest tests/core/ast/test_arith_nodes.py -v)"
+      "Bash(python -m pytest tests/core/ast/test_arith_nodes.py -v)",
+      "Bash(python:*)",
+      "Bash(pip install:*)"
     ]
   }
 }

@@ -1,7 +1,5 @@
 """Tests for arithmetic nodes."""
 
-import pytest
-
 from sapdl.core.ast.number_parameter_nodes.arith_nodes import (
     AddNode,
     DivNode,
