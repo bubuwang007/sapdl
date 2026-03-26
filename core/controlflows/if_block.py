@@ -8,7 +8,7 @@ from __future__ import annotations
 from contextlib import contextmanager
 from typing import TYPE_CHECKING
 
-from sapdl.core.ast import IfNode
+from sapdl.core.ast import IfNode, NumberComparisonNode
 
 if TYPE_CHECKING:
     from sapdl.core.mac import Mac
@@ -42,7 +42,7 @@ class IfBlock:
         return
 
     @contextmanager
-    def if_(self, condition: str):
+    def if_(self, condition: NumberComparisonNode):
         """IF 分支上下文管理器。
 
         Args:
@@ -68,7 +68,7 @@ class IfBlock:
         self._state = "if"
 
     @contextmanager
-    def elif_(self, condition: str):
+    def elif_(self, condition: NumberComparisonNode):
         """ELIF 分支上下文管理器。
 
         Args:
