@@ -24,11 +24,6 @@ class Node(ABC):
         """
         pass
 
-    @abstractmethod
-    def __str__(self) -> str:
-        """String representation of the node."""
-        pass
-
 
 class Body:
     """Statement block container.
@@ -80,6 +75,3 @@ class Body:
         """
         for line in self.apdl(indent_level):
             print(line)
-
-    def __str__(self):
-        return "\n".join([str(node) for node in self.nodes])

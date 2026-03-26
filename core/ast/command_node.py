@@ -17,6 +17,3 @@ class CommandNode(Node):
 
     def apdl(self, indent_level: int) -> str:
         return f"{INDENT * indent_level}{self.cmd}"
-
-    def __str__(self) -> str:
-        return f"CommandNode(cmd={self.cmd!r})"

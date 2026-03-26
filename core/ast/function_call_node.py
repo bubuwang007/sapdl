@@ -21,6 +21,3 @@ class FunctionCallNode(Node):
     def apdl(self, _: int) -> str:
         args_str = ", ".join([str(arg) for arg in self.args])
         return f"{self.name}({args_str})"
-
-    def __str__(self) -> str:
-        return f"FunctionNode(name={self.name!r}, args={self.args!r})"

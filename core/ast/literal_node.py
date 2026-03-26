@@ -24,9 +24,6 @@ class NumberLiteral(Node):
     def apdl(self, _: int) -> str:
         return str(self.value)
 
-    def __str__(self) -> str:
-        return str(self.value)
-
 
 class StringLiteral(Node):
     """String literal node.
@@ -42,7 +39,4 @@ class StringLiteral(Node):
         self.type = "expr"
 
     def apdl(self, _: int) -> str:
-        return f"'{self.value}'"
-
-    def __str__(self) -> str:
         return f"'{self.value}'"

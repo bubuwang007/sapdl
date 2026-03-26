@@ -17,6 +17,3 @@ class CommentNode(Node):
 
     def apdl(self, indent_level: int) -> str:
         return f"{INDENT * indent_level}! {self.text}"
-
-    def __str__(self) -> str:
-        return f"CommentNode(text={self.text!r})"

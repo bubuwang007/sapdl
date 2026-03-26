@@ -20,6 +20,3 @@ class MacroCallNode(Node):
     def apdl(self, indent_level: int = 0) -> str:
         args_str = ", ".join([str(arg) for arg in self.args])
         return f"{INDENT * indent_level}{self.name},{args_str}"
-
-    def __str__(self) -> str:
-        return f"MacroCallNode(name={self.name!r}, args={self.args!r})"
