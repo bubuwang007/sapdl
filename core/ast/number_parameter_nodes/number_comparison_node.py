@@ -15,3 +15,6 @@ class NumberComparisonNode(Node):
         self.operator = operator
         self.right = right
         self.type = "expr"
+
+    def apdl(self, _: int) -> str:
+        return f"{self.left},{self.operator},{self.right}"

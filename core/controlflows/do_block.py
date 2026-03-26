@@ -5,9 +5,7 @@
 
 from __future__ import annotations
 
-from contextlib import contextmanager
 from typing import TYPE_CHECKING
-
 from sapdl.core.ast import DoNode
 
 if TYPE_CHECKING:
@@ -53,7 +51,7 @@ class DoBlock:
 
         self.prev_body = self.mac.body
         self.mac.body = self.do_node.body
-        
+
         return self.var
 
     def __exit__(self, exc_type, exc_val, exc_tb) -> None:

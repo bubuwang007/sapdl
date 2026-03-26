@@ -6,6 +6,7 @@ from .literal_node import NumberLiteral, StringLiteral
 from .macro_call_node import MacroCallNode
 
 from .controflow_nodes import *
+from .number_parameter_nodes import *
 
 __all__ = [
     "Body",
