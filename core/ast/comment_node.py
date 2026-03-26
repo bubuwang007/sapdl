@@ -9,12 +9,13 @@ class CommentNode(Node):
         text: The comment text (without ! symbol).
     """
 
-    __slots__ = ["text"]
+    __slots__ = ["text", "type"]
 
     def __init__(self, text: str):
         self.text = text
+        self.type = "statement"
 
-    def apdl(self, indent_level: int = 0) -> str:
+    def apdl(self, indent_level: int) -> str:
         return f"{INDENT * indent_level}! {self.text}"
 
     def __str__(self) -> str:

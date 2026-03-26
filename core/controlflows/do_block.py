@@ -1,0 +1,2 @@
+class DoBlock:
+    pass
