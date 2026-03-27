@@ -8,6 +8,7 @@ from .ast import Body, CommandNode, CommentNode
 from .symbol_table import SymbolTable
 from .controlflows import Controlflows
 
+
 class Commands(APDLCommands, Controlflows):
     """APDL 命令流生成器
 
@@ -15,17 +16,11 @@ class Commands(APDLCommands, Controlflows):
 
     Attributes:
         body: 命令流容器，存储所有命令节点
-        indent_level: 当前缩进级别
     """
 
-    def __init__(self, indent_level: int = 0):
-        """初始化 Commands 实例
-
-        Args:
-            indent_level: 缩进级别，默认为 0
-        """
+    def __init__(self):
+        """初始化 Commands 实例"""
         self.body = Body()
-        self.indent_level = indent_level
         self.symbol_table = SymbolTable()
 
     def run(self, cmd: str, **kwargs) -> None:
