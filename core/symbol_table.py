@@ -10,24 +10,17 @@ class Symbol:
     name: str
     type: str
     scope: str
-    _mac: "Mac" = field(default=None, repr=False)
-
-    def _delete(self):
-        """从符号表中删除此符号，并生成 APDL 删除命令"""
-        if self._mac and hasattr(self._mac, 'symbol_table'):
-            self._mac.symbol_table.remove(self.name)
-        if self._mac and hasattr(self._mac, 'run'):
-            self._mac.run(f"*DEL,{self.name}")
+    obj: Optional[Any]
 
 
 class SymbolTable:
     def __init__(self):
         self.symbols: Dict[str, Symbol] = {}
 
-    def define(self, name: str, type: str, scope: str = "local") -> Symbol:
+    def define(self, name: str, type: str, obj, scope: str = "local") -> Symbol:
         if name in self.symbols:
             raise ValueError(f"Symbol '{name}' is already defined.")
-        symbol = Symbol(name, type, scope)
+        symbol = Symbol(name, type, scope, obj)
         self.symbols[name] = symbol
         return symbol
 

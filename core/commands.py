@@ -7,9 +7,10 @@ from sapdl.apdl import Commands as APDLCommands
 from .ast import Body, CommandNode, CommentNode
 from .symbol_table import SymbolTable
 from .controlflows import Controlflows
+from .objects import ObjectsDefine
 
 
-class Commands(APDLCommands, Controlflows):
+class Commands(APDLCommands, Controlflows, ObjectsDefine):
     """APDL 命令流生成器
 
     将 APDL 命令收集到 Body 中，支持命令流生成。

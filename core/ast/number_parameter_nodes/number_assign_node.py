@@ -17,4 +17,5 @@ class NumberAssignNode(Node):
         self.type = "statement"
 
     def apdl(self, indent_level: int) -> str:
-        return f"{INDENT * indent_level}{self.number_parameter.apdl(0)} = {self.value.apdl(0)}"
+        res = self.value.apdl(0) if hasattr(self.value, "apdl") else str(self.value)
+        return f"{INDENT * indent_level}{self.number_parameter.apdl(0)} = {res}"

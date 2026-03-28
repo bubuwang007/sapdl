@@ -11,7 +11,7 @@ class ApdlObject:
     _alive: bool = True
 
     def __init__(self, mac: Mac, name: str):
-        self._mac = mac
+        self.mac = mac
         self._name = name
 
     @property
@@ -28,3 +28,6 @@ class ApdlObject:
 
     def _delete(self):
         raise NotImplementedError("Subclasses must implement _delete method.")
+
+    def delete(self):
+        raise NotImplementedError("Subclasses must implement delete method.")

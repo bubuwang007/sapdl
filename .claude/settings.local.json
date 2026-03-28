@@ -6,7 +6,8 @@
       "Bash(pip install:*)",
       "Bash(E:/develop/miniconda/envs/mtl/Scripts/pytest.exe tests/launcher/test_grpc_launcher.py -v)",
       "Bash(E:/develop/miniconda/envs/mtl/python.exe -m pytest tests/launcher/test_grpc_launcher.py -v)",
-      "Bash(E:/develop/miniconda/envs/mtl/python.exe -c \"from sapdl.launcher.grpc_launcher import GrpcLauncher; print\\('Import OK'\\)\")"
+      "Bash(E:/develop/miniconda/envs/mtl/python.exe -c \"from sapdl.launcher.grpc_launcher import GrpcLauncher; print\\('Import OK'\\)\")",
+      "Bash(pytest tests/ -v)"
     ]
   }
 }
