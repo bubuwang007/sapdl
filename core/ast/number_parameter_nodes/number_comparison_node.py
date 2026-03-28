@@ -18,3 +18,6 @@ class NumberComparisonNode(Node):
 
     def apdl(self, _: int) -> str:
         return f"{self.left},{self.operator},{self.right}"
+
+    def __str__(self):
+        return self.apdl(0)

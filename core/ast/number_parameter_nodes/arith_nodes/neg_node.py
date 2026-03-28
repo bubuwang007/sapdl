@@ -21,3 +21,8 @@ class NegNode(NumberArithNode):
         ):
             operand_str = f"({operand_str})"
         return f"-{operand_str}"
+
+    def __neg__(self) -> "NegNode":
+        """负号的负号 (-(-x))"""
+        from .neg_node import NegNode
+        return NegNode(self)
