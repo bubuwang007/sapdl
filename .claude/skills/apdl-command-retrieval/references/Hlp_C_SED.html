@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:34:40-05:00"><title>SED</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="SED">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_S_TOC.html" title="S Commands">
+<link rel="prev" href="Hlp_C_SECWRITE.html" title="SECWRITE">
+<link rel="next" href="Hlp_C_SEDLIST.html" title="SEDLIST">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="SED"><a name="SED"></a><div class="titlepage"></div><a class="indexterm" name="d0e251955"></a><span class="refentrytitle"><span class="command"><strong>SED</strong></span></span><div class="refnamediv"><p><span class="command"><strong>SED</strong></span>, <em class="replaceable"><code>SEDX</code></em>, <em class="replaceable"><code>SEDY</code></em>, <em class="replaceable"><code>SEDZ</code></em>, <em class="replaceable"><code>Cname</code></em><br><b class="refpurpose">Defines the excitation direction for response spectrum
+and PSD analyses.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoluspectrumjla070199" title="Table 2.51: Spectrum Options"><span class="type">Spectrum Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="SED.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>SEDX</code></em>, <em class="replaceable"><code>SEDY</code></em>, <em class="replaceable"><code>SEDZ</code></em></b></span></dt><dd><p>Global Cartesian coordinates of a point that defines
+a line (through the origin) corresponding to the excitation direction.
+ For example: 0.0, 1.0, 0.0 defines global Y as the spectrum direction.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Cname</code></em></b></span></dt><dd><p>The component name corresponding to the group of excited
+nodes. Only applies to base excitation multi-point response spectrum
+analysis (<a class="link" href="Hlp_C_SPOPT.html" title="SPOPT"><span class="command"><strong>SPOPT</strong></span></a>, MPRS) and power spectral density
+analysis (<a class="link" href="Hlp_C_SPOPT.html" title="SPOPT"><span class="command"><strong>SPOPT</strong></span></a>, PSD). Defaults to no component.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="SED.notes"></a><h2>Notes</h2><p>In single-point response spectrum analysis (<a class="link" href="Hlp_C_SPOPT.html" title="SPOPT"><span class="command"><strong>SPOPT</strong></span></a>,SPRS), the excitation
+   direction without rocking (<a class="link" href="Hlp_C_ROCK.html" title="ROCK"><span class="command"><strong>ROCK</strong></span></a>) is normalized to one so that the
+    <em class="replaceable"><code>SEDX</code></em>, <em class="replaceable"><code>SEDY</code></em>, and
+    <em class="replaceable"><code>SEDZ</code></em> values do not scale the spectrum. The excitation direction with
+   rocking is not normalized. The <em class="replaceable"><code>SEDX</code></em>, <em class="replaceable"><code>SEDY</code></em>,
+   and <em class="replaceable"><code>SEDZ</code></em> values must be consistent with <span>the linear components of </span>
+   <em class="replaceable"><code>OMX</code></em>, <em class="replaceable"><code>OMY</code></em>, and
+    <em class="replaceable"><code>OMZ</code></em> values on the <a class="link" href="Hlp_C_ROCK.html" title="ROCK"><span class="command"><strong>ROCK</strong></span></a> command. The calculated
+   direction then scales the spectrum. For more information, see <a href="../ans_thry/thy_anproc7.html#anppartmode" title="Participation Factors and Mode Coefficients" class="olink">Participation Factors and Mode Coefficients</a>. </p><p>In multi-point response spectrum analysis
+(<a class="link" href="Hlp_C_SPOPT.html" title="SPOPT"><span class="command"><strong>SPOPT</strong></span></a>,MPRS) and power spectral density analysis
+(<a class="link" href="Hlp_C_SPOPT.html" title="SPOPT"><span class="command"><strong>SPOPT</strong></span></a>,PSD), the excitation direction is normalized
+to one so that the <em class="replaceable"><code>SEDX</code></em>, <em class="replaceable"><code>SEDY</code></em>, and <em class="replaceable"><code>SEDZ</code></em> values do not scale the spectrum.
+ The component name (<em class="replaceable"><code>Cname</code></em>) is required.
+The constraints corresponding to the excitation direction are applied
+to the component nodes.</p><p>This command is also valid in PREP7.</p></div><div class="refsect1" title="Menu Paths"><a name="SED.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Spectrum&gt;DDAM Options</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Spectrum&gt;MultiPt&gt;Settings</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Spectrum&gt;PSD&gt;Settings</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Spectrum&gt;SinglePt&gt;Settings</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Spectrum&gt;DDAM Options</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Spectrum&gt;MultiPt&gt;Settings</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Spectrum&gt;PSD&gt;Settings</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Spectrum&gt;SinglePt&gt;Settings</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:07-05:00"><title>MPTEMP</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="MPTEMP">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_M_TOC.html" title="M Commands">
+<link rel="prev" href="Hlp_C_MPRINT.html" title="MPRINT">
+<link rel="next" href="Hlp_C_MPTGEN.html" title="MPTGEN">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="MPTEMP"><a name="MPTEMP"></a><div class="titlepage"></div><a class="indexterm" name="d0e174217"></a><span class="refentrytitle"><span class="command"><strong>MPTEMP</strong></span></span><div class="refnamediv"><p><span class="command"><strong>MPTEMP</strong></span>, <em class="replaceable"><code>SLOC</code></em>, <em class="replaceable"><code>T1</code></em>, <em class="replaceable"><code>T2</code></em>, <em class="replaceable"><code>T3</code></em>, <em class="replaceable"><code>T4</code></em>, <em class="replaceable"><code>T5</code></em>, <em class="replaceable"><code>T6</code></em><br><b class="refpurpose">Defines a temperature table for material properties.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7matldm061600" title="Table 2.27: Materials"><span class="type">Materials</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="bold"><strong>DesignSpace</strong></span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="MPTEMP.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>SLOC</code></em></b></span></dt><dd><p>Starting location in table for entering temperatures.
+ For example, if <em class="replaceable"><code>SLOC</code></em> = 1, data input in
+the <em class="replaceable"><code>T1</code></em> field applies to the first constant
+in the table.  If <em class="replaceable"><code>SLOC</code></em> = 7, data input
+in the <em class="replaceable"><code>T1</code></em> field applies to the seventh
+constant in the table, etc.  Defaults to the last location filled
++ 1.</p></dd><dt><span><b class="term"><em class="replaceable"><code>T1</code></em>, <em class="replaceable"><code>T2</code></em>, <em class="replaceable"><code>T3</code></em>, . . . , <em class="replaceable"><code>T6</code></em></b></span></dt><dd><p>Temperatures assigned to six locations starting with <em class="replaceable"><code>SLOC</code></em>.  If a value is already in this location, it will
+be redefined.  A blank (or zero) value for <em class="replaceable"><code>T1</code></em> resets the previous value in <em class="replaceable"><code>SLOC</code></em> to
+zero.  A value of zero can only be assigned by <em class="replaceable"><code>T1</code></em>.  Blank (or zero) values for <em class="replaceable"><code>T2</code></em> to <em class="replaceable"><code>T6</code></em> leave the corresponding previous values unchanged.</p></dd></dl></div></div></div><div class="refsect1" title="Command Default"><a name="MPTEMP.default"></a><h2>Command Default</h2><p>No temperature table defined (that is, properties must be defined
+as a constant or linear function of temperature via the <a class="link" href="Hlp_C_MP.html" title="MP"><span class="command"><strong>MP</strong></span></a> command).</p></div><div class="refsect1" title="Notes"><a name="MPTEMP.notes"></a><h2>Notes</h2><p>Defines a temperature table to be associated with the property
+data table [<a class="link" href="Hlp_C_MPDATA.html" title="MPDATA"><span class="command"><strong>MPDATA</strong></span></a>].  These temperatures are also
+used for polynomial property evaluation, if defined [<a class="link" href="Hlp_C_MP.html" title="MP"><span class="command"><strong>MP</strong></span></a>].  Temperatures must be defined in non-descending order.  Issue <a class="link" href="Hlp_C_MATER.html" title="MATER"><span class="command"><strong>MATER</strong></span></a> $ <a class="link" href="Hlp_C_STAT.html" title="STAT"><span class="command"><strong>STAT</strong></span></a> to list the current temperature
+table.  Repeat <span class="command"><strong>MPTEMP</strong></span> command for additional temperatures
+(100 maximum).  If all arguments are blank, the temperature table
+is erased.</p><p>For clear definition, the temperature range you define with
+the <span class="command"><strong>MPTEMP</strong></span> command should include the entire range
+you'll use in subsequently defined materials.  To assist the user
+in this, the first (and only the first) excursion out of the temperature
+range defined by the <span class="command"><strong>MPTEMP</strong></span> commands is flagged
+with a warning message.  Similarly, the reference temperature (<a class="link" href="Hlp_C_TREF.html" title="TREF"><span class="command"><strong>TREF</strong></span></a> or <a class="link" href="Hlp_C_MP.html" title="MP"><span class="command"><strong>MP</strong></span></a>,<span class="italic"><em>reft</em></span> commands) should also fall in this same temperature range.  If not
+and <a class="link" href="Hlp_C_MP.html" title="MP"><span class="command"><strong>MP</strong></span></a>,<span class="italic"><em>alpx</em></span> was
+used, a note will be output.  If not, and <a class="link" href="Hlp_C_MP.html" title="MP"><span class="command"><strong>MP</strong></span></a>,<span class="italic"><em>ctex</em></span> or <a class="link" href="Hlp_C_MP.html" title="MP"><span class="command"><strong>MP</strong></span></a>,<span class="italic"><em>thsx</em></span> was used, an error message will be output. </p><p>This command is also valid in SOLUTION.</p></div><div class="refsect1" title="Menu Paths"><a name="MPTEMP.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Other&gt;Change Mat Props&gt;Material Models</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Material Props&gt;Material Models</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Other&gt;Change Mat Props&gt;Material Models</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

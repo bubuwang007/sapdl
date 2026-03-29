@@ -1,0 +1,54 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:23-05:00"><title>NUMSTR</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="NUMSTR">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_N_TOC.html" title="N Commands">
+<link rel="prev" href="Hlp_C_NUMOFF.html" title="NUMOFF">
+<link rel="next" href="Hlp_C_NUMVAR.html" title="NUMVAR">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="NUMSTR"><a name="NUMSTR"></a><div class="titlepage"></div><a class="indexterm" name="d0e191421"></a><span class="refentrytitle"><span class="command"><strong>NUMSTR</strong></span></span><div class="refnamediv"><p><span class="command"><strong>NUMSTR</strong></span>, <em class="replaceable"><code>Label</code></em>, <em class="replaceable"><code>VALUE</code></em><br><b class="refpurpose">Establishes starting numbers for automatically numbered items.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7databaseldm061600" title="Table 2.24: Database"><span class="type">Database</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="NUMSTR.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Label</code></em></b></span></dt><dd><p>Apply starting number to one of the following sets of items:
+      </p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">NODE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Node numbers.  <em class="replaceable"><code>Value</code></em> defaults
+(and is continually reset) to 1 + maximum node number in model.  Cannot be
+reset lower.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ELEM</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Element numbers.  <em class="replaceable"><code>Value</code></em> defaults
+(and is continually reset) to 1 + maximum element number in model.  Cannot
+be reset lower.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">KP</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Keypoint numbers.  <em class="replaceable"><code>Value</code></em> defaults
+to 1.  Only undefined numbers are used.  Existing keypoints are not overwritten.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">LINE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Line numbers.  <em class="replaceable"><code>Value</code></em> defaults
+to 1.  Only undefined numbers are used.  Existing lines are not overwritten.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">AREA</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Area numbers.  <em class="replaceable"><code>Value</code></em> defaults
+to 1.  Only undefined numbers are used.  Existing areas are not overwritten.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">VOLU</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Volume numbers.  <em class="replaceable"><code>Value</code></em> defaults
+to 1.  Only undefined numbers are used.  Existing volumes are not overwritten.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">DEFA</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Default.  Returns all starting numbers to
+their default values.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>VALUE</code></em></b></span></dt><dd><p>Starting number value.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="NUMSTR.notes"></a><h2>Notes</h2><p>Establishes starting numbers for various items that may have numbers
+automatically assigned (such as element numbers with the <a class="link" href="Hlp_C_EGEN.html" title="EGEN"><span class="command"><strong>EGEN</strong></span></a> command,
+and node and solid model entity numbers with the mesh [<a class="link" href="Hlp_C_AMESH.html" title="AMESH"><span class="command"><strong>AMESH</strong></span></a>, <a class="link" href="Hlp_C_VMESH.html" title="VMESH"><span class="command"><strong>VMESH</strong></span></a>,
+etc.] commands).  Use <span class="command"><strong>NUMSTR</strong></span>,STAT to display settings.
+ Use <span class="command"><strong>NUMSTR</strong></span>,DEFA to reset all specifications back to defaults.
+ Defaults may be lowered by deleting and compressing items (i.e., <a class="link" href="Hlp_C_NDELE.html" title="NDELE"><span class="command"><strong>NDELE</strong></span></a> and <a class="link" href="Hlp_C_NUMCMP.html" title="NUMCMP"><span class="command"><strong>NUMCMP</strong></span></a>,NODE
+for nodes, etc.).</p><div class="note" title="Note" style="margin-left: 1.3rem; margin-right: 1.3remin;"><hr><p><span class="admontitle"><b>Note:</b></span>&nbsp;&nbsp;A mesh clear operation (<a class="link" href="Hlp_C_VCLEAR.html" title="VCLEAR"><span class="command"><strong>VCLEAR</strong></span></a>, <a class="link" href="Hlp_C_ACLEAR.html" title="ACLEAR"><span class="command"><strong>ACLEAR</strong></span></a>, <a class="link" href="Hlp_C_LCLEAR.html" title="LCLEAR"><span class="command"><strong>LCLEAR</strong></span></a>,
+and <a class="link" href="Hlp_C_KCLEAR.html" title="KCLEAR"><span class="command"><strong>KCLEAR</strong></span></a>) automatically sets starting node and element
+numbers to the highest unused numbers.  If a specific starting node or element
+number is desired, issue <span class="command"><strong>NUMSTR</strong></span> after the clear operation.</p><hr></div></div><div class="refsect1" title="Menu Paths"><a name="NUMSTR.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Numbering Ctrls&gt;Reset Start Num</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Numbering Ctrls&gt;Set Start Number</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Numbering Ctrls&gt;Start Num Status</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

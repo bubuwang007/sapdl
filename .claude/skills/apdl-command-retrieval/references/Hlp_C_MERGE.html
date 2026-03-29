@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:01-05:00"><title>*MERGE</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="*MERGE">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_M_TOC.html" title="M Commands">
+<link rel="prev" href="Hlp_C_MENU.html" title="/MENU">
+<link rel="next" href="Hlp_C_MESHING.html" title="MESHING">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="*MERGE"><a name="a-MERGE"></a><div class="titlepage"></div><a class="indexterm" name="d0e164823"></a><span class="refentrytitle"><a href="Hlp_C_MERGE.html" title="*MERGE" class="olink"><span class="command"><strong>*MERGE</strong></span></a></span><div class="refnamediv"><p><span class="command"><strong>*MERGE</strong></span>, <em class="replaceable"><code>Name1</code></em>, <em class="replaceable"><code>Name2</code></em>, <em class="replaceable"><code>Val1</code></em>, <em class="replaceable"><code>Val2</code></em> <br><b class="refpurpose">Merges two dense matrices or vectors into one.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_4.html" title="2.4. APDL Commands"><code class="classname">APDL</code></a>: <a class="link" href="Hlp_C_CH2_4.html#cmdapdlmatrix" title="Table 2.23: Matrix Operations (APDL Math)"><span class="type">Matrix Operations</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="light">Premium</span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsect1" title="Argument Descriptions"><a name="a-MERGE.argdescript"></a><h2>Argument Descriptions</h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Name1</code></em></b></span></dt><dd><p>Name of the matrix or vector to extend.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Name2</code></em></b></span></dt><dd><p>Name of the matrix or vector to be merged into <em class="replaceable"><code>Name1</code></em>. </p></dd><dt><span><b class="term"><em class="replaceable"><code>Val1</code></em>, <em class="replaceable"><code>Val2</code></em></b></span></dt><dd><p>Additional input. The meaning of <em class="replaceable"><code>Val1</code></em> and <em class="replaceable"><code>Val2</code></em> varies depending on the entity
+type (matrix or vector). See details below. </p></dd></dl></div></div><p><span class="bold"><strong>The following <em class="replaceable"><code>Val1</code></em> and <em class="replaceable"><code>Val2</code></em> fields are used if <em class="replaceable"><code>Name1</code></em> refers to a dense matrix created by the <a href="Hlp_C_DMAT.html" title="*DMAT" class="olink"><span class="command"><strong>*DMAT</strong></span></a> command:</strong></span></p><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Val1</code></em></b></span></dt><dd><p>Column or row number indicating where the new values
+are to be inserted into the <em class="replaceable"><code>Name1</code></em> matrix.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Val2</code></em></b></span></dt><dd><p>Specifies how the <em class="replaceable"><code>Name2</code></em> matrix or vector is copied into the <em class="replaceable"><code>Name1</code></em> matrix.</p><div><div class="variablelist"><dl><dt><span><b class="term">COL</b></span></dt><dd><p>Insert the new values at the column
+location specified by <em class="replaceable"><code>Val1</code></em> (default). </p></dd><dt><span><b class="term">ROW</b></span></dt><dd><p>Insert the new values at the row location
+specified by <em class="replaceable"><code>Val1</code></em>.</p></dd></dl></div></div></dd></dl></div></div><p><span class="bold"><strong>The following <em class="replaceable"><code>Val1</code></em> field is used if <em class="replaceable"><code>Name1</code></em> refers to a vector
+created by the <a href="Hlp_C_VEC.html" title="*VEC" class="olink"><span class="command"><strong>*VEC</strong></span></a> command:</strong></span></p><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Val1</code></em></b></span></dt><dd><p>Row number indicating where the new values are to
+be inserted into the <em class="replaceable"><code>Name1</code></em> vector.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="a-MERGE.notes"></a><h2>Notes</h2><p><a href="Hlp_C_MERGE.html" title="*MERGE" class="olink"><span class="command"><strong>*MERGE</strong></span></a> can be used to add new columns or
+rows to a dense matrix that was created by the <a href="Hlp_C_DMAT.html" title="*DMAT" class="olink"><span class="command"><strong>*DMAT</strong></span></a> command. In this case, <em class="replaceable"><code>Name1</code></em> must be
+the name of the dense matrix and <em class="replaceable"><code>Name2</code></em> must
+refer to a vector or another dense matrix. </p><p>The following two examples demonstrate merging columns into
+a dense matrix.</p><div><img src="graphics/gMERGE1.png"></div><p>The following example demonstrates merging rows into a dense
+matrix.</p><div><img src="graphics/gMERGE3.png"></div><p><a href="Hlp_C_MERGE.html" title="*MERGE" class="olink"><span class="command"><strong>*MERGE</strong></span></a> can also be used to add new rows to
+a vector that was created by the <a href="Hlp_C_VEC.html" title="*VEC" class="olink"><span class="command"><strong>*VEC</strong></span></a> command.
+In this case, <em class="replaceable"><code>Name1</code></em> and <em class="replaceable"><code>Name2</code></em> must both refer to vectors, as demonstrated in the example below.</p><div><img src="graphics/gMERGE2.png"></div><p>In all cases, the values of the original matrix or vector are
+retained, and the matrix or vector is resized to accommodate the additional
+rows or columns.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e165045"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

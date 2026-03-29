@@ -1,0 +1,45 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:51-05:00"><title>PMAP</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="PMAP">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_P_TOC.html" title="P Commands">
+<link rel="prev" href="Hlp_C_PMACRO.html" title="/PMACRO">
+<link rel="next" href="Hlp_C_PMGTRAN.html" title="PMGTRAN">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="PMAP"><a name="PMAP"></a><div class="titlepage"></div><a class="indexterm" name="d0e212849"></a><span class="refentrytitle"><span class="command"><strong>PMAP</strong></span></span><div class="refnamediv"><p><span class="command"><strong>PMAP</strong></span>, <em class="replaceable"><code>FORM</code></em>, <em class="replaceable"><code>DISCON</code></em><br><b class="refpurpose">Creates mapping of the path geometry by defining path interpolation
+division points.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_7.html" title="2.7. POST1 Commands"><code class="classname">POST1</code></a>: <a class="link" href="Hlp_C_CH2_7.html#cmdpost1pathopjla070199" title="Table 2.79: Path Operations"><span class="type">Path Operations</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="PMAP.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>FORM</code></em></b></span></dt><dd><p>Defines the mapping method:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">UNIFORM</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Maps uniform divisions (specified on the <em class="replaceable"><code>nDiv</code></em> argument
+of the <a class="link" href="Hlp_C_PATH.html" title="PATH"><span class="command"><strong>PATH</strong></span></a> command) between specified points.  This is
+the default.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ACCURATE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Map geometry using a small division at
+the beginning and end of each segment.  This gives you accurate derivatives,
+integrals, tangents, and normals for curves which do not have continuous slopes
+at the specified points. To create nonuniform divisions, the <em class="replaceable"><code>nDiv</code></em> argument
+of the <a class="link" href="Hlp_C_PATH.html" title="PATH"><span class="command"><strong>PATH</strong></span></a> command must be greater than 2.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>DISCON</code></em></b></span></dt><dd><p>Sets mapping for discontinuities in the field.  The divisions
+are modified to put a point just before and just after the discontinuity.
+ The valid label is MAT, for a material discontinuity.  No discontinuity is
+the default.  Discontinuity mapping involves the NOAV option on the <a class="link" href="Hlp_C_PDEF.html" title="PDEF"><span class="command"><strong>PDEF</strong></span></a> command.</p></dd></dl></div></div></div><div class="refsect1" title="Menu Paths"><a name="PMAP.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;General Postproc&gt;Path Operations&gt;Define Path&gt;Path Options</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Path Operations&gt;Define Path&gt;Path Options</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

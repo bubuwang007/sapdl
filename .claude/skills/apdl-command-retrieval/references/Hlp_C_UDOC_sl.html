@@ -1,0 +1,77 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:44-05:00"><title>/UDOC</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="/UDOC">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_U_TOC.html" title="U Commands">
+<link rel="prev" href="Hlp_C_UCMD.html" title="/UCMD">
+<link rel="next" href="Hlp_C_UI.html" title="/UI">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="/UDOC"><a name="s-UDOC"></a><div class="titlepage"></div><a class="indexterm" name="d0e299845"></a><span class="refentrytitle"><a href="Hlp_C_UDOC_sl.html" title="/UDOC" class="olink"><span class="command"><strong>/UDOC</strong></span></a></span><div class="refnamediv"><p><span class="command"><strong>/UDOC</strong></span>, <em class="replaceable"><code>WIND</code></em>, <em class="replaceable"><code>Class</code></em>, <em class="replaceable"><code>Key</code></em>, <br><b class="refpurpose">Determines position and content for the multi-legend options. </b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_3.html" title="2.3. GRAPHICS Commands"><code class="classname">GRAPHICS</code></a>: <a class="link" href="Hlp_C_CH2_3.html#cmdgraphiclabjla070199" title="Table 2.15: Labeling"><span class="type">Labeling</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="s-UDOC.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>WIND</code></em></b></span></dt><dd><p>The window number to which the command applies. (defaults
+to 1)</p></dd><dt><span><b class="term"><em class="replaceable"><code>Class</code></em></b></span></dt><dd><p>The type (and relative importance) of legend item being displayed:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">CNTR</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Contour legend. This legend item is controlled
+separately from the other legend items (see note below).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">DATE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The items in the DATE class include the date
+and time, or the ANSYS graphical logo (<a href="Hlp_C_PLOPTS.html" title="/PLOPTS" class="olink"><span class="command"><strong>/PLOPTS</strong></span></a>,LOGO,1).
+This item is shown by default in all plots. </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">GWIN</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The items in the GWIN class include the entity
+acronyms that appear in the legend of a multiplot of entities (Nodes, Elements,
+Keypoints, Lines, Areas, Volumes). GWIN items are shown by default for all <a class="link" href="Hlp_C_GPLOT.html" title="GPLOT"><span class="command"><strong>GPLOT</strong></span></a> displays.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">TYPE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Items in the TYPE class include the plot
+type (e.g. ELEMENTS, MATERIALS, NODAL SOLUTIONS, etc.). TYPE items are shown
+by default in all plots. </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">TYP2</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Items in the TYP2 class include supplementary
+type information, such as DMAX and SMAX for nodal solutions. TYP2 items are
+shown by default in all plots. </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">INUM</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Items in the INUM class include the number
+labels generated by the <a href="Hlp_C_PNUM.html" title="/PNUM" class="olink"><span class="command"><strong>/PNUM</strong></span></a> command. This class is displayed
+by default in all plots that contain <a href="Hlp_C_PNUM.html" title="/PNUM" class="olink"><span class="command"><strong>/PNUM</strong></span></a> information. </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">BCDC</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The items in the BCDC class include labels
+created by the <a href="Hlp_C_PBC.html" title="/PBC" class="olink"><span class="command"><strong>/PBC</strong></span></a>  command. This class is shown by default
+in all plots which contain <a href="Hlp_C_PBC.html" title="/PBC" class="olink"><span class="command"><strong>/PBC</strong></span></a> information. </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">VECT</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Items in the VECT class include labels created
+by the <a class="link" href="Hlp_C_PLVECT.html" title="PLVECT"><span class="command"><strong>PLVECT</strong></span></a> command. This class is shown by default for
+all <a class="link" href="Hlp_C_PLVECT.html" title="PLVECT"><span class="command"><strong>PLVECT</strong></span></a> plots. </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">SURF</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The items in the SURF class include labels
+from the <a href="Hlp_C_PSF.html" title="/PSF" class="olink"><span class="command"><strong>/PSF</strong></span></a> legend. This class is shown by default on
+all plots of surface boundary conditions. </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">BODY</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Items from the BODY class include labels
+from the <a href="Hlp_C_PBF.html" title="/PBF" class="olink"><span class="command"><strong>/PBF</strong></span></a> legend. This class is shown by default in
+all plots of body forces.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">PSTA</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Items from the PSTA class include stress
+scaling statistics, such as the <a href="Hlp_C_SSCALE.html" title="/SSCALE" class="olink"><span class="command"><strong>/SSCALE</strong></span></a> setting. This class
+is not shown as the default for any type of plot, and must be specifically
+referenced to display the included data. </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">VIEW</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The items in the VIEW class include view
+statistics. This class is not shown as the default for any type of plot, and
+must be specifically referenced to display the included data. </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">MISC</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The items in the MISC class include supplementary
+labels like /EXPANDED and Stress Section Cross Section. This class is not
+shown as the default for any type of plot, and must be specifically referenced
+to display the included data. </p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>KEY</code></em></b></span></dt><dd><p>Switch:</p><div class="informaltable"><table border="0" width="95%"><colgroup><col class="col1" width="50%"><col class="col2" width="50%"></colgroup><tbody><tr><td><span class="bold"><strong>OFF or 0 --</strong></span></td><td>Do not display the legend.</td></tr><tr><td><span class="bold"><strong>LEFT, RIGHT, TOP or BOTTOM --</strong></span></td><td>If the value for <em class="replaceable"><code>Class</code></em> is CNTR,
+these are the four acceptable values for the contour legend position.</td></tr><tr><td><span class="bold"><strong>LEFT or RIGHT --</strong></span></td><td>If any value other than CNTR is used for <em class="replaceable"><code>Class</code></em>,
+these are the two acceptable values for the text data.</td></tr></tbody></table></div></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="s-UDOC.notes"></a><h2>Notes</h2><p>The legend classes conform to the controls specified in the window options
+panel (<span class="guimenu"><strong>PlotCtrls&gt; Window Controls&gt; Window Options</strong></span>). In
+many instances, the legend controls specified with the <a href="Hlp_C_PLOPTS.html" title="/PLOPTS" class="olink"><span class="command"><strong>/PLOPTS</strong></span></a> command
+will take precedence and override <a href="Hlp_C_UDOC_sl.html" title="/UDOC" class="olink"><span class="command"><strong>/UDOC</strong></span></a> specifications.
+For instance:</p><p><a href="Hlp_C_PLOPTS.html" title="/PLOPTS" class="olink"><span class="command"><strong>/PLOPTS</strong></span></a>,LEG1,OFF will disable the TYPE, TYP2, INUM,
+and MISC classes, regardless of the <a href="Hlp_C_UDOC_sl.html" title="/UDOC" class="olink"><span class="command"><strong>/UDOC</strong></span></a> settings.</p><p><a href="Hlp_C_PLOPTS.html" title="/PLOPTS" class="olink"><span class="command"><strong>/PLOPTS</strong></span></a>,LEG2,OFF will disable the VIEW class, regardless
+of the <a href="Hlp_C_UDOC_sl.html" title="/UDOC" class="olink"><span class="command"><strong>/UDOC</strong></span></a> settings.</p><p><a href="Hlp_C_PLOPTS.html" title="/PLOPTS" class="olink"><span class="command"><strong>/PLOPTS</strong></span></a>,LEG3,OFF will disable the PSTA class, regardless
+of the <a href="Hlp_C_UDOC_sl.html" title="/UDOC" class="olink"><span class="command"><strong>/UDOC</strong></span></a> settings.</p><p>All items in a class are listed with the same X coordinate (except for
+contours). The contents of the text classes are dumped onto the display window
+from top to bottom, in order of class importance. </p><p>The font specification for text items that are included in the user-specified
+legends are controlled with the <a href="Hlp_C_DEVICE.html" title="/DEVICE" class="olink"><span class="command"><strong>/DEVICE</strong></span></a> command (<span class="guimenu"><strong>PlotCtrls&gt;
+Font Controls&gt; Anno/Graph Font</strong></span>).</p><p>The floating point values for the data presented in the legend(s) are
+controlled by the <a href="Hlp_C_GFORMAT.html" title="/GFORMAT" class="olink"><span class="command"><strong>/GFORMAT</strong></span></a> command. </p></div><div class="refsect1" title="Menu Paths"><a name="s-UDOC.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Utility Menu&gt;PlotCtrls&gt;Style&gt;MultiLegend Options&gt;Contour Legend</strong></span></td></tr><tr><td><span class="guimenu"><strong>Utility Menu&gt;PlotCtrls&gt;Style&gt;MultiLegend Options&gt;Text Legend</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

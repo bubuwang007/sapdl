@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:34:31-05:00"><title>SCOPT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="SCOPT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_S_TOC.html" title="S Commands">
+<link rel="prev" href="Hlp_C_SCAL.html" title="*SCAL">
+<link rel="next" href="Hlp_C_SDELETE.html" title="SDELETE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="SCOPT"><a name="SCOPT"></a><div class="titlepage"></div><a class="indexterm" name="d0e244483"></a><span class="refentrytitle"><span class="command"><strong>SCOPT</strong></span></span><div class="refnamediv"><p><span class="command"><strong>SCOPT</strong></span>,
+      <em class="replaceable"><code>TempDepKey</code></em><br><b class="refpurpose">Specifies System Coupling options.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoluanaoptjla070199" title="Table 2.48: Analysis Options"><span class="type">Analysis Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="SCOPT.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>TempDepKey</code></em></b></span></dt><dd><p>Temperature-dependent behavior key based on the convection coefficient:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">YES</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>A negative convection coefficient, -<em class="replaceable"><code>N</code></em>, is assumed
+                    to be a function of temperature and is determined from the HF property table for
+                    material <em class="replaceable"><code>N</code></em> (<a class="link" href="Hlp_C_MP.html" title="MP"><span class="command"><strong>MP</strong></span></a> command). This is
+                    the default.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">NO</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>A negative convection coefficient, -<em class="replaceable"><code>N</code></em>, is used as
+                    is in the convection calculation.</p></td></tr></tbody></table></div></div></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="SCOPT.notes"></a><h2>Notes</h2><p>By default in the Mechanical APDL program, a negative convection
+      coefficient value triggers temperature-dependent behavior. In some one-way CFD to Mechanical APDL
+      thermal simulations, it is desirable to allow convection coefficients to be used as negative
+      values. To do so, issue the command <span class="command"><strong>SCOPT</strong></span>,NO.</p></div><div class="refsect1" title="Menu Paths"><a name="SCOPT.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

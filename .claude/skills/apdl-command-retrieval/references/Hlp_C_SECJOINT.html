@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:34:36-05:00"><title>SECJOINT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="SECJOINT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_S_TOC.html" title="S Commands">
+<link rel="prev" href="Hlp_C_SECFUNCTION.html" title="SECFUNCTION">
+<link rel="next" href="Hlp_C_SECLIB.html" title="/SECLIB">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="SECJOINT"><a name="SECJOINT"></a><div class="titlepage"></div><a class="indexterm" name="d0e249078"></a><span class="refentrytitle"><span class="command"><strong>SECJOINT</strong></span></span><div class="refnamediv"><p><span class="command"><strong>SECJOINT</strong></span>, <em class="replaceable"><code>Kywrd</code></em>, <em class="replaceable"><code>Val1</code></em>, <em class="replaceable"><code>Val2</code></em>, <em class="replaceable"><code>Val3</code></em>, <em class="replaceable"><code>Val4</code></em>, <em class="replaceable"><code>Val5</code></em>, <em class="replaceable"><code>Val6</code></em><br><b class="refpurpose">Defines local coordinate systems at joint element nodes and other
+data for joint elements.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7crosssectldm061600" title="Table 2.44: Sections"><span class="type">Cross Sections</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="SECJOINT.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Kywrd</code></em></b></span></dt><dd><p>Keyword that indicates the type of joint element data being
+defined.</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">LSYS&nbsp;or&nbsp;blank</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Define local coordinate
+systems at the nodes that form the <a href="../ans_elem/Hlp_E_MPC184.html" title="MPC184" class="olink"><span class="structname">MPC184</span></a> joint element. </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">RDOF</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Define the relative degrees of freedom to
+be fixed for an <a href="../ans_elem/Hlp_E_MPC184gen.html" title="MPC184-General" class="olink"><span class="structname">MPC184-General</span></a> joint element. </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">PITC</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Define the pitch of an <a href="../ans_elem/Hlp_E_MPC184scr.html" title="MPC184-Screw" class="olink"><span class="structname">MPC184-Screw</span></a> joint
+element.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">FRIC</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Define the geometric quantities required
+for Coulomb frictional behavior in the <a href="../ans_elem/Hlp_E_MPC184revo.html" title="MPC184-Revolute" class="olink"><span class="structname">MPC184-Revolute</span></a> or <a href="../ans_elem/Hlp_E_MPC184tran.html" title="MPC184-Translational" class="olink"><span class="structname">MPC184-Translational</span></a> joint
+element.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>Val1</code></em>, <em class="replaceable"><code>Val2</code></em>, <em class="replaceable"><code>Val3</code></em>, <em class="replaceable"><code>Val4</code></em>, <em class="replaceable"><code>Val5</code></em>, <em class="replaceable"><code>Val6</code></em></b></span></dt><dd><p>The meaning of <em class="replaceable"><code>Val1</code></em> through <em class="replaceable"><code>Val6</code></em> changes,
+depending on the value of <em class="replaceable"><code>Kywrd</code></em>.</p><p>If <em class="replaceable"><code>Kywrd</code></em> =
+LSYS (or blank), <em class="replaceable"><code>Val1</code></em> and <em class="replaceable"><code>Val2</code></em> are
+Identifiers of the local coordinate systems at nodes I and J, respectively,
+of the joint element. <em class="replaceable"><code>Val3</code></em> through <em class="replaceable"><code>Val6</code></em> are
+not used.</p><p>If <em class="replaceable"><code>Kywrd</code></em> = RDOF, <em class="replaceable"><code>Val1</code></em> through <em class="replaceable"><code>Val6</code></em> are
+the relative degrees of freedom to be fixed for a general joint element. Input
+1 for UX, 2 for UY, 3 for UZ, 4 for ROTX, 5 for ROTY, and 6 for ROTZ. You
+may input the DOFs in any order.</p><p>If <em class="replaceable"><code>Kywrd</code></em> = PITC, <em class="replaceable"><code>Val1</code></em> is
+the pitch of the screw joint element; pitch is defined as the ratio of relative
+axial displacement (length units) to relative rotation (in radians). <em class="replaceable"><code>Val2</code></em> through <em class="replaceable"><code>Val6</code></em> are
+not used.</p><p>If <em class="replaceable"><code>Kywrd</code></em> = FRIC, <em class="replaceable"><code>Val1</code></em> through <em class="replaceable"><code>Val3</code></em> are defined as follows.</p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="bold"><strong>For Revolute Joint:</strong></span></td></tr><tr><td><em class="replaceable"><code>Val1</code></em> = outer radius</td></tr><tr><td><em class="replaceable"><code>Val2</code></em> = inner radius</td></tr><tr><td><em class="replaceable"><code>Val3</code></em> = effective length</td></tr><tr><td><span class="bold"><strong>For Translational Joint:</strong></span></td></tr><tr><td><em class="replaceable"><code>Val1</code></em> = effective length</td></tr><tr><td><em class="replaceable"><code>Val2</code></em> = effective radius</td></tr></table></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="SECJOINT.notes"></a><h2>Notes</h2><p>Use this command to define additional section data for <a href="../ans_elem/Hlp_E_MPC184.html" title="MPC184" class="olink"><span class="structname">MPC184</span></a> joint
+elements. To overwrite the current values, issue another <span class="command"><strong>SECJOINT</strong></span> command
+with the same <em class="replaceable"><code>Kywrd</code></em> value. The data input on this
+command is interpreted based on the most recently issued <a class="link" href="Hlp_C_SECTYPE.html" title="SECTYPE"><span class="command"><strong>SECTYPE</strong></span></a> command.</p></div><div class="refsect1" title="Menu Paths"><a name="SECJOINT.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Sections&gt;Joints&gt;Add / Edit</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

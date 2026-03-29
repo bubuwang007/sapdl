@@ -1,0 +1,41 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:33-05:00"><title>ANDYNA</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="ANDYNA">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_A_TOC.html" title="A Commands">
+<link rel="prev" href="Hlp_C_ANDSCL.html" title="ANDSCL">
+<link rel="next" href="Hlp_C_ANFILE.html" title="/ANFILE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="ANDYNA"><a name="ANDYNA"></a><div class="titlepage"></div><a class="indexterm" name="d0e23140"></a><span class="refentrytitle"><span class="command"><strong>ANDYNA</strong></span></span><div class="refnamediv"><p><span class="command"><strong>ANDYNA</strong></span>, <em class="replaceable"><code>DELAY</code></em>, <em class="replaceable"><code>NCYCL</code></em>, <em class="replaceable"><code>START</code></em>, <em class="replaceable"><code>END</code></em>, <em class="replaceable"><code>INC</code></em>, <em class="replaceable"><code>AUTOCONTOURKEY</code></em><br><b class="refpurpose">Produces an animated sequence of contour values through substeps.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_7.html" title="2.7. POST1 Commands"><code class="classname">POST1</code></a>: <a class="link" href="Hlp_C_CH2_7.html#cmdpost1animajla070199" title="Table 2.78: Animation"><span class="type">Animation</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="ANDYNA.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>DELAY</code></em></b></span></dt><dd><p>Time delay during animation (defaults to 0.1 seconds).</p></dd><dt><span><b class="term"><em class="replaceable"><code>NCYCL</code></em></b></span></dt><dd><p>Number of animation cycles (defaults to 5).  Available in
+non-UI mode only.</p></dd><dt><span><b class="term"><em class="replaceable"><code>START</code></em></b></span></dt><dd><p>Number of the starting substep (defaults to 1).</p></dd><dt><span><b class="term"><em class="replaceable"><code>END</code></em></b></span></dt><dd><p>Number of the ending substep (defaults to the maximum substep).</p></dd><dt><span><b class="term"><em class="replaceable"><code>INC</code></em></b></span></dt><dd><p>Increment between substeps (defaults to 1).</p></dd><dt><span><b class="term"><em class="replaceable"><code>AUTOCONTOURKEY</code></em></b></span></dt><dd><p>Auto-scales contour values, based on the overall subset range
+of values  (defaults to 0, no auto-scaling).</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="ANDYNA.notes"></a><h2>Notes</h2><p><span class="command"><strong>ANDYNA</strong></span> involves an ANSYS macro which produces an
+animation of contour values through all the substeps of the last plot action
+command.  This command operates only on graphic display platforms supporting
+the <a href="Hlp_C_SEG.html" title="/SEG" class="olink"><span class="command"><strong>/SEG</strong></span></a> command.  After executing <span class="command"><strong>ANDYNA</strong></span>,
+you can replay the animated sequence by issuing the <a class="link" href="Hlp_C_ANIM.html" title="ANIM"><span class="command"><strong>ANIM</strong></span></a> command.</p><p>The command functions only in the postprocessor.</p></div><div class="refsect1" title="Menu Paths"><a name="ANDYNA.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Utility Menu&gt;PlotCtrls&gt;Animate&gt;Dynamic Results</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

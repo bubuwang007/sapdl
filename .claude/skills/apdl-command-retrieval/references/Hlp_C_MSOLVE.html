@@ -1,0 +1,88 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:08-05:00"><title>MSOLVE</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="MSOLVE">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_M_TOC.html" title="M Commands">
+<link rel="prev" href="Hlp_C_MSHPATTERN.html" title="MSHPATTERN">
+<link rel="next" href="Hlp_C_MSTART.html" title="/MSTART">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="MSOLVE"><a name="MSOLVE"></a><div class="titlepage"></div><a class="indexterm" name="d0e176393"></a><span class="refentrytitle">
+<span class="command"><strong>MSOLVE</strong></span>
+</span><div class="refnamediv"><p>
+<span class="command"><strong>MSOLVE</strong></span>,
+    <em class="replaceable"><code>NUMSLV</code></em>, <em class="replaceable"><code>VAL1</code></em>,
+    <em class="replaceable"><code>VAL2</code></em>, <em class="replaceable"><code>Lab</code></em>,
+    <em class="replaceable"><code>ANGFIX</code></em>
+<br><b class="refpurpose">Starts multiple solutions for an acoustic analysis.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoluanaoptjla070199" title="Table 2.48: Analysis Options"><span class="type">Analysis Options</span></a></span></div></div></div><div class="refclass">
+<div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="light">Premium</span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div>
+</div></p></div><div class="refsynopsisdiv" title="Synopsis"><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term">
+<em class="replaceable"><code>NUMSLV</code></em>
+</b></span></dt><dd><p>Number of multiple solutions (load steps). This number corresponds to the number of
+      random samplings for the diffuse sound field in a random acoustic analysis, or the incident
+      angles of the plane wave when the Floquet periodic boundary condition is present. Default =
+      1.</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>VAL1</code></em>
+</b></span></dt><dd><p>The meaning of <em class="replaceable"><code>VAL1</code></em> depends on the
+       <em class="replaceable"><code>Lab</code></em> value. </p><p>For <em class="replaceable"><code>Lab</code></em> = DSF, <em class="replaceable"><code>VAL1</code></em> is the norm
+      convergence tolerance defined by comparing the averaged radiated diffuse sound power of two
+      multiple sampling sets over the frequency range for the diffuse sound field (default = 0.05). </p><p>For <em class="replaceable"><code>Lab</code></em> = APHI or ATHETA, <em class="replaceable"><code>VAL1</code></em> is
+            the beginning angle for the incident angle sweep of the plane wave (default = 0).</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>VAL2</code></em>
+</b></span></dt><dd><p>The meaning of <em class="replaceable"><code>VAL2</code></em> depends on the
+       <em class="replaceable"><code>Lab</code></em> value. </p><p>For <em class="replaceable"><code>Lab</code></em> = DSF,  <em class="replaceable"><code>VAL2</code></em> is the
+      interval of the norm convergence check for the diffuse sound field (default = 5). </p><p>For <em class="replaceable"><code>Lab</code></em> = APHI or ATHETA, <em class="replaceable"><code>VAL2</code></em> is
+            the ending angle for the incident angle sweep of the plane wave (default = 0).</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>Lab</code></em>
+</b></span></dt><dd><p>Label indicating the type of acoustic analysis:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">DSF</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Diffuse sound field with multiple solutions (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">APHI</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plane wave angle sweep with fixed <span class="inlineequation" style="&#xA;            vertical-align:-5.000000px"><img src="graphics/eq78a935ff-1990-4da5-89e5-3406e485f759.svg"></span> angle and varied <span class="inlineequation" style="&#xA;            vertical-align:-1.000000px"><img src="graphics/eq30fd7a46-9fce-47b0-b294-6e63bd00f6e3.svg"></span> angle (see the <a class="link" href="Hlp_C_aport.html" title="APORT"><span class="command"><strong>APORT</strong></span></a> command).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ATHETA</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plane wave angle sweep with fixed <span class="inlineequation" style="&#xA;            vertical-align:-1.000000px"><img src="graphics/eqabf2a021-f72d-4ce2-80b1-2e0d3cf4db7a.svg"></span> angle and varied <span class="inlineequation" style="&#xA;            vertical-align:-5.000000px"><img src="graphics/eqbf91e8ef-9902-4b5b-bad8-8b6abf50b3f2.svg"></span> angle (see the <a class="link" href="Hlp_C_aport.html" title="APORT"><span class="command"><strong>APORT</strong></span></a> command).</p></td></tr></tbody></table></div></div><p>
+</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>ANGFIX</code></em>
+</b></span></dt><dd><p>The value of the fixed incident angle for the plane wave angle sweep (used only when
+              <em class="replaceable"><code>Lab</code></em> = APHI or ATHETA).</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="d0e176597"></a><h2>Notes</h2><p>The <span class="command"><strong>MSOLVE</strong></span> command starts multiple solutions (load
+   steps) for a random acoustic analysis with multiple samplings or for the angle sweep of the
+   incident plane wave with the Floquet periodic boundary condition, as described below. </p><p>
+<span class="bold"><strong>Random Acoustic Analysis
+     (<em class="replaceable"><code>Lab</code></em> = DSF)</strong></span>
+</p><p>Use <em class="replaceable"><code>Lab</code></em> = DSF for a random acoustic
+   analysis. The process is controlled by the norm convergence tolerance (<em class="replaceable"><code>VAL1</code></em>) or the number of multiple solutions
+    (<em class="replaceable"><code>NUMSLV</code></em>) if the solution steps reach the defined number.</p><p>The program checks the norm convergence by comparing two averaged sets of radiated sound
+   powers with the interval <em class="replaceable"><code>VAL2</code></em> over the
+   frequency range. For example, if <em class="replaceable"><code>VAL2</code></em> = 5, the
+   averaged values from 5 solutions are compared with the averaged values from 10 solutions, then
+   the averaged values from 10 solutions are compared with the averaged values from 15 solutions,
+   and so on.</p><p>The incident diffuse sound field is defined via the <a class="link" href="Hlp_C_DFSWAVE.html" title="DFSWAVE"><span class="command"><strong>DFSWAVE</strong></span></a> command. </p><p>The average result of multiple solutions with different samplings is
+      calculated via the <a class="link" href="Hlp_C_PRAS.html" title="PRAS"><span class="command"><strong>PRAS</strong></span></a> or <a class="link" href="Hlp_C_PLAS.html" title="PLAS"><span class="command"><strong>PLAS</strong></span></a> command. </p><p>
+<span class="bold"><strong>Plane Wave Incident Angle Sweep
+     (<em class="replaceable"><code>Lab</code></em> = APHI or ATHETA)</strong></span>
+</p><p>Use <em class="replaceable"><code>Lab</code></em> = APHI or ATHETA to perform an angle
+   sweep for the incident plane wave defined by the <a class="link" href="Hlp_C_aport.html" title="APORT"><span class="command"><strong>APORT</strong></span></a> command. The process is
+   controlled by the number of multiple solutions (<em class="replaceable"><code>NUMSLV</code></em>). The plane
+   wave port must be defined with the default values of incident angles prior to the
+    <span class="command"><strong>MSOLVE</strong></span> command.</p><p>The sound power parameters are calculated over the sweeping angles
+      during postprocessing by the <a class="link" href="Hlp_C_PRAS.html" title="PRAS"><span class="command"><strong>PRAS</strong></span></a> or <a class="link" href="Hlp_C_PLAS.html" title="PLAS"><span class="command"><strong>PLAS</strong></span></a>
+      command.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e176681"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

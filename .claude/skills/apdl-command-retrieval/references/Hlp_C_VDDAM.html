@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:50-05:00"><title>VDDAM</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="VDDAM">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_V_TOC.html" title="V Commands">
+<link rel="prev" href="Hlp_C_VCUM.html" title="*VCUM">
+<link rel="next" href="Hlp_C_VDELE.html" title="VDELE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="VDDAM"><a name="VDDAM"></a><div class="titlepage"></div><a class="indexterm" name="d0e305607"></a><span class="refentrytitle"><span class="command"><strong>VDDAM</strong></span></span><div class="refnamediv"><p><span class="command"><strong>VDDAM</strong></span>, <em class="replaceable"><code>VF</code></em>, <em class="replaceable"><code>VA</code></em>, <em class="replaceable"><code>VB</code></em>, <em class="replaceable"><code>VC</code></em><br><b class="refpurpose">Specifies the velocity spectrum computation constants
+for the analysis of shock resistance of shipboard structures.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoluspectrumjla070199" title="Table 2.51: Spectrum Options"><span class="type">Spectrum Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="VDDAM.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>VF</code></em></b></span></dt><dd><p>Direction-dependent velocity coefficient for elastic
+or elastic-plastic analysis option (Default = 0).</p></dd><dt><span><b class="term"><em class="replaceable"><code>VA</code></em>, <em class="replaceable"><code>VB</code></em>, <em class="replaceable"><code>VC</code></em></b></span></dt><dd><p>Coefficients for the DDAM velocity spectrum equations.
+ See <a href="../ans_thry/thy_anproc7.html#anpdynamicdsn" title="Dynamic Design Analysis Method" class="olink">Dynamic Design Analysis Method</a> in the <a href="../ans_thry/ans_thry.html" title="Mechanical APDL Theory Reference" class="olink"><em class="citetitle">Mechanical APDL Theory Reference</em></a>.  Default for these coefficients is zero.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="VDDAM.notes"></a><h2>Notes</h2><p>This command specifies velocity coefficients to analyze shock
+resistance of shipboard equipment.  These coefficients are used to
+compute mode coefficients according to the equations given in <a href="../ans_thry/thy_anproc7.html#anpdynamicdsn" title="Dynamic Design Analysis Method" class="olink">Dynamic Design Analysis Method</a> in the <a href="../ans_thry/ans_thry.html" title="Mechanical APDL Theory Reference" class="olink"><em class="citetitle">Mechanical APDL Theory Reference</em></a>.
+ The form of these equations is based on the Naval NRL Dynamic Design
+Analysis Method.  This command, along with the <a class="link" href="Hlp_C_ADDAM.html" title="ADDAM"><span class="command"><strong>ADDAM</strong></span></a> and <a class="link" href="Hlp_C_SED.html" title="SED"><span class="command"><strong>SED</strong></span></a> commands, is used with the spectrum (<a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,SPECTR) analysis as a special purpose alternative
+to the <a class="link" href="Hlp_C_SV.html" title="SV"><span class="command"><strong>SV</strong></span></a>, <a class="link" href="Hlp_C_FREQ.html" title="FREQ"><span class="command"><strong>FREQ</strong></span></a>, and <a class="link" href="Hlp_C_SVTYP.html" title="SVTYP"><span class="command"><strong>SVTYP</strong></span></a> commands.</p><p>In order to perform a DDAM spectrum analysis
+using a units system other than BIN (default), you must specify the
+units system complying with the mass and length units of the model
+using the <a href="Hlp_C_UNITS.html" title="/UNITS" class="olink"><span class="command"><strong>/UNITS</strong></span></a> command. Issue the <a href="Hlp_C_UNITS.html" title="/UNITS" class="olink"><span class="command"><strong>/UNITS</strong></span></a> command before defining the shock spectrum computation constants
+(<span class="command"><strong>VDDAM</strong></span>). The <span class="command"><strong>VDDAM</strong></span> command is
+not supported with the user-defined units system (<em class="replaceable"><code>Label</code></em> = USER on the <a href="Hlp_C_UNITS.html" title="/UNITS" class="olink"><span class="command"><strong>/UNITS</strong></span></a> command).</p><p><a class="link" href="Hlp_C_DDASPEC.html" title="DDASPEC"><span class="command"><strong>DDASPEC</strong></span></a> may alternatively be used to calculate
+spectrum coefficients.</p><p>This command is also valid in PREP7.</p></div><div class="refsect1" title="Menu Paths"><a name="VDDAM.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Spectrum&gt;DDAM Options</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Spectrum&gt;DDAM Options</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:21-05:00"><title>/GCMD</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="/GCMD">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_G_TOC.html" title="G Commands">
+<link rel="prev" href="Hlp_C_GCGEN.html" title="GCGEN">
+<link rel="next" href="Hlp_C_GCOLUMN.html" title="/GCOLUMN">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="/GCMD"><a name="s-GCMD"></a><div class="titlepage"></div><a class="indexterm" name="d0e114101"></a><span class="refentrytitle"><a href="Hlp_C_GCMD.html" title="/GCMD" class="olink"><span class="command"><strong>/GCMD</strong></span></a></span><div class="refnamediv"><p><span class="command"><strong>/GCMD</strong></span>, <em class="replaceable"><code>WN</code></em>, <em class="replaceable"><code>Lab1</code></em>, <em class="replaceable"><code>Lab2</code></em>, <em class="replaceable"><code>Lab3</code></em>, <em class="replaceable"><code>Lab4</code></em>, <em class="replaceable"><code>Lab5</code></em>, <em class="replaceable"><code>Lab6</code></em>, <em class="replaceable"><code>Lab7</code></em>, <em class="replaceable"><code>Lab8</code></em>, <em class="replaceable"><code>Lab9</code></em>, <em class="replaceable"><code>Lab10</code></em>, <em class="replaceable"><code>Lab11</code></em>, <em class="replaceable"><code>Lab12</code></em><br><b class="refpurpose">Controls the type of element or graph display used for the <a class="link" href="Hlp_C_GPLOT.html" title="GPLOT"><span class="command"><strong>GPLOT</strong></span></a> command.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_3.html" title="2.3. GRAPHICS Commands"><code class="classname">GRAPHICS</code></a>: <a class="link" href="Hlp_C_CH2_3.html#cmdgraphicsetupjla070199" title="Table 2.11: Setup"><span class="type">Set Up</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="s-GCMD.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>WN</code></em></b></span></dt><dd><p>Window number (or ALL) to which this command applies (defaults
+to 1)</p></dd><dt><span><b class="term"><em class="replaceable"><code>Lab1</code></em>, <em class="replaceable"><code>Lab2</code></em>, <em class="replaceable"><code>Lab3</code></em>,
+. . . , <em class="replaceable"><code>Lab12</code></em></b></span></dt><dd><p>Command labels (for example, <a class="link" href="Hlp_C_PLNSOL.html" title="PLNSOL"><span class="command"><strong>PLNSOL</strong></span></a>,S,X)</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="s-GCMD.notes"></a><h2>Notes</h2><p>This command controls the type of element or graph display that appears
+when you issue the <a class="link" href="Hlp_C_GPLOT.html" title="GPLOT"><span class="command"><strong>GPLOT</strong></span></a> command when the <a href="Hlp_C_GTYPE.html" title="/GTYPE" class="olink"><span class="command"><strong>/GTYPE</strong></span></a>,,(ELEM
+or GRPH) entity type is active.  If you have multiple plotting windows enabled,
+you can also use <a href="Hlp_C_GCMD.html" title="/GCMD" class="olink"><span class="command"><strong>/GCMD</strong></span></a> to select one window when you wish
+to edit its contents.</p><p>For related information, see the descriptions of the <a class="link" href="Hlp_C_GPLOT.html" title="GPLOT"><span class="command"><strong>GPLOT</strong></span></a> and <a href="Hlp_C_GTYPE.html" title="/GTYPE" class="olink"><span class="command"><strong>/GTYPE</strong></span></a> commands
+in this manual.</p><p>This command is valid in any processor.</p></div><div class="refsect1" title="Menu Paths"><a name="s-GCMD.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Utility Menu&gt;PlotCtrls&gt;Multi-Plot Contrls</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

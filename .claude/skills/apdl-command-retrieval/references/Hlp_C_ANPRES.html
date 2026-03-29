@@ -1,0 +1,52 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:34-05:00"><title>ANPRES</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="ANPRES">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_A_TOC.html" title="A Commands">
+<link rel="prev" href="Hlp_C_ANORM.html" title="ANORM">
+<link rel="next" href="Hlp_C_ANSOL.html" title="ANSOL">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="ANPRES"><a name="ANPRES"></a><div class="titlepage"></div><a class="indexterm" name="d0e24743"></a><span class="refentrytitle"><span class="command"><strong>ANPRES</strong></span></span><div class="refnamediv"><p><span class="command"><strong>ANPRES</strong></span>, <em class="replaceable"><code>NFRAM</code></em>, <em class="replaceable"><code>DELAY</code></em>, <em class="replaceable"><code>NCYCL</code></em>, <em class="replaceable"><code>RefFrame</code></em><br><b class="refpurpose">Produces an animated sequence of the time-harmonic pressure
+variation of an engine-order excitation in a cyclic harmonic analysis.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsolumiscldsjla070199" title="Table 2.58: Miscellaneous Loads"><span class="type">Misc Loads</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="ANPRES.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>NFRAM</code></em></b></span></dt><dd><p>Number of frame captures per cycle. Defaults to 3
+times the number of sectors.</p></dd><dt><span><b class="term"><em class="replaceable"><code>DELAY</code></em></b></span></dt><dd><p>Time delay (seconds) during animation. Defaults to
+0.1 seconds.</p></dd><dt><span><b class="term"><em class="replaceable"><code>NCYCL</code></em></b></span></dt><dd><p>Number of animation cycles. Defaults to 5.</p></dd><dt><span><b class="term"><em class="replaceable"><code>RefFrame</code></em></b></span></dt><dd><p>Reference frame for the model rotation.</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">0</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Rotating reference frame (default).
+The model remains fixed in space and the pressure revolve around the
+model.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Stationary reference frame. The model
+rotates and the pressure locations remain fixed in space.</p></td></tr></tbody></table></div></div></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="ANPRES.notes"></a><h2>Notes</h2><p><span class="command"><strong>ANPRES</strong></span> invokes a macro which produces an
+animated sequence of the time-harmonic applied pressure in the case
+of a mode-superposition harmonic analysis (<a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,HARMIC with <a class="link" href="Hlp_C_CYCOPT.html" title="CYCOPT"><span class="command"><strong>CYCOPT</strong></span></a>,MSUP,ON). The engine-order
+excitation must also have been specified (<a class="link" href="Hlp_C_CYCFREQ.html" title="CYCFREQ"><span class="command"><strong>CYCFREQ</strong></span></a>,EO). While pressure loads are not accepted as valid loading in a
+mode-superposition analysis (they must be applied in the modal analysis
+and the modal load vector applied in the mode-superposition analysis)
+you can apply them for the purposes of this animation.</p><p>For <em class="replaceable"><code>RefFrame</code></em> = 1 (stationary reference
+frame), the rotational velocity from the Linear Perturbation step,
+or the current <a class="link" href="Hlp_C_OMEGA.html" title="OMEGA"><span class="command"><strong>OMEGA</strong></span></a> or <a class="link" href="Hlp_C_CGOMGA.html" title="CGOMGA"><span class="command"><strong>CGOMGA</strong></span></a> value, is used to determine the rotation direction about the cyclic
+cylindrical axis, otherwise a positive rotation is assumed.</p><p>You may use <a href="Hlp_C_HBC.html" title="/HBC" class="olink"><span class="command"><strong>/HBC</strong></span></a>,,ON to hide overlapping
+pressure faces, and use <a href="Hlp_C_GLINE.html" title="/GLINE" class="olink"><span class="command"><strong>/GLINE</strong></span></a>,,-1 to suppress
+the element outlines if desired.</p></div><div class="refsect1" title="Menu Paths"><a name="ANPRES.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

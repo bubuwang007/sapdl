@@ -1,0 +1,52 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:46-05:00"><title>KEYOPT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="KEYOPT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_K_TOC.html" title="K Commands">
+<link rel="prev" href="Hlp_C_KESIZE.html" title="KESIZE">
+<link rel="next" href="Hlp_C_KEYPTS.html" title="KEYPTS">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="KEYOPT"><a name="KEYOPT"></a><div class="titlepage"></div><a class="indexterm" name="d0e142553"></a><span class="refentrytitle"><span class="command"><strong>KEYOPT</strong></span></span><div class="refnamediv"><p><span class="command"><strong>KEYOPT</strong></span>, <em class="replaceable"><code>ITYPE</code></em>, <em class="replaceable"><code>KNUM</code></em>, <em class="replaceable"><code>VALUE</code></em><br><b class="refpurpose">Sets element key options.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7elementtypeldm061600" title="Table 2.25: Element Type"><span class="type">Element Type</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="KEYOPT.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>ITYPE</code></em></b></span></dt><dd><p>Element type number as defined on the <a class="link" href="Hlp_C_ET.html" title="ET"><span class="command"><strong>ET</strong></span></a> command.</p><p>The following labels are valid input for contact elements:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">CONT</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Set element key options for all contact element types, <span><a href="../ans_elem/Hlp_E_CONTA172.html" title="CONTA172" class="olink"><span class="structname">CONTA172</span></a>,
+                        <a href="../ans_elem/Hlp_E_CONTA174.html" title="CONTA174" class="olink"><span class="structname">CONTA174</span></a>, <a href="../ans_elem/Hlp_E_CONTA175.html" title="CONTA175" class="olink"><span class="structname">CONTA175</span></a>, and
+                        <a href="../ans_elem/Hlp_E_CONTA177.html" title="CONTA177" class="olink"><span class="structname">CONTA177</span></a></span>.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">TARG</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Set element key options for all target element types,
+                      <a href="../ans_elem/Hlp_E_TARGE169.html" title="TARGE169" class="olink"><span class="structname">TARGE169</span></a> and
+                    <a href="../ans_elem/Hlp_E_TARGE170.html" title="TARGE170" class="olink"><span class="structname">TARGE170</span></a>.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">GCN</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Set element key options for all contact element types used in a <a href="../ans_ctec/ctec_gencont.html" title="general contact" class="olink">general contact</a>
+                    definition (that is, all contact elements having a real constant set number =
+                    0).</p></td></tr></tbody></table></div></div><p>See <a class="link" href="Hlp_C_KEYOPT.html#KEYOPT.notes" title="Notes">Notes</a> for additional
+              <em class="replaceable"><code>ITYPE</code></em> input specific to general contact.</p></dd><dt><span><b class="term"><em class="replaceable"><code>KNUM</code></em></b></span></dt><dd><p>Number of the KEYOPT to be defined (KEYOPT(<em class="replaceable"><code>KNUM</code></em>)).</p></dd><dt><span><b class="term"><em class="replaceable"><code>VALUE</code></em></b></span></dt><dd><p>Value of this KEYOPT.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="KEYOPT.notes"></a><h2>Notes</h2><p>The <span class="command"><strong>KEYOPT</strong></span> command is an alternative method for inputting element key
+   option (KEYOPT) values via the <a class="link" href="Hlp_C_ET.html" title="ET"><span class="command"><strong>ET</strong></span></a> command. (Issue the <a class="link" href="Hlp_C_ET.html" title="ET"><span class="command"><strong>ET</strong></span></a>
+   command <span class="emphasis"><em>first</em></span> to define <em class="replaceable"><code>ITYPE</code></em>). </p><p>The <span class="command"><strong>KEYOPT</strong></span> command is required for inputting key options numbered higher
+   than six (that is, &gt; KEYOPT(6)).  </p><div class="refsect2" title="Special Usage for Structural Elements"><a name="refsect2_kpb_rp5_xv"></a><h3>Special Usage for Structural Elements</h3><p>If <a class="link" href="Hlp_C_ETCONTROL.html" title="ETCONTROL"><span class="command"><strong>ETCONTROL</strong></span></a>,SET is enabled, key options that you specify via the
+     <span class="command"><strong>KEYOPT</strong></span> command might be overridden for many structural elements. For more
+    information, see <a href="../ans_elem/Hlp_E_AutoSelectElems.html" title="Automatic Selection of Element Technologies and Formulations in the Element Reference" class="olink">Automatic Selection of Element Technologies and Formulations in the <span class="olinkdocname">Element Reference</span></a>.</p></div><div class="refsect2" title="Special Usage for General Contact"><a name="refsect2_ibn_np5_xv"></a><h3>Special Usage for General Contact</h3><p>Specify <em class="replaceable"><code>ITYPE</code></em> = GCN to set element key
+        options for all contact element types used in a <a href="../ans_ctec/ctec_gencont.html" title="general contact" class="olink">general contact</a> definition. You can selectively set
+        element key options for multiple contact element types in a general contact definition by
+        setting <em class="replaceable"><code>ITYPE</code></em> to a valid label (ALL_EDGE, ALL_FACE, ALL_VERT,
+        ALL_TOP, or ALL_BOT) or by inputting a node component name with or without a component name
+        extension (_EDGE, _FACE, _VERT, _TOP, or _BOT). For more information, see <a href="../ans_ctec/ctec_nondefset.html" title="Defining Non-Default Contact Settings" class="olink">Defining Non-Default Contact Settings</a> in the <a href="../ans_ctec/ctectoc.html" title="Contact Technology Guide" class="olink"><em class="citetitle">Contact Technology Guide</em></a>.</p></div></div><div class="refsect1" title="Menu Paths"><a name="KEYOPT.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Element Type&gt;Add/Edit/Delete</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:45-05:00"><title>*ULIB</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="*ULIB">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_U_TOC.html" title="U Commands">
+<link rel="prev" href="Hlp_C_UIS.html" title="/UIS">
+<link rel="next" href="Hlp_C_UNDELETE.html" title="UNDELETE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="*ULIB"><a name="a-ULIB"></a><div class="titlepage"></div><a class="indexterm" name="d0e301343"></a><span class="refentrytitle"><a href="Hlp_C_ULIB.html" title="*ULIB" class="olink"><span class="command"><strong>*ULIB</strong></span></a></span><div class="refnamediv"><p><span class="command"><strong>*ULIB</strong></span>, <em class="replaceable"><code>Fname</code></em>, <em class="replaceable"><code>Ext</code></em>, <em class="replaceable"><code>--</code></em><br><b class="refpurpose">Identifies a macro library file.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_4.html" title="2.4. APDL Commands"><code class="classname">APDL</code></a>: <a class="link" href="Hlp_C_CH2_4.html#cmdapdlmacrojla070199" title="Table 2.19: Macro Files"><span class="type">Macro Files</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsect1" title="Argument Descriptions"><a name="a-ULIB.argdescript"></a><h2>Argument Descriptions</h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Fname</code></em></b></span></dt><dd><p>File name and directory path (248 characters maximum, including the characters needed for the directory path).  An unspecified directory path defaults to the working directory; in this case, you can use all 248 characters for the file name. </p></dd><dt><span><b class="term"><em class="replaceable"><code>Ext</code></em></b></span></dt><dd><p>Filename extension (eight-character maximum).</p></dd><dt><span><b class="term"><em class="replaceable"><code>--</code></em></b></span></dt><dd><p>Unused field.</p></dd></dl></div></div></div><div class="refsect1" title="Command Default"><a name="a-ULIB.default"></a><h2>Command Default</h2><p>No macro library file.</p></div><div class="refsect1" title="Notes"><a name="a-ULIB.notes"></a><h2>Notes</h2><p>Identifies a macro library file for the <a href="Hlp_C_USE.html" title="*USE" class="olink"><span class="command"><strong>*USE</strong></span></a> command.  A library of macros allows blocks of often used ANSYS
+commands to be stacked and executed from a single file.  The macro
+blocks must be enclosed within block identifier and terminator lines
+as shown in the example below.  If you want to add comment lines to
+a macro block, you may place them anywhere <span class="italic"><em>within</em></span> the macro block.  (This includes placing them directly
+on the lines where the macro block identifier and the macro block
+terminator appear, as shown in the example.)  Do not place comment
+lines (or any other lines) outside of a macro block.</p><pre class="programlisting">ABC! Any valid alphanumeric name (32 characters maximum)
+!  identifying this data block
+---! ANSYS data input commands
+---
+---
+/EOF! Terminator for this data block
+XYZ! Identify another data block (if desired)
+---! ANSYS data input commands
+---
+---
+/EOF! Terminator for this data block
+(etc.)</pre><p>The name of the macro library file is identified for reading
+on the <a href="Hlp_C_ULIB.html" title="*ULIB" class="olink"><span class="command"><strong>*ULIB</strong></span></a> command.   The name of the macro block
+is identified on the <a href="Hlp_C_USE.html" title="*USE" class="olink"><span class="command"><strong>*USE</strong></span></a> command.  The commands
+within the macro block are copied to a temporary file (of the macro
+block name) during the <a href="Hlp_C_USE.html" title="*USE" class="olink"><span class="command"><strong>*USE</strong></span></a>  operation and executed
+as if a macro file of that name had been created by the user.  The
+temporary file is deleted after it has been used.  Macro block names
+should be acceptable filenames (system dependent) and should not match
+user created macro file names, since the user macro file will be used
+first (if it exists) before the library file is searched.  Macro blocks
+may be stacked in any order.  Branching  [<a href="Hlp_C_GO_st.html" title="*GO" class="olink"><span class="command"><strong>*GO</strong></span></a> or
+ <a href="Hlp_C_IF.html" title="*IF" class="olink"><span class="command"><strong>*IF</strong></span></a>] external to the macro block is not allowed.</p><p>This command is valid in any processor.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e301467"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Utility Menu&gt;Macro&gt;Execute Data Block</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

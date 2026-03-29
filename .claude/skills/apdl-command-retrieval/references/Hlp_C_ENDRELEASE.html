@@ -1,0 +1,58 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:03-05:00"><title>ENDRELEASE</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="ENDRELEASE">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_E_TOC.html" title="E Commands">
+<link rel="prev" href="Hlp_C_ENDIF.html" title="*ENDIF">
+<link rel="next" href="Hlp_C_ENERSOL.html" title="ENERSOL">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="ENDRELEASE"><a name="ENDRELEASE"></a><div class="titlepage"></div><a class="indexterm" name="d0e91160"></a><span class="refentrytitle"><span class="command"><strong>ENDRELEASE</strong></span></span><div class="refnamediv"><p><span class="command"><strong>ENDRELEASE</strong></span>,
+    <em class="replaceable"><code>--</code></em>, <em class="replaceable"><code>TOLERANCE</code></em>,
+    <em class="replaceable"><code>Dof1</code></em>, <em class="replaceable"><code>Dof2</code></em>,
+    <em class="replaceable"><code>Dof3</code></em>, <em class="replaceable"><code>Dof4</code></em>,
+    <em class="replaceable"><code>KJCT</code></em><br><b class="refpurpose">Specifies degrees of freedom to be decoupled for end release.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7elementsldm061600" title="Table 2.38: Elements"><span class="type">Elements</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a> 
+    <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="ENDRELEASE.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>--</code></em></b></span></dt><dd><p>Unused field.</p></dd><dt><span><b class="term"><em class="replaceable"><code>TOLERANCE</code></em></b></span></dt><dd><p>Angle tolerance (in degrees) between adjacent elements. Default = 20. Set
+       <em class="replaceable"><code>TOLERANCE</code></em> to -1 to release all selected elements.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Dof1</code></em>, <em class="replaceable"><code>Dof2</code></em>,
+      <em class="replaceable"><code>Dof3</code></em>, <em class="replaceable"><code>Dof4</code></em></b></span></dt><dd><p>Degrees of freedom to release. If <em class="replaceable"><code>Dof1</code></em> is blank, WARP is
+      assumed and <em class="replaceable"><code>Dof2</code></em>, <em class="replaceable"><code>Dof3</code></em>, and
+       <em class="replaceable"><code>Dof4</code></em> are ignored.</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">WARP</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Release the warping degree of freedom (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ROTX</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Release rotations in the X direction.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ROTY</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Release rotations in the Y direction.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ROTZ</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Release rotations in the Z direction.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">UX</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Release displacements in the X direction.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">UY</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Release displacements in the Y direction.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">UZ</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Release displacements in the Z direction.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">BALL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Create ball joints (equivalent to releasing WARP, ROTX, ROTY, and ROTZ).</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>KJCT</code></em></b></span></dt><dd><p>Behavior at a junction node (a node shared by more than two elements):</p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>0 (or blank) &#8211; Release all elements. <em class="replaceable"><code>TOLERANCE</code></em> is
+        ignored.</td></tr><tr><td>1 &#8211; Release noncontinuous elements (if only one pair of continuous elements
+        exists).</td></tr></table><p>This argument is ignored (due to ambiguity) if <em class="replaceable"><code>KJCT</code></em> = 1 and
+      multiple pairs of continuous elements exist.</p><p>This argument is ignored if <em class="replaceable"><code>TOLERANCE</code></em> = -1.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="ENDRELEASE.notes"></a><h2>Notes</h2><p>This command specifies end releases for the <a href="../ans_elem/Hlp_E_BEAM188.html" title="BEAM188" class="olink"><span class="structname">BEAM188</span></a>,
+    <a href="../ans_elem/Hlp_E_BEAM189.html" title="BEAM189" class="olink"><span class="structname">BEAM189</span></a>, <a href="../ans_elem/Hlp_E_PIPE288.html" title="PIPE288" class="olink"><span class="structname">PIPE288</span></a>, and
+    <a href="../ans_elem/Hlp_E_PIPE289.html" title="PIPE289" class="olink"><span class="structname">PIPE289</span></a> elements. The command works on currently selected nodes and
+   elements. It creates end releases on any two connected beam elements whose angle at connection
+   exceeds <em class="replaceable"><code>TOLERANCE</code></em>. </p><p>From within the GUI, the <span class="guilabel"><strong>Picked node</strong></span> option generates an end release at
+   the selected node regardless of the angle of connection (<em class="replaceable"><code>TOLERANCE</code></em> =
+   -1).</p><div class="table"><a name="d0e91380"></a><p class="title"><b>Table 112:  Possible End-Release Conditions at a Junction Node when <em class="replaceable"><code>KJCT</code></em> =
+    1</b></p><div class="table-contents"><table summary="Possible End-Release Conditions at a Junction Node when KJCT =&#xA;    1" border="1" width="95%"><colgroup><col width="288" align="center" class="c1"><col width="192" class="c2"></colgroup><thead><tr><th align="center">Junction Node Example </th><th>Behavior</th></tr></thead><tbody><tr><td align="center"><span class="inlinegraphic"><img src="graphics/gENDRELEASE1.png"></span>&nbsp;</td><td>E2 is not released. E3 is released. A new node is generated for E3.</td></tr><tr><td align="center"><span class="inlinegraphic"><img src="graphics/gENDRELEASE2.png"></span>&nbsp;</td><td>E2 and E3 are released if the angles between E1-E2 and E1-E3 are within tolerance (two
+       continuous pairs).</td></tr><tr><td align="center"><span class="inlinegraphic"><img src="graphics/gENDRELEASE3.png"></span>&nbsp;</td><td>E2, E3, and E4 are released regardless of <em class="replaceable"><code>KJCT</code></em> (two
+       continuous pairs). </td></tr><tr><td align="center"><span class="inlinegraphic"><img src="graphics/gENDRELEASE4.png"></span>&nbsp;</td><td>E4 is not released. E2 and E3 are released. New nodes are generated for E3 and
+       E4.</td></tr></tbody></table></div></div><br class="table-break"><p>To list the coupled sets generated by this command, issue <a class="link" href="Hlp_C_CPLIST.html" title="CPLIST"><span class="command"><strong>CPLIST</strong></span></a>.</p><p>Exercise engineering judgement when using this command. Improper use may result in mechanics
+   that render a solution impossible.</p></div><div class="refsect1" title="Menu Paths"><a name="ENDRELEASE.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Other&gt;End Releases&gt;Beams&gt;On Selected set</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Other&gt;End Releases&gt;Beams&gt;On Selected set</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

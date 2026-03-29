@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:33-05:00"><title>ANDATA</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="ANDATA">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_A_TOC.html" title="A Commands">
+<link rel="prev" href="Hlp_C_ANCYC.html" title="ANCYC">
+<link rel="next" href="Hlp_C_ANDSCL.html" title="ANDSCL">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="ANDATA"><a name="ANDATA"></a><div class="titlepage"></div><a class="indexterm" name="d0e22819"></a><span class="refentrytitle"><span class="command"><strong>ANDATA</strong></span></span><div class="refnamediv"><p><span class="command"><strong>ANDATA</strong></span>, <em class="replaceable"><code>DELAY</code></em>, <em class="replaceable"><code>NCYCL</code></em>, <em class="replaceable"><code>RSLTDAT</code></em>, <em class="replaceable"><code>MIN</code></em>, <em class="replaceable"><code>MAX</code></em>, <em class="replaceable"><code>INCR</code></em>, <em class="replaceable"><code>FRCLST</code></em>, <em class="replaceable"><code>AUTOCONT</code></em>, <em class="replaceable"><code>--</code></em>, <em class="replaceable"><code>AUTOCNTR</code></em><br><b class="refpurpose">Displays animated graphics data for nonlinear problems.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_7.html" title="2.7. POST1 Commands"><code class="classname">POST1</code></a>: <a class="link" href="Hlp_C_CH2_7.html#cmdpost1animajla070199" title="Table 2.78: Animation"><span class="type">Animation</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="ANDATA.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>DELAY</code></em></b></span></dt><dd><p>Time delay during animation (defaults to 0.5 seconds).</p></dd><dt><span><b class="term"><em class="replaceable"><code>NCYCL</code></em></b></span></dt><dd><p>Number of animation cycles (defaults to 5).  Available
+in non-UI mode only.</p></dd><dt><span><b class="term"><em class="replaceable"><code>RSLTDAT</code></em></b></span></dt><dd><p>The type of results data to be used for the animation
+sequence.  This can be:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">0</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Current load step data (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Range of load step data.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">2</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Range of results data.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>MIN</code></em></b></span></dt><dd><p>The range minimum value.  If left blank or 0, defaults
+to the first data point.</p></dd><dt><span><b class="term"><em class="replaceable"><code>MAX</code></em></b></span></dt><dd><p>The range maximum value.  If left blank or 0, defaults
+to the last data point.</p></dd><dt><span><b class="term"><em class="replaceable"><code>INCR</code></em></b></span></dt><dd><p>The increment between result data (defaults to 1).</p></dd><dt><span><b class="term"><em class="replaceable"><code>FRCLST</code></em></b></span></dt><dd><p>Key to force the last sub step in a selected load
+step to be included in the animation (defaults to 0).</p></dd><dt><span><b class="term"><em class="replaceable"><code>AUTOCONT</code></em></b></span></dt><dd><p>A value of 1 enables automatic scaling of contour
+values based on the overall subset range of values. The default value
+is 0 (no automatic scaling). </p></dd><dt><span><b class="term"><em class="replaceable"><code>--</code></em></b></span></dt><dd><p>Unused field.</p></dd><dt><span><b class="term"><em class="replaceable"><code>AUTOCNTR</code></em></b></span></dt><dd><p>A value of 1 disables automatic centering of displaced
+plots. The default value is 0 (allow automatic centering).</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="ANDATA.notes"></a><h2>Notes</h2><p>Use the <span class="command"><strong>ANDATA</strong></span> command to create animations
+for nonlinear problems. The command works by displaying an individual
+graphical image for each result data set from the results file. For
+information about creating animations for linear problems, see the <a class="link" href="Hlp_C_ANIM.html" title="ANIM"><span class="command"><strong>ANIM</strong></span></a> command.</p><p>The command operates only on graphic display platforms supporting
+the <a href="Hlp_C_SEG.html" title="/SEG" class="olink"><span class="command"><strong>/SEG</strong></span></a> command. It uses a macro to produce an
+animation based on the last plot action command (for example, <a class="link" href="Hlp_C_PLDISP.html" title="PLDISP"><span class="command"><strong>PLDISP</strong></span></a>).</p><p>The results file must have more than one set of results.</p><p>The command implicitly issues <a href="Hlp_C_DSCALE_sl.html" title="/DSCALE" class="olink"><span class="command"><strong>/DSCALE</strong></span></a>, 1
+for default displacement scaling. Large displacements may not give
+good results.</p><p>This command functions only in the postprocessor.</p></div><div class="refsect1" title="Menu Paths"><a name="ANDATA.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Utility Menu&gt;PlotCtrls&gt;Animate&gt;Animate Over Results</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

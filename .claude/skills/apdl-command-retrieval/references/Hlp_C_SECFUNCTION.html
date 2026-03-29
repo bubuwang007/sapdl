@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:34:36-05:00"><title>SECFUNCTION</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="SECFUNCTION">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_S_TOC.html" title="S Commands">
+<link rel="prev" href="Hlp_C_SECDATA.html" title="SECDATA">
+<link rel="next" href="Hlp_C_SECJOINT.html" title="SECJOINT">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="SECFUNCTION"><a name="SECFUNCTION"></a><div class="titlepage"></div><a class="indexterm" name="d0e248925"></a><span class="refentrytitle"><span class="command"><strong>SECFUNCTION</strong></span></span><div class="refnamediv"><p><span class="command"><strong>SECFUNCTION</strong></span>, <em class="replaceable"><code>TABLE</code></em>, <em class="replaceable"><code>PATTERN</code></em><br><b class="refpurpose">Specifies shell section thickness as a tabular function.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7crosssectldm061600" title="Table 2.44: Sections"><span class="type">Cross Sections</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="SECFUNCTION.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>TABLE</code></em></b></span></dt><dd><p>Name of table parameter or array parameter  for specifying thickness.
+                    </p></dd><dt><span><b class="term"><em class="replaceable"><code>PATTERN</code></em></b></span></dt><dd><p>Interpretation pattern for array parameters. </p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="SECFUNCTION.notes"></a><h2>Notes</h2><p> The <span class="command"><strong>SECFUNCTION</strong></span> command is associated with
+the section most recently defined via the <a class="link" href="Hlp_C_SECTYPE.html" title="SECTYPE"><span class="command"><strong>SECTYPE</strong></span></a> command.</p><p>A table parameter can define tabular thickness as a function of
+            coordinates. Alternatively, you can use an array parameter (indexed by node number) that
+            expresses the function to be mapped. (See <em class="replaceable"><code>PATTERN</code></em> of NOD2 for
+            array content.) Enclose the table or array name in percent signs (%)
+                (<span class="command"><strong>SECFUNCTION</strong></span>,%<em class="replaceable"><code>tablename</code></em>%). </p><p>Issue the <a href="Hlp_C_DIM.html" title="*DIM" class="olink"><span class="command"><strong>*DIM</strong></span></a> command to define a table or
+            array.</p><p>The table or array defines the total shell thickness at any
+point in space. In multilayered sections, the total thickness and
+each layer thickness are scaled accordingly.</p><p>The <a href="../ans_bas/Hlp_G_BASFUNCTOOL.html" title="Function Tool" class="olink">Function Tool</a> is a convenient way
+   to define your thickness tables.</p><p>Refer to the <a href="Hlp_C_DIM.html" title="*DIM" class="olink"><span class="command"><strong>*DIM</strong></span></a> command
+for interpreting a table in a local coordinate system.</p><div class="refsect2" title="Specifying the PATTERN Value"><a name="d0e249035"></a><h3>Specifying the <em class="replaceable"><code>PATTERN</code></em> Value</h3><p>When <em class="replaceable"><code>PATTERN</code></em> = NODE, <em class="replaceable"><code>TABLE</code></em>
+                should be a 1-D array parameter (indexed by node number) that expresses the function
+                to be mapped.</p><p>When <em class="replaceable"><code>PATTERN</code></em> = NOD2, <em class="replaceable"><code>TABLE</code></em>
+                should be a 2-D array parameter (where column 1 contains node numbers and column 2
+                contains the corresponding thicknesses) that expresses the function to be
+                mapped.</p><p>Specify <em class="replaceable"><code>PATTERN</code></em> when <em class="replaceable"><code>TABLE</code></em>
+                is an <span class="emphasis"><em>array parameter</em></span> only (and not when it is a table
+                parameter or a single value).</p></div></div><div class="refsect1" title="Menu Paths"><a name="SECFUNCTION.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Sections&gt;Shell&gt;Lay-up&gt;Add / Edit</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

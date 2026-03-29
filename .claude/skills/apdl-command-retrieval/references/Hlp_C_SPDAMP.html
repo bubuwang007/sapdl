@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:07-05:00"><title>SPDAMP</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="SPDAMP">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_S_TOC.html" title="S Commands">
+<link rel="prev" href="Hlp_C_SPCTEMP.html" title="SPCTEMP">
+<link rel="next" href="Hlp_C_SPEC.html" title="SPEC">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="SPDAMP"><a name="SPDAMP"></a><div class="titlepage"></div><a class="indexterm" name="d0e269734"></a><span class="refentrytitle"><span class="command"><strong>SPDAMP</strong></span></span><div class="refnamediv"><p><span class="command"><strong>SPDAMP</strong></span>, <em class="replaceable"><code>TBLNO</code></em>, <em class="replaceable"><code>CURVNO</code></em>, <em class="replaceable"><code>DampRatio </code></em><br><b class="refpurpose">Defines input spectrum damping in a multi-point response
+spectrum analysis.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoluspectrumjla070199" title="Table 2.51: Spectrum Options"><span class="type">Spectrum Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="SPDAMP.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>TBLNO</code></em></b></span></dt><dd><p>Input table number. Corresponds to the frequency table
+number (<em class="replaceable"><code>TBLNO</code></em> on the <a class="link" href="Hlp_C_SPFREQ.html" title="SPFREQ"><span class="command"><strong>SPFREQ</strong></span></a> command).</p></dd><dt><span><b class="term"><em class="replaceable"><code>CURVNO</code></em></b></span></dt><dd><p>Input curve number. Corresponds to the spectrum values
+curve number (<em class="replaceable"><code>CURVNO</code></em> on the <a class="link" href="Hlp_C_SPVAL.html" title="SPVAL"><span class="command"><strong>SPVAL</strong></span></a> command).</p></dd><dt><span><b class="term"><em class="replaceable"><code>DampRatio</code></em></b></span></dt><dd><p>Damping ratio for the response spectrum curve. Up
+to 20 different curves may be defined, each with a different damping
+ratio. Damping values must be input in ascending order.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="SPDAMP.notes"></a><h2>Notes</h2><p>Defines multi-point response spectrum damping value to be associated
+with:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Previously defined frequency points (<a class="link" href="Hlp_C_SPFREQ.html" title="SPFREQ"><span class="command"><strong>SPFREQ</strong></span></a>).</p></li><li class="listitem"><p>Subsequently defined spectrum points (<a class="link" href="Hlp_C_SPVAL.html" title="SPVAL"><span class="command"><strong>SPVAL</strong></span></a>).</p></li></ul></div><p>Damping values are used only to identify input spectrum values
+for the mode coefficients calculation. </p><p>The curve number must be input in ascending order starting with
+1.</p><p>This command is also valid in PREP7.</p></div><div class="refsect1" title="Menu Paths"><a name="SPDAMP.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Spectrum&gt;MultiPt&gt;Spect vs Freq</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Spectrum&gt;MultiPt&gt;Spect vs Freq</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

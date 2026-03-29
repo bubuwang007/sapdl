@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:44-05:00"><title>PLMC</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="PLMC">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_P_TOC.html" title="P Commands">
+<link rel="prev" href="Hlp_C_PLMAP.html" title="PLMAP">
+<link rel="next" href="Hlp_C_PLNEAR.html" title="PLNEAR">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="PLMC"><a name="PLMC"></a><div class="titlepage"></div><a class="indexterm" name="d0e208522"></a><span class="refentrytitle"><span class="command"><strong>PLMC</strong></span></span><div class="refnamediv"><p><span class="command"><strong>PLMC</strong></span>, <em class="replaceable"><code>LSTEP</code></em>, <em class="replaceable"><code>SBSTEP</code></em>, <em class="replaceable"><code>TIMFRQ</code></em>, <em class="replaceable"><code>KIMG</code></em>, <em class="replaceable"><code>HIbeg</code></em>, <em class="replaceable"><code>HIend</code></em><br><b class="refpurpose">Plots the modal coordinates from a mode-superposition
+solution.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_7.html" title="2.7. POST1 Commands"><code class="classname">POST1</code></a>: <a class="link" href="Hlp_C_CH2_7.html#cmdpost1sppurpjla070199" title="Table 2.84: Special Purpose"><span class="type">Special Purpose</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="PLMC.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>LSTEP, SBSTEP</code></em></b></span></dt><dd><p>Plot the solution identified as load step <em class="replaceable"><code>LSTEP</code></em> and substep <em class="replaceable"><code>SBSTEP</code></em></p></dd><dt><span><b class="term"><em class="replaceable"><code>TIMFRQ</code></em></b></span></dt><dd><p>As an alternative to <em class="replaceable"><code>LSTEP</code></em> and <em class="replaceable"><code>SBSTEP</code></em>, plot the solution at the
+time value <em class="replaceable"><code>TIMFRQ</code></em> (for <a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,TRANS) or frequency value <em class="replaceable"><code>TIMFRQ</code></em> (for <a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,HARMIC). <em class="replaceable"><code>LSTEP</code></em> and <em class="replaceable"><code>SBSTEP</code></em> should be left blank.</p></dd><dt><span><b class="term"><em class="replaceable"><code>KIMG</code></em></b></span></dt><dd><p>Key for plotting real or imaginary solution. Valid only for
+                            <a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,HARMIC.</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">0 (or blank)</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plot the real solution (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plot the imaginary solution.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">2</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plot the amplitude.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>HIbeg, HIend</code></em></b></span></dt><dd><p>For cyclic symmetry solutions, plot the solutions
+in the harmonic index solution range <em class="replaceable"><code>HIbeg</code></em> to <em class="replaceable"><code>HIend</code></em>. Defaults to all harmonic indices
+(all modes).</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="PLMC.notes"></a><h2>Notes</h2><p><span class="command"><strong>PLMC</strong></span> plots a histogram of the modal coordinates (the
+            factors which modes may be multiplied by to obtain their contribution to the response)
+            at a certain time point (transient analyses) or frequency point (harmonic analyses). The
+            absolute values of the modal coordinates are plotted. Use <a href="Hlp_C_XRANGE.html" title="/XRANGE" class="olink"><span class="command"><strong>/XRANGE</strong></span></a> to
+            plot only modes in a certain range, if desired.</p><p>For transient analyses, the <span class="filename"><strong>Jobname.rdsp</strong></span>
+            file must be available. For harmonic analyses, the <span class="filename"><strong>Jobname.rfrq</strong></span>
+            file must be available. The content of these files depends on the
+                <a class="link" href="Hlp_C_OUTturRES.html" title="OUTRES"><span class="command"><strong>OUTRES</strong></span></a> command settings. Note that the default for
+            mode-superposition transient analysis is to write the reduced displacement file every
+            4th substep. For more information, see <a href="Hlp_C_OUTturRES.html#OUTRES.default" title="Command&#xA;                Default" class="olink">Command
+                Default</a> in the <a class="link" href="Hlp_C_OUTturRES.html" title="OUTRES"><span class="command"><strong>OUTRES</strong></span></a> command description.</p><p>For a cyclic harmonic mode-superposition analysis, use the <a class="link" href="Hlp_C_CYCFILES.html" title="CYCFILES"><span class="command"><strong>CYCFILES</strong></span></a> command
+            to identify the <span class="filename"><strong>Jobname.rfrq</strong></span> and modal
+                <span class="filename"><strong>Jobname.rst</strong></span> file. You may limit the plot to display only those
+            modes in a certain harmonic index range. The modes having the same harmonic index are
+            each plotted in a unique color. If there are less than 10 harmonic indices, they are
+            identified in the graphics legend.</p><p>This is a graphical representation of the optional
+                <span class="filename"><strong>Jobname.mcf</strong></span> text file (see the <a class="link" href="Hlp_C_TRNOPT.html" title="TRNOPT"><span class="command"><strong>TRNOPT</strong></span></a> and
+                <a class="link" href="Hlp_C_HROPT.html" title="HROPT"><span class="command"><strong>HROPT</strong></span></a> commands). To print the modal coordinates, use the
+                <a class="link" href="Hlp_C_PRMC.html" title="PRMC"><span class="command"><strong>PRMC</strong></span></a> command. For more information on modal coordinates, see
+                <a href="../ans_thry/thy_tool9.html" title="Mode-Superposotion Method" class="olink">Mode-Superposotion Method</a>
+            in the <a href="../ans_thry/ans_thry.html" title="Mechanical APDL Theory Reference" class="olink"><em class="citetitle">Mechanical APDL Theory Reference</em></a>.</p></div><div class="refsect1" title="Menu Paths"><a name="PLMC.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

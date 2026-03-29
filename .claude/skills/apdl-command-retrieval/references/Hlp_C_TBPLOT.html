@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:38-05:00"><title>TBPLOT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="TBPLOT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_T_TOC.html" title="T Commands">
+<link rel="prev" href="Hlp_C_TBMODIF.html" title="TBMODIF">
+<link rel="next" href="Hlp_C_TBPT.html" title="TBPT">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="TBPLOT"><a name="TBPLOT"></a><div class="titlepage"></div><a class="indexterm" name="d0e293135"></a><span class="refentrytitle"><span class="command"><strong>TBPLOT</strong></span></span><div class="refnamediv"><p><span class="command"><strong>TBPLOT</strong></span>, <em class="replaceable"><code>Lab</code></em>, <em class="replaceable"><code>MAT</code></em>, <em class="replaceable"><code>TBOPT</code></em>, <em class="replaceable"><code>TEMP</code></em>, <em class="replaceable"><code>SEGN</code></em><br><b class="refpurpose">Displays the material <a href="../ans_mat/mat_understandingdt.html" title="data table" class="olink">data table</a>.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7datatablesldm061600" title="Table 2.28: Material Data Tables"><span class="type">Data Tables</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="TBPLOT.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Lab</code></em></b></span></dt><dd><p>Data table label. Valid labels are: MELAS, BKIN, BISO, BH, GASKET, and JOIN. Defaults to
+      the active table label. For B-H data, also valid are: NB to display
+       NU-B<sup>2</sup>, MH to display MU vs. H, and SBH, SNB, SMH to display the
+      slopes of the corresponding data.</p></dd><dt><span><b class="term"><em class="replaceable"><code>MAT</code></em></b></span></dt><dd><p>Material number to be displayed (defaults to the active
+material).</p></dd><dt><span><b class="term"><em class="replaceable"><code>TBOPT</code></em></b></span></dt><dd><p>Gasket material or joint element material option to
+be plotted. </p><p>The following gasket material options are
+valid only when <em class="replaceable"><code>Lab</code></em> = GASKET:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ALL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plots all gasket data.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">COMP</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plots gasket compression data only.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">LUNL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plots gasket linear unloading data
+with compression curve.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">NUNL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plots gasket nonlinear unloading
+data only.</p></td></tr></tbody></table></div></div><p>The following joint element material options are valid only
+when <span class="italic"><em>Lab</em></span> = JOIN:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">JNSA</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plots nonlinear stiffness data that
+is applicable to all relevant directions.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">JNS<span class="italic"><em>n</em></span></b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plots only the specified nonlinear stiffness data. The <span class="quote">"<span class="quote"><span class="italic"><em>n</em></span></span>"</span> can be 1, 4, or 6. For example,
+JNS4 plots only the nonlinear stiffness data specified in the local
+direction 4 (ROTX).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">JNDA</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plots nonlinear damping data that
+is applicable to all relevant directions.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">JND<span class="italic"><em>n</em></span></b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plots only the specified nonlinear damping data. The <span class="quote">"<span class="quote"><span class="italic"><em>n</em></span></span>"</span> can be 1, 4, or 6. For example,
+JND4 plots only the nonlinear damping data specified in the local
+direction 4 (ROTX).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">JNFA</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plots nonlinear hysteretic friction
+data that is applicable to all relevant directions.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">JNF<span class="italic"><em>n</em></span></b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plots only the specified nonlinear hysteretic friction data. The <span class="quote">"<span class="quote"><span class="italic"><em>n</em></span></span>"</span> can be 1, 4, or 6. For
+example, JNF4 plots only the nonlinear hysteretic friction data specified
+in local direction 4 (ROTX).</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>TEMP</code></em></b></span></dt><dd><p>Specific temperature at which gasket data or joint
+element material data will be plotted (used only when <em class="replaceable"><code>Lab</code></em> = GASKET or JOIN). Use <em class="replaceable"><code>TEMP</code></em> = ALL to plot gasket data or joint element material data at all
+temperatures.</p></dd><dt><span><b class="term"><em class="replaceable"><code>SEGN</code></em></b></span></dt><dd><p>Segment number of plotted curve (valid only when <em class="replaceable"><code>Lab</code></em> = GASKET):</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">NO</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Segment number is not added to plotted
+curve (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">YES</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Segment number is added to plotted
+curve. This option is ignored if the number of data points in a curve
+exceeds 20.</p></td></tr></tbody></table></div></div></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="TBPLOT.notes"></a><h2>Notes</h2><p>Only data for stress-strain, B-H, gasket curves, or joint element
+nonlinear material model curves can be displayed. </p><p>The <em class="replaceable"><code>TBOPT</code></em> and <em class="replaceable"><code>TEMP</code></em> values are valid only when <span class="italic"><em>Lab</em></span> = GASKET or JOIN. </p><p>The <em class="replaceable"><code>SEGN</code></em> value is valid only when <span class="italic"><em>Lab</em></span> = GASKET.</p><p>This command is valid in any processor.</p></div><div class="refsect1" title="Menu Paths"><a name="TBPLOT.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Utility Menu&gt;Plot&gt;Data Tables</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:06-05:00"><title>*SORT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="*SORT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_S_TOC.html" title="S Commands">
+<link rel="prev" href="Hlp_C_SOLVE.html" title="SOLVE">
+<link rel="next" href="Hlp_C_SORT.html" title="SORT">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="*SORT"><a name="a-SORT"></a><div class="titlepage"></div><a class="indexterm" name="d0e268990"></a><span class="refentrytitle"><a href="Hlp_C_SORT_st.html" title="*SORT" class="olink"><span class="command"><strong>*SORT</strong></span></a></span><div class="refnamediv"><p><span class="command"><strong>*SORT</strong></span>, <em class="replaceable"><code>Name</code></em>,
+    <em class="replaceable"><code>SortType</code></em>, <em class="replaceable"><code>Val1</code></em>,
+    <em class="replaceable"><code>Val2</code></em>
+  <br><b class="refpurpose">Sorts the values of the specified vector.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_4.html" title="2.4. APDL Commands"><code class="classname">APDL</code></a>: <a class="link" href="Hlp_C_CH2_4.html#cmdapdlmatrix" title="Table 2.23: Matrix Operations (APDL Math)"><span class="type">Matrix Operations</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="light">Premium</span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsect1" title="Argument Descriptions"><a name="a-SORT.argdescript"></a><h2>Argument Descriptions</h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Name</code></em></b></span></dt><dd><p>Name of the vector to be sorted. This vector can contain real or complex values.</p></dd><dt><span><b class="term"><em class="replaceable"><code>SortType</code></em></b></span></dt><dd><p>Criteria used to sort the values:</p><div><div class="variablelist"><dl><dt><span><b class="term">VALUE &#8211; </b></span></dt><dd><p>Values are sorted based on their real value (default).</p></dd><dt><span><b class="term">ABS &#8211; </b></span></dt><dd><p>Values are sorted based on their absolute value.</p></dd><dt><span><b class="term">PERM &#8211; </b></span></dt><dd><p>Values are sorted based on the input permutation vector
+          (<em class="replaceable"><code>Val1</code></em>).</p></dd></dl></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>Val1</code></em>, <em class="replaceable"><code>Val2</code></em></b></span></dt><dd><p>Additional input. The meaning of <em class="replaceable"><code>Val1</code></em>,
+       <em class="replaceable"><code>Val2</code></em> varies depending on the specified
+       <em class="replaceable"><code>SortType</code></em>. See below for details.</p></dd></dl></div></div><p><span class="bold"><strong>The following <em class="replaceable"><code>Valx</code></em> fields are used with
+     <em class="replaceable"><code>SortType</code></em> = VALUE or ABS:</strong></span></p><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Val1</code></em></b></span></dt><dd><p>Name of the vector in which permutation values will be saved (optional). This should be
+      an empty vector of type integer that was created with the <a href="Hlp_C_VEC.html" title="*VEC" class="olink"><span class="command"><strong>*VEC</strong></span></a> command. The
+      size of this permutation vector must be identical to the size of the vector to be sorted.
+      After the sort, this vector contains the permutation used to sort the values.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Val2</code></em></b></span></dt><dd><p>Order of the sort operation:</p><div><div class="variablelist"><dl><dt><span><b class="term">0 &#8211; </b></span></dt><dd><p>Increasing order (default).</p></dd><dt><span><b class="term">1 &#8211; </b></span></dt><dd><p>Decreasing order.</p></dd></dl></div></div></dd></dl></div></div><p><span class="bold"><strong>The following <em class="replaceable"><code>Valx</code></em> fields are used with
+     <em class="replaceable"><code>Method</code></em> = PERM:</strong></span></p><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Val1</code></em></b></span></dt><dd><p>Name of the permutation vector used to sort the values. This must be a vector of integer
+      values that was created with the <a href="Hlp_C_VEC.html" title="*VEC" class="olink"><span class="command"><strong>*VEC</strong></span></a> command. The size of this permutation
+      vector must be identical to the size of the vector to be sorted.</p><p>This permutation vector is required when using <em class="replaceable"><code>Method</code></em> =
+      PERM.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="a-SORT.notes"></a><h2>Notes</h2><p>The examples below demonstrate using <a href="Hlp_C_SORT_st.html" title="*SORT" class="olink"><span class="command"><strong>*SORT</strong></span></a> to sort the values of an input
+   vector.</p><p>The following input:</p><pre class="programlisting">
+*VEC,V,I,ALLOC,5
+V(1)=5,-3,2,0,-1
+*SORT,V,VALUE
+*PRINT,V</pre><p>generates this output:</p><pre class="programlisting">       -3        -1         0         2         5</pre><p>To reverse the order, this input:</p><pre class="programlisting">
+*SORT,V,VALUE,,1
+*PRINT,V</pre><p>generates this output:</p><pre class="programlisting">        5         2         0        -1        -3</pre></div><div class="refsect1" title="Menu Paths"><a name="d0e269201"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

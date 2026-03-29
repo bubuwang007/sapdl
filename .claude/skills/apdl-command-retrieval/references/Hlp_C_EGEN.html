@@ -1,0 +1,63 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:01-05:00"><title>EGEN</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="EGEN">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_E_TOC.html" title="E Commands">
+<link rel="prev" href="Hlp_C_EFACET.html" title="/EFACET">
+<link rel="next" href="Hlp_C_EGID.html" title="EGID">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="EGEN"><a name="EGEN"></a><div class="titlepage"></div><a class="indexterm" name="d0e86697"></a><span class="refentrytitle"><span class="command"><strong>EGEN</strong></span></span><div class="refnamediv"><p><span class="command"><strong>EGEN</strong></span>, <em class="replaceable"><code>ITIME</code></em>, <em class="replaceable"><code>NINC</code></em>, <em class="replaceable"><code>IEL1</code></em>, <em class="replaceable"><code>IEL2</code></em>, <em class="replaceable"><code>IEINC</code></em>, <em class="replaceable"><code>MINC</code></em>, <em class="replaceable"><code>TINC</code></em>, <em class="replaceable"><code>RINC</code></em>, <em class="replaceable"><code>CINC</code></em>, <em class="replaceable"><code>SINC</code></em>, <em class="replaceable"><code>DX</code></em>, <em class="replaceable"><code>DY</code></em>, <em class="replaceable"><code>DZ</code></em><br><b class="refpurpose">Generates elements from an existing pattern.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7elementsldm061600" title="Table 2.38: Elements"><span class="type">Elements</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="EGEN.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>ITIME</code></em>, <em class="replaceable"><code>NINC</code></em></b></span></dt><dd><p>Do this generation operation a total of <em class="replaceable"><code>ITIME</code></em>s,
+incrementing all nodes in the given pattern by <em class="replaceable"><code>NINC</code></em> each
+time after the first. <em class="replaceable"><code>ITIME</code></em> must be &gt;1 if generation
+is to occur. <em class="replaceable"><code>NINC</code></em> may be positive, zero, or negative.
+If <em class="replaceable"><code>DX</code></em>, <em class="replaceable"><code>DY</code></em>, and/or <em class="replaceable"><code>DZ</code></em> is
+specified, <em class="replaceable"><code>NINC</code></em> should be set so any existing nodes
+(as on <a class="link" href="Hlp_C_NGEN.html" title="NGEN"><span class="command"><strong>NGEN</strong></span></a>) are not overwritten.</p></dd><dt><span><b class="term"><em class="replaceable"><code>IEL1</code></em>, <em class="replaceable"><code>IEL2</code></em>, <em class="replaceable"><code>IEINC</code></em></b></span></dt><dd><p>Generate elements from selected pattern beginning with <em class="replaceable"><code>IEL1</code></em> to <em class="replaceable"><code>IEL2</code></em> (defaults
+to <em class="replaceable"><code>IEL1</code></em>) in steps of <em class="replaceable"><code>IEINC</code></em> (defaults
+to 1). If <em class="replaceable"><code>IEL1</code></em> is negative, <em class="replaceable"><code>IEL2</code></em> and <em class="replaceable"><code>IEINC</code></em> are
+ignored and the last |<em class="replaceable"><code>IEL1</code></em>| elements (in sequence
+backward from the maximum element number) are used as the pattern to be repeated.
+ If <em class="replaceable"><code>IEL1</code></em> = ALL, <em class="replaceable"><code>IEL2</code></em> and <em class="replaceable"><code>IEINC</code></em> are
+ignored and use all selected elements [<a class="link" href="Hlp_C_ESEL.html" title="ESEL"><span class="command"><strong>ESEL</strong></span></a>] as pattern
+to be repeated. If <em class="replaceable"><code>P1</code></em> = P, graphical picking is
+enabled and all remaining command fields are ignored (valid only in the GUI).
+ A component name may also be substituted for <em class="replaceable"><code>IEL1</code></em> (<em class="replaceable"><code>IEL2</code></em> and <em class="replaceable"><code>INC</code></em> are
+ignored).</p></dd><dt><span><b class="term"><em class="replaceable"><code>MINC</code></em></b></span></dt><dd><p>Increment material number of all elements in the given pattern
+by <em class="replaceable"><code>MINC</code></em> each time after the first.</p></dd><dt><span><b class="term"><em class="replaceable"><code>TINC</code></em></b></span></dt><dd><p>Increment type number by <em class="replaceable"><code>TINC</code></em>.</p></dd><dt><span><b class="term"><em class="replaceable"><code>RINC</code></em></b></span></dt><dd><p>Increment real constant table number by <em class="replaceable"><code>RINC</code></em>.</p></dd><dt><span><b class="term"><em class="replaceable"><code>CINC</code></em></b></span></dt><dd><p>Increment element coordinate system number by <em class="replaceable"><code>CINC</code></em>.</p></dd><dt><span><b class="term"><em class="replaceable"><code>SINC</code></em></b></span></dt><dd><p>Increment section ID number by <em class="replaceable"><code>SINC</code></em>.</p></dd><dt><span><b class="term"><em class="replaceable"><code>DX</code></em>, <em class="replaceable"><code>DY</code></em>, <em class="replaceable"><code>DZ</code></em></b></span></dt><dd><p>Define nodes that do not already exist but are needed by generated
+elements (as though the <a class="link" href="Hlp_C_NGEN.html" title="NGEN"><span class="command"><strong>NGEN</strong></span></a>,<em class="replaceable"><code>ITIME,INC,NODE1,,,DX,DY,DZ</code></em> were
+issued before <span class="command"><strong>EGEN</strong></span>). Zero is a valid value. If blank, <em class="replaceable"><code>DX</code></em>, <em class="replaceable"><code>DY</code></em>,
+and <em class="replaceable"><code>DZ</code></em> are ignored.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="EGEN.notes"></a><h2>Notes</h2><p>A pattern may consist of any number of previously defined elements.
+The MAT, TYPE, REAL, ESYS, and SECNUM numbers of the new elements are based
+upon the elements in the pattern and not upon the current specification settings.</p><p>You can use the <span class="command"><strong>EGEN</strong></span> command to generate interface
+elements (<a href="../ans_elem/Hlp_E_INTER192.html" title="INTER192" class="olink"><span class="structname">INTER192</span></a>, <a href="../ans_elem/Hlp_E_INTER193.html" title="INTER193" class="olink"><span class="structname">INTER193</span></a>, <a href="../ans_elem/Hlp_E_INTER194.html" title="INTER194" class="olink"><span class="structname">INTER194</span></a>,
+and <a href="../ans_elem/Hlp_E_INTER195.html" title="INTER195" class="olink"><span class="structname">INTER195</span></a>) directly. However, because interface
+elements require that the element connectivity be started from the bottom
+surface, you must make sure that you use the correct element node connectivity.
+See the element descriptions for <a href="../ans_elem/Hlp_E_INTER192.html" title="INTER192" class="olink"><span class="structname">INTER192</span></a>, <a href="../ans_elem/Hlp_E_INTER193.html" title="INTER193" class="olink"><span class="structname">INTER193</span></a>, <a href="../ans_elem/Hlp_E_INTER194.html" title="INTER194" class="olink"><span class="structname">INTER194</span></a>,
+and <a href="../ans_elem/Hlp_E_INTER195.html" title="INTER195" class="olink"><span class="structname">INTER195</span></a> for the correct element node definition.</p></div><div class="refsect1" title="Menu Paths"><a name="EGEN.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Copy&gt;Elements&gt;Auto Numbered</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

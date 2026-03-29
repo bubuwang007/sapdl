@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:02-05:00"><title>SMIN</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="SMIN">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_S_TOC.html" title="S Commands">
+<link rel="prev" href="Hlp_C_SMFOR.html" title="SMFOR">
+<link rel="next" href="Hlp_C_SMOOTH.html" title="SMOOTH">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="SMIN"><a name="SMIN"></a><div class="titlepage"></div><a class="indexterm" name="d0e266816"></a><span class="refentrytitle"><span class="command"><strong>SMIN</strong></span></span><div class="refnamediv"><p><span class="command"><strong>SMIN</strong></span>, <em class="replaceable"><code>LabR</code></em>, <em class="replaceable"><code>Lab1</code></em>, <em class="replaceable"><code>Lab2</code></em>, <em class="replaceable"><code>FACT1</code></em>, <em class="replaceable"><code>FACT2</code></em><br><b class="refpurpose">Forms an element table item from the minimum of two other items.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_7.html" title="2.7. POST1 Commands"><code class="classname">POST1</code></a>: <a class="link" href="Hlp_C_CH2_7.html#cmdpost1elemtbljla070199" title="Table 2.76: Element Table"><span class="type">Element Table</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="SMIN.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>LabR</code></em></b></span></dt><dd><p>Label assigned to results.  If same as existing label, the
+existing values will be overwritten by these results.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Lab1</code></em></b></span></dt><dd><p>First labeled result item in operation.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Lab2</code></em></b></span></dt><dd><p>Second labeled result item in operation (may be blank).</p></dd><dt><span><b class="term"><em class="replaceable"><code>FACT1</code></em></b></span></dt><dd><p>Scale factor applied to <em class="replaceable"><code>Lab1</code></em>. A
+(blank) or '0' entry defaults to 1.0.</p></dd><dt><span><b class="term"><em class="replaceable"><code>FACT2</code></em></b></span></dt><dd><p>Scale factor applied to <em class="replaceable"><code>Lab2</code></em>. A
+(blank) or '0' entry defaults to 1.0.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="SMIN.notes"></a><h2>Notes</h2><p>Forms a labeled result item (see <a class="link" href="Hlp_C_ETABLE.html" title="ETABLE"><span class="command"><strong>ETABLE</strong></span></a> command)
+for the selected elements by comparing two existing labeled result items according
+to the operation:</p><div class="blockquote"><blockquote class="blockquote"><p><em class="replaceable"><code>LabR</code></em> = (<em class="replaceable"><code>FACT1</code></em> x <em class="replaceable"><code>Lab1</code></em>)
+cmn (<em class="replaceable"><code>FACT2</code></em> x <em class="replaceable"><code>Lab2</code></em>)</p></blockquote></div><p>where "cmn" means "compare and save minimum."  If absolute values are
+requested [<a class="link" href="Hlp_C_SABS.html" title="SABS"><span class="command"><strong>SABS</strong></span></a>,1], the absolute values of <em class="replaceable"><code>Lab1</code></em> and <em class="replaceable"><code>Lab2</code></em> are
+used.</p></div><div class="refsect1" title="Menu Paths"><a name="SMIN.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;General Postproc&gt;Element Table&gt;Find Minimum</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

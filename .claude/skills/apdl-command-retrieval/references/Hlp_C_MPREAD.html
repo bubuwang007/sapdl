@@ -1,0 +1,66 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:06-05:00"><title>MPREAD</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="MPREAD">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_M_TOC.html" title="M Commands">
+<link rel="prev" href="Hlp_C_MPPLOT.html" title="MPPLOT">
+<link rel="next" href="Hlp_C_MPRINT.html" title="MPRINT">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="MPREAD"><a name="MPREAD"></a><div class="titlepage"></div><a class="indexterm" name="d0e173894"></a><span class="refentrytitle"><span class="command"><strong>MPREAD</strong></span></span><div class="refnamediv"><p><span class="command"><strong>MPREAD</strong></span>, <em class="replaceable"><code>Fname</code></em>, <em class="replaceable"><code>Ext</code></em>, <em class="replaceable"><code>--</code></em>, <code class="literal">LIB</code><br><b class="refpurpose">Reads a file containing material properties.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7matldm061600" title="Table 2.27: Materials"><span class="type">Materials</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="MPREAD.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Fname</code></em></b></span></dt><dd><p>File name and directory path (248 characters maximum, including
+directory). If you do not specify the <code class="literal">LIB</code> option, the default
+directory is the current working directory. If you specify the <code class="literal">LIB</code> option,
+the default is the following search path: the current working directory, the
+user's home directory, MPLIB_DIR (as specified by the <a href="Hlp_C_MPLIB.html" title="/MPLIB" class="olink"><span class="command"><strong>/MPLIB</strong></span></a>,READ,<code class="literal">PATH</code> command)
+and <span class="filename"><strong>/<em class="replaceable"><code>ansys_dir</code></em>/matlib</strong></span> (as
+defined by installation). If you use the default for your directory, you can
+use all 248 characters for the file name.</p><p>The file name defaults
+to <span class="filename"><strong>Jobname</strong></span>.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Ext</code></em></b></span></dt><dd><p>Filename extension (eight-character maximum).</p><p>If you omit the default extension is MP. extension
+is units_MPL, where units is the system of units currently in use. (See the
+description of the <a href="Hlp_C_UNITS.html" title="/UNITS" class="olink"><span class="command"><strong>/UNITS</strong></span></a> command.) For example, if <a href="Hlp_C_UNITS.html" title="/UNITS" class="olink"><span class="command"><strong>/UNITS</strong></span></a> is
+set to SI, the extension defaults to SI_MPL.</p></dd><dt><span><b class="term"><em class="replaceable"><code>--</code></em></b></span></dt><dd><p>Unused field.</p></dd><dt><span><b class="term"><code class="literal">LIB</code></b></span></dt><dd><p>Reads material library files previously written with the <a class="link" href="Hlp_C_MPWRITE.html" title="MPWRITE"><span class="command"><strong>MPWRITE</strong></span></a> command.
+ (See the description of the LIB option for the <a class="link" href="Hlp_C_MPWRITE.html" title="MPWRITE"><span class="command"><strong>MPWRITE</strong></span></a> command.)
+ The only allowed value for LIB is LIB.</p><p>The LIB field indicates
+that the specified file was written by <a class="link" href="Hlp_C_MPWRITE.html" title="MPWRITE"><span class="command"><strong>MPWRITE</strong></span></a> using the
+LIB option, and that the file is consistent with the material library file
+format.  When the <span class="command"><strong>MPREAD</strong></span> command executes, the ANSYS program
+reads material properties defined in the specified file into the current ANSYS
+working database.  The currently selected material, as defined by the <a class="link" href="Hlp_C_MAT.html" title="MAT"><span class="command"><strong>MAT</strong></span></a> command
+(<a class="link" href="Hlp_C_MAT.html" title="MAT"><span class="command"><strong>MAT</strong></span></a>,MAT), determines the material number used when reading
+the material properties.  The LIB option for <span class="command"><strong>MPREAD</strong></span> and <a class="link" href="Hlp_C_MPWRITE.html" title="MPWRITE"><span class="command"><strong>MPWRITE</strong></span></a> supports
+storing and retrieving both linear and nonlinear properties.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="MPREAD.notes"></a><h2>Notes</h2><p>Material properties written to a file without the LIB option do not
+support nonlinear properties.  Also, properties written to a file without
+the LIB option are restored in the same material number as originally defined.
+ To avoid errors, use <span class="command"><strong>MPREAD</strong></span> with the LIB option only when
+reading files written using <a class="link" href="Hlp_C_MPWRITE.html" title="MPWRITE"><span class="command"><strong>MPWRITE</strong></span></a> with the LIB option.</p><p>If you omit the LIB option for <span class="command"><strong>MPREAD</strong></span>, this command
+supports only linear properties.</p><p>Material numbers are hardcoded.  If you write a material file without
+specifying the LIB option, then read that file in using the <span class="command"><strong>MPREAD</strong></span> command
+with the LIB option, the ANSYS program will not write the file to a new material
+number.  Instead, it will write the file to the "old" material number (the
+number specified on the <a class="link" href="Hlp_C_MPWRITE.html" title="MPWRITE"><span class="command"><strong>MPWRITE</strong></span></a> command that created the
+file.)</p><p>This command is also valid in SOLUTION.</p></div><div class="refsect1" title="Menu Paths"><a name="MPREAD.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Other&gt;Change Mat Props&gt;Material Library&gt;Export Library</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Other&gt;Change Mat Props&gt;Material Library&gt;Import Library</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Other&gt;Change Mat Props&gt;Material Library&gt;Select Units</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Other&gt;Change Mat Props&gt;Read from File</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Material Props&gt;Material Library&gt;Export Library</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Material Props&gt;Material Library&gt;Import Library</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Material Props&gt;Material Library&gt;Select Units</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Material Props&gt;Read from File</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Other&gt;Change Mat Props&gt;Material Library&gt;Export Library</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Other&gt;Change Mat Props&gt;Material Library&gt;Import Library</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Other&gt;Change Mat Props&gt;Material Library&gt;Select Units</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Other&gt;Change Mat Props&gt;Read from File</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

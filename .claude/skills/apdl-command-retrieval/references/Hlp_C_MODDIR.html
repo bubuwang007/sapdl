@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:02-05:00"><title>MODDIR</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="MODDIR">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_M_TOC.html" title="M Commands">
+<link rel="prev" href="Hlp_C_MODCONT.html" title="MODCONT">
+<link rel="next" href="Hlp_C_MODE.html" title="MODE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="MODDIR"><a name="MODDIR"></a><div class="titlepage"></div><a class="indexterm" name="d0e166705"></a><span class="refentrytitle"><span class="command"><strong>MODDIR</strong></span></span><div class="refnamediv"><p><span class="command"><strong>MODDIR</strong></span>, <em class="replaceable"><code>Key</code></em>,
+                <em class="replaceable"><code>Directory</code></em>, <em class="replaceable"><code>Fname</code></em><br><b class="refpurpose">Enables remote read-only usage of modal analysis files or
+            substructuring analysis files.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoluanaoptjla070199" title="Table 2.48: Analysis Options"><span class="type">Analysis Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="MODDIR.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Key</code></em></b></span></dt><dd><p>Key for enabling remote read-only usage of modal
+                        analysis files or <a href="../ans_substr/substr_intro.html" title="substructuring" class="olink">substructuring</a>
+                        analysis files:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1 (ON or YES)</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The program performs the analysis using <span>remote files</span>. The files are
+                                    read-only.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">0 (OFF or NO)</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The program performs the analysis <span>using files</span> located in the
+                                    working directory (default).</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>Directory</code></em></b></span></dt><dd><p>Directory path (248 characters maximum). The
+                        directory contains the modal analysis files or the substructuring generation
+                        pass files.</p><p>The directory path defaults to the current working directory.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Fname</code></em></b></span></dt><dd><p>File name (no extension or directory path) for the
+                        modal analysis files or the substructuring generation pass files.</p><p>The file name defaults to the current <span class="filename"><strong>Jobname</strong></span>.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="MODDIR.notes"></a><h2>Notes</h2><p>This command applies to spectrum analyses
+                (<a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,SPECTR) and substructuring analyses
+                (<a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,SUBSTR) only.</p><p>Using the default for both the directory path
+                (<em class="replaceable"><code>Directory</code></em>) and the file name
+                (<em class="replaceable"><code>Fname</code></em>) is not valid.  At least one of these values must
+            be specified.</p><p>In a spectrum analysis, <span class="command"><strong>MODDIR</strong></span> must be
+            issued during the first solution <span>and at the beginning of the solution phase
+                (before <a class="link" href="Hlp_C_LVSCALE.html" title="LVSCALE"><span class="command"><strong>LVSCALE</strong></span></a> in particular). Remote modal files usage is not
+                supported when mode file reuse is activated (<em class="replaceable"><code>modeReuseKey</code></em>
+                = YES on <a class="link" href="Hlp_C_SPOPT.html" title="SPOPT"><span class="command"><strong>SPOPT</strong></span></a>). </span></p><p>In a substructuring or CMS analysis, <span class="command"><strong>MODDIR</strong></span>
+            can be issued during either of the following analysis phases:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>The first solution of the first restart of a generation pass.
+                            <em class="replaceable"><code>ExpMth</code></em> on <a class="link" href="Hlp_C_SEOPT.html" title="SEOPT"><span class="command"><strong>SEOPT</strong></span></a> must be
+                        set to MODDIR during the first solve of the primary generation pass.</p></li><li class="listitem"><p>The first solution of the expansion pass.</p></li></ul></div></div><div class="refsect1" title="Menu Paths"><a name="MODDIR.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

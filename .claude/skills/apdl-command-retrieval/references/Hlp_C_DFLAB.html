@@ -1,0 +1,41 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:55-05:00"><title>/DFLAB</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="/DFLAB">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_D_TOC.html" title="D Commands">
+<link rel="prev" href="Hlp_C_DEVICE.html" title="/DEVICE">
+<link rel="next" href="Hlp_C_DFLX.html" title="DFLX">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="/DFLAB"><a name="s-DFLAB"></a><div class="titlepage"></div><a class="indexterm" name="d0e75836"></a><span class="refentrytitle"><a href="Hlp_C_DFLAB.html" title="/DFLAB" class="olink"><span class="command"><strong>/DFLAB</strong></span></a></span><div class="refnamediv"><p><span class="command"><strong>/DFLAB</strong></span>, <em class="replaceable"><code>DOF</code></em>, <em class="replaceable"><code>DispLab</code></em>, <em class="replaceable"><code>ForceLab</code></em><br><b class="refpurpose">Changes degree-of-freedom labels for user custom elements.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7elementsldm061600" title="Table 2.38: Elements"><span class="type">Elements</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsect1" title="Argument Descriptions"><a name="s-DFLAB.argdescript"></a><h2>Argument Descriptions</h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>DOF</code></em></b></span></dt><dd><p>Number between 1 and 32 indicating which degree of
+freedom is to have its labels changed. For a list of these quantities,
+see the degree-of-freedom table in the <span class="filename"><strong>echprm.inc</strong></span> file. The first few quantities follow:</p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>1 = UX,FX</td></tr><tr><td>2 = UY,FY</td></tr><tr><td>3 = UZ,FZ</td></tr><tr><td>4 = ROTX,MX</td></tr></table></dd><dt><span><b class="term"><em class="replaceable"><code>DispLab</code></em></b></span></dt><dd><p>New label (four-character maximum) for the displacement
+label. The prior label is no longer valid.</p></dd><dt><span><b class="term"><em class="replaceable"><code>ForceLab</code></em></b></span></dt><dd><p>New label (four-character maximum) for the force label
+for this degree of freedom. The prior label is no longer valid.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="s-DFLAB.notes"></a><h2>Notes</h2><p>The <a href="Hlp_C_DFLAB.html" title="/DFLAB" class="olink"><span class="command"><strong>/DFLAB</strong></span></a> command is rarely used. Use it
+if you are writing a custom element and want to use degrees of freedom
+that are not part of the standard element set.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e75938"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

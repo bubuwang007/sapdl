@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:45-05:00"><title>CIRCLE</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="CIRCLE">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_C_CTOC.html" title="C Commands">
+<link rel="prev" href="Hlp_C_CINT.html" title="CINT">
+<link rel="next" href="Hlp_C_CISOL.html" title="CISOL">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="CIRCLE"><a name="CIRCLE"></a><div class="titlepage"></div><a class="indexterm" name="d0e51656"></a><span class="refentrytitle"><span class="command"><strong>CIRCLE</strong></span></span><div class="refnamediv"><p><span class="command"><strong>CIRCLE</strong></span>, <em class="replaceable"><code>PCENT</code></em>, <em class="replaceable"><code>RAD</code></em>, <em class="replaceable"><code>PAXIS</code></em>, <em class="replaceable"><code>PZERO</code></em>, <em class="replaceable"><code>ARC</code></em>, <em class="replaceable"><code>NSEG</code></em><br><b class="refpurpose">Generates circular arc lines.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7linesldm061600" title="Table 2.32: Lines"><span class="type">Lines</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="CIRCLE.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>PCENT</code></em></b></span></dt><dd><p>Keypoint defining the center of the circle (in the plane of
+the circle).  If <em class="replaceable"><code>PCENT</code></em> = P, graphical picking is
+enabled and all remaining command fields are ignored (valid only in the GUI).</p></dd><dt><span><b class="term"><em class="replaceable"><code>RAD</code></em></b></span></dt><dd><p>Radius of the circle.  If <em class="replaceable"><code>RAD</code></em> is
+blank and <em class="replaceable"><code>PCENT</code></em> = P, the radius is the distance
+from <em class="replaceable"><code>PCENT</code></em> to <em class="replaceable"><code>PZERO</code></em>.</p></dd><dt><span><b class="term"><em class="replaceable"><code>PAXIS</code></em></b></span></dt><dd><p>Keypoint defining axis of circle (along with <em class="replaceable"><code>PCENT</code></em>).
+ If <em class="replaceable"><code>PCENT</code></em> = P and <em class="replaceable"><code>PAXIS</code></em> is
+omitted, the axis is normal to the working plane.</p></dd><dt><span><b class="term"><em class="replaceable"><code>PZERO</code></em></b></span></dt><dd><p>Keypoint defining the plane normal to circle (along with <em class="replaceable"><code>PCENT</code></em> and <em class="replaceable"><code>PAXIS</code></em>)
+and the zero degree location.  Need not be in the plane of the circle. This
+value is not required if <em class="replaceable"><code>PAXIS</code></em> is defined along
+the Y axis (that is, a circle in the XZ plane).</p></dd><dt><span><b class="term"><em class="replaceable"><code>ARC</code></em></b></span></dt><dd><p>Arc length (in degrees).  Positive follows right-hand rule
+about <em class="replaceable"><code>PCENT</code></em>-<em class="replaceable"><code>PAXIS</code></em> vector.
+ Defaults to 360&deg;.</p></dd><dt><span><b class="term"><em class="replaceable"><code>NSEG</code></em></b></span></dt><dd><p>Number of lines around circumference (defaults to minimum
+required for 90&deg;-maximum arcs, i.e., 4 for 360&deg;).  Number of keypoints
+generated is <em class="replaceable"><code>NSEG</code></em> for 360&deg; or <em class="replaceable"><code>NSEG</code></em> +
+1 for less than 360&deg;.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="CIRCLE.notes"></a><h2>Notes</h2><p>Generates circular arc lines (and their corresponding keypoints).  Keypoints
+are generated at regular angular locations (based on a maximum spacing of
+90&deg;).  Arc lines are generated connecting the keypoints.  Keypoint and
+line numbers are automatically assigned, beginning with the lowest available
+values [<a class="link" href="Hlp_C_NUMSTR.html" title="NUMSTR"><span class="command"><strong>NUMSTR</strong></span></a>].  Adjacent lines use a common keypoint.
+ Line shapes are generated as arcs, regardless of the active coordinate system.
+ Line shapes are invariant with coordinate system after they are generated.</p></div><div class="refsect1" title="Menu Paths"><a name="CIRCLE.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Create&gt;Lines&gt;Arcs&gt;By Cent &amp; Radius</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Create&gt;Lines&gt;Arcs&gt;Full Circle</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

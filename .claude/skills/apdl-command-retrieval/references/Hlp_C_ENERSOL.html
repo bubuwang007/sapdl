@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:03-05:00"><title>ENERSOL</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="ENERSOL">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_E_TOC.html" title="E Commands">
+<link rel="prev" href="Hlp_C_ENDRELEASE.html" title="ENDRELEASE">
+<link rel="next" href="Hlp_C_ENGEN.html" title="ENGEN">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="ENERSOL"><a name="ENERSOL"></a><div class="titlepage"></div><a class="indexterm" name="d0e91440"></a><span class="refentrytitle"><span class="command"><strong>ENERSOL</strong></span></span><div class="refnamediv"><p><span class="command"><strong>ENERSOL</strong></span>, <em class="replaceable"><code>NVAR</code></em>, <em class="replaceable"><code>Item</code></em>, <em class="replaceable"><code>--</code></em>, <em class="replaceable"><code>Name</code></em><br><b class="refpurpose">Specifies the total energies to be stored.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_8.html" title="2.8. POST26 Commands"><code class="classname">POST26</code></a>: <a class="link" href="Hlp_C_CH2_8.html#cmdpost26setupjla070199" title="Table 2.87: Setup"><span class="type">Set Up</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>NVAR</code></em></b></span></dt><dd><p>Arbitrary reference number assigned to this variable (2 to
+NV).</p></dd><dt><span><b class="term"><em class="replaceable"><code>Item</code></em></b></span></dt><dd><p>
+      </p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">SENE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Potential energy (stiffness energy)</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">KENE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Kinetic energy</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">DENE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Damping energy</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">WEXT</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Work done by external load</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">AENE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Artificial energy due to hourglass control/drill stiffness or due to contact
+          stabilization damping</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">STEN</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Artificial energy due to nonlinear stabilization</p></td></tr></tbody></table></div></div><p>
+     </p></dd><dt><span><b class="term"><em class="replaceable"><code>--</code></em></b></span></dt><dd><p>Unused field.</p></dd><dt><span><b class="term"><em class="replaceable"><code>NAME</code></em></b></span></dt><dd><p>A 32-character name identifying the item on printouts and displays. Defaults to a
+      4-character label formed by the four characters of the <em class="replaceable"><code>Item</code></em>
+      value.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="ENERSOL.Notes"></a><h2>Notes</h2><p>Damping energy (DENE) and work done by external loads (WEXT) are
+   available only if the following were set prior to the analysis solution:
+    <em class="replaceable"><code>EngCalc</code></em> = YES on the <a class="link" href="Hlp_C_TRNOPT.html" title="TRNOPT"><span class="command"><strong>TRNOPT</strong></span></a>,
+    <a class="link" href="Hlp_C_HROUT.html" title="HROUT"><span class="command"><strong>HROUT</strong></span></a> or <a class="link" href="Hlp_C_MXPAND.html" title="MXPAND"><span class="command"><strong>MXPAND</strong></span></a> command; and
+    <em class="replaceable"><code>Item</code></em> = VENG, ESOL, or ALL on the <a class="link" href="Hlp_C_OUTturRES.html" title="OUTRES"><span class="command"><strong>OUTRES</strong></span></a>
+   command.</p><p>If <em class="replaceable"><code>EngCalc</code></em> = YES on the <a class="link" href="Hlp_C_HROUT.html" title="HROUT"><span class="command"><strong>HROUT</strong></span></a> or
+    <a class="link" href="Hlp_C_MXPAND.html" title="MXPAND"><span class="command"><strong>MXPAND</strong></span></a> command, <em class="replaceable"><code>Item</code></em> = SENE and KENE are the
+   average potential and kinetic energies, respectively. </p></div><div class="refsect1" title="Menu Paths"><a name="ENERSOL.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

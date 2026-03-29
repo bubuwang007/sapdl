@@ -1,0 +1,54 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:33-05:00"><title>AMSUPPORTS</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="AMSUPPORTS">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_A_TOC.html" title="A Commands">
+<link rel="prev" href="Hlp_C_AMPOWDER.html" title="AMPOWDER">
+<link rel="next" href="Hlp_C_AMSTEP.html" title="AMSTEP">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="AMSUPPORTS"><a name="AMSUPPORTS"></a><div class="titlepage"></div><a class="indexterm" name="d0e21395"></a><span class="refentrytitle"><span class="command"><strong>AMSUPPORTS</strong></span></span><div class="refnamediv"><p><span class="command"><strong>AMSUPPORTS</strong></span>, <em class="replaceable"><code>NSUPPORTS</code></em>,
+    <em class="replaceable"><code>CompName</code></em>, <em class="replaceable"><code>SectArray</code></em><br><b class="refpurpose">Specifies information about the supports in an <a href="../add_ag/add_ag.html" title="additive&#xA;    manufacturing" class="olink">additive
+    manufacturing</a> analysis.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoladdman" title="Table 2.72: Additive Manufacturing"><span class="type">Additive Manufacturing</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="light">Premium</span> | <span class="light">Enterprise</span> | <span class="light">PrepPost</span> | <span class="light">Solver</span> | <span class="bold"><strong>AS add-on</strong></span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="AMSUPPORTS.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>NSUPPORTS</code></em></b></span></dt><dd><p>Number of supports.</p></dd><dt><span><b class="term"><em class="replaceable"><code>CompName</code></em></b></span></dt><dd><p>Root name of the components containing the elements comprising each support. (For
+      example, if <em class="replaceable"><code>CompName</code></em> = "MySupport," MySupport1 represents support
+      1, MySupport2 represents support 2, etc.)</p></dd><dt><span><b class="term"><em class="replaceable"><code>SectArray</code></em></b></span></dt><dd><p>Name of the array (<a href="Hlp_C_DIM.html" title="*DIM" class="olink"><span class="command"><strong>*DIM</strong></span></a>) containing the section-reference ID for each
+      support.</p></dd></dl></div></div></div><div class="refsect1" title="Command Default"><a name="AMSUPPORTS.default"></a><h2>Command Default</h2><p>No supports are included in the build. All non-plate elements are assumed to be the build
+   part.</p></div><div class="refsect1" title="Notes"><a name="AMSUPPORTS.notes"></a><h2>Notes</h2><p>The section-reference ID array (<em class="replaceable"><code>SectArray</code></em>) is
+    <em class="replaceable"><code>NSUPPORTS</code></em> long, with each array member representing a
+   section-reference ID of a corresponding support.</p><p><a class="link" href="Hlp_C_SECTYPE.html" title="SECTYPE"><span class="command"><strong>SECTYPE</strong></span></a> specifies the type of support, and <a class="link" href="Hlp_C_SECDATA.html" title="SECDATA"><span class="command"><strong>SECDATA</strong></span></a>
+   specifies the geometry of the support.</p><div class="example"><a name="d0e21508"></a><p class="title"><b>Example 1:  Specifying Support Information in an Additive Manufacturing Analysis</b></p><div class="example-contents"><pre class="programlisting">! specify supports
+*dim,suppsect,,2               ! two supports
+suppsect(1)=101                ! support 1 sectID=101
+suppsect(2)=101                ! support 2 sectID=101
+!
+sectype,101,support,block      ! sectype is a block support
+secdata,.07,1                  ! wall thickness and spacing
+amsupport,2,support,suppsect   ! root name is "support" and suppsect is the
+                               !   array name containing the section IDs
+</pre></div></div><br class="example-break"><p>This command is also valid in PREP7.</p><p>For more information, including a list of the elements and commands
+   used in an additive manufacturing analysis, see <a href="../add_ag/add_ag_AM_in_WB.html" title="AM Process Simulation in ANSYS Workbench in the Workbench Additive Manufacturing Analysis Guide" class="olink">AM Process Simulation in ANSYS Workbench in the <span class="olinkdocname">Workbench Additive Manufacturing Analysis Guide</span></a>.</p></div><div class="refsect1" title="Menu Paths"><a name="AMSUPPORTS.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

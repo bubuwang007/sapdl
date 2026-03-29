@@ -1,0 +1,52 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:28-05:00"><title>TBDATA</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="TBDATA">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_T_TOC.html" title="T Commands">
+<link rel="prev" href="Hlp_C_TBCOPY.html" title="TBCOPY">
+<link rel="next" href="Hlp_C_TBDELE.html" title="TBDELE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="TBDATA"><a name="TBDATA"></a><div class="titlepage"></div><a class="indexterm" name="d0e288945"></a><span class="refentrytitle"><span class="command"><strong>TBDATA</strong></span></span><div class="refnamediv"><p><span class="command"><strong>TBDATA</strong></span>, <em class="replaceable"><code>STLOC</code></em>, <em class="replaceable"><code>C1</code></em>, <em class="replaceable"><code>C2</code></em>, <em class="replaceable"><code>C3</code></em>, <em class="replaceable"><code>C4</code></em>, <em class="replaceable"><code>C5</code></em>, <em class="replaceable"><code>C6</code></em><br><b class="refpurpose">Defines data for the material <a href="../ans_mat/mat_understandingdt.html" title="data table" class="olink">data table</a>.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7datatablesldm061600" title="Table 2.28: Material Data Tables"><span class="type">Data Tables</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="TBDATA.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>STLOC</code></em></b></span></dt><dd><p>Starting location in table for entering data. For example, if
+       <em class="replaceable"><code>STLOC</code></em>&nbsp;=&nbsp;1, data input in the
+       <em class="replaceable"><code>C1</code></em> field applies to the first table constant,
+       <em class="replaceable"><code>C2</code></em> applies to the second table constant, etc. If
+       <em class="replaceable"><code>STLOC</code></em>=5, data input in the <em class="replaceable"><code>C1</code></em> field
+      applies to the fifth table constant, etc. Defaults to the last location filled + 1. The last
+      location is reset to 1 with each <a class="link" href="Hlp_C_TB.html" title="TB"><span class="command"><strong>TB</strong></span></a>, <a class="link" href="Hlp_C_TBTEMP.html" title="TBTEMP"><span class="command"><strong>TBTEMP</strong></span></a>, or
+       <a class="link" href="Hlp_C_TBFIELD.html" title="TBFIELD"><span class="command"><strong>TBFIELD</strong></span></a> command.</p></dd><dt><span><b class="term"><em class="replaceable"><code>C1</code></em>, <em class="replaceable"><code>C2</code></em>, <em class="replaceable"><code>C3</code></em>, . . . , <em class="replaceable"><code>C6</code></em></b></span></dt><dd><p>Data values assigned to six locations starting with <em class="replaceable"><code>STLOC</code></em>.  If a value is already in this location, it
+is redefined.  A blank value leaves the existing value unchanged.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="TBDATA.notes"></a><h2>Notes</h2><p>Defines data for the table specified on the last <a class="link" href="Hlp_C_TB.html" title="TB"><span class="command"><strong>TB</strong></span></a>
+   command at the temperature specified on the last <a class="link" href="Hlp_C_TBTEMP.html" title="TBTEMP"><span class="command"><strong>TBTEMP</strong></span></a> or
+    <a class="link" href="Hlp_C_TBFIELD.html" title="TBFIELD"><span class="command"><strong>TBFIELD</strong></span></a> command (if applicable). The type of data table specified in the last
+    <a class="link" href="Hlp_C_TB.html" title="TB"><span class="command"><strong>TB</strong></span></a> command determines the number of data values needed in
+    <span class="command"><strong>TBDATA</strong></span>. Data values are interpolated for temperatures or other specified
+   field variables that fall between user-defined <a class="link" href="Hlp_C_TBTEMP.html" title="TBTEMP"><span class="command"><strong>TBTEMP</strong></span></a> or
+    <a class="link" href="Hlp_C_TBFIELD.html" title="TBFIELD"><span class="command"><strong>TBFIELD</strong></span></a> values.</p><p>Some elements (for example, <a href="../ans_elem/Hlp_E_SOLID226.html" title="SOLID226" class="olink"><span class="structname">SOLID226</span></a>) support
+   tabular input for certain linear materials input via the <span class="command"><strong>TBDATA</strong></span> command. For a
+   list of elements that support tabular material properties and associated primary variables, see
+    <a href="../ans_mat/ansmatdeflin.html#bas_tabinputmat" title="Defining Linear Material Properties Using Tabular Input in the Material Reference" class="olink">Defining Linear Material Properties Using Tabular Input in the <span class="olinkdocname">Material Reference</span></a>.</p><p>This command is also valid in SOLUTION.</p></div><div class="refsect1" title="Menu Paths"><a name="TBDATA.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Other&gt;Change Mat Props&gt;Material Models</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Material Props&gt;Material Models</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Other&gt;Change Mat Props&gt;Material Models</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

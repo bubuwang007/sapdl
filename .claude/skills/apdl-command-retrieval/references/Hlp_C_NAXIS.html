@@ -1,0 +1,62 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:10-05:00"><title>NAXIS</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="NAXIS">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_N_TOC.html" title="N Commands">
+<link rel="prev" href="Hlp_C_NANG.html" title="NANG">
+<link rel="next" href="Hlp_C_NCNV.html" title="NCNV">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="NAXIS"><a name="NAXIS"></a><div class="titlepage"></div><a class="indexterm" name="d0e178218"></a><span class="refentrytitle"><span class="command"><strong>NAXIS</strong></span></span><div class="refnamediv"><p><span class="command"><strong>NAXIS</strong></span>, <em class="replaceable"><code>Action</code></em>, <em class="replaceable"><code>Val</code></em> <br><b class="refpurpose">Generates nodes for general axisymmetric element sections.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7nodesldm061600" title="Table 2.37: Nodes"><span class="type">Nodes</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="NAXIS.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Action</code></em></b></span></dt><dd><p>Specifies one of the following command behaviors:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">GEN</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Generates nodes around the axis of
+an axisymmetric section (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">CLEAR</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Clears all nodes around the axis
+of an axisymmetric section. </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">EFACET</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Specifies the number of facets
+per edge between nodal planes and <a href="../ans_elem/Hlp_E_continuumelems.html#elemgenaxsidebar" title="integration planes" class="olink">integration planes</a> in the circumferential
+direction to display using PowerGraphics.  This option is only valid
+with <a href="Hlp_C_ESHAPE.html" title="/ESHAPE" class="olink"><span class="command"><strong>/ESHAPE</strong></span></a>,1 and <a class="link" href="Hlp_C_RSYS.html" title="RSYS"><span class="command"><strong>RSYS</strong></span></a>,SOLU
+commands.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>Val</code></em></b></span></dt><dd><p>Tolerance value <span class="italic"><em>or</em></span> number of facets per edge: </p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term"><em class="replaceable"><code>TOLER</code></em></b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>When <em class="replaceable"><code>Action</code></em> = GEN, the tolerance to use for merging the
+generated nodes around the axis. </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term"><em class="replaceable"><code>NUM</code></em></b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>When <em class="replaceable"><code>Action</code></em> = EFACET, the number of facets per element edge
+for element plots:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">AUTO</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Use program-chosen facets per edge (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Use 1 facet per edge (default
+for elements with 9, 10, 11, or 12 nodal planes). Shows nodal and
+integration planes only.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">2</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Use 2 facets per edge (default
+for elements with 5, 6, 7, or 8 nodal planes, and maximum for elements
+with 9, 10, 11, or 12 nodal planes).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">3</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Use 3 facets per edge (default
+for elements with 3 or 4 nodal planes, and maximum for elements with
+6, 7, or 8 nodal planes).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">4</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Use 4 facets per edge (maximum
+for elements with 5 nodal planes).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">5</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Use 5 facets per edge (maximum
+for elements with 4 nodal planes).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">6</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Use 6 facets per edge (maximum
+for elements with 3 nodal planes).</p></td></tr></tbody></table></div></div></td></tr></tbody></table></div></div></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="NAXIS.notes"></a><h2>Notes</h2><p>The <span class="command"><strong>NAXIS</strong></span> command
+generates or clears the nodes for general axisymmetric element sections.
+The command applies to elements <a href="../ans_elem/Hlp_E_SURF159.html" title="SURF159" class="olink"><span class="structname">SURF159</span></a>, <a href="../ans_elem/Hlp_E_SOLID272.html" title="SOLID272" class="olink"><span class="structname">SOLID272</span></a>, and <a href="../ans_elem/Hlp_E_SOLID273.html" title="SOLID273" class="olink"><span class="structname">SOLID273</span></a>.</p><p>The generate option (<em class="replaceable"><code>Action</code></em> = GEN)
+operates automatically on any current-technology axisymmetric element.
+Any nodes within the tolerance value (<em class="replaceable"><code>TOLER</code></em>) of the axis are merged into a single node. The default  tolerance
+is 1.0e-4. </p><p>If you want to change the number of nodes, use the clear option
+(<em class="replaceable"><code>Action</code></em> = CLEAR) before regenerating the
+nodes.</p><p>To cause the 3-D element plot to appear more like the actual
+3-D model, use <span class="command"><strong>NAXIS</strong></span>,EFACET,<em class="replaceable"><code>NUM</code></em>, where <em class="replaceable"><code>NUM</code></em> &gt; 1. In this case, the coordinate
+system specified for displaying element and nodal results (RSYS) must
+be solution (<a class="link" href="Hlp_C_RSYS.html" title="RSYS"><span class="command"><strong>RSYS</strong></span></a>,SOLU); otherwise, ANSYS resets <em class="replaceable"><code>NUM</code></em> to 1.</p></div><div class="refsect1" title="Menu Paths"><a name="NAXIS.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Create&gt;Nodes&gt;About AXIS Section</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

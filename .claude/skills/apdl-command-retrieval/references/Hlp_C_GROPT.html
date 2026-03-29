@@ -1,0 +1,94 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:39-05:00"><title>/GROPT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="/GROPT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_G_TOC.html" title="G Commands">
+<link rel="prev" href="Hlp_C_GRID.html" title="/GRID">
+<link rel="next" href="Hlp_C_GRP.html" title="GRP">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="/GROPT"><a name="s-GROPT"></a><div class="titlepage"></div><a class="indexterm" name="d0e129560"></a><span class="refentrytitle"><a href="Hlp_C_GROPT.html" title="/GROPT" class="olink"><span class="command"><strong>/GROPT</strong></span></a></span><div class="refnamediv"><p><span class="command"><strong>/GROPT</strong></span>, <em class="replaceable"><code>Lab</code></em>, <em class="replaceable"><code>KEY</code></em><br><b class="refpurpose">Sets various line graph display options.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_3.html" title="2.3. GRAPHICS Commands"><code class="classname">GRAPHICS</code></a>: <a class="link" href="Hlp_C_CH2_3.html#cmdgraphicgraphsjla070199" title="Table 2.16: Graphs"><span class="type">Graphs</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="s-GROPT.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Lab</code></em></b></span></dt><dd><p>Apply display style as selected from the following labels:
+      </p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">AXDV</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Axis division (tick) marks (defaults to <em class="replaceable"><code>KEY</code></em> =
+ON).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">AXNM</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Axis scale numbers (defaults to <em class="replaceable"><code>KEY</code></em> =
+ON, which puts numbers at the back plane of the graph).  If <em class="replaceable"><code>KEY</code></em> =
+FRONT, numbers are on the front plane of the graph.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">AXNSC</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Axis number size scale factor.  Input the
+scale value for <em class="replaceable"><code>KEY</code></em> (defaults to 1.0).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ASCAL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Automatic scaling of additional Y-axes for
+multi-curve [<a href="Hlp_C_GRTYP.html" title="/GRTYP" class="olink"><span class="command"><strong>/GRTYP</strong></span></a>, 2 or 3] graphs (defaults to <em class="replaceable"><code>KEY</code></em> =
+ON).  If <em class="replaceable"><code>KEY</code></em> = OFF, use base Y-axis scaling (see
+the <a href="Hlp_C_YRANGE.html" title="/YRANGE" class="olink"><span class="command"><strong>/YRANGE</strong></span></a> command).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">LOGX</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Log X scale (defaults to <em class="replaceable"><code>KEY</code></em> =
+OFF (linear)).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">LOGY</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Log Y scale (applies only to the base Y axis)
+(defaults to <em class="replaceable"><code>KEY</code></em> = OFF (linear)).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">FILL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Color fill areas under curves (defaults to <em class="replaceable"><code>KEY</code></em> =
+OFF).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">CGRID</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Superimpose background grid [<a href="Hlp_C_GRID.html" title="/GRID" class="olink"><span class="command"><strong>/GRID</strong></span></a>]
+over areas under filled curves (defaults to <em class="replaceable"><code>KEY</code></em> =
+OFF).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">DIG1</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Number of significant digits before decimal
+point for axis values.  Input the value for <em class="replaceable"><code>KEY</code></em> (defaults
+to 4).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">DIG2</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Number of significant digits after decimal
+point for axis values.  Input the value for <em class="replaceable"><code>KEY</code></em> (defaults
+to 3).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">VIEW</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>View key for graph displays (defaults to <em class="replaceable"><code>KEY</code></em> =
+OFF, in which case the view is (0,0,1) for 2-D graph displays or (1,2,3) for
+3-D graph displays).  If <em class="replaceable"><code>KEY</code></em> = ON, the view settings
+for graph displays are the same as the view settings for the model.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">REVX</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plots the values on the X-axis in reverse
+order.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">REVY</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plots the values on the Y-axis in reverse
+order.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">DIVX</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Determines the number of divisions (grid
+markers) that will be plotted on the X axis.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">DIVY</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Determines the number of divisions (grid
+markers) that will be plotted on the Y axis.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">LTYP</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Determines whether ANSYS generated (<em class="replaceable"><code>KEY</code></em> =
+1) or system derived (<em class="replaceable"><code>KEY</code></em> = 0) fonts will be used
+for the axis labels.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">CURL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Determines the position of the curve labels.
+If (<em class="replaceable"><code>KEY</code></em> = 1), the curve label will be plotted in
+the legend column, and the label will be displayed in the same color as the
+curve. If (<em class="replaceable"><code>KEY</code></em> = 0) the curve labels will be plotted
+near the curve. (default). </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">XAXO</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>When you use this label, the subsequent <em class="replaceable"><code>KEY</code></em> value
+will determine an offset amount from the default (along the bottom) location
+for the X axis. If <em class="replaceable"><code>KEY</code></em> = 1.0, a full offset occurs
+(the X axis is moved to the top of the graph). If <em class="replaceable"><code>KEY</code></em> =
+0.5, the axis is offset to the midpoint of the graph, and if <em class="replaceable"><code>KEY</code></em> =
+0 the axis remains in the original position, along the bottom of the graph.
+For any offset, a grey copy of the original axis (containing the axis numbering)
+remains at the original location. </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">YAXO</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>When you use this label, the subsequent <em class="replaceable"><code>KEY</code></em> value
+will determine an offset amount from the default (along the left side of the
+graph) location for the Y axis. If <em class="replaceable"><code>KEY</code></em> = 1.0, a
+full offset occurs (the Y axis is moved to the right side of the graph). If <em class="replaceable"><code>KEY</code></em> =
+0.5, the axis is offset to the midpoint of the graph, and if <em class="replaceable"><code>KEY</code></em> =
+0 the axis remains in the original position, along the left side of the graph.
+For any offset, a gray copy of the original axis (containing the axis numbering)
+remains at the original location. </p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>KEY</code></em></b></span></dt><dd><p>Option values:       </p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">OFF&nbsp;(0)</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Do not apply selected style.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ON&nbsp;(1)</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Apply selected style.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term"><em class="replaceable"><code>nnnn</code></em></b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>If <em class="replaceable"><code>Lab</code></em> is
+DIG1 or DIG2, input the number of digits.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term"><em class="replaceable"><code>nn</code></em></b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>If <em class="replaceable"><code>Lab</code></em> is
+AXNSC, input the scale factor.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">FRONT</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>If <em class="replaceable"><code>Lab</code></em> is AXNM,
+FRONT may also be input.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">Ndiv</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>If <em class="replaceable"><code>Lab</code></em> is DIVX
+or DIVY, determines the number of divisions (1-99) that will be applied to
+the axis.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">Kfont</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>If <em class="replaceable"><code>Lab</code></em> is LTYP,
+Kfont is ON (1) or OFF(0).  ON will use ANSYS generated fonts for the axis
+labels, while OFF will use SYSTEM (Windows, X-system, etc.) fonts. The default
+value is ON (ANSYS fonts).</p></td></tr></tbody></table></div></div></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="s-GROPT.notes"></a><h2>Notes</h2><p>Sets various line graph display options.  Issue <a href="Hlp_C_GROPT.html" title="/GROPT" class="olink"><span class="command"><strong>/GROPT</strong></span></a>,STAT
+to display the current settings.  Issue <a href="Hlp_C_GROPT.html" title="/GROPT" class="olink"><span class="command"><strong>/GROPT</strong></span></a>,DEFA to
+reset the default specifications.  ANSYS informs you that graph view manipulation
+is inactive unless you have issued the <a href="Hlp_C_GROPT.html" title="/GROPT" class="olink"><span class="command"><strong>/GROPT</strong></span></a>,VIEW,ON command.
+ See the <a href="Hlp_C_AXLAB.html" title="/AXLAB" class="olink"><span class="command"><strong>/AXLAB</strong></span></a>, <a href="Hlp_C_GRTYP.html" title="/GRTYP" class="olink"><span class="command"><strong>/GRTYP</strong></span></a>, <a href="Hlp_C_GRID.html" title="/GRID" class="olink"><span class="command"><strong>/GRID</strong></span></a>,
+and <a href="Hlp_C_GTHK.html" title="/GTHK" class="olink"><span class="command"><strong>/GTHK</strong></span></a> commands for other graph control options.</p><p>Automatic scaling using the <a href="Hlp_C_XRANGE.html" title="/XRANGE" class="olink"><span class="command"><strong>/XRANGE</strong></span></a> and <a href="Hlp_C_YRANGE.html" title="/YRANGE" class="olink"><span class="command"><strong>/YRANGE</strong></span></a> commands
+will often yield inappropriate range values for logarithmic scales (<a href="Hlp_C_GROPT.html" title="/GROPT" class="olink"><span class="command"><strong>/GROPT</strong></span></a>,
+LOGX or <a href="Hlp_C_GROPT.html" title="/GROPT" class="olink"><span class="command"><strong>/GROPT</strong></span></a>, LOGY).</p><p>This command is valid in any processor.</p></div><div class="refsect1" title="Menu Paths"><a name="s-GROPT.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Utility Menu&gt;PlotCtrls&gt;Style&gt;Graphs&gt;Modify Axes</strong></span></td></tr><tr><td><span class="guimenu"><strong>Utility Menu&gt;PlotCtrls&gt;Style&gt;Graphs&gt;Modify Curve</strong></span></td></tr><tr><td><span class="guimenu"><strong>Utility Menu&gt;PlotCtrls&gt;Style&gt;Graphs&gt;Modify Grid</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

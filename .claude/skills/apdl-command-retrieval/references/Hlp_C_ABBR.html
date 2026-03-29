@@ -1,0 +1,57 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:30-05:00"><title>*ABBR</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="*ABBR">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_A_TOC.html" title="A Commands">
+<link rel="prev" href="Hlp_C_A.html" title="A">
+<link rel="next" href="Hlp_C_AADD.html" title="AADD">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="*ABBR"><a name="a-ABBR"></a><div class="titlepage"></div><a class="indexterm" name="d0e15270"></a><span class="refentrytitle"><a href="Hlp_C_ABBR.html" title="*ABBR" class="olink"><span class="command"><strong>*ABBR</strong></span></a></span><div class="refnamediv"><p><span class="command"><strong>*ABBR</strong></span>, <em class="replaceable"><code>Abbr</code></em>, <em class="replaceable"><code>String</code></em><br><b class="refpurpose">Defines an abbreviation.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_4.html" title="2.4. APDL Commands"><code class="classname">APDL</code></a>: <a class="link" href="Hlp_C_CH2_4.html#cmdapdlabbrvjla070199" title="Table 2.20: Abbreviations"><span class="type">Abbreviations</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsect1" title="Argument Descriptions"><a name="a-ABBR.argdescript"></a><h2>Argument Descriptions</h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Abbr</code></em></b></span></dt><dd><p>The abbreviation (up to 8 alphanumeric characters) used to
+represent the string <em class="replaceable"><code>String</code></em>.  If <em class="replaceable"><code>Abbr</code></em> is
+the same as an existing ANSYS command, the abbreviation overrides.  Avoid
+using an <em class="replaceable"><code>Abbr</code></em> which is the same as an ANSYS command.</p></dd><dt><span><b class="term"><em class="replaceable"><code>String</code></em></b></span></dt><dd><p>String of characters (60 maximum) represented by <em class="replaceable"><code>Abbr</code></em>.
+ Cannot include a $ or any of the commands <a href="Hlp_C_C.html" title="C***" class="olink"><span class="command"><strong>C***</strong></span></a>,  <a href="Hlp_C_COM.html" title="/COM" class="olink"><span class="command"><strong>/COM</strong></span></a>,
+ <a href="Hlp_C_GOPR.html" title="/GOPR" class="olink"><span class="command"><strong>/GOPR</strong></span></a>,  <a href="Hlp_C_NOPR.html" title="/NOPR" class="olink"><span class="command"><strong>/NOPR</strong></span></a>,  <a href="Hlp_C_QUIT.html" title="/QUIT" class="olink"><span class="command"><strong>/QUIT</strong></span></a>,
+ <a href="Hlp_C_UI.html" title="/UI" class="olink"><span class="command"><strong>/UI</strong></span></a>, or  <a href="Hlp_C_END.html" title="*END" class="olink"><span class="command"><strong>*END</strong></span></a>.  Parameter names and
+commands of the <a href="Hlp_C_DO.html" title="*DO" class="olink"><span class="command"><strong>*DO</strong></span></a> and Use the <a href="Hlp_C_IF.html" title="*IF" class="olink"><span class="command"><strong>*IF</strong></span></a> groups
+may not be abbreviated. If <em class="replaceable"><code>String</code></em> is blank, the
+abbreviation is deleted. To abbreviate multiple commands, create an "unknown
+command" macro or define <em class="replaceable"><code>String</code></em> to execute a macro
+file [<a href="Hlp_C_USE.html" title="*USE" class="olink"><span class="command"><strong>*USE</strong></span></a>] containing the desired commands.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="a-ABBR.notes"></a><h2>Notes</h2><p>Once the abbreviation <em class="replaceable"><code>Abbr</code></em> is defined, you
+can issue it at the beginning of a command line and follow it with a blank
+(or with a comma and appended data), and the program will substitute the string
+ <em class="replaceable"><code>String</code></em> for <em class="replaceable"><code>Abbr</code></em> as
+the line is executed. Up to 100 abbreviations may exist at any time and are
+available throughout the program. Abbreviations may be redefined or deleted
+at any time.</p><p>Use <a href="Hlp_C_STATUS_st.html" title="*STATUS" class="olink"><span class="command"><strong>*STATUS</strong></span></a> to display the current list of abbreviations.
+For abbreviations repeated with <a href="Hlp_C_REPEAT.html" title="*REPEAT" class="olink"><span class="command"><strong>*REPEAT</strong></span></a>, substitution occurs
+before the repeat increments are applied. There are a number of abbreviations
+that are predefined by the program (these can be deleted by using the blank <em class="replaceable"><code>String</code></em> option
+described above). Note that <em class="replaceable"><code>String</code></em> will be written
+to the <span class="filename"><strong>File.LOG</strong></span>.</p><p>This command is valid in any processor.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e15434"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Utility Menu&gt;Macro&gt;Edit Abbreviations</strong></span></td></tr><tr><td><span class="guimenu"><strong>Utility Menu&gt;MenuCtrls&gt;Edit Toolbar</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:55-05:00"><title>PRERR</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="PRERR">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_P_TOC.html" title="P Commands">
+<link rel="prev" href="Hlp_C_PREP7.html" title="/PREP7">
+<link rel="next" href="Hlp_C_PRESOL.html" title="PRESOL">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="PRERR"><a name="PRERR"></a><div class="titlepage"></div><a class="indexterm" name="d0e217154"></a><span class="refentrytitle"><span class="command"><strong>PRERR</strong></span></span><div class="refnamediv"><p><span class="command"><strong>PRERR</strong></span><br><b class="refpurpose">Prints SEPC and TEPC.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_7.html" title="2.7. POST1 Commands"><code class="classname">POST1</code></a>: <a class="link" href="Hlp_C_CH2_7.html#cmdpost1lstjla070199" title="Table 2.77: Listing"><span class="type">Listing</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsect1" title="Notes"><a name="PRERR.notes"></a><h2>Notes</h2><p>Prints the percent error in structural energy norm (SEPC) and
+the thermal energy norm percent error (TEPC).  Approximations of mesh
+discretization error associated with a solution are calculated for
+analyses having structural or thermal degrees of freedom.</p><p>The structural approximation is based
+on the energy error (which is similar in concept to the strain energy)
+and represents the error associated with the discrepancy between the
+calculated stress field and the globally continuous stress field (see <a href="../ans_thry/thy_post7.html" title="POST1 - Error Approximation&#xA;Technique" class="olink">POST1 - Error Approximation
+Technique</a> in the <a href="../ans_thry/ans_thry.html" title="Mechanical APDL Theory Reference" class="olink"><em class="citetitle">Mechanical APDL Theory Reference</em></a>).  This discrepancy is due to
+the assumption in the elements that only the displacements are continuous
+at the nodes.  The stress field is calculated from the displacements
+and should also be continuous, but generally is not.</p><p>Thermal analyses may use any solid and shell thermal element
+having only temperature degrees of freedom.  The thermal approximation
+is based on the total heat flow dissipation and represents the error
+associated with the discrepancy between the calculated nodal thermal
+flux within an element and a continuous global thermal flux.  This
+continuous thermal flux is calculated with the normal nodal averaging
+procedure.</p><p>The volume (result label VOLU) is used to calculate the energy
+error per element (result label SERR for the structural energy error
+and TERR for the thermal energy error).  These energy errors, along
+with the appropriate energy, are then used to calculate the percent
+error in energy norm (SEPC for structural and TEPC for thermal). These
+percentages can be listed by the <span class="command"><strong>PRERR</strong></span> command,
+retrieved by the <a href="Hlp_C_GET.html" title="*GET" class="olink"><span class="command"><strong>*GET</strong></span></a> command (with labels SEPC
+and TEPC) for further calculations, and shown on the displacement
+display (<a class="link" href="Hlp_C_PLDISP.html" title="PLDISP"><span class="command"><strong>PLDISP</strong></span></a>), as applicable.</p><p>For structural analyses, the maximum absolute value of nodal
+stress variation of any stress component for any node of an element
+(result item SDSG) is also calculated.  Similarly, for thermal gradient
+components, TDSG is calculated.  Minimum and maximum result bounds
+considering the possible effect of discretization error will be shown
+on contour displays (<a class="link" href="Hlp_C_PLNSOL.html" title="PLNSOL"><span class="command"><strong>PLNSOL</strong></span></a>).  For shell elements,
+the top surface location is used to produce a meaningful percentage
+value.  SERR, TERR, SEPC, TEPC, SDSG, and TDSG will be updated whenever
+the nodal stresses or fluxes are recalculated.</p><p>If the energy error is a significant portion of the total energy, then the analysis should be
+   repeated using a finer mesh to obtain a more accurate solution. The energy error is relative from
+   problem to problem but will converge to a zero energy error as the mesh is refined.</p><p><span class="bold"><strong>The following element- and material-type limitations
+    apply:</strong></span></p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Valid with most 2-D solid, 3-D solid, axisymmetric solid, or 3-D shell elements.</p></li><li class="listitem"><p>The model should have only structural or thermal degrees of freedom.</p></li><li class="listitem"><p>The analysis must be linear (for both material and geometry). </p></li><li class="listitem"><p>Multi-material (for example, composite) elements are not valid. </p></li><li class="listitem"><p>Transition regions from one material to another are not valid (that is, the entire model
+      should consist of one material). </p></li><li class="listitem"><p>Anisotropic materials (<a class="link" href="Hlp_C_TB.html" title="TB"><span class="command"><strong>TB</strong></span></a>,ANEL) are not considered. </p></li></ul></div></div><div class="refsect1" title="Menu Paths"><a name="PRERR.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;General Postproc&gt;List Results&gt;Percent Error</strong></span></td></tr><tr><td><span class="guimenu"><strong>Utility Menu&gt;List&gt;Results&gt;Percent Error</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:09-05:00"><title>ET</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="ET">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_E_TOC.html" title="E Commands">
+<link rel="prev" href="Hlp_C_ESYS.html" title="ESYS">
+<link rel="next" href="Hlp_C_ETABLE.html" title="ETABLE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="ET"><a name="ET"></a><div class="titlepage"></div><a class="indexterm" name="d0e98616"></a><span class="refentrytitle"><span class="command"><strong>ET</strong></span></span><div class="refnamediv"><p><span class="command"><strong>ET</strong></span>, <em class="replaceable"><code>ITYPE</code></em>, <em class="replaceable"><code>Ename</code></em>, <em class="replaceable"><code>KOP1</code></em>, <em class="replaceable"><code>KOP2</code></em>, <em class="replaceable"><code>KOP3</code></em>, <em class="replaceable"><code>KOP4</code></em>, <em class="replaceable"><code>KOP5</code></em>, <em class="replaceable"><code>KOP6</code></em>, <em class="replaceable"><code>INOPR</code></em><br><b class="refpurpose">Defines a local element type from the element library.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7elementtypeldm061600" title="Table 2.25: Element Type"><span class="type">Element Type</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="bold"><strong>DesignSpace</strong></span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="ET.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>ITYPE</code></em></b></span></dt><dd><p>An arbitrary local element-type number. Defaults to 1 + current maximum.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Ename</code></em></b></span></dt><dd><p>A full element name (such as <strong class="userinput"><code>pipe288</code></strong>) <span class="emphasis"><em>or</em></span> element
+      number only (such as <strong class="userinput"><code>288</code></strong>), as given in the <a href="../ans_elem/Hlp_E_LIBRARY.html" title="element library" class="olink">element library</a>. </p></dd><dt><span><b class="term"><em class="replaceable"><code>KOP1</code></em>, <em class="replaceable"><code>KOP2</code></em>, <em class="replaceable"><code>KOP3</code></em>, . . . , <em class="replaceable"><code>KOP6</code></em></b></span></dt><dd><p>KEYOPT values (1 through 6) as desired for the specified element.</p></dd><dt><span><b class="term"><em class="replaceable"><code>INOPR</code></em></b></span></dt><dd><p>Specify 1 to suppress all element-solution printout for this element type.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="ET.notes"></a><h2>Notes</h2><p>The <span class="command"><strong>ET</strong></span> command selects an element type from the <a href="../ans_elem/Hlp_E_LIBRARY.html" title="element library" class="olink">element library</a> and establishes it as a local element type for
+   the current model. Information derived from the element type is used for subsequent commands, so
+   the <span class="command"><strong>ET</strong></span> command(s) should be issued early.</p><p>Although specifying a full element name (category prefix and number such as
+    <strong class="userinput"><code>pipe288</code></strong>) for <em class="replaceable"><code>Ename</code></em> is optional, it is still
+   displayed in the output.</p><p><em class="replaceable"><code>Ename</code></em> = 0 is a special option to ignore the specified element type
+   during solution without removing it from the model. The option is valid only for the previously
+   defined element type. (The preferred method for ignoring elements is to issue
+    <a class="link" href="Hlp_C_ESEL.html" title="ESEL"><span class="command"><strong>ESEL</strong></span></a> or another <a href="Hlp_C_CH2_2.html#cmddataselectjla062999" title="selection&#xA;    command" class="olink">selection
+    command</a>.)</p><p><em class="replaceable"><code>KOPn</code></em> are element key options (KEYOPT(<em class="replaceable"><code>n</code></em>)), used to enable or disable options available for the given element. Available
+   KEYOPT values are shown each element documented in the <a href="../ans_elem/Hlp_E_LIBRARY.html" title="element&#xA;    library" class="olink">element
+    library</a>. If KEYOPT(7) and higher are needed, input those KEYOPT values values via
+    <a class="link" href="Hlp_C_KEYOPT.html" title="KEYOPT"><span class="command"><strong>KEYOPT</strong></span></a>.</p><p>Although <span class="command"><strong>ET</strong></span> defines an element type local to your model, you must point to
+   the desired local element type before meshing. To do so, issue <a class="link" href="Hlp_C_TYPE.html" title="TYPE"><span class="command"><strong>TYPE</strong></span></a> (or a
+   similar command such as <a class="link" href="Hlp_C_KATT.html" title="KATT"><span class="command"><strong>KATT</strong></span></a>, <a class="link" href="Hlp_C_LATT.html" title="LATT"><span class="command"><strong>LATT</strong></span></a>,
+   <a class="link" href="Hlp_C_AATT.html" title="AATT"><span class="command"><strong>AATT</strong></span></a>, or <a class="link" href="Hlp_C_VATT.html" title="VATT"><span class="command"><strong>VATT</strong></span></a>).</p></div><div class="refsect1" title="Menu Paths"><a name="ET.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Element Type&gt;Add/Edit/Delete</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

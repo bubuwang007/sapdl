@@ -1,0 +1,114 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:34:27-05:00"><title>RSTMAC</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="RSTMAC">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_R_TOC.html" title="R Commands">
+<link rel="prev" href="Hlp_C_RSPLIT.html" title="RSPLIT">
+<link rel="next" href="Hlp_C_RSTOFF.html" title="RSTOFF">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="RSTMAC"><a name="RSTMAC"></a><div class="titlepage"></div><a class="indexterm" name="d0e241820"></a><span class="refentrytitle">
+<span class="command"><strong>RSTMAC</strong></span>
+</span><div class="refnamediv"><p>
+   <span class="command"><strong>RSTMAC</strong></span>, <em class="replaceable"><code>File1</code></em>, <em class="replaceable"><code>Lstep1</code></em>,
+    <em class="replaceable"><code>Sbstep1</code></em>, <em class="replaceable"><code>File2</code></em>,
+    <em class="replaceable"><code>Lstep2</code></em>, <em class="replaceable"><code>Sbstep2</code></em>, --,
+    <em class="replaceable"><code>MacLim</code></em>, <em class="replaceable"><code>Cname</code></em>,
+    <em class="replaceable"><code>KeyPrint</code></em><br><b class="refpurpose">Calculates modal assurance criterion (MAC) and matches
+nodal solutions from two results files or from one results file and
+one universal format file.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_7.html" title="2.7. POST1 Commands"><code class="classname">POST1</code></a>: <a class="link" href="Hlp_C_CH2_7.html#cmdpost1sppurpjla070199" title="Table 2.84: Special Purpose"><span class="type">Special Purpose</span></a></span></div></div></div><div class="refclass">
+<div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div>
+</div></p></div><div class="refsynopsisdiv" title="Synopsis"><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term">
+<em class="replaceable"><code>File1</code></em>
+</b></span></dt><dd><p>File name (<span>248</span> characters maximum) corresponding to
+      the first results file (<span class="filename"><strong>.rst</strong></span> or <span class="filename"><strong>.rstp</strong></span> file). If the
+      file name does not contain the extension, it defaults to <span class="filename"><strong>.rst</strong></span>.</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>Lstep1</code></em>
+</b></span></dt><dd><p>Load step number of the results to be read in <em class="replaceable"><code>File1</code></em>.</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">
+<em class="replaceable"><code>N</code></em> </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Reads load
+step <em class="replaceable"><code>N</code></em>. Defaults to 1.</p></td></tr></tbody></table></div></div><p>
+</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>Sbstep1</code></em> </b></span></dt><dd><p>Substep number of the results to be read in <em class="replaceable"><code>File1</code></em>.</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">
+<em class="replaceable"><code>N</code></em> </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Reads substep <em class="replaceable"><code>N</code></em>.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">All </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Reads all substeps. This value is
+the default.</p></td></tr></tbody></table></div></div><p>
+</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>File2</code></em>
+</b></span></dt><dd><p>File name (<span>248</span> characters maximum) corresponding to
+      the second file (<span class="filename"><strong>.rst</strong></span>, <span class="filename"><strong>.rstp</strong></span>, or
+       <span class="filename"><strong>.unv</strong></span> file). If the file name does not contain the extension, it defaults
+      to <span class="filename"><strong>.rst</strong></span>.</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>Lstep2</code></em>
+</b></span></dt><dd><p>Load step number of the results to be read in <em class="replaceable"><code>File2</code></em>.</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">
+<em class="replaceable"><code>N</code></em> </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Reads load
+step <em class="replaceable"><code>N</code></em>. Defaults to 1.</p></td></tr></tbody></table></div></div><p>
+</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>Sbstep2</code></em> </b></span></dt><dd><p>Substep number of the results to be read in <em class="replaceable"><code>File2</code></em>. </p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">
+<em class="replaceable"><code>N</code></em> </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Reads substep <em class="replaceable"><code>N</code></em>.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">All </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Reads all substeps. This value is
+the default.</p></td></tr></tbody></table></div></div><p>
+</p></dd><dt><span><b class="term">--</b></span></dt><dd><p>Unused field.</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>MacLim</code></em>
+</b></span></dt><dd><p>Smallest acceptable MAC value. Must be 
+<span class="inlineequation" style="&#xA;            vertical-align:0.000000px"><img src="graphics/eq4dc952d7-ef85-40c5-b2ea-fa2cd8c895af.svg"></span> 0 and 
+<span class="inlineequation" style="&#xA;            vertical-align:0.000000px"><img src="graphics/eq4a60f8f9-b80a-41f0-9dab-58832742e875.svg"></span> 1. The
+default value is 0.90. </p></dd><dt><span><b class="term">
+<em class="replaceable"><code>Cname</code></em>
+</b></span></dt><dd><p>Name of the component from the first file (<em class="replaceable"><code>File1</code></em>). The component
+      must be based on nodes. If unspecified, all nodes are matched and used for MAC calculations.
+      If a component name is specified, only nodes included in the specified component are used. Not
+      applicable to node mapping (<span><em class="replaceable"><code>Option</code></em> =
+       NODMAP on <a class="link" href="Hlp_C_MACOPT.html" title="MACOPT"><span class="command"><strong>MACOPT</strong></span></a></span>).</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>KeyPrint</code></em> </b></span></dt><dd><p>Printout options:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">0 </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Printout matched solutions table. This
+value is the default.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1 </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Printout matched solutions table and
+full MAC table.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">2 </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Printout matched solutions table, full
+MAC table and matched nodes table.</p></td></tr></tbody></table></div></div><p>
+</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="d0e242134"></a><h2>Notes</h2><p>The <span class="command"><strong>RSTMAC</strong></span> command
+allows the comparison of the solutions from either:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Two different results files</p></li><li class="listitem"><p>One result file and one universal format file</p></li></ul></div><p>
+</p><p>The modal assurance criterion (MAC) is
+used.</p><p>The meshes read from <em class="replaceable"><code>File1</code></em> and
+                <em class="replaceable"><code>File2</code></em> may be different. The nodes of
+                <em class="replaceable"><code>File1</code></em> are matched with the nodes of
+                <em class="replaceable"><code>File2</code></em> based on either node location (default) or node
+            number. The solutions are compared for the identified pair of matched nodes. The nodes
+            can also be mapped and the solutions interpolated from <em class="replaceable"><code>File1</code></em>.
+            See the <a class="link" href="Hlp_C_MACOPT.html" title="MACOPT"><span class="command"><strong>MACOPT</strong></span></a> command for all options.</p><p>Units and coordinate systems must be the same for both models.</p><p>Results may be real or complex; <span>however, if results in
+                    <em class="replaceable"><code>File1</code></em> have a different type than results in
+                    <em class="replaceable"><code>File2</code></em></span>, only the real parts of the solutions
+            are taken into account in MAC calculations. The analysis type can be arbitrary.</p><p>Non-structural degrees of freedom can be considered. Degrees of freedom
+            can vary between <em class="replaceable"><code>File1</code></em> and <em class="replaceable"><code>File2</code></em>,
+            but at least one common degree of freedom must exist. </p><p>The solutions read on the results files are not all written to the <span>database; therefore, </span>subsequent plotting or printing
+            of solutions is not possible. A <a class="link" href="Hlp_C_SET.html" title="SET"><span class="command"><strong>SET</strong></span></a> command must be issued after the
+                <span class="command"><strong>RSTMAC</strong></span> command to post-process each solution.</p><p>
+            <span class="command"><strong>RSTMAC</strong></span> comparison on cyclic symmetry analysis works only if the
+            number of sectors on <em class="replaceable"><code>File1</code></em> and
+                <em class="replaceable"><code>File2</code></em> are the same. Also, comparison cannot be made
+            between cyclic symmetry results and full 360 degree model results
+                (<em class="replaceable"><code>File1</code></em> &#8211; cyclic solution,
+                <em class="replaceable"><code>File2</code></em> &#8211; full 360 degree model solution). <span>Comparing cyclic symmetry solutions written on a selected set
+                of nodes (<a class="link" href="Hlp_C_OUTturRES.html" title="OUTRES"><span class="command"><strong>OUTRES</strong></span></a>) is not supported.</span></p><p>The modal assurance criterion values can be retrieved as parameters
+using the <a href="Hlp_C_GET.html" title="*GET" class="olink"><span class="command"><strong>*GET</strong></span></a> command (<em class="replaceable"><code>Entity</code></em> = <span class="command"><strong>RSTMAC</strong></span>).</p><p>For more information and an example, see <a href="../ans_bas/Hlp_G_BAS5_4.html#rstmacbas" title="Comparing Nodal Solutions&#xA;From Two Models (RSTMAC)" class="olink">Comparing Nodal Solutions
+From Two Models (<span class="command"><strong>RSTMAC</strong></span>)</a> in the <a href="../ans_bas/Hlp_G_BasTOC.html" title="Basic Analysis Guide" class="olink"><em class="citetitle">Basic Analysis Guide</em></a>. </p></div><div class="refsect1" title="Menu Paths"><a name="d0e242252"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

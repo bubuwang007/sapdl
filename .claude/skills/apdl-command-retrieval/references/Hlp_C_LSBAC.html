@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:56-05:00"><title>*LSBAC</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="*LSBAC">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_L_TOC.html" title="L Commands">
+<link rel="prev" href="Hlp_C_LSBA.html" title="LSBA">
+<link rel="next" href="Hlp_C_LSBL.html" title="LSBL">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="*LSBAC"><a name="a-LSBAC"></a><div class="titlepage"></div><a class="indexterm" name="d0e156819"></a><span class="refentrytitle"><a href="Hlp_C_LSBAC.html" title="*LSBAC" class="olink"><span class="command"><strong>*LSBAC</strong></span></a></span><div class="refnamediv"><p><span class="command"><strong>*LSBAC</strong></span>,
+    <em class="replaceable"><code>EngineName</code></em>, <em class="replaceable"><code>RhsVector</code></em>,
+    <em class="replaceable"><code>SolVector</code></em>, <em class="replaceable"><code>TransKey</code></em><br><b class="refpurpose">Performs the solve (forward/backward substitution) of a factorized linear system. </b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_4.html" title="2.4. APDL Commands"><code class="classname">APDL</code></a>: <a class="link" href="Hlp_C_CH2_4.html#cmdapdlmatrix" title="Table 2.23: Matrix Operations (APDL Math)"><span class="type">Matrix Operations</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="light">Premium</span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsect1" title="Argument Descriptions"><a name="a-LSBAC.argdescript"></a><h2>Argument Descriptions</h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>EngineName</code></em></b></span></dt><dd><p>Name used to identify this engine. Must have been previously
+created using <a href="Hlp_C_LSENGINE.html" title="*LSENGINE" class="olink"><span class="command"><strong>*LSENGINE</strong></span></a> and factorized using <a href="Hlp_C_LSFACTOR.html" title="*LSFACTOR" class="olink"><span class="command"><strong>*LSFACTOR</strong></span></a>.</p></dd><dt><span><b class="term"><em class="replaceable"><code>RhsVector</code></em></b></span></dt><dd><p>Name of vector containing the right-hand side
+(load) vectors as input. Must have been previously defined as a <a href="Hlp_C_VEC.html" title="*VEC" class="olink"><span class="command"><strong>*VEC</strong></span></a> vector
+or a <a href="Hlp_C_DMAT.html" title="*DMAT" class="olink"><span class="command"><strong>*DMAT</strong></span></a> matrix.</p></dd><dt><span><b class="term"><em class="replaceable"><code>SolVector</code></em></b></span></dt><dd><p>Name of vector that will contain the solution vectors upon
+completion. Must be predefined as a <a href="Hlp_C_VEC.html" title="*VEC" class="olink"><span class="command"><strong>*VEC</strong></span></a> vector or <a href="Hlp_C_DMAT.html" title="*DMAT" class="olink"><span class="command"><strong>*DMAT</strong></span></a> matrix.</p></dd><dt><span><b class="term"><em class="replaceable"><code>TransKey</code></em></b></span></dt><dd><p>Transpose key. Set <em class="replaceable"><code>TransKey</code></em> = TRANS to solve the transposed
+      linear system. If blank, transpose will not be used.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="a-LSBAC.notes"></a><h2>Notes</h2><p>This command performs forward and back substitution to obtain the
+      solution to the linear matrix equation Ax = b (or A<sup>T</sup>x = b if
+        <em class="replaceable"><code>TransKey</code></em> = TRANS). The matrix engine must have been previously
+      defined using <a href="Hlp_C_LSENGINE.html" title="*LSENGINE" class="olink"><span class="command"><strong>*LSENGINE</strong></span></a>, and the matrix factored using
+        <a href="Hlp_C_LSFACTOR.html" title="*LSFACTOR" class="olink"><span class="command"><strong>*LSFACTOR</strong></span></a>.</p><p>You can use the <a href="Hlp_C_DMAT.html" title="*DMAT" class="olink"><span class="command"><strong>*DMAT</strong></span></a>,,,COPY (or <a href="Hlp_C_VEC.html" title="*VEC" class="olink"><span class="command"><strong>*VEC</strong></span></a>,,,COPY)
+command to copy the load vector to the solution vector in order to predefine
+it with the appropriate size.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e156966"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

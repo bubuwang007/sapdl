@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:27-05:00"><title>OUTPR</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="OUTPR">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_O_TOC.html" title="O Commands">
+<link rel="prev" href="Hlp_C_OUTOPT.html" title="OUTOPT">
+<link rel="next" href="Hlp_C_OUTPUT.html" title="/OUTPUT">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="OUTPR"><a name="OUTPR"></a><div class="titlepage"></div><a class="indexterm" name="d0e195783"></a><span class="refentrytitle"><span class="command"><strong>OUTPR</strong></span></span><div class="refnamediv"><p><span class="command"><strong>OUTPR</strong></span>, <em class="replaceable"><code>Item</code></em>, <em class="replaceable"><code>Freq</code></em>, <em class="replaceable"><code>Cname</code></em><br><b class="refpurpose">Controls the solution printout.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsolumiscldsjla070199" title="Table 2.58: Miscellaneous Loads"><span class="type">Misc Loads</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="OUTPR.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Item</code></em></b></span></dt><dd><p>Item for print control:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">BASIC</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Basic quantities (nodal DOF solution,
+nodal reaction loads, and element solution) (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">NSOL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Nodal DOF solution.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">RSOL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Nodal reaction loads.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ESOL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Element solution.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">NLOAD</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Element nodal loads. When <a href="../ans_str/Hlp_G_STRUNST.html#strnonlinstab" title="nonlinear stabilization" class="olink">nonlinear stabilization</a> is active, the stabilization force/moments are also printed. </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">SFOR</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Stabilization force/moment at the
+applicable nodes (valid only when <a href="../ans_str/Hlp_G_STRUNST.html#strnonlinstab" title="nonlinear stabilization" class="olink">nonlinear stabilization</a> is active).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">VENG</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Element energies. When <a href="../ans_str/Hlp_G_STRUNST.html#strnonlinstab" title="nonlinear stabilization" class="olink">nonlinear stabilization</a> is active, the energy dissipation due to stabilization is also printed.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">RSFO</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Result section force/moment output (valid only when a <a href="../ans_str/str_resultsec.html" title="result section" class="olink">result section</a> is defined). Result section output is
+          always written to a file named <span class="filename"><strong>Jobname.SECF</strong></span>.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">V</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Nodal velocity (applicable to structural
+transient analysis  only (<a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,TRANS)).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">A</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Nodal acceleration (applicable to structural
+transient analysis only (<a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,TRANS)).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ALL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>All of the above solution items.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>Freq</code></em></b></span></dt><dd><p>Print solution for this item
+every <em class="replaceable"><code>Freq</code></em><sup>th</sup> (and the last) substep of each load step.  If -<em class="replaceable"><code>n</code></em>, print up to <em class="replaceable"><code>n</code></em> equally spaced solutions (only applies to static or full transient
+analyses when automatic time stepping is enabled).  If NONE, suppress
+all printout for this item for this load step.  If ALL, print solution
+for this item for every substep.  If LAST, print solution for this
+item only for the last substep of each load step.  For a modal analysis,
+use NONE or ALL.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Cname</code></em></b></span></dt><dd><p>Name of the component, created with the <a class="link" href="Hlp_C_CM.html" title="CM"><span class="command"><strong>CM</strong></span></a> command, defining the selected set of nodes or elements for which
+this specification is active.  If blank, the set is all entities.</p><div class="note" title="Note" style="margin-left: 1.3rem; margin-right: 1.3remin;"><hr><p><span class="admontitle"><b>Note:</b></span>&nbsp;&nbsp;The component named must be of the same type as the item, i.e. nodal or element. A
+       component name is not allowed with the BASIC, RSFO, or ALL labels.</p><hr></div></dd></dl></div></div></div><div class="refsect1" title="Command Default"><a name="OUTPR.default"></a><h2>Command Default</h2><p>No printout.</p></div><div class="refsect1" title="Notes"><a name="OUTPR.notes"></a><h2>Notes</h2><p>Controls the solution items to be printed, the frequency with which
+      they are printed (in static, transient, or full harmonic analyses), and the set of nodes or
+      elements to which this specification applies (in static, transient, or full harmonic
+      analyses). An item is associated with either a node (<a class="link" href="Hlp_C_NSOL.html" title="NSOL"><span class="command"><strong>NSOL</strong></span></a>,
+        <a class="link" href="Hlp_C_RFORCE.html" title="RFORCE"><span class="command"><strong>RFORCE</strong></span></a>, V, and A items) or an element (all of the remaining items). The
+      specifications are processed in the order that they are input. Use
+      <span class="command"><strong>OUTPR</strong></span>,STAT to list the current specifications and use
+        <span class="command"><strong>OUTPR</strong></span>,ERASE to erase all the current specifications.</p><p>In addition to <span class="command"><strong>OUTPR</strong></span>, <a class="link" href="Hlp_C_OUTturRES.html" title="OUTRES"><span class="command"><strong>OUTRES</strong></span></a>
+      and <a class="link" href="Hlp_C_OUTGEOM.html" title="OUTGEOM"><span class="command"><strong>OUTGEOM</strong></span></a> also control solution output. You can issue up to 50 of these
+      output-control commands (any combination of the three) in an analysis.</p><p>As described above, <span class="command"><strong>OUTPR</strong></span> writes some or
+all items (depending on analysis type) for all elements.  To restrict
+the solution printout, use <span class="command"><strong>OUTPR</strong></span> to selectively
+suppress (<em class="replaceable"><code>Freq</code></em> = NONE) the writing of solution
+data, or first suppress the writing of all solution data (<span class="command"><strong>OUTPR</strong></span>,ALL,NONE) and then selectively turn on the writing
+of solution data with subsequent <span class="command"><strong>OUTPR</strong></span> commands.</p><p>If the generalized plane strain feature is active and <span class="command"><strong>OUTPR</strong></span> is issued, the change of fiber length at the ending
+point during deformation and the rotation of the ending plane about
+X and Y during deformation will be printed if any displacement at
+the nodes is printed. The reaction forces at the ending point will
+be printed if any reaction force at the nodes is printed.</p><p>Nodal reaction loads (<em class="replaceable"><code>Item</code></em> = RSOL)
+are processed according to the specifications listed for the <a class="link" href="Hlp_C_PRRSOL.html" title="PRRSOL"><span class="command"><strong>PRRSOL</strong></span></a> command. </p><p>Result printouts for interactive sessions are suppressed for models with more than 10 elements
+        <span>except when the printout is redirected to a file using the
+          <a href="Hlp_C_OUTPUT.html" title="/OUTPUT" class="olink"><span class="command"><strong>/OUTPUT</strong></span></a> command.</span></p><p>This command is also valid in PREP7.</p></div><div class="refsect1" title="Menu Paths"><a name="OUTPR.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Output Ctrls&gt;Solu Printout</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Output Ctrls&gt;Solu Printout</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

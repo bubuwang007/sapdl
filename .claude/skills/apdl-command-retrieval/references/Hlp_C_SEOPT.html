@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:34:42-05:00"><title>SEOPT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="SEOPT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_S_TOC.html" title="S Commands">
+<link rel="prev" href="Hlp_C_SENERGY.html" title="SENERGY">
+<link rel="next" href="Hlp_C_SESYMM.html" title="SESYMM">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="SEOPT"><a name="SEOPT"></a><div class="titlepage"></div><a class="indexterm" name="d0e253662"></a><span class="refentrytitle"><span class="command"><strong>SEOPT</strong></span></span><div class="refnamediv"><p><span class="command"><strong>SEOPT</strong></span>, <em class="replaceable"><code>Sename</code></em>, <em class="replaceable"><code>SEMATR</code></em>, <em class="replaceable"><code>SEPR</code></em>, <em class="replaceable"><code>SESST</code></em>, <em class="replaceable"><code>ExpMth</code></em>, <em class="replaceable"><code>SeOcLvL</code></em><br><b class="refpurpose">Specifies substructure analysis options.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoluanaoptjla070199" title="Table 2.48: Analysis Options"><span class="type">Analysis Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="SEOPT.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Sename</code></em></b></span></dt><dd><p>The name (case-sensitive, 32-character maximum) assigned to the
+              <span class="filename"><strong>.sub</strong></span> superelement matrix file. This field defaults to
+              <em class="replaceable"><code>Fname</code></em> on the <a href="Hlp_C_FILNAME.html" title="/FILNAME" class="olink"><span class="command"><strong>/FILNAME</strong></span></a> command.</p></dd><dt><span><b class="term"><em class="replaceable"><code>SEMATR</code></em></b></span></dt><dd><p>Matrix generation key:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Generate stiffness (or conductivity) matrix (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">2</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Generate stiffness and mass (or conductivity and specific heat)
+                    matrices.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">3</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Generate stiffness, mass and damping matrices.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>SEPR</code></em></b></span></dt><dd><p>Print key:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">0</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Do not print superelement matrices or load vectors.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Print both load vectors and superelement matrices.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">2</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Print load vectors but not matrices.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>SESST</code></em></b></span></dt><dd><p>Stress-stiffening key:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">0</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Do not save space for stress stiffening in a later run.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Save space for the stress stiffening matrix (calculated in a subsequent
+                    generation run after the expansion pass).</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>ExpMth</code></em></b></span></dt><dd><p>Expansion method for expansion pass:</p></dd></dl></div></div><div><div class="variablelist"><dl><dt><span><b class="term">BACKSUB</b></span></dt><dd><p>Save necessary factorized matrix files <span>(for example, the
+                <span class="filename"><strong>.LN22</strong></span> file)</span> for backsubstitution during the subsequent
+            expansion passes (default). This normally results in a large usage of disk space.</p></dd><dt><span><b class="term">MODDIR</b></span></dt><dd><p>This is the same expansion method as BACKSUB, except that the static correction
+              <span>vectors</span> (see the first term of <a href="../ans_thry/thy_anproc6.html#thyeq17staticsnov2101" title="Equation&nbsp;15&#8211;135" class="olink">Equation&nbsp;15&#8211;135</a> in the <a href="../ans_thry/ans_thry.html" title="Mechanical APDL Theory Reference" class="olink"><em class="citetitle">Mechanical APDL Theory Reference</em></a>) are stored on the
+              <span class="filename"><strong>.bclv</strong></span> file instead of the <span class="filename"><strong>.LN22</strong></span> file. This
+            option is required when remote read-only file usage is used during the first solution of
+            the first restart of a generation pass (see the <a class="link" href="Hlp_C_MODDIR.html" title="MODDIR"><span class="command"><strong>MODDIR</strong></span></a>
+            command).</p></dd><dt><span><b class="term">RESOLVE</b></span></dt><dd><p>Do not save factorized matrix files. Global stiffness matrix will be reformed during
+            expansion pass. This option provides an effective way to save disk space usage. This
+            option cannot be used if the use pass uses large deflections
+            (<a class="link" href="Hlp_C_NLGEOM.html" title="NLGEOM"><span class="command"><strong>NLGEOM</strong></span></a>,ON).</p></dd><dt><span><b class="term">NONE</b></span></dt><dd><p>Do not save factorized matrix files. With this option, the expansion pass is not
+            possible when factorized matrix files are required.</p></dd><dt><span><b class="term">BCLV</b></span></dt><dd><p>Do not save factorized matrix files. The static correction vectors (see the first
+            term of <a href="../ans_thry/thy_anproc6.html#thyeq17staticsnov2101" title="Equation&nbsp;15&#8211;135 in the Theory Reference" class="olink">Equation&nbsp;15&#8211;135 in the <span class="olinkdocname">Theory Reference</span></a>) are
+            stored in the <span class="filename"><strong>.bclv</strong></span> file. With this option, the expansion pass is
+            not possible when factorized matrix files are required.</p></dd></dl></div></div><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>SeOcLvL</code></em></b></span></dt><dd><p>For the added-mass calculation, the ocean level to use when ocean waves
+              (<a class="link" href="Hlp_C_OCTYPE.html" title="OCTYPE"><span class="command"><strong>OCTYPE</strong></span></a>,,WAVE) are present:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ATP</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The ocean level at this point in time (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">MSL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The mean ocean level.</p></td></tr></tbody></table></div></div></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="SEOPT.notes"></a><h2>Notes</h2><p><span class="command"><strong>SEOPT</strong></span> specifies substructure analysis options
+      (<a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,SUBSTR). If used during solution, the command is valid only within
+      the first load step.</p><p>When ocean waves (<a class="link" href="Hlp_C_OCTYPE.html" title="OCTYPE"><span class="command"><strong>OCTYPE</strong></span></a>,,WAVE) are present,
+the <em class="replaceable"><code>SeOcLvL</code></em> argument specifies the ocean
+height or level to use for the added-mass calculation, as the use-run
+analysis type is unknown during the generation run.</p><p>The expansion pass method RESOLVE is not supported with component mode synthesis analysis
+        (<a class="link" href="Hlp_C_CMSOPT.html" title="CMSOPT"><span class="command"><strong>CMSOPT</strong></span></a>). <em class="replaceable"><code>ExpMth</code></em> is automatically set to
+      BACKSUB for CMS analysis. The RESOLVE method invalidates the use of the
+        <a class="link" href="Hlp_C_NUMEXP.html" title="NUMEXP"><span class="command"><strong>NUMEXP</strong></span></a> command. The RESOLVE method does not allow <span>the restarting of the substructure generation pass</span> and the
+      computation of results based on nodal velocity and nodal acceleration (damping force, inertial
+      force, kinetic energy, etc.) in the substructure expansion pass.</p><p>If <em class="replaceable"><code>ExpMth</code></em> = NONE or BCLV in a substructure
+      analysis or component mode synthesis (CMS) analysis (<a class="link" href="Hlp_C_CMSOPT.html" title="CMSOPT"><span class="command"><strong>CMSOPT</strong></span></a>) using the
+      fixed-interface (<a class="link" href="Hlp_C_CMSOPT.html" title="CMSOPT"><span class="command"><strong>CMSOPT</strong></span></a>,FIX) or free-interface
+      (<a class="link" href="Hlp_C_CMSOPT.html" title="CMSOPT"><span class="command"><strong>CMSOPT</strong></span></a>,FREE) methods, you cannot restart the generation pass or perform
+      the expansion pass. (In CMS analyses using those methods, however, the expansion pass is
+      possible when element-results calculation is activated in the generation pass
+        (<em class="replaceable"><code>ELCALC</code></em> = YES on <a class="link" href="Hlp_C_CMSOPT.html" title="CMSOPT"><span class="command"><strong>CMSOPT</strong></span></a>)). The
+        <em class="replaceable"><code>ExpMth</code></em> argument is not required for CMS analysis using the
+      residual-flexible free-interface method (<a class="link" href="Hlp_C_CMSOPT.html" title="CMSOPT"><span class="command"><strong>CMSOPT</strong></span></a>,RFFB).</p><p>This command is also valid in PREP7.</p></div><div class="refsect1" title="Menu Paths"><a name="SEOPT.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Analysis Type&gt;Analysis Options</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Analysis Type&gt;Analysis Options</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

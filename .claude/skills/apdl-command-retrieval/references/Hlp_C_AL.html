@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:32-05:00"><title>AL</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="AL">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_A_TOC.html" title="A Commands">
+<link rel="prev" href="Hlp_C_AINV.html" title="AINV">
+<link rel="next" href="Hlp_C_ALIST.html" title="ALIST">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="AL"><a name="AL"></a><div class="titlepage"></div><a class="indexterm" name="d0e19878"></a><span class="refentrytitle"><span class="command"><strong>AL</strong></span></span><div class="refnamediv"><p><span class="command"><strong>AL</strong></span>, <em class="replaceable"><code>L1</code></em>, <em class="replaceable"><code>L2</code></em>, <em class="replaceable"><code>L3</code></em>, <em class="replaceable"><code>L4</code></em>, <em class="replaceable"><code>L5</code></em>, <em class="replaceable"><code>L6</code></em>, <em class="replaceable"><code>L7</code></em>, <em class="replaceable"><code>L8</code></em>, <em class="replaceable"><code>L9</code></em>, <em class="replaceable"><code>L10</code></em><br><b class="refpurpose">Generates an area bounded by previously defined lines.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7areasldm061600" title="Table 2.33: Areas"><span class="type">Areas</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="AL.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>L1</code></em>, <em class="replaceable"><code>L2</code></em>, <em class="replaceable"><code>L3</code></em>,
+. . . , <em class="replaceable"><code>L10</code></em></b></span></dt><dd><p>List of lines defining area.  The minimum number of lines
+is 3.  The positive normal of the area is controlled by the direction of <em class="replaceable"><code>L1</code></em> using
+the right-hand rule.  A negative value of <em class="replaceable"><code>L1</code></em> reverses
+the normal direction.  If <em class="replaceable"><code>L1</code></em> = ALL, use all selected
+lines with <em class="replaceable"><code>L2</code></em> defining the normal (<em class="replaceable"><code>L3</code></em> to <em class="replaceable"><code>L10</code></em> are
+ignored and <em class="replaceable"><code>L2</code></em> defaults to the lowest numbered
+selected line).  If <em class="replaceable"><code>L1</code></em> = P, graphical picking is
+enabled and all remaining arguments are ignored (valid only in the GUI). 
+A component name may also be substituted for <em class="replaceable"><code>L1</code></em>.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="AL.notes"></a><h2>Notes</h2><p>Lines may be input (once each) in any order and must form a simply connected
+closed curve.  If the area is defined with more than four lines, the lines
+must also lie in the same plane or on a constant coordinate value in the active
+coordinate system (such as a plane or a cylinder).   </p><div class="note" title="Note" style="margin-left: 1.3rem; margin-right: 1.3remin;"><hr><p><span class="admontitle"><b>Note:</b></span>&nbsp;&nbsp;Solid modeling
+in a toroidal coordinate system is not recommended.  Areas may be redefined
+only if not yet attached to a volume.</p><hr></div><p>This command is valid in any processor.</p></div><div class="refsect1" title="Menu Paths"><a name="AL.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Create&gt;Areas&gt;Arbitrary&gt;By Lines</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

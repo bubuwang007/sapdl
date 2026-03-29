@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:02-05:00"><title>EMODIF</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="EMODIF">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_E_TOC.html" title="E Commands">
+<link rel="prev" href="Hlp_C_EMIS.html" title="EMIS">
+<link rel="next" href="Hlp_C_EMORE.html" title="EMORE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="EMODIF"><a name="EMODIF"></a><div class="titlepage"></div><a class="indexterm" name="d0e89628"></a><span class="refentrytitle"><span class="command"><strong>EMODIF</strong></span></span><div class="refnamediv"><p><span class="command"><strong>EMODIF</strong></span>, <em class="replaceable"><code>IEL</code></em>, <em class="replaceable"><code>STLOC</code></em>, <em class="replaceable"><code>I1</code></em>, <em class="replaceable"><code>I2</code></em>, <em class="replaceable"><code>I3</code></em>, <em class="replaceable"><code>I4</code></em>, <em class="replaceable"><code>I5</code></em>, <em class="replaceable"><code>I6</code></em>, <em class="replaceable"><code>I7</code></em>, <em class="replaceable"><code>I8</code></em><br><b class="refpurpose">Modifies a previously defined element.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7elementsldm061600" title="Table 2.38: Elements"><span class="type">Elements</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="EMODIF.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>IEL</code></em></b></span></dt><dd><p>Modify nodes and/or attributes for element number <em class="replaceable"><code>IEL</code></em>. If ALL,
+      modify all selected elements (<a class="link" href="Hlp_C_ESEL.html" title="ESEL"><span class="command"><strong>ESEL</strong></span></a>). If <em class="replaceable"><code>IEL</code></em> = P,
+      graphical picking is enabled and all remaining command fields are ignored (valid only in the
+      GUI). A component name may also be substituted for <em class="replaceable"><code>IEL</code></em>.</p></dd><dt><span><b class="term"><em class="replaceable"><code>STLOC</code></em></b></span></dt><dd><p>Starting location (<em class="replaceable"><code>n</code></em>) of first node to be modified or the attribute label. </p><p>If <em class="replaceable"><code>n</code></em>, modify element node positions <em class="replaceable"><code>n</code></em>, <em class="replaceable"><code>n</code></em>+1, etc. (<em class="replaceable"><code>n</code></em> = 1 to 20). For
+example, if <em class="replaceable"><code>STLOC</code></em> = 1, <em class="replaceable"><code>I1</code></em> refers to the first node, <em class="replaceable"><code>I2</code></em>, the second,
+etc.  If <em class="replaceable"><code>STLOC</code></em> = 9, <em class="replaceable"><code>I1</code></em> refers to the ninth node, <em class="replaceable"><code>I2</code></em>, the tenth,
+etc. Attributes are also modified to the currently specified values. </p><p>Use -<em class="replaceable"><code>n</code></em> to modify only
+nodes and not attributes. </p><p>If zero, modify only the attributes to the currently specified
+values. </p><p>If MAT, TYPE, REAL, ESYS, SECNUM, or EGID, modify only that attribute
+      to the <em class="replaceable"><code>I1</code></em> value.</p></dd><dt><span><b class="term"><em class="replaceable"><code>I1</code></em>, <em class="replaceable"><code>I2</code></em>, <em class="replaceable"><code>I3</code></em>, . . . , <em class="replaceable"><code>I8</code></em></b></span></dt><dd><p>Replace the previous node numbers assigned to this
+element with these corresponding values. A (blank) retains the previous
+value (except in the <em class="replaceable"><code>I1</code></em> field, which resets
+the <em class="replaceable"><code>STLOC</code></em> node number to zero).  </p><p>For attributes (<em class="replaceable"><code>STLOC</code></em> = MAT, TYPE, etc.), replace the existing value with the <em class="replaceable"><code>I1</code></em> value (or the default if <em class="replaceable"><code>I1</code></em> is zero or blank).</p><p>For attributes MAT and REAL, inputting
+the label GCN for <em class="replaceable"><code>I1</code></em> replaces the existing
+attribute value with zero for the specified elements. This is a special
+case used only for converting contact elements (<a href="../ans_elem/Hlp_E_TARGE169.html" title="TARGE169" class="olink"><span class="structname">TARGE169</span></a> through <a href="../ans_elem/Hlp_E_CONTA177.html" title="CONTA177" class="olink"><span class="structname">CONTA177</span></a>) from a pair-based definition
+to a <a href="../ans_ctec/ctec_gencont.html" title="general&#xA;contact definition" class="olink">general
+contact definition</a>.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="EMODIF.notes"></a><h2>Notes</h2><p>The nodes and/or attributes (MAT, TYPE, REAL, ESYS, SECNUM, or EGID values) of an existing
+   element can be changed with this command.</p><p>The EGID attribute is valid only for <a href="../ans_elem/Hlp_E_MESH200.html" title="MESH200" class="olink"><span class="structname">MESH200</span></a>
+   elements when they are used to generate <a href="../ans_str/Hlp_G_STRREINF.html" title="reinforcing" class="olink">reinforcing</a> elements
+    (REINF<em class="replaceable"><code>nnn</code></em>) via the <a href="../ans_str/Hlp_G_STRRFDEF.html#reinfmeshinddmethod" title="mesh-independent method" class="olink">mesh-independent method</a> for defining reinforcing.</p></div><div class="refsect1" title="Menu Paths"><a name="EMODIF.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Move / Modify&gt;Elements&gt;Modify Attrib</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Move / Modify&gt;Elements&gt;Modify Nodes</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

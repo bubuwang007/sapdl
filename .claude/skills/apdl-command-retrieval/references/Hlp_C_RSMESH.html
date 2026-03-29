@@ -1,0 +1,90 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:34:26-05:00"><title>RSMESH</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="RSMESH">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_R_TOC.html" title="R Commands">
+<link rel="prev" href="Hlp_C_RPSD.html" title="RPSD">
+<link rel="next" href="Hlp_C_RSOPT.html" title="RSOPT">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="RSMESH"><a name="RSMESH"></a><div class="titlepage"></div><a class="indexterm" name="d0e241159"></a><span class="refentrytitle">
+<span class="command"><strong>RSMESH</strong></span>
+</span><div class="refnamediv"><p>
+   <span class="command"><strong>RSMESH</strong></span>, <em class="replaceable"><code>P0</code></em>, <em class="replaceable"><code>RID</code></em>,
+    <em class="replaceable"><code>KCN</code></em>, <em class="replaceable"><code>Kdir</code></em>,
+    <em class="replaceable"><code>VALUE</code></em>, <em class="replaceable"><code>NDPLANE</code></em>,
+    <em class="replaceable"><code>PSTOL</code></em>, <em class="replaceable"><code>Ecomp</code></em>
+  <br><b class="refpurpose">Generates a result section. </b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7meshingldm061600" title="Table 2.36: Meshing"><span class="type">Meshing</span></a></span></div></div></div><div class="refclass">
+   <div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="bold"><strong>DesignSpace</strong></span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div>
+  </div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="RSMESH.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term">
+     <em class="replaceable"><code>P0</code></em>
+    </b></span></dt><dd><p>User-defined anchor point node number. This must be a previously defined target element
+      pilot node (see <a class="xref" href="Hlp_C_RSMESH.html#RSMESH.notes" title="Notes">"Notes"</a> for more information). If
+       <em class="replaceable"><code>P0</code></em> is specified, <em class="replaceable"><code>RID</code></em>,
+       <em class="replaceable"><code>KCN</code></em>, <em class="replaceable"><code>Kdir</code></em>,
+       <em class="replaceable"><code>VALUE</code></em>, and <em class="replaceable"><code>NDPLANE</code></em> are ignored. The
+      result section is defined in the x-direction of the nodal coordinate system of the pilot
+      node.</p><p>If <em class="replaceable"><code>P0</code></em> is not specified, the program computes the geometry
+      center point as the anchor point location by default.</p></dd><dt><span><b class="term">
+     <em class="replaceable"><code>RID</code></em>
+    </b></span></dt><dd><p>Unique real constant ID number that has not been previously assigned to any other
+      elements. If <em class="replaceable"><code>RID</code></em> is not specified, the program selects the next
+      available real constant ID number.</p></dd><dt><span><b class="term">
+     <em class="replaceable"><code>KCN</code></em>
+    </b></span></dt><dd><p>Coordinate system number used to define the result surface and normal direction.</p></dd><dt><span><b class="term">
+     <em class="replaceable"><code>Kdir</code></em>
+    </b></span></dt><dd><p>Direction (x, y, or z) normal to the result surface in the <em class="replaceable"><code>KCN</code></em>
+      coordinate system.</p></dd><dt><span><b class="term">
+     <em class="replaceable"><code>VALUE</code></em>
+    </b></span></dt><dd><p>Point along the <em class="replaceable"><code>Kdir</code></em> axis at which to locate the result
+      surface. Ignored if <em class="replaceable"><code>NDPLANE</code></em> is specified.</p></dd><dt><span><b class="term">
+     <em class="replaceable"><code>NDPLANE</code></em>
+    </b></span></dt><dd><p>Node number of existing node used to locate the result surface. If
+       <em class="replaceable"><code>NDPLANE</code></em> is specified, the location of the result surface is
+      defined by the <em class="replaceable"><code>Kdir</code></em> coordinate of
+       <em class="replaceable"><code>NDPLANE</code></em> in the <em class="replaceable"><code>KCN</code></em> coordinate
+      system.</p></dd><dt><span><b class="term">
+     <em class="replaceable"><code>PSTOL</code></em>
+    </b></span></dt><dd><p>Optional tolerance below <em class="replaceable"><code>VALUE</code></em>. Allows nodes occurring
+      precisely at or slightly below the result surface to be identified properly as above the
+      plane. Has the effect of shifting the plane down by <em class="replaceable"><code>PSTOL</code></em>. The
+      following expression represents the default value: </p><div class="informalequation"><a name="eqd50e3719-5145-4c48-9b54-bab371eb3c4c"></a><div><img src="graphics/eqd50e3719-5145-4c48-9b54-bab371eb3c4c.svg"></div></div><p>where &#916;X, &#916;Y, and &#916;Z are the dimensions <span>of the locally selected region of the model</span> based on nodal
+      locations (that is, &#916;X = X<em class="replaceable"><code>max</code></em> -
+       X<em class="replaceable"><code>min</code></em>).</p></dd><dt><span><b class="term">
+     <em class="replaceable"><code>Ecomp</code></em>
+    </b></span></dt><dd><p>If specified, the name of a component to be composed of elements underneath the result
+      section generated by the <span class="command"><strong>RSMESH</strong></span> command.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="RSMESH.notes"></a><h2>Notes</h2><p>This command defines a result section and automatically imbeds contact elements
+    (<a href="../ans_elem/Hlp_E_CONTA172.html" title="CONTA172" class="olink"><span class="structname">CONTA172</span></a> or <a href="../ans_elem/Hlp_E_CONTA174.html" title="CONTA174" class="olink"><span class="structname">CONTA174</span></a>) on the surface of the
+   selected base elements. See <a href="../ans_str/str_resultsec.html" title="Monitoring Result Section Data During Solution in the Structural Analysis Guide" class="olink">Monitoring Result Section Data During Solution in the <span class="olinkdocname">Structural Analysis Guide</span></a> for
+   more information on how to use this command.</p><p>A user-specified anchor point and local coordinate system can be specified by defining a
+   pilot node (a target element defined using <a class="link" href="Hlp_C_TSHAP.html" title="TSHAP"><span class="command"><strong>TSHAP</strong></span></a>,PILO) before issuing the
+    <span class="command"><strong>RSMESH</strong></span> command. Input the pilot node number for
+   <em class="replaceable"><code>P0</code></em>. Only one pilot node should be associated with a result section;
+   the pilot node should not be used for any other purpose (such as remote loading). The contact
+   elements generated for the result section will have the same real constant ID as the pilot node
+   target element.</p></div><div class="refsect1" title="Menu Paths"><a name="RSMESH.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

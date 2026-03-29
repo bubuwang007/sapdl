@@ -1,0 +1,57 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:53-05:00"><title>VFSM</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="VFSM">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_V_TOC.html" title="V Commands">
+<link rel="prev" href="Hlp_C_VFQUERY.html" title="VFQUERY">
+<link rel="next" href="Hlp_C_VFUN.html" title="*VFUN">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="VFSM"><a name="VFSM"></a><div class="titlepage"></div><a class="indexterm" name="d0e308649"></a><span class="refentrytitle"><span class="command"><strong>VFSM</strong></span></span><div class="refnamediv"><p><span class="command"><strong>VFSM</strong></span>, <em class="replaceable"><code>Action</code></em>, <em class="replaceable"><code>ENCL</code></em>, <em class="replaceable"><code>OPT</code></em>, <em class="replaceable"><code>MAXITER</code></em>, <em class="replaceable"><code>CONV</code></em><br><b class="refpurpose">Adjusts view factor matrix to satisfy reciprocity and/or
+row sum properties.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_10.html" title="2.11. AUX12 Commands"><code class="classname">AUX12</code></a>: <a class="link" href="Hlp_C_CH2_10.html#cmdaux12radsolver" title="Table 2.99: Radiosity Solver"><span class="type">Radiosity Solver</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div> </div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="VFSM.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Action</code></em></b></span></dt><dd><p>Action to be performed:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">Define</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Define a view factor summation
+(default)</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">Clear</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Resets the scaling method to 0 for
+all enclosures. All subsequent arguments are ignored. </p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">Status</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Outputs the <em class="replaceable"><code>OPT</code></em> value for each enclosure in the model.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>ENCL</code></em></b></span></dt><dd><p>Previously defined enclosure number for the view factor
+adjustment. </p></dd><dt><span><b class="term"><em class="replaceable"><code>OPT</code></em></b></span></dt><dd><p>Option key:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">0</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The view factor matrix values are not
+adjusted (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The view factor matrix values are adjusted
+so that the row sum equals 1.0.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">2</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The view factor matrix values are adjusted
+so that the row sum equals 1.0 and the reciprocity relationship is
+satisfied.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">3</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The view factor matrix values are adjusted so that the reciprocity relationship is
+          satisfied.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">4</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The view factor matrix values are adjusted
+so that the original row sum is maintained and the reciprocity relationship
+is satisfied.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>MAXITER</code></em></b></span></dt><dd><p>Maximum number of iterations to achieve convergence.
+Valid only when <em class="replaceable"><code>OPT</code></em> = 2 or 4. Default is
+100.</p></dd><dt><span><b class="term"><em class="replaceable"><code>CONV</code></em></b></span></dt><dd><p>Convergence value for row sum. Iterations will continue
+(up to <em class="replaceable"><code>MAXITER</code></em>) until the maximum residual
+over all the rows is less than this value. Valid only when <em class="replaceable"><code>OPT</code></em> = 2 or 4. Default is 1E-3.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="VFSM.notes"></a><h2>Notes</h2><p>To have a good energy balance, it is important to satisfy both
+the row sum and reciprocity relationships. For more information, see <a href="../ans_thry/thy_heat1.html#heaviewfact" title="View Factors" class="olink">View Factors</a> in the <a href="../ans_thry/ans_thry.html" title="Mechanical APDL Theory Reference" class="olink"><em class="citetitle">Mechanical APDL Theory Reference</em></a>.</p><p><em class="replaceable"><code>OPT</code></em> = 1 and 2 are suitable for perfect
+enclosures. <em class="replaceable"><code>OPT</code></em> = 1 is less expensive than <em class="replaceable"><code>OPT</code></em> = 2 because no iterations are involved. However,
+with <em class="replaceable"><code>OPT</code></em> = 1, the reciprocity relationship
+is not satisfied.</p><p><em class="replaceable"><code>OPT</code></em> = 3 and 4 are suitable for leaky
+   enclosures. <em class="replaceable"><code>OPT</code></em> = 3 is less expensive than
+    <em class="replaceable"><code>OPT</code></em> = 4 because no iterations are involved. However, with
+    <em class="replaceable"><code>OPT</code></em> = 3, the original row sum is not maintained.</p><p>The <span class="command"><strong>VFSM</strong></span> command must be used before <a class="link" href="Hlp_C_VFOPT.html" title="VFOPT"><span class="command"><strong>VFOPT</strong></span></a> is issued, or Solve is initiated.</p></div><div class="refsect1" title="Menu Paths"><a name="VFSM.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

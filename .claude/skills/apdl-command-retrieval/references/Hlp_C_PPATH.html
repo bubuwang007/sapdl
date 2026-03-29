@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:53-05:00"><title>PPATH</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="PPATH">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_P_TOC.html" title="P Commands">
+<link rel="prev" href="Hlp_C_POWERH.html" title="POWERH">
+<link rel="next" href="Hlp_C_PRANGE.html" title="PRANGE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="PPATH"><a name="PPATH"></a><div class="titlepage"></div><a class="indexterm" name="d0e214900"></a><span class="refentrytitle"><span class="command"><strong>PPATH</strong></span></span><div class="refnamediv"><p><span class="command"><strong>PPATH</strong></span>, <em class="replaceable"><code>POINT</code></em>, <em class="replaceable"><code>NODE</code></em>, <em class="replaceable"><code>X</code></em>, <em class="replaceable"><code>Y</code></em>, <em class="replaceable"><code>Z</code></em>, <em class="replaceable"><code>CS</code></em><br><b class="refpurpose">Defines a path by picking or defining nodes, or locations on the
+currently active working plane, or by entering specific coordinate locations.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_7.html" title="2.7. POST1 Commands"><code class="classname">POST1</code></a>: <a class="link" href="Hlp_C_CH2_7.html#cmdpost1pathopjla070199" title="Table 2.79: Path Operations"><span class="type">Path Operations</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="PPATH.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>POINT</code></em></b></span></dt><dd><p>The point number.  It must be greater than zero and less than
+or equal to the <em class="replaceable"><code>nPts</code></em> value specified on the <a class="link" href="Hlp_C_PATH.html" title="PATH"><span class="command"><strong>PATH</strong></span></a> command
+if graphical picking is not being used.</p></dd><dt><span><b class="term"><em class="replaceable"><code>NODE</code></em></b></span></dt><dd><p>The node number defining this point.  If blank, use the X,
+Y, Z coordinates to define the point.  A valid node number will override <em class="replaceable"><code>X</code></em>, <em class="replaceable"><code>Y</code></em>, <em class="replaceable"><code>Z</code></em> coordinate arguments.</p></dd><dt><span><b class="term"><em class="replaceable"><code>X</code></em>, <em class="replaceable"><code>Y</code></em>, <em class="replaceable"><code>Z</code></em></b></span></dt><dd><p>The location of the point in the global Cartesian coordinate
+system.  Use these arguments only if you omit the <em class="replaceable"><code>NODE</code></em> argument. </p></dd><dt><span><b class="term"><em class="replaceable"><code>CS</code></em></b></span></dt><dd><p>The coordinate system for interpolation of the path between
+the previous point and this point.  Omit this argument if you wish to use
+the currently active (<a class="link" href="Hlp_C_CSYS.html" title="CSYS"><span class="command"><strong>CSYS</strong></span></a>) coordinate system.  If the
+coordinate system of two adjacent points is different, the <em class="replaceable"><code>CS</code></em> value
+of the latter point will be used.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="PPATH.notes"></a><h2>Notes</h2><p>For linearized stress calculations, the path must be defined with nodes.</p><p>This command is designed and works best in interactive (GUI) mode, using
+the menu paths listed below. For command line operations, issue <span class="command"><strong>PPATH</strong></span>,P
+to define your path by picking nodes. </p><p>For information on displaying paths you have defined, see <a href="../ans_bas/Hlp_G_BAS5_2.html#basdefitlm51799" title="Defining Data to be Retrieved" class="olink">Defining Data to be Retrieved</a> in
+the <a href="../ans_bas/Hlp_G_BasTOC.html" title="Basic Analysis Guide" class="olink"><em class="citetitle">Basic Analysis Guide</em></a>.</p></div><div class="refsect1" title="Menu Paths"><a name="PPATH.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;General Postproc&gt;Path Operations&gt;Define Path&gt;By Location</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;General Postproc&gt;Path Operations&gt;Define Path&gt;By Nodes</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;General Postproc&gt;Path Operations&gt;Define Path&gt;Modify Path</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;General Postproc&gt;Path Operations&gt;Define Path&gt;On Working Plane</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Path Operations&gt;Define Path&gt;By Location</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Path Operations&gt;Define Path&gt;By Nodes</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Path Operations&gt;Define Path&gt;Modify Path</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Path Operations&gt;Define Path&gt;On Working Plane</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

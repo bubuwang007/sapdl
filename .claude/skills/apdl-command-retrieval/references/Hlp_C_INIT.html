@@ -1,0 +1,61 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:43-05:00"><title>*INIT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="*INIT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_I_TOC.html" title="I Commands">
+<link rel="prev" href="Hlp_C_INISTATE.html" title="INISTATE">
+<link rel="next" href="Hlp_C_INPUT.html" title="/INPUT">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="*INIT"><a name="a-INIT"></a><div class="titlepage"></div><a class="indexterm" name="d0e138132"></a><span class="refentrytitle"><a href="Hlp_C_INIT.html" title="*INIT" class="olink"><span class="command"><strong>*INIT</strong></span></a></span><div class="refnamediv"><p><span class="command"><strong>*INIT</strong></span>, <em class="replaceable"><code>Name</code></em>, <em class="replaceable"><code>Method</code></em>, <em class="replaceable"><code>Val1</code></em>, <em class="replaceable"><code>Val2</code></em>, <em class="replaceable"><code>Val3</code></em><br><b class="refpurpose">Initializes a vector or matrix.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_4.html" title="2.4. APDL Commands"><code class="classname">APDL</code></a>: <a class="link" href="Hlp_C_CH2_4.html#cmdapdlmatrix" title="Table 2.23: Matrix Operations (APDL Math)"><span class="type">Matrix Operations</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="light">Premium</span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsect1" title="Argument Descriptions"><a name="a-INIT.argdescript"></a><h2>Argument Descriptions</h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Name</code></em></b></span></dt><dd><p>Vector or matrix which will be initialized. This can be a vector (created by the
+       <a href="Hlp_C_VEC.html" title="*VEC" class="olink"><span class="command"><strong>*VEC</strong></span></a> command), a dense matrix (created by the <a href="Hlp_C_DMAT.html" title="*DMAT" class="olink"><span class="command"><strong>*DMAT</strong></span></a>
+      command), or a sparse matrix (created by the <a href="Hlp_C_SMAT.html" title="*SMAT" class="olink"><span class="command"><strong>*SMAT</strong></span></a> command).</p></dd><dt><span><b class="term"><em class="replaceable"><code>Method</code></em></b></span></dt><dd><p>Initialization method to use:</p><div><div class="variablelist"><dl><dt><span><b class="term">ZERO&nbsp;--&nbsp;</b></span></dt><dd><p>Fill the vector/matrix
+with zeros (default).</p></dd><dt><span><b class="term">CONST&nbsp;--&nbsp;</b></span></dt><dd><p>Fill the vector/matrix
+with a constant value.</p></dd><dt><span><b class="term">RAND&nbsp;--&nbsp;</b></span></dt><dd><p>Fill the vector/matrix
+with random values.</p></dd><dt><span><b class="term">DIAG&nbsp;--&nbsp;</b></span></dt><dd><p>Fill the <em class="replaceable"><code>n</code></em>th diagonal of the matrix with a constant value.
+          Other values are not overwritten. For this option, <em class="replaceable"><code>Name</code></em> must be
+          a dense matrix.</p></dd><dt><span><b class="term">ADIAG&nbsp;--&nbsp;</b></span></dt><dd><p>Fill the <em class="replaceable"><code>n</code></em>th anti-diagonal of the matrix with a constant
+          value. Other values are not overwritten. For this option, <em class="replaceable"><code>Name</code></em>
+          must be a dense matrix. </p></dd><dt><span><b class="term">CONJ&nbsp;--&nbsp;</b></span></dt><dd><p>Take the complex conjugate
+of the values in the vector/matrix (no change for non-complex values).</p></dd><dt><span><b class="term">FILTER&nbsp;--&nbsp;</b></span></dt><dd><p>Initialize a subset
+of values of a vector using a filtering vector. For this option, <em class="replaceable"><code>Name</code></em> must be a vector.</p></dd></dl></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>Val1</code></em>, <em class="replaceable"><code>Val2</code></em>, <em class="replaceable"><code>Val3</code></em></b></span></dt><dd><p>Additional input. The meaning of <em class="replaceable"><code>Val1</code></em> through <em class="replaceable"><code>Val3</code></em> will vary depending on the
+specified <em class="replaceable"><code>Method</code></em>. See details below.</p></dd></dl></div></div><p><span class="bold"><strong>The following <em class="replaceable"><code>Valx</code></em> fields are used with <em class="replaceable"><code>Method</code></em> = CONST:</strong></span></p><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Val1</code></em></b></span></dt><dd><p>The real part of the constant value to use (default
+= 0).</p></dd><dt><span><b class="term"><em class="replaceable"><code>Val2</code></em></b></span></dt><dd><p>The imaginary part of the constant value to use (default
+= 0). Required only for a complex vector/matrix.</p></dd></dl></div></div><p><span class="bold"><strong>The following <em class="replaceable"><code>Valx</code></em> fields are used with <em class="replaceable"><code>Method</code></em> = DIAG or <em class="replaceable"><code>Method</code></em> = ADIAG:</strong></span></p><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Val1</code></em></b></span></dt><dd><p>The number of the diagonal to fill. A zero value (which
+is the default) indicates the main diagonal (or main anti-diagonal).
+A positive value indicates an upper diagonal; a negative value indicates
+a lower diagonal.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Val2</code></em></b></span></dt><dd><p>The real part of the constant value to use (default
+= 1).</p></dd><dt><span><b class="term"><em class="replaceable"><code>Val3</code></em></b></span></dt><dd><p>The imaginary part of the constant value to use (default
+= 0). Required only for a <span>complex matrix</span>.</p></dd></dl></div></div><p>The following example demonstrates <em class="replaceable"><code>Method</code></em> = DIAG:</p><div><img src="graphics/gINIT1.svg"></div><p><span class="bold"><strong>The following <em class="replaceable"><code>Valx</code></em> fields are used with <em class="replaceable"><code>Method</code></em> = FILTER:</strong></span></p><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Val1</code></em></b></span></dt><dd><p>The name of an existing integer vector (created by <a href="Hlp_C_VEC.html" title="*VEC" class="olink"><span class="command"><strong>*VEC</strong></span></a>) to be used as the filter vector. The values in this
+vector indicate the locations in the <em class="replaceable"><code>Name</code></em> vector that are to be initialized to <em class="replaceable"><code>Val2</code></em> (real value) and <em class="replaceable"><code>Val3</code></em> (imaginary value,
+if applicable). Location values higher than the dimension of the original
+vector are ignored.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Val2</code></em></b></span></dt><dd><p>The real part of the value used for initialization
+(default = 0).</p></dd><dt><span><b class="term"><em class="replaceable"><code>Val3</code></em></b></span></dt><dd><p>The imaginary part of the value used for initialization
+(default = 0); applicable only if the <em class="replaceable"><code>Name</code></em> vector contains complex values.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="a-INIT.notes"></a><h2>Notes</h2><p>This command initializes a previously defined vector
+    (<a href="Hlp_C_VEC.html" title="*VEC" class="olink"><span class="command"><strong>*VEC</strong></span></a>), dense matrix (<a href="Hlp_C_DMAT.html" title="*DMAT" class="olink"><span class="command"><strong>*DMAT</strong></span></a>), or sparse matrix
+    (<a href="Hlp_C_SMAT.html" title="*SMAT" class="olink"><span class="command"><strong>*SMAT</strong></span></a>).</p></div><div class="refsect1" title="Menu Paths"><a name="d0e138436"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

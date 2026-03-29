@@ -1,0 +1,63 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:33-05:00"><title>AMSTEP</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="AMSTEP">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_A_TOC.html" title="A Commands">
+<link rel="prev" href="Hlp_C_AMSUPPORTS.html" title="AMSUPPORTS">
+<link rel="next" href="Hlp_C_AMTYPE.html" title="AMTYPE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="AMSTEP"><a name="AMSTEP"></a><div class="titlepage"></div><a class="indexterm" name="d0e21529"></a><span class="refentrytitle"><span class="command"><strong>AMSTEP</strong></span></span><div class="refnamediv"><p><span class="command"><strong>AMSTEP</strong></span>, <em class="replaceable"><code>Sequence</code></em>,
+    <em class="replaceable"><code>VAL1</code></em>, <em class="replaceable"><code>VAL2</code></em>,
+    <em class="replaceable"><code>VAL3</code></em>, <em class="replaceable"><code>VAL4</code></em><br><b class="refpurpose">Specifies the build-sequence steps in an <a href="../add_ag/add_ag.html" title="additive&#xA;    manufacturing" class="olink">additive
+    manufacturing</a> analysis.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoladdman" title="Table 2.72: Additive Manufacturing"><span class="type">Additive Manufacturing</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="light">Premium</span> | <span class="light">Enterprise</span> | <span class="light">PrepPost</span> | <span class="light">Solver</span> | <span class="bold"><strong>AS add-on</strong></span></span></div></div><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_AMSTEP.html#AMSTEPprodrest" title="Product Restrictions">Product Restrictions</a></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="AMSTEP.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Sequence</code></em></b></span></dt><dd><p>One of the following sequence options:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">PREHEAT</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p><em class="replaceable"><code>VAL1</code></em> &#8211; Preheat temperature of the build plate. Default =
+          <a class="link" href="Hlp_C_TUNIF.html" title="TUNIF"><span class="command"><strong>TUNIF</strong></span></a>.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">BUILD</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p><em class="replaceable"><code>VAL1</code></em> &#8211; Unused.</p><p><em class="replaceable"><code>VAL2</code></em> &#8211; Ending-layer number (for performing the simulation
+         from the first layer to the specified layer only). Default = last layer necessary to build
+         the part. </p><p><em class="replaceable"><code>VAL3</code></em> &#8211; Number of time steps taken to apply heating. Default
+         = 2.</p><p><em class="replaceable"><code>VAL4</code></em> &#8211; Number of time steps taken between layer additions.
+         Default = 2.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">COOLDOWN</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p><em class="replaceable"><code>VAL1</code></em> &#8211; Ambient (room) temperature (to serve as the target
+         cooldown temperature).</p><p><em class="replaceable"><code>VAL2</code></em> &#8211; Cooldown time. If 0 or unspecified, the program
+         calculates the time based on the volume of the part and the convection coefficient
+          (<a class="link" href="Hlp_C_AMENV.html" title="AMENV"><span class="command"><strong>AMENV</strong></span></a> and <a class="link" href="Hlp_C_AMPOWDER.html" title="AMPOWDER"><span class="command"><strong>AMPOWDER</strong></span></a>).</p><p><em class="replaceable"><code>VAL3</code></em> &#8211; Number of time steps taken to cool down. Default =
+         20.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">HEATTREAT</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Perform a heat-treat (stress-relief) step.</p></td></tr></tbody></table></div></div><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">REMOVE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p><em class="replaceable"><code>VAL1</code></em> &#8211; The number of a support to remove. Specify 0 for
+         plate.</p></td></tr></tbody></table></div></div><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">USER</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Perform a user-defined step.</p></td></tr></tbody></table></div></div></dd></dl></div></div></div><div class="refsect1" title="Command Default"><a name="AMSTEP.default"></a><h2>Command Default</h2><p>None. A sequence option is required.</p></div><div class="refsect1" title="Notes"><a name="AMSTEP.notes"></a><h2>Notes</h2><p><span class="command"><strong>AMSTEP</strong></span> executes a build-sequence step: </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>In a thermal analysis, <em class="replaceable"><code>Sequence</code></em> = PREHEAT sets the value of
+      the starting temperature of the build plate. It is ignored in a structural analysis. </p></li><li class="listitem"><p><em class="replaceable"><code>Sequence</code></em> = BUILD executes the layer-by-layer build sequence.
+     </p></li><li class="listitem"><p><em class="replaceable"><code>Sequence</code></em> = COOLDOWN executes the cooldown step and must occur
+      after the BUILD step. </p></li><li class="listitem"><p><em class="replaceable"><code>Sequence</code></em> = HEATTREAT performs a heat-treatment step to
+      stress-relieve the part. Issue <a class="link" href="Hlp_C_AMBUILD.html" title="AMBUILD"><span class="command"><strong>AMBUILD</strong></span></a>,RTHFILE to point to the heat-treat
+      thermal-cycle results and specify either a relaxation temperature (<a class="link" href="Hlp_C_AMMAT.html" title="AMMAT"><span class="command"><strong>AMMAT</strong></span></a>)
+      or creep properties (<a class="link" href="Hlp_C_TB.html" title="TB"><span class="command"><strong>TB</strong></span></a>).</p></li><li class="listitem"><p>In a structural analysis, <em class="replaceable"><code>Sequence</code></em> = REMOVE removes the
+      requested support or build plate. It is ignored in a thermal analysis.</p></li><li class="listitem"><p>In a structural analysis, <em class="replaceable"><code>Sequence</code></em> = USER can specify an
+      initial step (such as bolt-pretension the build plate) or a final step (such as a
+      manufacturing postprocessing step).</p></li></ul></div><p>For <em class="replaceable"><code>Sequence</code></em> = BUILD and <em class="replaceable"><code>Sequence</code></em> =
+   COOLDOWN, the number of time steps specified determines the accuracy of the captured temperature
+   profile. For distortion and global residual stresses, the default is sufficient.</p><p>This command starts a solution. You must remain in SOLUTION between sequence steps.</p><p>When <em class="replaceable"><code>Sequence</code></em> = USER, the build-sequence steps are bypassed and
+   the usual nonlinear solution is performed during this step. All applicable load and load step
+   options are accessible. If USER is the initial step, all times are offset by the TIME associated
+   with the USER step.</p><p>This command is valid in the SOLUTION processor only.</p><p>For more information, including a list of the elements and commands
+   used in an additive manufacturing analysis, see <a href="../add_ag/add_ag_AM_in_WB.html" title="AM Process Simulation in ANSYS Workbench in the Workbench Additive Manufacturing Analysis Guide" class="olink">AM Process Simulation in ANSYS Workbench in the <span class="olinkdocname">Workbench Additive Manufacturing Analysis Guide</span></a>.</p></div><div class="refsect1" title="Product Restrictions"><a name="AMSTEPprodrest"></a><h2>Product Restrictions</h2><p title="ANSYS Mechanical Enterprise PrepPost"><b>ANSYS Mechanical Enterprise PrepPost&nbsp; &#8212; &nbsp;</b>This command is not valid.</p></div><div class="refsect1" title="Menu Paths"><a name="AMSTEP.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

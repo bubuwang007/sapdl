@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:03-05:00"><title>ENORM</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="ENORM">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_E_TOC.html" title="E Commands">
+<link rel="prev" href="Hlp_C_ENGEN.html" title="ENGEN">
+<link rel="next" href="Hlp_C_ENSYM.html" title="ENSYM">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="ENORM"><a name="ENORM"></a><div class="titlepage"></div><a class="indexterm" name="d0e91904"></a><span class="refentrytitle"><span class="command"><strong>ENORM</strong></span></span><div class="refnamediv"><p><span class="command"><strong>ENORM</strong></span>, <em class="replaceable"><code>ENUM</code></em><br><b class="refpurpose">Reorients shell element normals or line element node connectivity.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7elementsldm061600" title="Table 2.38: Elements"><span class="type">Elements</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="ENORM.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>ENUM</code></em></b></span></dt><dd><p>Element number having the normal direction that the reoriented
+elements are to match. If <em class="replaceable"><code>ENUM</code></em> = P, graphical picking
+is enabled and all remaining command fields are ignored (valid only in the
+GUI).</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="ENORM.notes"></a><h2>Notes</h2><p>Reorients shell elements so that their outward normals are consistent
+with that of a specified element. <span class="command"><strong>ENORM</strong></span> can also be used
+to reorder nodal connectivity of line elements so that their nodal ordering
+is consistent with that of a specified element.</p><p>For shell elements, the operation reorients the element by reversing
+and shifting the node connectivity pattern. For example, for a 4-node shell
+element, the nodes in positions I, J, K and L of the original element are
+placed in positions J, I, L and K of the reoriented element. All 3-D shell
+elements in the selected set are considered for reorientation, and no element
+is reoriented more than once during the operation. Only shell elements adjacent
+to the lateral (side) faces are considered.</p><p>The command reorients the shell element normals on the same panel as
+the specified shell element. A <span class="italic"><em>panel</em></span> is
+the geometry defined by a subset of shell elements bounded by free edges or
+T-junctions (anywhere three or more shell edges share common nodes). </p><p>Reorientation progresses within the selected set until either of the
+following conditions is true:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>The edge of the model is reached.</p></li><li class="listitem"><p>More than two elements (whether selected or unselected) are
+adjacent to a lateral face.</p></li></ul></div><p>In situations where unselected elements might undesirably cause
+case b to control, consider using <a class="link" href="Hlp_C_ENSYM.html" title="ENSYM"><span class="command"><strong>ENSYM</strong></span></a>,0,,0,ALL instead
+of <span class="command"><strong>ENORM</strong></span>.  It is recommended that reoriented elements be
+displayed and graphically reviewed.</p><p>You cannot use the <span class="command"><strong>ENORM</strong></span> command to change the normal
+direction of any element that has a body or surface load. We recommend that
+you apply all of your loads only <span class="italic"><em>after</em></span> ensuring
+that the element normal directions are acceptable.</p><p>Real constant values are not reoriented and may be invalidated by an
+element reversal.</p></div><div class="refsect1" title="Menu Paths"><a name="ENORM.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Move / Modify&gt;Elements&gt;Shell Normals</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:27-05:00"><title>OUTGEOM</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="OUTGEOM">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_O_TOC.html" title="O Commands">
+<link rel="prev" href="OUTAERO.html" title="OUTAERO">
+<link rel="next" href="Hlp_C_OUTOPT.html" title="OUTOPT">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="OUTGEOM"><a name="OUTGEOM"></a><div class="titlepage"></div><a class="indexterm" name="d0e195496"></a><span class="refentrytitle"><span class="command"><strong>OUTGEOM</strong></span></span><div class="refnamediv"><p><span class="command"><strong>OUTGEOM</strong></span>, <em class="replaceable"><code>Item</code></em>,
+    <em class="replaceable"><code>Freq</code></em><br><b class="refpurpose">Controls geometry-related data written to the results file.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsolumiscldsjla070199" title="Table 2.58: Miscellaneous Loads"><span class="type">Misc Loads</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a> 
+   <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="OUTGEOM.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Item</code></em></b></span></dt><dd><p>Geometry data item for file write control:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">MAT</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Material Properties.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ERASE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Reset <span class="command"><strong>OUTGEOM</strong></span> specifications to their default values.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">STAT</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>List the current <span class="command"><strong>OUTGEOM</strong></span> specifications.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>Freq</code></em></b></span></dt><dd><p>Specifies how often to write the specified geometry data: </p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">NONE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Suppress writing of the specified item for all substeps.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ALL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Write the data of the specified item for every substep.</p></td></tr></tbody></table></div></div></dd></dl></div></div></div><div class="refsect1" title="Command Default"><a name="OUTGEOM.default"></a><h2>Command Default</h2><p>All geometry data (including material data) is written to the results file. </p></div><div class="refsect1" title="Notes"><a name="OUTGEOM.notes"></a><h2>Notes</h2><p>The <span class="command"><strong>OUTGEOM</strong></span> command controls writing of the specified geometry
+    <em class="replaceable"><code>Item</code></em> to the results file. The geometry items correspond to the
+   geometry records that are included in the results file (see the GEO records of the results file
+   as described in <a href="../ans_prog/Hlp_P_INT1_2.html#int_resultsfile" title="Results File Format in the Programmer's Reference" class="olink">Results File Format in the <span class="olinkdocname">Programmer's Reference</span></a>).</p><p>The command generates a specification for controlling data storage by either activating
+   storage of the specified geometry item (<em class="replaceable"><code>Freq</code></em> = ALL) or by suppressing
+   storage of that item (<em class="replaceable"><code>Freq</code></em> = NONE).</p><p>You can issue multiple <span class="command"><strong>OUTGEOM</strong></span> commands in an analysis. After the initial
+   command creates the storage specification, subsequent <span class="command"><strong>OUTGEOM</strong></span> commands
+    <span class="emphasis"><em>modify</em></span> the specification set. The command processes your specifications in
+   the order in which you input them. If you specify a given <em class="replaceable"><code>Item</code></em> twice,
+   output is based upon the <span class="emphasis"><em>last</em></span> specification. </p><p>In addition to <span class="command"><strong>OUTGEOM</strong></span>, <a class="link" href="Hlp_C_OUTPR.html" title="OUTPR"><span class="command"><strong>OUTPR</strong></span></a> and
+    <a class="link" href="Hlp_C_OUTturRES.html" title="OUTRES"><span class="command"><strong>OUTRES</strong></span></a> also control solution output. You can issue up to 50 of these
+   output-control commands (any combination of the three) in an analysis.</p><p><span class="command"><strong>OUTGEOM</strong></span>,ERASE erases the existing output specifications and resets the
+   counted number of <span class="command"><strong>OUTGEOM</strong></span> commands to zero.</p><div class="important" title="Important" style="margin-left: 1.3rem; margin-right: 1.3remin;"><hr><p><span class="admontitle"><b>Important:</b></span>&nbsp;&nbsp;When material property information is not written to the results file
+     (<span class="command"><strong>OUTGEOM</strong></span>,MAT,NONE), clearing the database via <a href="Hlp_C_CLEAR.html" title="/CLEAR" class="olink"><span class="command"><strong>/CLEAR</strong></span></a> and
+    reading in a set of data in the general postprocessor (<a href="Hlp_C_POST1.html" title="/POST1" class="olink"><span class="command"><strong>/POST1</strong></span></a>) via the
+     <a class="link" href="Hlp_C_SET.html" title="SET"><span class="command"><strong>SET</strong></span></a> command results in no material property data being stored in the
+    database. In this case, the lack of material data prevents a successful solve from occurring
+    with the modified database, and the results file is only applicable for carrying out
+    post-processing.</p><hr></div><p>The <span class="command"><strong>OUTGEOM</strong></span> command is also valid in <a href="Hlp_C_PREP7.html" title="/PREP7" class="olink"><span class="command"><strong>/PREP7</strong></span></a>.</p></div><div class="refsect1" title="Menu Paths"><a name="OUTGEOM.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

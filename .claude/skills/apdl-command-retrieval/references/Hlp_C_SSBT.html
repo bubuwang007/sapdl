@@ -1,0 +1,92 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:10-05:00"><title>SSBT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="SSBT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_S_TOC.html" title="S Commands">
+<link rel="prev" href="Hlp_C_SRSS.html" title="SRSS">
+<link rel="next" href="Hlp_C_SSCALE.html" title="/SSCALE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="SSBT"><a name="SSBT"></a><div class="titlepage"></div><a class="indexterm" name="d0e272629"></a><span class="refentrytitle">
+<span class="command"><strong>SSBT</strong></span>
+</span><div class="refnamediv"><p>
+<span class="command"><strong>SSBT</strong></span>, <em class="replaceable"><code>B<sup>T</sup>
+<sub>11</sub>
+</code></em>, <em class="replaceable"><code>B<sup>T</sup>
+<sub>22</sub>
+</code></em>, <em class="replaceable"><code>B<sup>T</sup>
+<sub>12</sub>
+</code></em>, <em class="replaceable"><code>T</code></em>
+<br><b class="refpurpose">Specifies preintegrated bending thermal effects for shell sections.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7crosssectldm061600" title="Table 2.44: Sections"><span class="type">Cross Sections</span></a></span></div></div></div><div class="refclass">
+<div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div>
+</div></p></div><div class="refsynopsisdiv" title="Synopsis"><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term">
+<em class="replaceable"><code>B<sup>T</sup>
+<sub>11</sub>
+</code></em>, <em class="replaceable"><code>B<sup>T</sup>
+<sub>22</sub>
+</code></em>, <em class="replaceable"><code>B<sup>T</sup>
+<sub>12</sub>
+</code></em>
+</b></span></dt><dd><p>Bending thermal effects component [<span class="bold"><strong>
+<em class="replaceable"><code>B</code></em>
+</strong></span>
+<sup>
+<em class="replaceable"><code>T</code></em>
+</sup>].</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>T</code></em>
+</b></span></dt><dd><p>Temperature.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="d0e272767"></a><h2>Notes</h2><p>The behavior of shell elements is governed by the generalized-stress/generalized-strain
+relationship of the <a href="../ans_str/Hlp_G_PRESHELL_5.html" title="form" class="olink">form</a>:</p><div class="informalequation"><a name="eqe5a5824c-b904-4479-8743-39c6ec5e244c"></a><div><img src="graphics/eqe5a5824c-b904-4479-8743-39c6ec5e244c.svg"></div></div><p>The <span class="command"><strong>SSBT</strong></span> command, one of several <a href="../ans_str/Hlp_G_PRESHELL_5.html#strpreshelldef" title="preintegrated shell section commands" class="olink">preintegrated shell section commands</a>,
+specifies the bending thermal effects quantity (submatrix [<span class="bold"><strong>
+<em class="replaceable"><code>B</code></em>
+</strong></span>
+<sup>
+<em class="replaceable"><code>T</code></em>
+</sup>] data) for a preintegrated shell section. The
+section data defined is associated with the section most recently defined
+(via the <a class="link" href="Hlp_C_SECTYPE.html" title="SECTYPE"><span class="command"><strong>SECTYPE</strong></span></a> command).</p><p>The [<span class="bold"><strong>
+<em class="replaceable"><code>B</code></em>
+</strong></span>
+<sup>
+<em class="replaceable"><code>T</code></em>
+</sup>]
+quantity represents bending stress resultants caused by a unit raise in temperature
+on a fully constrained model. For a layered composite shell, it is usually
+necessary to specify both the [<span class="bold"><strong>
+<em class="replaceable"><code>B</code></em>
+</strong></span>
+<sup>
+<em class="replaceable"><code>T</code></em>
+</sup>] and [<span class="bold"><strong>
+<em class="replaceable"><code>M</code></em>
+</strong></span>
+<sup>
+<em class="replaceable"><code>T</code></em>
+</sup>]
+quantities (by issuing the <span class="command"><strong>SSBT</strong></span> and <a class="link" href="Hlp_C_SSMT.html" title="SSMT"><span class="command"><strong>SSMT</strong></span></a> commands,
+respectively). </p><p>Unspecified values default to zero.</p><p>Related commands are <a class="link" href="Hlp_C_SSPA.html" title="SSPA"><span class="command"><strong>SSPA</strong></span></a>, <a class="link" href="Hlp_C_SSPB.html" title="SSPB"><span class="command"><strong>SSPB</strong></span></a>, <a class="link" href="Hlp_C_SSPD.html" title="SSPD"><span class="command"><strong>SSPD</strong></span></a>, <a class="link" href="Hlp_C_SSPE.html" title="SSPE"><span class="command"><strong>SSPE</strong></span></a>, <a class="link" href="Hlp_C_SSMT.html" title="SSMT"><span class="command"><strong>SSMT</strong></span></a>, and <a class="link" href="Hlp_C_SSPM.html" title="SSPM"><span class="command"><strong>SSPM</strong></span></a>.</p><p>If you are using the <a href="../ans_elem/Hlp_E_SHELL181.html" title="SHELL181" class="olink"><span class="structname">SHELL181</span></a> or <a href="../ans_elem/Hlp_E_SHELL281.html" title="SHELL281" class="olink"><span class="structname">SHELL281</span></a> element's
+Membrane option (KEYOPT(1) = 1), it is not necessary to issue this command.</p><p>For complete information, see <a href="../ans_str/Hlp_G_PRESHELL_5.html" title="Creating a Preintegrated General Shell Section" class="olink">Creating a Preintegrated General Shell Section</a>.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e272888"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Sections&gt;Shell&gt;Pre-integrated</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

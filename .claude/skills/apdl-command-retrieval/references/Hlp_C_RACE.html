@@ -1,0 +1,52 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:34:15-05:00"><title>RACE</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="RACE">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_R_TOC.html" title="R Commands">
+<link rel="prev" href="Hlp_C_R.html" title="R">
+<link rel="next" href="Hlp_C_RADOPT.html" title="RADOPT">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="RACE"><a name="RACE"></a><div class="titlepage"></div><a class="indexterm" name="d0e229726"></a><span class="refentrytitle"><span class="command"><strong>RACE</strong></span></span><div class="refnamediv"><p><span class="command"><strong>RACE</strong></span>, <em class="replaceable"><code>XC</code></em>, <em class="replaceable"><code>YC</code></em>, <em class="replaceable"><code>RAD</code></em>, <em class="replaceable"><code>TCUR</code></em>, <em class="replaceable"><code>DY</code></em>, <em class="replaceable"><code>DZ</code></em>, <em class="replaceable"><code>--</code></em>, <em class="replaceable"><code>--</code></em>, <em class="replaceable"><code>Cname</code></em><br><b class="refpurpose">Defines a "racetrack" current source. </b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7specpurpldm061600" title="Table 2.47: Special Purpose"><span class="type">Special Purpose</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="light">Premium</span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="RACE.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>XC</code></em></b></span></dt><dd><p>Location of the mid-thickness of the vertical leg
+along the working plane X-axis.</p></dd><dt><span><b class="term"><em class="replaceable"><code>YC</code></em></b></span></dt><dd><p>Location of the mid-thickness of the horizontal leg
+along the working plane Y-axis.</p></dd><dt><span><b class="term"><em class="replaceable"><code>RAD</code></em></b></span></dt><dd><p>Radius of curvature of the mid-thickness of the curves
+in the racetrack source.  Defaults to .501 * DY</p></dd><dt><span><b class="term"><em class="replaceable"><code>TCUR</code></em></b></span></dt><dd><p>Total current, amp-turns (MKS), flowing in the source.</p></dd><dt><span><b class="term"><em class="replaceable"><code>DY</code></em></b></span></dt><dd><p>In-plane thickness of the racetrack source.</p></dd><dt><span><b class="term"><em class="replaceable"><code>DZ</code></em></b></span></dt><dd><p>Out-of-plane thickness (depth) of the racetrack source.</p></dd><dt><span><b class="term"><em class="replaceable"><code>--</code></em>, <em class="replaceable"><code>--</code></em></b></span></dt><dd><p>Unused fields</p></dd><dt><span><b class="term"><em class="replaceable"><code>Cname</code></em></b></span></dt><dd><p>An alphanumeric name assigned as a component name
+to the group of <a href="../ans_elem/Hlp_E_SOURC36.html" title="SOURC36" class="olink"><span class="structname">SOURC36</span></a> elements created
+by the command macro.  Cname must be enclosed in single quotes in
+the <span class="command"><strong>RACE</strong></span> command line.  Cname may be up to 32 characters,
+beginning with a letter and containing only letters, numbers, and
+underscores.  Component names beginning with an underscore (e.g.,
+_LOOP) are reserved for use by ANSYS and should be avoided.  If blank,
+no component name is assigned.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="RACE.notes"></a><h2>Notes</h2><p><span class="command"><strong>RACE</strong></span> invokes an ANSYS macro which defines
+a "racetrack" current source in the working plane coordinate system.
+ The current source is generated from bar and arc source primitives
+using the <a href="../ans_elem/Hlp_E_SOURC36.html" title="SOURC36" class="olink"><span class="structname">SOURC36</span></a> element (which is assigned
+the next available element type number).  The macro is valid for use
+in 3-D magnetic field analysis using a scalar potential formulation.
+ Current flows in a counterclockwise direction with respect  to the
+working plane.</p><p>The diagram below shows you a racetrack current source.</p><div><img src="graphics/gRACE1.svg"></div></div><div class="refsect1" title="Menu Paths"><a name="RACE.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Define Loads&gt;Apply&gt;Magnetic&gt;Excitation&gt;Racetrack Coil</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Create&gt;Racetrack Coil</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Define Loads&gt;Apply&gt;Magnetic&gt;Excitation&gt;Racetrack Coil</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

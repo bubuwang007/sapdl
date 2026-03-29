@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:34:23-05:00"><title>RMODIF</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="RMODIF">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_R_TOC.html" title="R Commands">
+<link rel="prev" href="Hlp_C_RMNEVEC.html" title="RMNEVEC">
+<link rel="next" href="Hlp_C_RMORE.html" title="RMORE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="RMODIF"><a name="RMODIF"></a><div class="titlepage"></div><a class="indexterm" name="d0e238582"></a><span class="refentrytitle"><span class="command"><strong>RMODIF</strong></span></span><div class="refnamediv"><p><span class="command"><strong>RMODIF</strong></span>, <em class="replaceable"><code>NSET</code></em>, <em class="replaceable"><code>STLOC</code></em>, <em class="replaceable"><code>V1</code></em>, <em class="replaceable"><code>V2</code></em>, <em class="replaceable"><code>V3</code></em>, <em class="replaceable"><code>V4</code></em>, <em class="replaceable"><code>V5</code></em>, <em class="replaceable"><code>V6</code></em><br><b class="refpurpose">Modifies real constant sets.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7realconstantsldm061600" title="Table 2.26: Real Constants"><span class="type">Real Constants</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="RMODIF.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>NSET</code></em></b></span></dt><dd><p>Number of existing real constant set to be modified.</p><p>The labels CONT and GCN are also valid input for defining or modifying
+      real constants associated with contact elements (see <a class="link" href="Hlp_C_RMODIF.html#RMODIF.notes" title="Notes">Notes</a>).</p></dd><dt><span><b class="term"><em class="replaceable"><code>STLOC</code></em></b></span></dt><dd><p>Starting location in table for modifying data.  For
+example, if <em class="replaceable"><code>STLOC</code></em> = 1, data input in the <em class="replaceable"><code>V1</code></em> field is the first constant in the set.  If <em class="replaceable"><code>STLOC</code></em> = 7, data input in the <em class="replaceable"><code>V1</code></em> field is the seventh constant in the set, etc.  Must be greater
+than zero.</p></dd><dt><span><b class="term"><em class="replaceable"><code>V1</code></em></b></span></dt><dd><p>New value assigned to constant in location <em class="replaceable"><code>STLOC</code></em>.  If zero (or blank), a zero value will be assigned.</p></dd><dt><span><b class="term"><em class="replaceable"><code>V2</code></em>, <em class="replaceable"><code>V3</code></em>, <em class="replaceable"><code>V4</code></em>, . . . , <em class="replaceable"><code>V6</code></em></b></span></dt><dd><p>New values assigned to constants in the next five
+locations.  If blank, the value remains unchanged.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="RMODIF.notes"></a><h2>Notes</h2><p>Allows modifying (or adding) real constants to an existing set
+[<a class="link" href="Hlp_C_R.html" title="R"><span class="command"><strong>R</strong></span></a>] at any location.</p><p>Specify <em class="replaceable"><code>NSET</code></em> = CONT to define or modify real
+   constants for all real constant sets associated with contact elements in pair-based contact
+   definitions. Specify <em class="replaceable"><code>NSET</code></em> = GCN to define or modify real constants for
+   real constant sets that were previously assigned by the <a class="link" href="Hlp_C_GCDEF.html" title="GCDEF"><span class="command"><strong>GCDEF</strong></span></a> command; that
+   is, real constants used in <a href="../ans_ctec/ctec_gencont.html" title="general&#xA;    contact" class="olink">general
+    contact</a> interactions. </p><p>This command is also valid in SOLUTION.
+For important information about using this command within the solution
+phase, see <a href="../ans_adv/Hlp_G_ADV7_2.html#aRouq1cdldm" title="What Are Nonstandard Uses?" class="olink">What Are Nonstandard Uses?</a> in the <a href="../ans_adv/Hlp_G_AdvTOC.html" title="Advanced Analysis Guide" class="olink"><em class="citetitle">Advanced Analysis Guide</em></a>.</p></div><div class="refsect1" title="Menu Paths"><a name="RMODIF.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

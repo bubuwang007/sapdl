@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:49-05:00"><title>VATT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="VATT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_V_TOC.html" title="V Commands">
+<link rel="prev" href="Hlp_C_VARNAM.html" title="VARNAM">
+<link rel="next" href="Hlp_C_VCLEAR.html" title="VCLEAR">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="VATT"><a name="VATT"></a><div class="titlepage"></div><a class="indexterm" name="d0e304716"></a><span class="refentrytitle"><span class="command"><strong>VATT</strong></span></span><div class="refnamediv"><p><span class="command"><strong>VATT</strong></span>, <em class="replaceable"><code>MAT</code></em>, <em class="replaceable"><code>REAL</code></em>, <em class="replaceable"><code>TYPE</code></em>, <em class="replaceable"><code>ESYS</code></em>, <em class="replaceable"><code>SECNUM</code></em><br><b class="refpurpose">Associates element attributes with the selected, unmeshed volumes.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7meshingldm061600" title="Table 2.36: Meshing"><span class="type">Meshing</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="VATT.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>MAT</code></em>, <em class="replaceable"><code>REAL</code></em>, <em class="replaceable"><code>TYPE</code></em>, <em class="replaceable"><code>ESYS</code></em>, <em class="replaceable"><code>SECNUM</code></em></b></span></dt><dd><p>Material number, real constant set
+number, type number, coordinate system number, and section number to be associated
+with selected, unmeshed volumes.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="VATT.notes"></a><h2>Notes</h2><p>These element attributes will be used when the
+volumes are meshed.  If a volume does not have attributes associated with
+it (by this command) at the time it is meshed, the attributes are obtained
+from the then current <a class="link" href="Hlp_C_MAT.html" title="MAT"><span class="command"><strong>MAT</strong></span></a>, <a class="link" href="Hlp_C_REAL.html" title="REAL"><span class="command"><strong>REAL</strong></span></a>, <a class="link" href="Hlp_C_TYPE.html" title="TYPE"><span class="command"><strong>TYPE</strong></span></a>, <a class="link" href="Hlp_C_ESYS.html" title="ESYS"><span class="command"><strong>ESYS</strong></span></a>,
+and <a class="link" href="Hlp_C_SECNUM.html" title="SECNUM"><span class="command"><strong>SECNUM</strong></span></a> command settings.  Reissue the <span class="command"><strong>VATT</strong></span> command
+(before volumes are meshed) to change the attributes.  A zero (or blank) argument
+removes the corresponding association.</p><p>If any of the arguments <em class="replaceable"><code>MAT</code></em>, <em class="replaceable"><code>REAL</code></em>, <em class="replaceable"><code>TYPE</code></em>, <em class="replaceable"><code>ESYS</code></em> or <em class="replaceable"><code>SECNUM</code></em> are
+defined as -1, then that value will be left unchanged in the selected set.</p><p>In some cases, ANSYS can proceed with a volume meshing operation even
+when no logical element type has been assigned via <span class="command"><strong>VATT</strong></span>,,,<em class="replaceable"><code>TYPE</code></em> or <a class="link" href="Hlp_C_TYPE.html" title="TYPE"><span class="command"><strong>TYPE</strong></span></a>.
+ For more information, see the discussion on setting element attributes in <a href="../ans_mod/Hlp_G_MOD7.html" title="Meshing Your Solid Model" class="olink">Meshing Your Solid Model</a> of
+the <a href="../ans_mod/Hlp_G_ModTOC.html" title="Modeling and Meshing Guide" class="olink"><em class="citetitle">Modeling and Meshing Guide</em></a>.</p></div><div class="refsect1" title="Menu Paths"><a name="VATT.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Meshing&gt;Mesh Attributes&gt;All Volumes</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Meshing&gt;Mesh Attributes&gt;Picked Volumes</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

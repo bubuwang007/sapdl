@@ -1,0 +1,66 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:34:27-05:00"><title>RSURF</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="RSURF">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_R_TOC.html" title="R Commands">
+<link rel="prev" href="Hlp_C_RSTOFF.html" title="RSTOFF">
+<link rel="next" href="Hlp_C_RSYMM.html" title="RSYMM">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="RSURF"><a name="RSURF"></a><div class="titlepage"></div><a class="indexterm" name="d0e242419"></a><span class="refentrytitle"><span class="command"><strong>RSURF</strong></span></span><div class="refnamediv"><p><span class="command"><strong>RSURF</strong></span>, <em class="replaceable"><code>Options</code></em>, <em class="replaceable"><code>Delopts</code></em>, <em class="replaceable"><code>ETNUM</code></em><br><b class="refpurpose">Generates the radiosity surface elements and stores them in the database.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsolradiosity" title="Table 2.71: Radiosity"><span class="type">Radiosity</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code> Options</code></em></b></span></dt><dd><p>Command options:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">CLEAR </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Deletes radiosity surface elements
+and nodes. The set of elements and nodes to be deleted is defined
+by <em class="replaceable"><code>Delopts</code></em>. <em class="replaceable"><code>ETNUM</code></em> is ignored.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">DEFINE </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Creates the radiosity surface
+elements and nodes (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">STAT</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Shows the status/listing. Other command
+options are ignored.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>Delopts </code></em></b></span></dt><dd><p>Deletion options</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ALL </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Deletes all radiosity surface elements
+and nodes.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">LAST </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Deletes radiosity surface elements
+and nodes created by the last <span class="command"><strong>RSURF</strong></span> command.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>ETNUM</code></em></b></span></dt><dd><p>Element type number. Leave blank to indicate the next
+available number.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="d0e242540"></a><h2>Notes</h2><p>This command generates the radiosity surface elements (<a href="../ans_elem/Hlp_E_SURF251.html" title="SURF251" class="olink"><span class="structname">SURF251</span></a>,
+            <a href="../ans_elem/Hlp_E_SURF252.html" title="SURF252" class="olink"><span class="structname">SURF252</span></a>) based on the <a class="link" href="Hlp_C_RSYMM.html" title="RSYMM"><span class="command"><strong>RSYMM</strong></span></a> and
+            <a class="link" href="Hlp_C_RDEC.html" title="RDEC"><span class="command"><strong>RDEC</strong></span></a> parameters and stores them in the database. It works only on the
+         faces of selected underlying elements that have RDSF flags on them and all corner nodes
+         selected. You can issue multiple <span class="command"><strong>RSURF</strong></span> commands to build the radiosity
+         model. However, all <span class="command"><strong>RSURF</strong></span> commands must be issued after issuing the
+            <a class="link" href="Hlp_C_RSYMM.html" title="RSYMM"><span class="command"><strong>RSYMM</strong></span></a> command, and after the model is complete (that is, after all
+         meshing operations are complete). </p><p>If you do issue multiple <span class="command"><strong>RSURF</strong></span> commands for
+different regions, you must first mesh the different regions, and
+then generate the radiosity surface elements on each meshed region
+individually. Use <span class="command"><strong>RSURF</strong></span>,,,ETNUM to assign a separate
+element type number to each region. This procedure allow you to identify
+the individual regions later in the multi-field analysis.</p><p>If the underlying solid elements are higher order, the radiosity
+surface elements are always lower order (4- or 3-node in 3-D or 2-node
+in 2-D). Decimation will always occur before any symmetry operations.</p><p>For 2-D axisymmetric YR models, the newly-generated nodes can
+have only positive Y coordinates.</p><p>The <span class="command"><strong>RSURF</strong></span> command assigns real constant set
+         number 1 to all <a href="../ans_elem/Hlp_E_SURF251.html" title="SURF251" class="olink"><span class="structname">SURF251</span></a> and <a href="../ans_elem/Hlp_E_SURF252.html" title="SURF252" class="olink"><span class="structname">SURF252</span></a>
+         elements generated, irrespective of the current real constant set attribute pointer
+            (<a class="link" href="Hlp_C_REAL.html" title="REAL"><span class="command"><strong>REAL</strong></span></a> command). If the generated elements require a real constant set
+         other than number 1, you must manually change the set number for those elements by using
+         the <a class="link" href="Hlp_C_EMODIF.html" title="EMODIF"><span class="command"><strong>EMODIF</strong></span></a>,,REAL command.</p><p>If you have already issued <span class="command"><strong>RSURF</strong></span> for a surface
+and you issue <span class="command"><strong>RSURF</strong></span> again, the program creates
+a new set of radiosity surface elements and nodes over the existing
+set, resulting in an erroneous solution.</p><p class="dan" title="Distributed ANSYS Restriction"><b>Distributed ANSYS Restriction&nbsp; &#8212; &nbsp;</b>This command is not supported in Distributed ANSYS.</p><p>This is an action command (that creates or deletes surface meshes) and is serial in nature.
+   Even if Distributed ANSYS is running, the <span class="command"><strong>RSURF</strong></span> command runs serially.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e242622"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Radiation Opts&gt;Advanced Solution Option&gt;Radiation Surface Mesh&gt;Clear Radiation Surface Mesh</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Radiation Opts&gt;Advanced Solution Option&gt;Radiation Surface Mesh&gt;Generate Radiation Surface Mesh</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Radiation Opts&gt;Advanced Solution Option&gt;Radiation Surface Mesh&gt;Clear Radiation Surface Mesh</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Radiation Opts&gt;Advanced Solution Option&gt;Radiation Surface Mesh&gt;Generate Radiation Surface Mesh</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

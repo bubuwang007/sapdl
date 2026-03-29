@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:33-05:00"><title>ANIM</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="ANIM">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_A_TOC.html" title="A Commands">
+<link rel="prev" href="Hlp_C_ANHARM.html" title="ANHARM">
+<link rel="next" href="Hlp_C_ANISOS.html" title="ANISOS">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="ANIM"><a name="ANIM"></a><div class="titlepage"></div><a class="indexterm" name="d0e23962"></a><span class="refentrytitle"><span class="command"><strong>ANIM</strong></span></span><div class="refnamediv"><p><span class="command"><strong>ANIM</strong></span>, <em class="replaceable"><code>NCYCL</code></em>, <em class="replaceable"><code>KCYCL</code></em>, <em class="replaceable"><code>DELAY</code></em><br><b class="refpurpose">Displays animated graphics data for linear problems.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_7.html" title="2.7. POST1 Commands"><code class="classname">POST1</code></a>: <a class="link" href="Hlp_C_CH2_7.html#cmdpost1animajla070199" title="Table 2.78: Animation"><span class="type">Animation</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="ANIM.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>NCYCL</code></em></b></span></dt><dd><p>Number of cycles associated with the animation (defaults
+to 5 in non-GUI mode only)</p></dd><dt><span><b class="term"><em class="replaceable"><code>KCYCL</code></em></b></span></dt><dd><p>Animation mode:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">0&nbsp;&nbsp;</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Continuous animation cycle
+(forward-reverse-forward-etc.) (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1&nbsp;&nbsp;</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Discontinuous animation
+cycle (forward-reset-forward-etc.).</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>DELAY</code></em></b></span></dt><dd><p>Time delay (seconds) between animation frames (defaults
+to 0.1 seconds).</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="ANIM.notes"></a><h2>Notes</h2><p>Use the <span class="command"><strong>ANIM</strong></span> command to create animations
+for linear problems only. The command uses the currently displayed
+picture based on one particular data set from the results file, and
+linearly interpolates that data into different sets, displaying pictures
+of each interpolated data set in sequence to create animation.  For
+information about creating animations for nonlinear problems, see
+the <a class="link" href="Hlp_C_ANDATA.html" title="ANDATA"><span class="command"><strong>ANDATA</strong></span></a> command.</p><p>This command is device-dependent.</p><p>Do not resize the graphic while animation is in progress; doing
+so can result in distorted plots.</p><p>For more information, see the <a href="Hlp_C_SEG.html" title="/SEG" class="olink"><span class="command"><strong>/SEG</strong></span></a> command
+for details about segment storage, and the <a class="link" href="Hlp_C_ANCNTR.html" title="ANCNTR"><span class="command"><strong>ANCNTR</strong></span></a> macro for a convenient method of storing graphics frames in terminal
+memory segments.  </p><p>This command is valid in any processor.</p></div><div class="refsect1" title="Menu Paths"><a name="ANIM.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Utility Menu&gt;PlotCtrls&gt;Animate&gt;Replay Animation</strong></span></td></tr><tr><td><span class="guimenu"><strong>Utility Menu&gt;PlotCtrls&gt;Animate&gt;Restore Animation</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

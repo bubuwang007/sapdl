@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:16-05:00"><title>NORA</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="NORA">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_N_TOC.html" title="N Commands">
+<link rel="prev" href="Hlp_C_NOPR.html" title="/NOPR">
+<link rel="next" href="Hlp_C_NORL.html" title="NORL">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="NORA"><a name="NORA"></a><div class="titlepage"></div><a class="indexterm" name="d0e184570"></a><span class="refentrytitle"><span class="command"><strong>NORA</strong></span></span><div class="refnamediv"><p><span class="command"><strong>NORA</strong></span>, <em class="replaceable"><code>AREA</code></em>, <em class="replaceable"><code>NDIR</code></em><br><b class="refpurpose">Rotates nodal coordinate systems to surface normal</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7nodesldm061600" title="Table 2.37: Nodes"><span class="type">Nodes</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="NORA.argdesc"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>AREA</code></em></b></span></dt><dd><p>The area number containing the nodes to be rotated to their
+normals. If ALL, applies to all selected areas (see the <a class="link" href="Hlp_C_ASEL.html" title="ASEL"><span class="command"><strong>ASEL</strong></span></a> command).
+If AREA = P, graphical picking is enabled.</p></dd><dt><span><b class="term"><em class="replaceable"><code>NDIR</code></em></b></span></dt><dd><p>Direction of the normal. If NDIR = -1, the nodal coordinate
+system is rotated in the opposite direction of the surface normal. The default
+is the same direction as the surface normal.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="NORA.notes"></a><h2>Notes</h2><p>The NORA command rotates the X-axis of the nodal coordinate system to
+the surface normal. The rotated nodal coordinate systems may be displayed
+through the <a href="Hlp_C_PSYMB.html" title="/PSYMB" class="olink"><span class="command"><strong>/PSYMB</strong></span></a> command. In case multiple areas are
+selected, there could be conflicts at the boundaries. If a node belongs to
+two areas that have a different normal, its nodal coordinate system will be
+rotated to the area normal with the lowest number. You can use the <a class="link" href="Hlp_C_AREVERSE.html" title="AREVERSE"><span class="command"><strong>AREVERSE</strong></span></a> and <a class="link" href="Hlp_C_ANORM.html" title="ANORM"><span class="command"><strong>ANORM</strong></span></a> commands
+to rotate the surface normals in the appropriate direction. Keep the following
+in mind when using the NORA command:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>If the nodal coordinate system is parallel to the global Cartesian
+system, it is not displayed through the <a href="Hlp_C_PSYMB.html" title="/PSYMB" class="olink"><span class="command"><strong>/PSYMB</strong></span></a> command.</p></li><li class="listitem"><p>Previously specified rotation on the selected nodes are overridden.</p></li></ul></div></div><div class="refsect1" title="Menu Paths"><a name="NORA.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Move / Modify&gt;RotateNode&gt;To Surf Norm&gt;On Areas</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

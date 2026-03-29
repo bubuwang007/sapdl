@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:36:06-05:00"><title>*VSCFUN</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="*VSCFUN">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_V_TOC.html" title="V Commands">
+<link rel="prev" href="Hlp_C_VSCALE.html" title="/VSCALE">
+<link rel="next" href="Hlp_C_VSEL.html" title="VSEL">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="*VSCFUN"><a name="a-VSCFUN"></a><div class="titlepage"></div><a class="indexterm" name="d0e317122"></a><span class="refentrytitle"><a href="Hlp_C_VSCFUN.html" title="*VSCFUN" class="olink"><span class="command"><strong>*VSCFUN</strong></span></a></span><div class="refnamediv"><p><span class="command"><strong>*VSCFUN</strong></span>, <em class="replaceable"><code>ParR</code></em>, <em class="replaceable"><code>Func</code></em>, <em class="replaceable"><code>Par1</code></em><br><b class="refpurpose">Determines properties of an array parameter.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_4.html" title="2.4. APDL Commands"><code class="classname">APDL</code></a>: <a class="link" href="Hlp_C_CH2_4.html#cmdapdlarrayparajla070199" title="Table 2.21: Array Parameters"><span class="type">Array Parameters</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsect1" title="Argument Descriptions"><a name="a-VSCFUN.argdescript"></a><h2>Argument Descriptions</h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>ParR</code></em></b></span></dt><dd><p>The name of the resulting scalar parameter.  See <a href="Hlp_C_SET_st.html" title="*SET" class="olink"><span class="command"><strong>*SET</strong></span></a> for
+name restrictions.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Func</code></em></b></span></dt><dd><p>Functions:</p><div><div class="variablelist"><dl><dt><span><b class="term">MAX&nbsp;--&nbsp;</b></span></dt><dd><p>Maximum: the maximum <em class="replaceable"><code>Par1</code></em> array
+element value.</p></dd><dt><span><b class="term">MIN&nbsp;--&nbsp;</b></span></dt><dd><p>Minimum: the minimum <em class="replaceable"><code>Par1</code></em> array
+element value.</p></dd><dt><span><b class="term">LMAX&nbsp;--&nbsp;</b></span></dt><dd><p>Index location of the maximum <em class="replaceable"><code>Par1</code></em> array
+element value.  Array <em class="replaceable"><code>Par1</code></em> is searched starting
+from its specified index.</p></dd><dt><span><b class="term">LMIN&nbsp;--&nbsp;</b></span></dt><dd><p>Index location of the minimum <em class="replaceable"><code>Par1</code></em> array
+element value.  Array <em class="replaceable"><code>Par1</code></em> is searched starting
+from its specified index.</p></dd><dt><span><b class="term">FIRST&nbsp;--&nbsp;</b></span></dt><dd><p>Index location of the first
+nonzero value in array <em class="replaceable"><code>Par1</code></em>.  Array <em class="replaceable"><code>Par1</code></em> is
+searched starting from its specified index.</p></dd><dt><span><b class="term">LAST&nbsp;--&nbsp;</b></span></dt><dd><p>Index location of the last
+nonzero value in array <em class="replaceable"><code>Par1</code></em>.  Array <em class="replaceable"><code>Par1</code></em> is
+searched starting from its specified index.</p></dd><dt><span><b class="term">SUM&nbsp;--&nbsp;</b></span></dt><dd><p>Sum:  <em class="replaceable"><code>Par1</code></em> (the
+summation of the <em class="replaceable"><code>Par1</code></em> array element values).</p></dd><dt><span><b class="term">MEDI&nbsp;--&nbsp;</b></span></dt><dd><p>Median: value of <em class="replaceable"><code>Par1</code></em> at
+which there are an equal number of values above and below.</p></dd><dt><span><b class="term">MEAN&nbsp;--&nbsp;</b></span></dt><dd><p>Mean: (&#963; Par1)/NUM, where
+NUM is the number of summed values.</p></dd><dt><span><b class="term">VARI&nbsp;--&nbsp;</b></span></dt><dd><p>Variance: (&#963; ((<em class="replaceable"><code>Par1</code></em>-MEAN)**2))/NUM.</p></dd><dt><span><b class="term">STDV&nbsp;--&nbsp;</b></span></dt><dd><p>Standard deviation: square
+root of VARI.</p></dd><dt><span><b class="term">RMS&nbsp;--&nbsp;</b></span></dt><dd><p>Root-mean-square: square root
+of (&#963; (<em class="replaceable"><code>Par1</code></em>**2))/NUM.</p></dd><dt><span><b class="term">NUM&nbsp;--&nbsp;</b></span></dt><dd><p>Number: the number of summed
+values (masked values are not counted).</p></dd></dl></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>Par1</code></em></b></span></dt><dd><p>Array parameter vector in the operation.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="a-VSCFUN.notes"></a><h2>Notes</h2><p>Operates on one input array parameter vector and produces one output
+scalar parameter according to:</p><div class="informalexample"><p><em class="replaceable"><code>ParR</code></em> = f(<em class="replaceable"><code>Par1</code></em>)</p></div><p>where the functions (f) are described below. The starting array element
+number must be defined for the array parameter vector.  For example, <a href="Hlp_C_VSCFUN.html" title="*VSCFUN" class="olink"><span class="command"><strong>*VSCFUN</strong></span></a>,MU,MEAN,A(1)
+finds the mean of the A vector values, starting from the first value and stores
+the result as parameter MU.  Operations use successive array elements [<a href="Hlp_C_VLEN.html" title="*VLEN" class="olink"><span class="command"><strong>*VLEN</strong></span></a>, <a href="Hlp_C_VMASK.html" title="*VMASK" class="olink"><span class="command"><strong>*VMASK</strong></span></a>]
+with the default being all successive array elements.  Absolute values and
+scale factors may be applied to all parameters [<a href="Hlp_C_VABS.html" title="*VABS" class="olink"><span class="command"><strong>*VABS</strong></span></a>, <a href="Hlp_C_VFACT.html" title="*VFACT" class="olink"><span class="command"><strong>*VFACT</strong></span></a>].
+ Results may be cumulative [<a href="Hlp_C_VCUM.html" title="*VCUM" class="olink"><span class="command"><strong>*VCUM</strong></span></a>].  See the <a href="Hlp_C_VOPER.html" title="*VOPER" class="olink"><span class="command"><strong>*VOPER</strong></span></a> command
+for details.</p><p>This command is valid in any processor.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e317376"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Utility Menu&gt;Parameters&gt;Array Operations&gt;Vector-Scalar Func</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

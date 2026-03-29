@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:42-05:00"><title>TRTIME</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="TRTIME">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_T_TOC.html" title="T Commands">
+<link rel="prev" href="Hlp_C_TRPOIN.html" title="TRPOIN">
+<link rel="next" href="Hlp_C_TSHAP.html" title="TSHAP">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="TRTIME"><a name="TRTIME"></a><div class="titlepage"></div><a class="indexterm" name="d0e297749"></a><span class="refentrytitle"><span class="command"><strong>TRTIME</strong></span></span><div class="refnamediv"><p><span class="command"><strong>TRTIME</strong></span>, <em class="replaceable"><code>TIME</code></em>, <em class="replaceable"><code>SPACING</code></em>, <em class="replaceable"><code>OFFSET</code></em>, <em class="replaceable"><code>SIZE</code></em>, <em class="replaceable"><code>LENGTH</code></em><br><b class="refpurpose">Defines the options used for the <a class="link" href="Hlp_C_PLTRAC.html" title="PLTRAC"><span class="command"><strong>PLTRAC</strong></span></a> (particle
+flow or charged particle trace) command.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_7.html" title="2.7. POST1 Commands"><code class="classname">POST1</code></a>: <a class="link" href="Hlp_C_CH2_7.html#cmdpost1animajla070199" title="Table 2.78: Animation"><span class="type">Animation</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="TRTIME.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>TIME</code></em></b></span></dt><dd><p>Total Trace Time (seconds) (defaults to 0, which is the full
+flow trace).</p></dd><dt><span><b class="term"><em class="replaceable"><code>SPACING</code></em></b></span></dt><dd><p>Particle spacing in seconds (defaults to 0).</p></dd><dt><span><b class="term"><em class="replaceable"><code>OFFSET</code></em></b></span></dt><dd><p>Particle offset in seconds (defaults to 0).  It is used internally
+in the <a class="link" href="Hlp_C_ANFLOW.html" title="ANFLOW"><span class="command"><strong>ANFLOW</strong></span></a> macro to produce an animation of particle
+flow in a flowing fluid or charged particle motion in an electric or magnetic
+field. </p></dd><dt><span><b class="term"><em class="replaceable"><code>SIZE</code></em></b></span></dt><dd><p>Particle size (defaults to 0, which is a line).</p></dd><dt><span><b class="term"><em class="replaceable"><code>LENGTH</code></em></b></span></dt><dd><p>Particle length fraction (defaults to .1).</p></dd></dl></div></div></div><div class="refsect1" title="Command Default"><a name="TRTIME.default"></a><h2>Command Default</h2><p>Full particle flow or charged particle trace.</p></div><div class="refsect1" title="Notes"><a name="TRTIME.notes"></a><h2>Notes</h2><p>The <span class="command"><strong>TRTIME</strong></span> command varies the type of   <a class="link" href="Hlp_C_PLTRAC.html" title="PLTRAC"><span class="command"><strong>PLTRAC</strong></span></a> display
+produced.  Particle flow or charged particle traces follow a particle's path
+in the forward and backward direction of travel. The DOF selected determines
+the color of the particle trace.  <em class="replaceable"><code>SPACING</code></em> defines
+the particle spacing in seconds from adjacent particles in the stream line.
+ <em class="replaceable"><code>OFFSET</code></em> defines the offset in seconds from the
+spacing set by the <em class="replaceable"><code>SPACING</code></em> argument. </p><p><em class="replaceable"><code>LENGTH</code></em> defines the particle length fraction.
+ The default value (.1), means the particle occupies 10% of the flow region,
+and the other 90% is a color-coded line.</p><p><em class="replaceable"><code>SIZE</code></em> sets the radius of the particle. Use <em class="replaceable"><code>SPACING</code></em>, <em class="replaceable"><code>OFFSET</code></em> and <em class="replaceable"><code>LENGTH</code></em> only when <em class="replaceable"><code>SIZE</code></em> is nonzero
+(i.e., the particle is bigger than the line).</p><p class="dan" title="Distributed ANSYS Restriction"><b>Distributed ANSYS Restriction&nbsp; &#8212; &nbsp;</b>This command is not supported in Distributed ANSYS.</p></div><div class="refsect1" title="Menu Paths"><a name="TRTIME.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;General Postproc&gt;Plot Results&gt;Time Interval</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

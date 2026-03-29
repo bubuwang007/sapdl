@@ -1,0 +1,54 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:06-05:00"><title>SOLU</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="SOLU">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_S_TOC.html" title="S Commands">
+<link rel="prev" href="Hlp_C_SNOPTION.html" title="SNOPTION">
+<link rel="next" href="Hlp_C_SOLU_sl.html" title="/SOLU">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="SOLU"><a name="SOLU"></a><div class="titlepage"></div><a class="indexterm" name="d0e268465"></a><span class="refentrytitle"><span class="command"><strong>SOLU</strong></span></span><div class="refnamediv"><p><span class="command"><strong>SOLU</strong></span>, <em class="replaceable"><code>NVAR</code></em>, <em class="replaceable"><code>Item</code></em>, <em class="replaceable"><code>Comp</code></em>, <em class="replaceable"><code>Name</code></em><br><b class="refpurpose">Specifies solution summary data per substep to be stored.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_8.html" title="2.8. POST26 Commands"><code class="classname">POST26</code></a>: <a class="link" href="Hlp_C_CH2_8.html#cmdpost26setupjla070199" title="Table 2.87: Setup"><span class="type">Set Up</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="SOLU.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>NVAR</code></em></b></span></dt><dd><p>Arbitrary reference number assigned to this variable (2 to <em class="replaceable"><code>NV</code></em> [<a class="link" href="Hlp_C_NUMVAR.html" title="NUMVAR"><span class="command"><strong>NUMVAR</strong></span></a>]).</p></dd><dt><span><b class="term"><em class="replaceable"><code>Item</code></em></b></span></dt><dd><p>Label identifying the item.  Valid item labels are shown in
+the table below.  Some items may also require a component label.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Comp</code></em></b></span></dt><dd><p>Component of the item (if required).  Valid component labels
+are shown in the table below.  None are currently required.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Name</code></em></b></span></dt><dd><p>Thirty-two character name identifying the item on printouts
+and displays.  Defaults to an eight character label formed by concatenating
+the first four characters of the <em class="replaceable"><code>Item</code></em> and <em class="replaceable"><code>Comp</code></em> labels.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="SOLU.notes"></a><h2>Notes</h2><p>See also the <a class="link" href="Hlp_C_PRITER.html" title="PRITER"><span class="command"><strong>PRITER</strong></span></a> command of POST1 to display some
+of these items directly.  Valid for a static or full transient analysis. All
+other analyses have zeros for the data. Valid item and component labels for
+solution summary values are:</p><div class="informaltable"><table border="0" width="95%"><colgroup><col width="96" class="col1"><col width="480" class="col2"></colgroup><thead><tr><th colspan="2" align="center">Valid Item Labels</th></tr><tr><th align="center">Item</th><th align="center">Description</th></tr></thead><tbody><tr><td valign="top">ALLF</td><td valign="top">Total arc-length
+load factor (ratio of the load at equilibrium to  the total applied load)</td></tr><tr><td valign="top">ALDLF</td><td valign="top">Arc-length
+load factor increment (change in ALLF)</td></tr><tr><td valign="top">ARCL</td><td valign="top">Normalized arc-length radius</td></tr><tr><td valign="top">CNVG</td><td valign="top">Convergence indicator.</td></tr><tr><td valign="top">CRPRAT</td><td valign="top">Maximum creep
+ratio.</td></tr><tr><td valign="top">CSCV</td><td valign="top">Current
+segment convergence value.</td></tr><tr><td valign="top">CUCV</td><td valign="top">Current convergence value.</td></tr><tr><td valign="top">DICV</td><td valign="top">Displacement convergence value.</td></tr><tr><td valign="top">DSPRM</td><td valign="top">Descent parameter.</td></tr><tr><td valign="top">DTIME</td><td valign="top">Time step size.</td></tr><tr><td valign="top">EQIT</td><td valign="top">Number of equilibrium
+iterations.</td></tr><tr><td valign="top">FFCV</td><td valign="top">Fluid
+flow convergence value.</td></tr><tr><td valign="top">FOCV</td><td valign="top">Force convergence value.</td></tr><tr><td valign="top">HFCV</td><td valign="top">Heat flow convergence value.</td></tr><tr><td valign="top">NCMIT</td><td valign="top">Cumulative number of iterations.</td></tr><tr><td valign="top">NCMLS</td><td valign="top">Cumulative
+number of load steps</td></tr><tr><td valign="top">NCMSS</td><td valign="top">Cumulative number of substeps</td></tr><tr><td valign="top">MFCV</td><td valign="top">Magnetic flux convergence value.</td></tr><tr><td valign="top">MOCV</td><td valign="top">Moment convergence value.</td></tr><tr><td valign="top">MXDVL</td><td valign="top">Maximum degree
+of freedom value.</td></tr><tr><td valign="top">PRCV</td><td valign="top">Pressure convergence value.</td></tr><tr><td valign="top">PSINC</td><td valign="top">Maximum plastic strain increment.</td></tr><tr><td valign="top">RESFRQ</td><td valign="top">Response frequency for 2nd
+order systems.</td></tr><tr><td valign="top">RESEIG</td><td valign="top">Response eigenvalue for 1st order systems.</td></tr><tr><td valign="top">ROCV</td><td valign="top">Rotation convergence value.</td></tr><tr><td valign="top">SMCV</td><td valign="top">Scalar magnetic
+potential convergence value.</td></tr><tr><td valign="top">TECV</td><td valign="top">Temperature convergence value.</td></tr><tr><td valign="top">VECV</td><td valign="top">Velocity convergence value.</td></tr><tr><td valign="top">VOCV</td><td valign="top">Voltage convergence
+value.</td></tr><tr><td valign="top">VMCV</td><td valign="top">Vector
+magnetic potential convergence value.</td></tr></tbody></table></div></div><div class="refsect1" title="Menu Paths"><a name="SOLU.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;TimeHist Postpro&gt;Define Variables</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;TimeHist Postpro&gt;Elec&amp;Mag&gt;Circuit&gt;Define Variables</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

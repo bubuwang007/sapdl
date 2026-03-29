@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:42-05:00"><title>CAMPBELL</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="CAMPBELL">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_C_CTOC.html" title="C Commands">
+<link rel="prev" href="Hlp_C_CALC.html" title="CALC">
+<link rel="next" href="Hlp_C_CBDOF.html" title="CBDOF">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="CAMPBELL"><a name="CAMPBELL"></a><div class="titlepage"></div><a class="indexterm" name="d0e44743"></a><span class="refentrytitle"><span class="command"><strong>CAMPBELL</strong></span></span><div class="refnamediv"><p><span class="command"><strong>CAMPBELL</strong></span>, <em class="replaceable"><code>Action</code></em><br><b class="refpurpose">Prepares the result file for a subsequent Campbell diagram
+of a prestressed structure. </b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoluldstepjla070199" title="Table 2.52: Load Step Options"><span class="type">Load Step Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Action</code></em></b></span></dt><dd><p>Campbell action:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">NONE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Do not prepare the result file. This
+option is the default behavior.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">RSTP</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Prepare the result file (<span class="filename"><strong>Jobname.RSTP</strong></span>) for a subsequent <a href="../ans_rot/Hlp_G_ROTCAMPDIAGS.html" title="Campbell diagram" class="olink">Campbell diagram</a> of a
+                                    prestressed structure.</p></td></tr></tbody></table></div></div></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="d0e44820"></a><h2>Notes</h2><p>For an analysis involving a prestressed structure, the <span class="command"><strong>CAMPBELL</strong></span> command
+            specifies whether or not to prepare the result file to support a <a href="../ans_rot/Hlp_G_ROTCAMPDIAGS.html" title="Campbell diagram" class="olink">Campbell diagram</a> analysis (<a class="link" href="Hlp_C_PRCAMP.html" title="PRCAMP"><span class="command"><strong>PRCAMP</strong></span></a>
+            or <a class="link" href="Hlp_C_PLCAMP.html" title="PLCAMP"><span class="command"><strong>PLCAMP</strong></span></a>).</p><p>To prestress a structure, the program performs a static solution before the <a href="../ans_str/strlinperturb.html" title="linear perturbation" class="olink">linear perturbation</a> modal solution.
+    <span>For specific information about rotating structures, see <a href="../ans_str/strllinpertrotmach.html" title="Considerations for Rotating Structures" class="olink">Considerations for Rotating Structures</a>.</span></p><p>The <span class="command"><strong>CAMPBELL</strong></span> command requires that modal
+and static analyses be performed alternately. It works only when the
+number of static analyses is the same as the number of modal analyses.
+Any number of analyses can be performed, but the same number of each
+(static and modal) is expected. The modal solutions are appended in
+the results file (<span class="filename"><strong>Jobname.RSTP</strong></span>).</p><p>For an example of <span class="command"><strong>CAMPBELL</strong></span> command usage, see <a href="../ans_rot/Hlp_G_ROTEXCAMPPRES.html" title="Example: Campbell Diagram Analysis" class="olink">Example: Campbell Diagram Analysis</a> in the
+            <a href="../ans_rot/rotbook.html" title="Rotordynamic Analysis Guide" class="olink"><em class="citetitle">Rotordynamic Analysis Guide</em></a>.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e44868"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

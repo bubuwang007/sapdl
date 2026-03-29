@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:40-05:00"><title>*TOPER</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="*TOPER">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_T_TOC.html" title="T Commands">
+<link rel="prev" href="Hlp_C_TOFFST.html" title="TOFFST">
+<link rel="next" href="Hlp_C_TORUS.html" title="TORUS">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="*TOPER"><a name="a-TOPER"></a><div class="titlepage"></div><a class="indexterm" name="d0e295793"></a><span class="refentrytitle"><a href="Hlp_C_TOPER_st.html" title="*TOPER" class="olink"><span class="command"><strong>*TOPER</strong></span></a></span><div class="refnamediv"><p><span class="command"><strong>*TOPER</strong></span>, <em class="replaceable"><code>ParR</code></em>, <em class="replaceable"><code>Par1</code></em>, <em class="replaceable"><code>Oper</code></em>, <em class="replaceable"><code>Par2</code></em>, <em class="replaceable"><code>FACT1</code></em>, <em class="replaceable"><code>FACT2</code></em>, <em class="replaceable"><code>CON1</code></em><br><b class="refpurpose">Operates on table parameters.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_4.html" title="2.4. APDL Commands"><code class="classname">APDL</code></a>: <a class="link" href="Hlp_C_CH2_4.html#cmdapdlarrayparajla070199" title="Table 2.21: Array Parameters"><span class="type">Array Parameters</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsect1" title="Argument Descriptions"><a name="TOPER.argdescript"></a><h2>Argument Descriptions</h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>ParR</code></em></b></span></dt><dd><p>Name of the resulting table parameter. The command will create
+a table array parameter with this name.  Any existing parameter with this
+name will be overwritten.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Par1</code></em></b></span></dt><dd><p>Name of the first table parameter.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Oper</code></em></b></span></dt><dd><p>The operation to be performed: ADD.  The operation is:  ParR(i,j,k)
+=   FACT1*Par1(i,j,k) + FACT2 *Par2(i,j,k) +CON1 </p></dd><dt><span><b class="term"><em class="replaceable"><code>Par2</code></em></b></span></dt><dd><p>Name of the second table parameter.</p></dd><dt><span><b class="term"><em class="replaceable"><code>FACT1</code></em></b></span></dt><dd><p>The first table parameter multiplying constant. Defaults to
+1.</p></dd><dt><span><b class="term"><em class="replaceable"><code>FACT2</code></em></b></span></dt><dd><p>The second table parameter multiplying constant.  Defaults
+to 1.</p></dd><dt><span><b class="term"><em class="replaceable"><code>CON1</code></em></b></span></dt><dd><p>The constant increment for offset.  Defaults to 0.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="TOPER.notes"></a><h2>Notes</h2><p><a href="Hlp_C_TOPER_st.html" title="*TOPER" class="olink"><span class="command"><strong>*TOPER</strong></span></a> operates on table parameters according to:
+ParR(i,j,k) =   FACT1*Par1(i,j,k) + FACT2 *Par2(i,j,k) +CON1</p><p>Par1 and Par2 must have the same dimensions and the same variable names
+corresponding to those dimensions. Par1 and Par2 must also have identical
+index values for rows, columns, etc.</p><p>If you want a local coordinate system for the resulting array, you must
+dimension it as such using the <a href="Hlp_C_DIM.html" title="*DIM" class="olink"><span class="command"><strong>*DIM</strong></span></a> command before issuing <a href="Hlp_C_TOPER_st.html" title="*TOPER" class="olink"><span class="command"><strong>*TOPER</strong></span></a>.</p><p>This command is valid in any processor.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e295936"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Utility Menu&gt;Parameters&gt;Array Operations&gt;Table Operations</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

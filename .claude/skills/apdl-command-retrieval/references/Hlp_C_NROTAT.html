@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:17-05:00"><title>NROTAT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="NROTAT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_N_TOC.html" title="N Commands">
+<link rel="prev" href="Hlp_C_NROPT.html" title="NROPT">
+<link rel="next" href="Hlp_C_NRRANG.html" title="NRRANG">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="NROTAT"><a name="NROTAT"></a><div class="titlepage"></div><a class="indexterm" name="d0e186065"></a><span class="refentrytitle"><span class="command"><strong>NROTAT</strong></span></span><div class="refnamediv"><p><span class="command"><strong>NROTAT</strong></span>, <em class="replaceable"><code>NODE1</code></em>, <em class="replaceable"><code>NODE2</code></em>, <em class="replaceable"><code>NINC</code></em><br><b class="refpurpose">Rotates nodal coordinate systems into the active system.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7nodesldm061600" title="Table 2.37: Nodes"><span class="type">Nodes</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="NROTAT.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>NODE1</code></em>, <em class="replaceable"><code>NODE2</code></em>, <em class="replaceable"><code>NINC</code></em></b></span></dt><dd><p>Rotate nodes from <em class="replaceable"><code>NODE1</code></em> to <em class="replaceable"><code>NODE2</code></em> (defaults to <em class="replaceable"><code>NODE1</code></em>) in steps of <em class="replaceable"><code>NINC</code></em> (defaults to 1).  If <em class="replaceable"><code>NODE1</code></em> = ALL, <em class="replaceable"><code>NODE2</code></em> and <em class="replaceable"><code>NINC</code></em> are ignored and all selected nodes [<a class="link" href="Hlp_C_NSEL.html" title="NSEL"><span class="command"><strong>NSEL</strong></span></a>] are rotated.  If <em class="replaceable"><code>NODE1</code></em> = P, graphical
+picking is enabled and all remaining command fields are ignored (valid
+only in the GUI).  A component name may also be substituted for <em class="replaceable"><code>NODE1</code></em> (<em class="replaceable"><code>NODE2</code></em> and <em class="replaceable"><code>NINC</code></em> are ignored).</p></dd></dl></div></div></div><div class="refsect1" title="Command Default"><a name="NROTAT.default"></a><h2>Command Default</h2><p>No automatic nodal rotation.</p></div><div class="refsect1" title="Notes"><a name="NROTAT.notes"></a><h2>Notes</h2><p>Rotates nodal coordinate systems into
+the active coordinate system.  Nodal coordinate systems may be automatically
+rotated into the active (global or local) coordinate system as follows:
+ Rotations in Cartesian systems will have nodal x directions rotated
+parallel to the Cartesian X direction.  Rotations in cylindrical,
+spherical or toroidal systems will have the nodal x directions rotated
+parallel to the R direction.  Nodes at (or near) a zero radius location
+should not be rotated.  Nodal coordinate directions may be displayed
+[<a href="Hlp_C_PSYMB.html" title="/PSYMB" class="olink"><span class="command"><strong>/PSYMB</strong></span></a>].  Nodal forces and constraints will also
+appear rotated when displayed if the nodal coordinate system is rotated.</p><div class="note" title="Note" style="margin-left: 1.3rem; margin-right: 1.3remin;"><hr><p><span class="admontitle"><b>Note:</b></span>&nbsp;&nbsp;When the  nodal coordinate systems are defined, they remain
+parallel to the global Cartesian system unless subsequently rotated.</p><hr></div><p>Previously specified rotations on the specified nodes are overridden.</p><p>See the <a class="link" href="Hlp_C_NMODIF.html" title="NMODIF"><span class="command"><strong>NMODIF</strong></span></a>, <a class="link" href="Hlp_C_NANG.html" title="NANG"><span class="command"><strong>NANG</strong></span></a>,
+and <a class="link" href="Hlp_C_NORA.html" title="NORA"><span class="command"><strong>NORA</strong></span></a> commands for other rotation options.</p></div><div class="refsect1" title="Menu Paths"><a name="NROTAT.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Create&gt;Nodes&gt;RotateNode&gt;To Active CS</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Move / Modify&gt;RotateNode&gt;To Active CS</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

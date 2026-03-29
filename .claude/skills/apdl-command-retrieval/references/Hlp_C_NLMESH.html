@@ -1,0 +1,136 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:15-05:00"><title>NLMESH</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="NLMESH">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_N_TOC.html" title="N Commands">
+<link rel="prev" href="Hlp_C_NLIST.html" title="NLIST">
+<link rel="next" href="Hlp_C_NLOG.html" title="NLOG">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="NLMESH"><a name="NLMESH"></a><div class="titlepage"></div><a class="indexterm" name="d0e183057"></a><span class="refentrytitle"><span class="command"><strong>NLMESH</strong></span></span><div class="refnamediv"><p><span class="command"><strong>NLMESH</strong></span>,
+    <em class="replaceable"><code>Control</code></em>, <em class="replaceable"><code>VAL1</code></em>,
+    <em class="replaceable"><code>VAL2</code></em><br><b class="refpurpose">Controls remeshing in nonlinear adaptivity.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsolunonlinjla070199" title="Table 2.49: Nonlinear Options"><span class="type">Nonlinear Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a> 
+      <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="light">Premium</span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="NLMESH.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Control</code></em></b></span></dt><dd><p>The mesh-quality control to adjust:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">NLAY</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The <span class="emphasis"><em>sculpting layer</em></span> adjustment:</p><p><em class="replaceable"><code>VAL1</code></em> &#8211; The number of sculpting layers, beginning
+          with detected seed elements. Valid for 2-D and 3-D analysis.</p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>Default:  <em class="replaceable"><code>VAL1</code></em> = 10 for 2-D analysis,
+                        <em class="replaceable"><code>VAL1</code></em> = 2 for 3-D analysis.</td></tr><tr><td>For local (partial) remeshing, this option helps the remesher to detect remeshing
+           regions from the whole deformed model. </td></tr><tr><td>Generally, a larger <em class="replaceable"><code>VAL1</code></em> leads to larger remeshing
+           regions and tends to unite isolated multiple regions. A larger value also tends to result
+           in better remeshing quality (and increases mapping and solution overhead
+           accordingly).</td></tr><tr><td>Only elements with the same element and material properties as seed elements are
+           included into the remeshing regions.</td></tr><tr><td><em class="replaceable"><code>VAL1</code></em> = 0 is not valid, as the remeshing regions would
+           contain only the detected seed elements, resulting in many small cavities within
+           remeshing regions (especially if the specified mesh-quality metric threshold
+            [<a class="link" href="Hlp_C_NLADAPTIVE.html" title="NLADAPTIVE"><span class="command"><strong>NLADAPTIVE</strong></span></a>] is relatively large).</td></tr></table><p><em class="replaceable"><code>VAL2</code></em> &#8211; Same as <em class="replaceable"><code>VAL1</code></em>,
+                    except that <em class="replaceable"><code>VAL1</code></em> controls remeshing to remove
+                    distortion and <em class="replaceable"><code>VAL2</code></em> controls element refinement.
+                    Default: <em class="replaceable"><code>VAL2</code></em> = 1 for 2-D analysis,
+                      <em class="replaceable"><code>VAL2</code></em> = 2 for 3-D analysis.</p><p>For more information about this control, see <a href="../ans_nlad/advmnanewmesh.html#advmnlasculptlayers" title="Sculpting Layers Control in the Nonlinear Adaptivity Analysis Guide" class="olink">Sculpting Layers Control in the <span class="olinkdocname">Nonlinear Adaptivity Analysis Guide</span></a>.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">BDRA</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The <span class="italic"><em>boundary angle threshold</em></span> in degrees. Use this
+          adjustment to retain geometry features of the original (source) mesh. Valid for both 2-D
+          and 3-D analysis.</p><p>In a 3-D analysis, this value is the dihedral angle (the angle between the normal
+          vectors from two neighboring surface facets). In a 2-D analysis, this value is the 2-D
+          patch boundary edge normal angle. If the edge angle or dihedral angle is larger than the
+          specified threshold, the node shared by 2-D edges or edges shared by 3-D facets are
+          retained during remeshing.</p><p>Valid values: 0 &lt; <em class="replaceable"><code>VAL1</code></em> &lt; 80.</p><p>Default for 2-D analysis: <em class="replaceable"><code>VAL1</code></em> = 10.  Default for 3-D
+          analysis: <em class="replaceable"><code>VAL1</code></em> = 15.</p><p>Generally, a larger <em class="replaceable"><code>VAL1</code></em> improves the quality of the new
+          mesh (and may even repair local tiny edges or facets of poor quality). Too large a value,
+          however, may also smooth out some geometric features, leading to slightly different
+          results and possibly causing convergence issues in the substeps immediately following
+          remeshing. </p><p>For more information about this control, see <a href="../ans_nlad/advmnanewmesh.html#advmnlaboundedgecont" title="Boundary-Angle and Edge-Angle Control in the Nonlinear Adaptivity Analysis Guide" class="olink">Boundary-Angle and Edge-Angle Control in the <span class="olinkdocname">Nonlinear Adaptivity Analysis Guide</span></a>.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">AEDG</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The <span class="italic"><em>edge angle threshold</em></span> in degrees. Valid for 3-D
+          analysis only.</p><p>Use this control to split 3-D patch segments. The edge angle is the angle between
+          adjacent surface segment edges sharing a node. If the edge angle is larger than the
+          specified threshold (VAL1), the segment splits and the node is automatically treated as a
+          node to be retained.</p><p>Default: <em class="replaceable"><code>VAL1</code></em> = 10.</p><p>Generally, a larger <em class="replaceable"><code>VAL1</code></em> improves the quality of the new
+          mesh, but may result in loss of feature nodes. The effect is similar to that of boundary
+          angles (<em class="replaceable"><code>Control</code></em> = BDRA). </p><p>For more information about this control, see <a href="../ans_nlad/advmnanewmesh.html#advmnlaboundedgecont" title="Boundary-Angle and Edge-Angle Control in the Nonlinear Adaptivity Analysis Guide" class="olink">Boundary-Angle and Edge-Angle Control in the <span class="olinkdocname">Nonlinear Adaptivity Analysis Guide</span></a>.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">SRAT </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The <span class="emphasis"><em>global sizing ratio</em></span>. Valid for 2-D and 3-D analysis.</p><p><em class="replaceable"><code>VAL1</code></em> &#8211; The global sizing ratio for remeshing. </p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>Default: <em class="replaceable"><code>VAL1</code></em> = 1.0. The default value results in the
+           new mesh having a size similar to that of the original mesh.</td></tr><tr><td>Generally, set the value (<em class="replaceable"><code>VAL1</code></em>) to &gt;= 0.7. The model
+                      can be refined (&lt; 1.0) or coarsened (&gt; 1.0) up to 3x depending on the
+                      mesh-sizing gradient and number of 3-D elements, and approximately 2x for 2-D
+                      elements.</td></tr></table><p><em class="replaceable"><code>VAL2</code></em> &#8211; Same as <em class="replaceable"><code>VAL1</code></em>,
+                    except that <em class="replaceable"><code>VAL1</code></em> controls remeshing to remove
+                    distortion and <em class="replaceable"><code>VAL2</code></em> controls element refinement.
+                    Default: <em class="replaceable"><code>VAL2</code></em> = 0.75.</p><p>For more information about this control, see <a href="../ans_nlad/advmnanewmesh.html#advmnlaglobsiz" title="Global Sizing Control in the Nonlinear Adaptivity Analysis Guide" class="olink">Global Sizing Control in the <span class="olinkdocname">Nonlinear Adaptivity Analysis Guide</span></a>.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">GRAD </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Adjusts the <span class="italic"><em>new mesh-sizing gradient</em></span>
+                    during remeshing. Valid for 2-D and 3-D analysis. </p><p>Valid values: <em class="replaceable"><code>VAL1</code></em> = 0, 1, 2, or 3. Default:
+                      <em class="replaceable"><code>VAL1</code></em> = 2 for 2-D analysis,
+                      <em class="replaceable"><code>VAL1</code></em> = 3 for 3-D analysis.</p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><em class="replaceable"><code>VAL1</code></em> = 0 -- The mesh-sizing gradient is not
+                      retained. The new mesh is uniform and has an approximate average size on the
+                      entire remeshed domain(s), even if the original mesh has sizing
+                      gradients.</td></tr><tr><td><em class="replaceable"><code>VAL1</code></em> = 1 -- The new mesh follows the original
+                      mesh-sizing gradient to retain the element averaged-edge length. This value
+                      tends to coarsen the mesh in the location of the distorted elements during
+                      remeshing.</td></tr><tr><td><em class="replaceable"><code>VAL1</code></em> = 2 -- The new mesh follows the sizing
+                      gradient of the original mesh, with additional sizing compensation based on
+                      the element size change due to deformation during solution. This value tends
+                      to refine the mesh at the location of the distorted elements, where the
+                      distortion may have originated from deformation during solution.</td></tr><tr><td><em class="replaceable"><code>VAL1</code></em> = 3 -- Similar to
+                        <em class="replaceable"><code>VAL1</code></em> = 2, but assumes that perfect mesh quality
+                      is not required, thus avoiding over-refinement of minor distorted regions.
+                      Valid for 3-D analysis only. </td></tr></table><p>For more information about this control, see <a href="../ans_nlad/advmnanewmesh.html#advmnlalocsizgrad" title="Gradient Control in the Nonlinear Adaptivity Analysis Guide" class="olink">Gradient Control in the <span class="olinkdocname">Nonlinear Adaptivity Analysis Guide</span></a>.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">QTOL </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The new <span class="emphasis"><em>mesh-acceptance tolerance</em></span>
+                      (<a href="../ans_elem/Hlp_E_PLANE182.html" title="PLANE182" class="olink"><span class="structname">PLANE182</span></a>, <a href="../ans_elem/Hlp_E_PLANE222.html" title="PLANE222" class="olink"><span class="structname">PLANE222</span></a>,
+                      <a href="../ans_elem/Hlp_E_SOLID187.html" title="SOLID187" class="olink"><span class="structname">SOLID187</span></a>, <a href="../ans_elem/Hlp_E_SOLID227.html" title="SOLID227" class="olink"><span class="structname">SOLID227</span></a>, and
+                      <a href="../ans_elem/Hlp_E_SOLID285.html" title="SOLID285" class="olink"><span class="structname">SOLID285</span></a>).</p><p><em class="replaceable"><code>VAL1</code></em> &#8211; Controls remeshing to remove distortion.
+          Default: 0.05.</p><p><em class="replaceable"><code>VAL2</code></em> &#8211; Controls element refinement. Default:
+          0.5.</p><p>For <a href="../ans_elem/Hlp_E_PLANE182.html" title="PLANE182" class="olink"><span class="structname">PLANE182</span></a> and <a href="../ans_elem/Hlp_E_PLANE222.html" title="PLANE222" class="olink"><span class="structname">PLANE222</span></a>,
+                      <em class="replaceable"><code>VAL2</code></em> is the only valid option (for mesh refinement),
+                    and the new mesh is accepted when (<span class="emphasis"><em>MaxCornerAngleNew</em></span> -
+                      <span class="emphasis"><em>MaxCornerAngleOld</em></span>) /
+                      <span class="emphasis"><em>MaxCornerAngleOld</em></span> &lt;= <em class="replaceable"><code>QTOL</code></em>. </p><p>For <a href="../ans_elem/Hlp_E_SOLID285.html" title="SOLID285" class="olink"><span class="structname">SOLID285</span></a>, the new mesh is accepted when
+                      (<span class="emphasis"><em>SkewnessNew</em></span> - <span class="emphasis"><em>SkewnessOld</em></span>) /
+                      <span class="emphasis"><em>SkewnessOld</em></span> &lt;= <em class="replaceable"><code>QTOL</code></em>. </p><p>For <a href="../ans_elem/Hlp_E_SOLID187.html" title="SOLID187" class="olink"><span class="structname">SOLID187</span></a> and <a href="../ans_elem/Hlp_E_SOLID227.html" title="SOLID227" class="olink"><span class="structname">SOLID227</span></a>, the new
+                    mesh is accepted when, in addition to skewness,
+                      (<span class="emphasis"><em>JacobianOld</em></span> - <span class="emphasis"><em>JacobianNew</em></span>) /
+                      <span class="emphasis"><em>JacobianOld</em></span> &lt;= <em class="replaceable"><code>QTOL</code></em>.</p><p>The program uses both tolerance and mesh-quality parameters to determine
+                    whether or not a new mesh is accepted.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">REFA </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The <span class="emphasis"><em>refinement algorithm</em></span> adjustment
+           (<a href="../ans_elem/Hlp_E_PLANE182.html" title="PLANE182" class="olink"><span class="structname">PLANE182</span></a>, <a href="../ans_elem/Hlp_E_PLANE222.html" title="PLANE222" class="olink"><span class="structname">PLANE222</span></a>, and
+           <a href="../ans_elem/Hlp_E_SOLID285.html" title="SOLID285" class="olink"><span class="structname">SOLID285</span></a>). Valid for 2-D and 3-D analysis.</p><p><em class="replaceable"><code>VAL1</code></em> &#8211; </p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>SPLIT &#8211; Use mesh <a href="../ans_nlad/advmnanewmesh.html#advsplitmorphgenmesh" title="splitting" class="olink">splitting</a>
+           instead of general remeshing. This is the only valid value.</td></tr></table><p>If not specified, mesh refinement occurs via general remeshing (except for
+                      <a href="../ans_elem/Hlp_E_PLANE183.html" title="PLANE183" class="olink"><span class="structname">PLANE183</span></a>).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">TCOR</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Coordinate truncation adjustments for nodal locations of the meshes during
+                    remeshing. Valid for 2-D and 3-D analysis. </p><p><em class="replaceable"><code>VAL1</code></em> &#8211; </p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>ON &#8211; Truncates the decimal value after the seventh position.
+                      Default behavior for <a href="../ans_elem/Hlp_E_PLANE182.html" title="PLANE182" class="olink"><span class="structname">PLANE182</span></a>,
+                        <a href="../ans_elem/Hlp_E_PLANE222.html" title="PLANE222" class="olink"><span class="structname">PLANE222</span></a>, and <a href="../ans_elem/Hlp_E_SOLID285.html" title="SOLID285" class="olink"><span class="structname">SOLID285</span></a>
+                      (augmented Lagrange and penalty contact formulations only).</td></tr><tr><td>OFF &#8211; No truncation occurs on the decimal value. Default behavior
+                      for <a href="../ans_elem/Hlp_E_SOLID187.html" title="SOLID187" class="olink"><span class="structname">SOLID187</span></a> and <a href="../ans_elem/Hlp_E_SOLID227.html" title="SOLID227" class="olink"><span class="structname">SOLID227</span></a>
+                      (all contact formulations), and <a href="../ans_elem/Hlp_E_PLANE182.html" title="PLANE182" class="olink"><span class="structname">PLANE182</span></a> and
+                        <a href="../ans_elem/Hlp_E_PLANE222.html" title="PLANE222" class="olink"><span class="structname">PLANE222</span></a> (Lagrange multiplier contact formulation
+                      only).</td></tr></table></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">AGGR</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Aggressive remeshing option. Creates meshes with improved shape metrics. May
+                    change some global remeshing control parameters applied by other
+                      <span class="command"><strong>NLMESH</strong></span> commands, and may increase remeshing time. Valid for
+                    both 2-D and 3-D nonlinear adaptivity analysis.</p><p><em class="replaceable"><code>VAL1</code></em> &#8211; </p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>ON &#8211; Enable aggressive remeshing.</td></tr><tr><td>OFF &#8211; Disable aggressive remeshing (default).</td></tr></table></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">LIST </b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Lists all mesh-quality control parameters.</p><p>If <em class="replaceable"><code>VAL1</code></em> has been specified for a given mesh control, the
+          most recently specified value is listed. If a value was not explicitly specified, the
+          default value is listed (assuming that the problem has been solved at least once). </p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>VAL1</code></em></b></span></dt><dd><p>Numerical input value that varies according to the specified
+       <em class="replaceable"><code>Control</code></em> option.</p><p>Valid for all <em class="replaceable"><code>Control</code></em> options. Can be used when controlling
+      remeshing for both distortion removal and for element refinement.</p></dd><dt><span><b class="term"><em class="replaceable"><code>VAL2</code></em></b></span></dt><dd><p>Numerical input value that varies according to the specified
+       <em class="replaceable"><code>Control</code></em> option.</p><p>Valid only for these <em class="replaceable"><code>Control</code></em> options:  NLAY, SRAT, and QTOL.
+            Also used for controlling remeshing for element refinement.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="NLMESH.notes"></a><h2>Notes</h2><p><span class="command"><strong>NLMESH</strong></span> is a global control command enabling
+      mesh-quality adjustments for remeshing in <a href="../ans_nlad/adv_meshnonlinadapt.html" title="nonlinear adaptivity" class="olink">nonlinear adaptivity</a>. The command can be used when
+      components are associated with mesh-quality criteria (<a class="link" href="Hlp_C_NLADAPTIVE.html" title="NLADAPTIVE"><span class="command"><strong>NLADAPTIVE</strong></span></a> with
+        <em class="replaceable"><code>Criterion</code></em> = MESH, or another criterion with mesh change through
+      general refinement). </p><p>Issue the <span class="command"><strong>NLMESH</strong></span> command only in cases where
+      advanced mesh-quality control is desirable for remeshing in nonlinear adaptivity. The control
+      values specified apply to all components having mesh-quality-based criteria defined, or
+      components having mesh change through general refinement, and can be modified at every
+      loadstep during the nonlinear adaptive solution or when performing a restart analysis.</p></div><div class="refsect1" title="Menu Paths"><a name="NLMESH.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

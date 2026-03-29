@@ -1,0 +1,63 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:46-05:00"><title>KCENTER</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="KCENTER">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_K_TOC.html" title="K Commands">
+<link rel="prev" href="Hlp_C_KBETW.html" title="KBETW">
+<link rel="next" href="Hlp_C_KCLEAR.html" title="KCLEAR">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="KCENTER"><a name="KCENTER"></a><div class="titlepage"></div><a class="indexterm" name="d0e141493"></a><span class="refentrytitle"><span class="command"><strong>KCENTER</strong></span></span><div class="refnamediv"><p><span class="command"><strong>KCENTER</strong></span>, <em class="replaceable"><code>Type</code></em>, <em class="replaceable"><code>VAL1</code></em>, <em class="replaceable"><code>VAL2</code></em>, <em class="replaceable"><code>VAL3</code></em>, <em class="replaceable"><code>VAL4</code></em>, <em class="replaceable"><code>KPNEW</code></em><br><b class="refpurpose">Creates a keypoint at the center of a circular arc defined by
+three locations.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7keypointsldm061600" title="Table 2.30: Keypoints"><span class="type">Keypoints</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="KCENTER.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Type</code></em></b></span></dt><dd><p>Type of entity used to define the circular arc.  The meaning
+of <em class="replaceable"><code>VAL1</code></em> through <em class="replaceable"><code>VAL4</code></em> will
+vary depending on <em class="replaceable"><code>Type</code></em>.  If <em class="replaceable"><code>Type</code></em> =
+P, graphical picking is enabled and all remaining command fields are ignored
+(valid only in the GUI).</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">KP</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Arc is defined by keypoints.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">LINE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Arc is defined by locations on a line.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>VAL1</code></em>, <em class="replaceable"><code>VAL2</code></em>, <em class="replaceable"><code>VAL3</code></em>, <em class="replaceable"><code>VAL4</code></em></b></span></dt><dd><p>Values used to specify three locations on the arc (see table
+below).</p></dd><dt><span><b class="term"><em class="replaceable"><code>KPNEW</code></em></b></span></dt><dd><p>Number assigned to new keypoint.  Defaults to the lowest available
+keypoint number.</p></dd></dl></div></div><p><span class="bold"><strong>Definitions: </strong></span></p><p>If <em class="replaceable"><code>Type</code></em> = KP, inputs <em class="replaceable"><code>VAL1</code></em> through <em class="replaceable"><code>VAL4</code></em> are
+defined as follows:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term"><em class="replaceable"><code>VAL1</code></em></b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>First keypoint.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term"><em class="replaceable"><code>VAL2</code></em></b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Second keypoint.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term"><em class="replaceable"><code>VAL3</code></em></b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Third keypoint.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term"><em class="replaceable"><code>VAL4</code></em></b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Arc radius.  If <em class="replaceable"><code>VAL4</code></em> = 0 or blank
+(default), the arc is defined by the three keypoints specified as <em class="replaceable"><code>VAL1</code></em>, <em class="replaceable"><code>VAL2</code></em>,
+and <em class="replaceable"><code>VAL3</code></em> and arc radius is not used.  If <em class="replaceable"><code>VAL4</code></em> is
+nonzero, <em class="replaceable"><code>VAL1</code></em>, <em class="replaceable"><code>VAL2</code></em>,
+and <em class="replaceable"><code>VAL4</code></em> are used to calculate the center point,
+and <em class="replaceable"><code>VAL3</code></em> is used to locate the center point as
+follows:    </p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term"><em class="replaceable"><code>VAL4</code></em> &gt; 0</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Center point
+and <em class="replaceable"><code>VAL3</code></em> are on the same side of the line between
+the first two keypoints.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term"><em class="replaceable"><code>VAL4</code></em> &lt; 0</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Center
+point and <em class="replaceable"><code>VAL3</code></em> are on opposite sides of the line
+between the first two keypoints.</p></td></tr></tbody></table></div></div></td></tr></tbody></table></div></div><p>If <em class="replaceable"><code>Type</code></em> = LINE, inputs <em class="replaceable"><code>VAL1</code></em> through <em class="replaceable"><code>VAL4</code></em> are
+defined as follows:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term"><em class="replaceable"><code>VAL1</code></em></b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Line number.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term"><em class="replaceable"><code>VAL2</code></em></b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Line ratio (0 to 1) indicating the first location (defaults
+to 0).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term"><em class="replaceable"><code>VAL3</code></em></b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Line ratio (0 to 1) indicating the second location (defaults
+to 0.5).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term"><em class="replaceable"><code>VAL4</code></em></b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Line ratio (0 to 1) indicating the third location (defaults
+to 1).</p></td></tr></tbody></table></div></div></div><div class="refsect1" title="Notes"><a name="KCENTER.notes"></a><h2>Notes</h2><p><span class="command"><strong>KCENTER</strong></span> should be used in the Cartesian coordinate
+system (<a class="link" href="Hlp_C_CSYS.html" title="CSYS"><span class="command"><strong>CSYS</strong></span></a>,0) only.  This command provides three methods
+to define a keypoint at the center of three locations.  As shown below, the
+center point can be calculated based on a) three keypoints, b) three keypoints
+and a radius, or c) three locations on a line.  Note that for method c, if
+a circular line is specified by <em class="replaceable"><code>VAL1</code></em>, <em class="replaceable"><code>VAL2</code></em> through <em class="replaceable"><code>VAL4</code></em> are
+not needed.</p><div><a name="KCENTER.fig.1"></a><img src="graphics/gKCEN1.svg"></div></div><div class="refsect1" title="Menu Paths"><a name="KCENTER.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Create&gt;Keypoints&gt;KP at center&gt;3 keypoints</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Create&gt;Keypoints&gt;KP at center&gt;3 KPs and radius</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Create&gt;Keypoints&gt;KP at center&gt;Location on line</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

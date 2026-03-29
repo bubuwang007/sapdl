@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:29-05:00"><title>~PARAIN</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="~PARAIN">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_conn_cmds.html" title="Connection Commands">
+<link rel="prev" href="Hlp_C_CATIAIN.html" title="~CATIAIN">
+<link rel="next" href="Hlp_C_PROEIN.html" title="~PROEIN">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="~PARAIN"><a name="PARAIN"></a><div class="titlepage"></div><a class="indexterm" name="d0e14404"></a><span class="refentrytitle"><a href="Hlp_C_PARAIN.html" title="~PARAIN" class="olink"><span class="command"><strong>~PARAIN</strong></span></a></span><div class="refnamediv"><p><span class="command"><strong>~PARAIN</strong></span>, <em class="replaceable"><code>Name</code></em>, <em class="replaceable"><code>Extension</code></em>, <em class="replaceable"><code>Path</code></em>, <em class="replaceable"><code>Entity</code></em>, <em class="replaceable"><code>FMT</code></em>, <em class="replaceable"><code>Scale</code></em><br><b class="refpurpose">Transfers a Parasolid file into the ANSYS program.</b><div class="refclass"><div class=""><div class="application"><span class="application">CAD Import</span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="PARAINt.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Name</code></em></b></span></dt><dd><p>The name of a valid Parasolid file. The first character
+of the file name must be an alphanumeric.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Extension</code></em></b></span></dt><dd><p>The extension for the file.
+The default extension is <span class="filename"><strong>.x_t</strong></span> on a PC or <span class="filename"><strong>.xmt_txt</strong></span> on a Linux system. Parasolid files are compatible
+across systems, and do not need to be renamed to be used on another
+platform.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Path</code></em></b></span></dt><dd><p>The path name of the directory in which the file resides,
+enclosed in single quotes. The default path name is the current working
+directory. </p></dd><dt><span><b class="term"><em class="replaceable"><code>Entity</code></em></b></span></dt><dd><p>Entity to be imported:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">SOLIDS</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Solids only, imported as ANSYS
+volumes (default)</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">SURFACES</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Surfaces only, imported as ANSYS
+areas.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">WIREFRAME</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Wireframe only, imported as
+ANSYS lines.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ALL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>All entities. Use this option when
+the file contains more than one type of entity.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>FMT</code></em></b></span></dt><dd><p>Sets the format in which ANSYS will store the model</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">0</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Neutral format (default). Defeaturing
+after import is restricted. Use this option if you need to scale a
+model to a specific unit of measure (other than meters).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Solid format; this allows defeaturing
+after import.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>Scale</code></em></b></span></dt><dd><p>Allows scaling for the model </p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">0</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Do not rescale the model; retain the
+default Parasolid setting of meters (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Scale the model if warranted by the
+model size.</p></td></tr></tbody></table></div></div><p>Very small models will be scaled by the
+factor of 10 or 100 to increase the chance of successful import; the
+scaling factor used is displayed in the output window and in the <span class="filename"><strong>.para_log</strong></span> file. Because scaling changes the dimensions
+of the model, you must apply loads and material properties appropriately.
+If the model cannot be properly scaled, the analysis may fail.</p><p>If you need to scale your model to a specific set of measurements,
+set FMT = 0, then use either the <a class="link" href="Hlp_C_VLSCALE.html" title="VLSCALE"><span class="command"><strong>VLSCALE</strong></span></a>, <a class="link" href="Hlp_C_ARSCALE.html" title="ARSCALE"><span class="command"><strong>ARSCALE</strong></span></a> or <a class="link" href="Hlp_C_LSSCALE.html" title="LSSCALE"><span class="command"><strong>LSSCALE</strong></span></a> command to select
+a different unit of measure.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="PARAIN.notes"></a><h2>Notes</h2><p>More information on importing Parasolid parts is available in <a href="../ans_con/Hlp_CAD_CKU3.html" title="Parasolid" class="olink">Parasolid</a> in the <a href="../ans_con/ansys.cad.cku.html" title="Connection User's Guide" class="olink"><em class="citetitle">Connection User's Guide</em></a>.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e14594"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>File&gt;Import&gt;PARA</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

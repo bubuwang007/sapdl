@@ -1,0 +1,57 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:02-05:00"><title>MODCONT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="MODCONT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_M_TOC.html" title="M Commands">
+<link rel="prev" href="Hlp_C_MMF.html" title="MMF">
+<link rel="next" href="Hlp_C_MODDIR.html" title="MODDIR">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="MODCONT"><a name="MODCONT"></a><div class="titlepage"></div><a class="indexterm" name="d0e166488"></a><span class="refentrytitle"><span class="command"><strong>MODCONT</strong></span></span><div class="refnamediv"><p><span class="command"><strong>MODCONT</strong></span>,
+        <em class="replaceable"><code>MLSkey</code></em>, <em class="replaceable"><code>EnforcedKey</code></em>,
+        <em class="replaceable"><code>--</code></em>, <em class="replaceable"><code>FastLV</code></em><br><b class="refpurpose">Specify additional modal analysis options. </b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoludynoptjla070199" title="Table 2.50: Dynamic Options"><span class="type">Dynamic Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a> 
+      <span class="bold"><strong>DesignSpace</strong></span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="MODCONT.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>MLSkey</code></em></b></span></dt><dd><p>Multiple load step key:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">OFF</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Perform the modal analysis (compute
+the eigenvalues and the load vector) for each load step. (default)</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ON</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Perform the modal analysis (compute
+the eigenvalues and the load vector) only for the first load step;
+form the load vector for each subsequent load step (without repeating
+the eigenvalue calculations) and write all load vectors to the <span class="filename"><strong>Jobname.MODE</strong></span> file for downstream mode-superposition analyses.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>EnforcedKey</code></em></b></span></dt><dd><p>Enforced motion key:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">OFF</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Do not calculate enforced static modes.
+(default)</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ON</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Calculate enforced static modes and
+write them to the <span class="filename"><strong>Jobname.MODE</strong></span> file.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>--</code></em></b></span></dt><dd><p>Unused field</p></dd><dt><span><b class="term"><em class="replaceable"><code>FastLV</code></em></b></span></dt><dd><p>Fast load vector generation key; valid only when <em class="replaceable"><code>MLSkey</code></em> = ON:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">OFF</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Do not activate fast load vector generation (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ON</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Activate fast load vector generation. This option is only supported when
+                    each load vector is based on a unique element surface load
+                      (<a class="link" href="Hlp_C_SFE.html" title="SFE"><span class="command"><strong>SFE</strong></span></a>) applied on one element, and the element result
+                    superposition key is activated (<em class="replaceable"><code>MSUPkey</code></em> = YES on
+                      <a class="link" href="Hlp_C_MXPAND.html" title="MXPAND"><span class="command"><strong>MXPAND</strong></span></a>).</p></td></tr></tbody></table></div></div></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="MODCONT.notes"></a><h2>Notes</h2><p>Specifies additional modal analysis (<a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,MODAL) options.</p><p>Use the <a class="link" href="Hlp_C_LVSCALE.html" title="LVSCALE"><span class="command"><strong>LVSCALE</strong></span></a> command to apply the desired
+load in a mode-superposition transient or harmonic analysis.</p><p>When <em class="replaceable"><code>MSUPkey</code></em> = YES on the
+        <a class="link" href="Hlp_C_MXPAND.html" title="MXPAND"><span class="command"><strong>MXPAND</strong></span></a> command, the maximum number of load vectors allowed in the
+        <span class="filename"><strong>Jobname.MODE</strong></span> file defaults to 1000. To increase this limit, use the
+      command <a href="Hlp_C_CONFIG.html" title="/CONFIG" class="olink"><span class="command"><strong>/CONFIG</strong></span></a>,NUMLV. When <em class="replaceable"><code>FastLV</code></em> = ON, the
+      limit is automatically set to 1x10<sup>6 </sup>and cannot be changed.</p><p>The maximum number of load vectors that can be used in the downstream mode-superposition
+   transient or harmonic analysis is <span>the number of load vectors
+    written in the <span class="filename"><strong>Jobname.MODE</strong></span> file</span>.</p><p><a href="../ans_str/Hlp_G_STR_SMSUP.html#strappmullo" title="Generation of multiple loads" class="olink">Generation of multiple loads</a> (<em class="replaceable"><code>MLSkey</code></em> = ON) is supported by the Block Lanczos, PCG
+Lanczos, Supernode, Subspace, Unsymmetric, and QR damped modal methods.</p><p>The <a href="../ans_str/Hlp_G_STR_SMSUP.html#strenfmotmetmod" title="enforced motion calculation" class="olink">enforced motion calculation</a> (<em class="replaceable"><code>EnforcedKey</code></em> = ON) is supported by the Block Lanczos
+and Supernode mode extraction methods.</p></div><div class="refsect1" title="Menu Paths"><a name="MODCONT.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

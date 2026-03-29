@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:43-05:00"><title>PLGEOM</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="PLGEOM">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_P_TOC.html" title="P Commands">
+<link rel="prev" href="Hlp_C_PLF2D.html" title="PLF2D">
+<link rel="next" href="Hlp_C_PLLS.html" title="PLLS">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="PLGEOM"><a name="PLGEOM"></a><div class="titlepage"></div><a class="indexterm" name="d0e208088"></a><span class="refentrytitle"><span class="command"><strong>PLGEOM</strong></span></span><div class="refnamediv"><p><span class="command"><strong>PLGEOM</strong></span>, <em class="replaceable"><code>Item</code></em>, <em class="replaceable"><code>NODEkey</code></em><br><b class="refpurpose">Plots target and source geometries.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="cmdsmapgroup.html" title="2.13. Mapping Processor Commands"><code class="classname">/MAP</code></a>: <a class="link" href="cmdsmapgroup.html#cmdsmaptable" title="Table 2.101: Pressure Mapping"><span class="type">Pressure Mapping</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="PLGEOM.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Item</code></em></b></span></dt><dd><p>Items to plot:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">BOTH&nbsp;&nbsp;</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plot both target and
+source geometries (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">TARGET&nbsp;&nbsp;</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plot only the target
+geometry.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">SOURCE&nbsp;&nbsp;</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Plot only the source
+geometry.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>NODEkey</code></em></b></span></dt><dd><p>If the source data contains faces (that is, surface
+elements were created upon the <a class="link" href="Hlp_C_READ.html" title="READ"><span class="command"><strong>READ</strong></span></a> command),
+set <em class="replaceable"><code>NODEkey</code></em> = 1 to plot only the source
+nodes rather than both the nodes and the elements.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="PLGEOM.notes"></a><h2>Notes</h2><p>Target faces are displayed in gray and source points in yellow.
+If the source data contains faces (that is, surface elements were
+created upon the <a class="link" href="Hlp_C_READ.html" title="READ"><span class="command"><strong>READ</strong></span></a> command), the source faces
+are also displayed in blue (unless <em class="replaceable"><code>NODEkey</code></em> = 1), and both surfaces are made translucent.</p></div><div class="refsect1" title="Menu Paths"><a name="PLGEOM.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

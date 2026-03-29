@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:46-05:00"><title>CMROTATE</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="CMROTATE">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_C_CTOC.html" title="C Commands">
+<link rel="prev" href="Hlp_C_CMPLOT.html" title="CMPLOT">
+<link rel="next" href="Hlp_C_CMSEL.html" title="CMSEL">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="CMROTATE"><a name="CMROTATE"></a><div class="titlepage"></div><a class="indexterm" name="d0e55363"></a><span class="refentrytitle"><span class="command"><strong>CMROTATE</strong></span></span><div class="refnamediv"><p><span class="command"><strong>CMROTATE</strong></span>, <em class="replaceable"><code>CM_Name</code></em>, <em class="replaceable"><code>ROTATX</code></em>, <em class="replaceable"><code>ROTATY</code></em>, <em class="replaceable"><code>ROTATZ</code></em>, <em class="replaceable"><code>X1</code></em>, <em class="replaceable"><code>Y1</code></em>, <em class="replaceable"><code>Z1</code></em>, <em class="replaceable"><code>X2</code></em>, <em class="replaceable"><code>Y2</code></em>, <em class="replaceable"><code>Z2</code></em><br><b class="refpurpose">Specifies the rotational velocity of an element component in a brake-squeal
+      analysis.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoluinertiajla070199" title="Table 2.57: Inertia"><span class="type">Inertia</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>CM_Name</code></em></b></span></dt><dd><p>The name of the element component.</p></dd><dt><span><b class="term"><em class="replaceable"><code>ROTATX</code></em>, <em class="replaceable"><code>ROTATY</code></em>, <em class="replaceable"><code>ROTATZ</code></em></b></span></dt><dd><p>If the <em class="replaceable"><code>X2</code></em>, <em class="replaceable"><code>Y2</code></em>, <em class="replaceable"><code>Z2</code></em> fields are not defined, <em class="replaceable"><code>ROTATX</code></em>, <em class="replaceable"><code>ROTATY</code></em>, and <em class="replaceable"><code>ROTATZ</code></em> specify the components of the rotational angle
+vector in the global Cartesian X, Y, Z directions. </p><p>If
+the <em class="replaceable"><code>X2</code></em>, <em class="replaceable"><code>Y2</code></em>, <em class="replaceable"><code>Z2</code></em> fields are defined, only <em class="replaceable"><code>ROTATX</code></em> is required. <em class="replaceable"><code>ROTATX</code></em> specifies the scalar
+rotational velocity about the rotational axis. The rotational direction
+of <em class="replaceable"><code>ROTATX</code></em> is designated either positive
+or negative, and is determined by the &#8220;right hand rule.&#8221;</p></dd><dt><span><b class="term"><em class="replaceable"><code>X1</code></em>, <em class="replaceable"><code>Y1</code></em>, <em class="replaceable"><code>Z1</code></em></b></span></dt><dd><p>If the <em class="replaceable"><code>X2</code></em>, <em class="replaceable"><code>Y2</code></em>, <em class="replaceable"><code>Z2</code></em> fields are defined, <em class="replaceable"><code>X1</code></em>, <em class="replaceable"><code>Y1</code></em>, and <em class="replaceable"><code>Z1</code></em> define the coordinates of the beginning point of
+the rotational axis vector. Otherwise, <em class="replaceable"><code>X1</code></em>, <em class="replaceable"><code>Y1</code></em>, and <em class="replaceable"><code>Z1</code></em> are the coordinates of a point through which the rotational axis
+passes.</p></dd><dt><span><b class="term"><em class="replaceable"><code>X2</code></em>, <em class="replaceable"><code>Y2</code></em>, <em class="replaceable"><code>Z2</code></em></b></span></dt><dd><p>The coordinates of the end point of the rotational
+axis vector. </p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="d0e55552"></a><h2>Notes</h2><p>The <span class="command"><strong>CMROTATE</strong></span> command specifies the rotational
+motion velocity components <em class="replaceable"><code>ROTATX</code></em>, <em class="replaceable"><code>ROTATY</code></em>, and <em class="replaceable"><code>ROTATZ</code></em> of an
+element component <em class="replaceable"><code>CM_Name</code></em> about a user-defined
+rotational axis. The rotational axis can be defined either as a vector
+passing through a single point or a vector connecting two points. <span class="command"><strong>CMROTATE</strong></span> can be used in static analyses (<a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,STATIC) and modal analyses (<a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,MODAL).</p><p>This command sets the constant rotational velocity on the nodes of the specified element
+      component, despite any deformation at the nodes. This feature is primarily used for generating
+        <a href="../ans_ctec/Hlp_ctec_realkey.html#ctecforfricslid" title="sliding contact at frictional contact interfaces" class="olink">sliding contact at frictional contact interfaces</a>
+      in a <a href="../ans_str/Hlp_G_STRmodanexamp.html#strPresModaBrakeSqueal" title="brake-squeal analysis" class="olink">brake-squeal analysis</a>. This type of
+      analysis typically involves surface-to-surface contact between the brake pad and the rotating
+      disk. The applicable contact elements, therefore, <span>are
+          <a href="../ans_elem/Hlp_E_CONTA174.html" title="CONTA174" class="olink"><span class="structname">CONTA174</span></a> and <a href="../ans_elem/Hlp_E_CONTA175.html" title="CONTA175" class="olink"><span class="structname">CONTA175</span></a></span>.</p><p>A <a href="../ans_str/Hlp_G_STRmodanexamp.html#strPresModaBrakeSqueal" title="brake-squeal analysis" class="olink">brake-squeal analysis</a> generally involves a
+      linear perturbation modal analysis subsequent to a large-deformation static analysis with the
+      Newton-Raphson option set as <a class="link" href="Hlp_C_NROPT.html" title="NROPT"><span class="command"><strong>NROPT</strong></span></a>,UNSYM. Therefore,
+        <span class="command"><strong>CMROTATE</strong></span> is not applicable for multiple load step solves using the
+        <a class="link" href="Hlp_C_LSSOLVE.html" title="LSSOLVE"><span class="command"><strong>LSSOLVE</strong></span></a> command. </p><p>The load interpolation setting (<a class="link" href="Hlp_C_KBC.html" title="KBC"><span class="command"><strong>KBC</strong></span></a>) applies to the
+   rotational velocity, in particular the <em class="replaceable"><code>OMGSQRDKEY</code></em> option for quadratic
+   interpolation.</p><p>This command is also valid in PREP7.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e55628"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

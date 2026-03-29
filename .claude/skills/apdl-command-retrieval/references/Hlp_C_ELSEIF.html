@@ -1,0 +1,79 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:02-05:00"><title>*ELSEIF</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="*ELSEIF">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_E_TOC.html" title="E Commands">
+<link rel="prev" href="Hlp_C_ELSE.html" title="*ELSE">
+<link rel="next" href="Hlp_C_EMAGERR.html" title="EMAGERR">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="*ELSEIF"><a name="a-ELSEIF"></a><div class="titlepage"></div><a class="indexterm" name="d0e88663"></a><span class="refentrytitle">
+<a href="Hlp_C_ELSEIF.html" title="*ELSEIF" class="olink"><span class="command"><strong>*ELSEIF</strong></span></a>
+</span><div class="refnamediv"><p>
+<span class="command"><strong>*ELSEIF</strong></span>, <em class="replaceable"><code>VAL1</code></em>, <em class="replaceable"><code>Oper1</code></em>, <em class="replaceable"><code>VAL2</code></em>, <em class="replaceable"><code>Conj</code></em>, <em class="replaceable"><code>VAL3</code></em>, <em class="replaceable"><code>Oper2</code></em>, <em class="replaceable"><code>VAL4</code></em>
+<br><b class="refpurpose">Separates an intermediate if-then-else block.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_4.html" title="2.4. APDL Commands"><code class="classname">APDL</code></a>: <a class="link" href="Hlp_C_CH2_4.html#cmdapdlproctlsjla070199" title="Table 2.22: Process Controls"><span class="type">Process Controls</span></a></span></div></div></div><div class="refclass">
+<div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div>
+</div></p></div><div class="refsect1" title="Argument Descriptions"><a name="a-ELSEIF.argdescript"></a><h2>Argument Descriptions</h2><div><div class="variablelist"><dl><dt><span><b class="term">
+<em class="replaceable"><code>VAL1</code></em>
+</b></span></dt><dd><p>First numerical value (or parameter which evaluates to numerical
+value) in the conditional comparison operation. <em class="replaceable"><code>VAL1</code></em>, <em class="replaceable"><code>VAL2</code></em>, <em class="replaceable"><code>VAL3</code></em>,
+and <em class="replaceable"><code>VAL4</code></em> can also be character strings (enclosed
+in quotes) or parameters for <em class="replaceable"><code>Oper</code></em> = EQ and NE only.</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>Oper1</code></em>
+</b></span></dt><dd><p>Operation label. A tolerance of 1.0E-10 is used for comparisons
+between real numbers:</p><div><div class="variablelist"><dl><dt><span><b class="term">EQ&nbsp;--&nbsp;</b></span></dt><dd><p>Equal (for <em class="replaceable"><code>VAL1</code></em> = <em class="replaceable"><code>VAL2</code></em>).</p></dd><dt><span><b class="term">NE&nbsp;--&nbsp;</b></span></dt><dd><p>Not equal (for <em class="replaceable"><code>VAL1</code></em>&nbsp;&#8800;<em class="replaceable"><code>VAL2</code></em>).</p></dd><dt><span><b class="term">LT&nbsp;--&nbsp;</b></span></dt><dd><p>Less than (for <em class="replaceable"><code>VAL1</code></em>&lt;<em class="replaceable"><code>VAL2</code></em>).</p></dd><dt><span><b class="term">GT&nbsp;--&nbsp;</b></span></dt><dd><p>Greater than (for <em class="replaceable"><code>VAL1</code></em>&gt;<em class="replaceable"><code>VAL2</code></em>).</p></dd><dt><span><b class="term">LE&nbsp;--&nbsp;</b></span></dt><dd><p>Less than or equal (for <em class="replaceable"><code>VAL1</code></em>&nbsp;
+<span class="inlineequation" style="&#xA;            vertical-align:0.000000px"><img src="graphics/eq1c1b2a11-f6d0-4ffa-bc88-7460c652bfed.svg"></span>
+<em class="replaceable"><code>VAL2</code></em>).</p></dd><dt><span><b class="term">GE&nbsp;--&nbsp;</b></span></dt><dd><p>Greater than or equal (for <em class="replaceable"><code>VAL1</code></em>&nbsp;
+<span class="inlineequation" style="&#xA;            vertical-align:0.000000px"><img src="graphics/eq3f25499c-1190-49de-b51f-fba1eef4c4ef.svg"></span>
+<em class="replaceable"><code>VAL2</code></em>).</p></dd><dt><span><b class="term">ABLT&nbsp;--&nbsp;</b></span></dt><dd><p>Absolute values of <em class="replaceable"><code>VAL1</code></em> and <em class="replaceable"><code>VAL2</code></em> before
+&lt; operation.</p></dd><dt><span><b class="term">ABGT&nbsp;--&nbsp;</b></span></dt><dd><p>Absolute values of <em class="replaceable"><code>VAL1</code></em> and <em class="replaceable"><code>VAL2</code></em> before
+&gt; operation.</p></dd></dl></div></div><p>
+</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>VAL2</code></em>
+</b></span></dt><dd><p>Second numerical value (or parameter which evaluates to numerical
+value) in the conditional comparison operation.</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>Conj</code></em>
+</b></span></dt><dd><p>(Optional) Connection between two logical clauses.</p><div><div class="variablelist"><dl><dt><span><b class="term">AND - </b></span></dt><dd><p>True if both clauses (<em class="replaceable"><code>Oper1</code></em> and <em class="replaceable"><code>Oper2</code></em>)
+are true. </p></dd><dt><span><b class="term">OR - </b></span></dt><dd><p>True if either clause is true. </p></dd><dt><span><b class="term">XOR - </b></span></dt><dd><p>True if either (but not both) clause is
+true. </p></dd></dl></div></div><p>
+</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>VAL3</code></em>
+</b></span></dt><dd><p>(Optional) Third numerical value (or parameter which evaluates
+to numerical value).</p></dd><dt><span><b class="term">
+<em class="replaceable"><code>Oper2</code></em>
+</b></span></dt><dd><p>(Optional) Operation label.  This will have the same labels
+as <em class="replaceable"><code>Oper1</code></em>, except it uses <em class="replaceable"><code>Val3</code></em> and <em class="replaceable"><code>Val4</code></em>.
+A tolerance of 1.0E-10 is used for comparisons between real numbers. </p></dd><dt><span><b class="term">
+<em class="replaceable"><code>VAL4</code></em>
+</b></span></dt><dd><p>(Optional) Fourth numerical value (or parameter value which
+evaluates to a numerical value). </p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="a-ELSEIF.notes"></a><h2>Notes</h2><p>Optional intermediate block separator within an if-then-else construct.
+All seven characters of the command name (*ELSEIF) must be input. This command
+is similar to the <a href="Hlp_C_IF.html" title="*IF" class="olink"><span class="command"><strong>*IF</strong></span></a>  command except that the <em class="replaceable"><code>Base</code></em> field
+is not used. The <a href="Hlp_C_IF.html" title="*IF" class="olink"><span class="command"><strong>*IF</strong></span></a>, <a href="Hlp_C_ELSEIF.html" title="*ELSEIF" class="olink"><span class="command"><strong>*ELSEIF</strong></span></a>, <a href="Hlp_C_ELSE.html" title="*ELSE" class="olink"><span class="command"><strong>*ELSE</strong></span></a>,
+and <a href="Hlp_C_ENDIF.html" title="*ENDIF" class="olink"><span class="command"><strong>*ENDIF</strong></span></a> commands for each if-then-else construct must
+all be read from the same file (or keyboard).</p><p>This command is valid in any processor.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e88988"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

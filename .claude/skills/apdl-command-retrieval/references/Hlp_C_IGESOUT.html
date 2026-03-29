@@ -1,0 +1,71 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:42-05:00"><title>IGESOUT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="IGESOUT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_I_TOC.html" title="I Commands">
+<link rel="prev" href="Hlp_C_IGESIN.html" title="IGESIN">
+<link rel="next" href="Hlp_C_IMAGE.html" title="/IMAGE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="IGESOUT"><a name="IGESOUT"></a><div class="titlepage"></div><a class="indexterm" name="d0e136380"></a><span class="refentrytitle"><span class="command"><strong>IGESOUT</strong></span></span><div class="refnamediv"><p><span class="command"><strong>IGESOUT</strong></span>, <em class="replaceable"><code>Fname</code></em>, <em class="replaceable"><code>Ext</code></em>, <em class="replaceable"><code>--</code></em>, <em class="replaceable"><code>ATT</code></em><br><b class="refpurpose">Writes solid model data to a file in IGES Version 5.1
+format.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7databaseldm061600" title="Table 2.24: Database"><span class="type">Database</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="IGESOUT.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Fname</code></em></b></span></dt><dd><p>File name and directory path (248 characters maximum, including the characters needed for the directory path).  An unspecified directory path defaults to the working directory; in this case, you can use all 248 characters for the file name. </p><p>The file name defaults to <span class="filename"><strong>Jobname</strong></span>.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Ext</code></em></b></span></dt><dd><p>Filename extension (eight-character maximum).</p><p>The extension defaults to IGES if <em class="replaceable"><code>Fname</code></em> is blank.</p></dd><dt><span><b class="term"><em class="replaceable"><code>--</code></em></b></span></dt><dd><p>Unused field.</p></dd><dt><span><b class="term"><em class="replaceable"><code>ATT</code></em></b></span></dt><dd><p>Attribute key:       </p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">0</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Do not write assigned numbers and attributes
+of the solid model entities to the IGES file (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Write assigned numbers and attributes
+of solid model entities (keypoints, lines, areas, volumes) to the
+IGES file.  Attributes include MAT, TYPE, REAL, and ESYS specifications
+as well as associated solid model loads and meshing (keypoint element
+size, number of line divisions and spacing ratio) specifications.</p></td></tr></tbody></table></div></div></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="IGESOUT.notes"></a><h2>Notes</h2><p>Causes the selected solid model data to be written to a coded
+file in the IGES Version 5.1 format.  Previous data on this file,
+if any, are overwritten.  Keypoints that are not attached to any line
+are written to the output file as IGES entity 116 (Point).  Lines
+that are not attached to any area are written to the output file as
+either IGES Entity 100 (Circular Arc), 110 (Line), or 126 (Rational
+B-Spline Curve) depending upon whether the ANSYS entity was defined
+as an arc, straight line, or spline.  Areas are written to the output
+file as IGES Entity 144 (Trimmed Parametric Surface).  Volumes are
+written to the output file as IGES entity 186 (Manifold Solid B-Rep
+Object).  Solid model entities to be written must have all corresponding
+lower level entities selected (use <a class="link" href="Hlp_C_ALLSEL.html" title="ALLSEL"><span class="command"><strong>ALLSEL</strong></span></a>,BELOW,ALL)
+before issuing command.  Concatenated lines and areas are not written
+to the IGES file; however, the entities that make up these concatenated
+entities are written.</p><div class="caution" title="Caution" style="margin-left: 1.3rem; margin-right: 1.3remin;"><hr><p><span class="admontitle"><b><font color="red">Caution:</font></b></span>&nbsp;&nbsp;Section properties assigned to areas, lines and other
+solid model entities will not be maintained when the model is exported
+using <span class="command"><strong>IGESOUT</strong></span>.</p><p>If you
+issue the <span class="command"><strong>IGESOUT</strong></span> command after generating a beam
+mesh with orientation nodes, the orientation keypoints that were specified
+for the line (<a class="link" href="Hlp_C_LATT.html" title="LATT"><span class="command"><strong>LATT</strong></span></a>) are no longer associated with
+the line and are not written out to the IGES file.  The line does
+not recognize that orientation keypoints were ever assigned to it,
+and the orientation keypoints do not "know" that they are orientation
+keypoints.  Thus the <span class="command"><strong>IGESOUT</strong></span> command does not support
+(for beam meshing) any line operation that relies on solid model associativity.
+ For example, meshing the areas adjacent to the meshed line, plotting
+the line that contains the orientation nodes, or clearing the mesh
+from the line that contains orientation nodes may not work as expected.
+ See <a href="../ans_mod/Hlp_G_MOD7.html" title="Meshing Your&#xA;Solid Model" class="olink">Meshing Your
+Solid Model</a> in the <a href="../ans_mod/Hlp_G_ModTOC.html" title="Modeling and Meshing Guide" class="olink"><em class="citetitle">Modeling and Meshing Guide</em></a> for more information about beam
+meshing.</p><hr></div></div><div class="refsect1" title="Menu Paths"><a name="IGESOUT.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Utility Menu&gt;File&gt;Export</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

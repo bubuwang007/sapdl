@@ -1,0 +1,41 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:07-05:00"><title>SPGRAPH</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="SPGRAPH">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_S_TOC.html" title="S Commands">
+<link rel="prev" href="Hlp_C_SPFREQ.html" title="SPFREQ">
+<link rel="next" href="Hlp_C_SPH4.html" title="SPH4">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="SPGRAPH"><a name="SPGRAPH"></a><div class="titlepage"></div><a class="indexterm" name="d0e270111"></a><span class="refentrytitle"><span class="command"><strong>SPGRAPH</strong></span></span><div class="refnamediv"><p><span class="command"><strong>SPGRAPH</strong></span>, <em class="replaceable"><code>TBLNO</code></em>, <em class="replaceable"><code>CURVNO</code></em>, <em class="replaceable"><code>CURVNOBeg </code></em><br><b class="refpurpose">Displays input spectrum curves for MPRS analysis.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoluspectrumjla070199" title="Table 2.51: Spectrum Options"><span class="type">Spectrum Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="SPGRAPH.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>TBLNO</code></em></b></span></dt><dd><p>Table number to display.  Defaults to 1.</p></dd><dt><span><b class="term"><em class="replaceable"><code>CURVNO</code></em></b></span></dt><dd><p>Curve number to display. Defaults to none.</p></dd><dt><span><b class="term"><em class="replaceable"><code>CURVNOBeg</code></em></b></span></dt><dd><p>Beginning of the curve number range to display. Defaults
+to 1.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="SPGRAPH.notes"></a><h2>Notes</h2><p>You can display up to 10 input spectrum curves (<a class="link" href="Hlp_C_SPVAL.html" title="SPVAL"><span class="command"><strong>SPVAL</strong></span></a> and <a class="link" href="Hlp_C_SPFREQ.html" title="SPFREQ"><span class="command"><strong>SPFREQ</strong></span></a> commands) with log X scale.</p><p>If the input spectrum curves are not associated with a damping
+value (<a class="link" href="Hlp_C_SPDAMP.html" title="SPDAMP"><span class="command"><strong>SPDAMP</strong></span></a> command), <em class="replaceable"><code>CURVNO</code></em> and <em class="replaceable"><code>CURVNOBeg</code></em> are not applicable and
+table <em class="replaceable"><code>TBLNO</code></em> is displayed. Otherwise, specify <em class="replaceable"><code>CURVNO</code></em> or <em class="replaceable"><code>CURVNOBeg</code></em>:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>if <em class="replaceable"><code>CURVNO</code></em> is used, one
+curve is displayed.</p></li><li class="listitem"><p>if <em class="replaceable"><code>CURVNOBeg</code></em> is used, up
+to 10 curves are displayed. <em class="replaceable"><code>CURVNOBeg</code></em> is
+the beginning of the curve number range of interest.</p></li></ul></div></div><div class="refsect1" title="Menu Paths"><a name="SPGRAPH.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

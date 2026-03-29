@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:45-05:00"><title>*ITENGINE</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="*ITENGINE">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_I_TOC.html" title="I Commands">
+<link rel="prev" href="Hlp_C_IRLIST.html" title="IRLIST">
+<link rel="next" href="Hlp_J_TOC.html" title="J Commands">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="*ITENGINE"><a name="a-ITENGINE"></a><div class="titlepage"></div><a class="indexterm" name="d0e140231"></a><span class="refentrytitle"><a href="Hlp_C_ITENGINE.html" title="*ITENGINE" class="olink"><span class="command"><strong>*ITENGINE</strong></span></a></span><div class="refnamediv"><p><span class="command"><strong>*ITENGINE</strong></span>, <em class="replaceable"><code>Type</code></em>, <em class="replaceable"><code>EngineName</code></em>, <em class="replaceable"><code>PrecondName</code></em>, <em class="replaceable"><code>Matrix</code></em>, <em class="replaceable"><code>RhsVector</code></em>, <em class="replaceable"><code>SolVector</code></em>, <em class="replaceable"><code>MaxIter</code></em>, <em class="replaceable"><code>Toler</code></em><br><b class="refpurpose">Performs a solution using an iterative solver.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_4.html" title="2.4. APDL Commands"><code class="classname">APDL</code></a>: <a class="link" href="Hlp_C_CH2_4.html#cmdapdlmatrix" title="Table 2.23: Matrix Operations (APDL Math)"><span class="type">Matrix Operations</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="light">Premium</span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsect1" title="Argument Descriptions"><a name="a-ITENGINE.argdescript"></a><h2>Argument Descriptions</h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Type</code></em></b></span></dt><dd><p>Specifies the algorithm to be used:</p><div><div class="variablelist"><dl><dt><span><b class="term">PCG&nbsp;--&nbsp;</b></span></dt><dd><p>Preconditioned conjugate gradient
+(default).</p></dd></dl></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>EngineName</code></em></b></span></dt><dd><p>Name used to identify this iterative solver engine. Must be
+specified.</p></dd><dt><span><b class="term"><em class="replaceable"><code>PrecondName</code></em></b></span></dt><dd><p>Linear solver engine name (<a href="Hlp_C_LSENGINE.html" title="*LSENGINE" class="olink"><span class="command"><strong>*LSENGINE</strong></span></a>) identifying
+the factored matrix to be used as the preconditioner.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Matrix</code></em></b></span></dt><dd><p>Name of the matrix to solve. </p></dd><dt><span><b class="term"><em class="replaceable"><code>RhsVector</code></em></b></span></dt><dd><p>Matrix (load vector) name.</p></dd><dt><span><b class="term"><em class="replaceable"><code>SolVector</code></em></b></span></dt><dd><p>Solution vector name. If non-zero, it will be taken as the
+initial vector for the iterative process.</p></dd><dt><span><b class="term"><em class="replaceable"><code>MaxIter</code></em></b></span></dt><dd><p>Maximum number of iterations allowed. Default is 2 times the
+number of rows in the matrix. </p></dd><dt><span><b class="term"><em class="replaceable"><code>Toler</code></em></b></span></dt><dd><p>Convergence tolerance. Default is 1.0E-8.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="a-ITENGINE.notes"></a><h2>Notes</h2><p>This command solves Ax = b using a preconditioned conjugate gradient
+algorithm. It uses an existing factored system as the preconditioner. This
+solution method is useful if an existing matrix has been solved and minor
+changes have been made to the matrix.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e140378"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

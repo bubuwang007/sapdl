@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:36:02-05:00"><title>VPLOT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="VPLOT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_V_TOC.html" title="V Commands">
+<link rel="prev" href="Hlp_C_VPLOT_st.html" title="*VPLOT">
+<link rel="next" href="Hlp_C_VPTN.html" title="VPTN">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="VPLOT"><a name="VPLOT"></a><div class="titlepage"></div><a class="indexterm" name="d0e314665"></a><span class="refentrytitle"><span class="command"><strong>VPLOT</strong></span></span><div class="refnamediv"><p><span class="command"><strong>VPLOT</strong></span>, <em class="replaceable"><code>NV1</code></em>, <em class="replaceable"><code>NV2</code></em>, <em class="replaceable"><code>NINC</code></em>, <em class="replaceable"><code>DEGEN</code></em>, <em class="replaceable"><code>SCALE</code></em><br><b class="refpurpose">Displays the selected volumes.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7volumesldm061600" title="Table 2.34: Volumes"><span class="type">Volumes</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="VPLOT.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>NV1</code></em>, <em class="replaceable"><code>NV2</code></em>, <em class="replaceable"><code>NINC</code></em></b></span></dt><dd><p>Display volumes from <em class="replaceable"><code>NV1</code></em> to <em class="replaceable"><code>NV2</code></em> (defaults
+to <em class="replaceable"><code>NV1</code></em>) in steps of <em class="replaceable"><code>NINC</code></em> (defaults
+to 1).  If <em class="replaceable"><code>NV1</code></em> = ALL (default), <em class="replaceable"><code>NV2</code></em> and <em class="replaceable"><code>NINC</code></em> are
+ignored and all selected volumes [<a class="link" href="Hlp_C_VSEL.html" title="VSEL"><span class="command"><strong>VSEL</strong></span></a>] are displayed.</p></dd><dt><span><b class="term"><em class="replaceable"><code>DEGEN</code></em></b></span></dt><dd><p>Degeneracy marker:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">(blank)</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>No degeneracy marker is used (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">DEGE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>A red star is placed on keypoints at degeneracies
+(see the <a href="../ans_mod/Hlp_G_ModTOC.html" title="Modeling and Meshing Guide" class="olink"><em class="citetitle">Modeling and Meshing Guide</em></a>).  Not available if <a href="Hlp_C_FACET.html" title="/FACET" class="olink"><span class="command"><strong>/FACET</strong></span></a>,WIRE is set.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>SCALE</code></em></b></span></dt><dd><p>Scale factor for the size of the degeneracy-marker star. 
+The scale is the size in window space (-1 to 1 in both directions) (defaults
+to .075).</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="VPLOT.notes"></a><h2>Notes</h2><p>Displays selected volumes.  (Only volumes having areas within the selected
+area set [<a class="link" href="Hlp_C_ASEL.html" title="ASEL"><span class="command"><strong>ASEL</strong></span></a>] will be plotted.)  With PowerGraphics on
+[<a href="Hlp_C_GRAPHICS.html" title="/GRAPHICS" class="olink"><span class="command"><strong>/GRAPHICS</strong></span></a>,POWER], <span class="command"><strong>VPLOT</strong></span> will display
+only the currently selected areas. This command is also a utility command,
+valid anywhere.  The degree of tessellation used to plot the volumes is set
+through the <a href="Hlp_C_FACET.html" title="/FACET" class="olink"><span class="command"><strong>/FACET</strong></span></a> command.</p></div><div class="refsect1" title="Menu Paths"><a name="VPLOT.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Check Geom&gt;Show Degeneracy&gt;Plot Degen Volus</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Operate&gt;Booleans&gt;Show Degeneracy&gt;Plot Degen Volus</strong></span></td></tr><tr><td><span class="guimenu"><strong>Utility Menu&gt;Plot&gt;Specified Entities&gt;Volumes</strong></span></td></tr><tr><td><span class="guimenu"><strong>Utility Menu&gt;Plot&gt;Volumes</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:04-05:00"><title>EREINF</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="EREINF">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_E_TOC.html" title="E Commands">
+<link rel="prev" href="Hlp_C_EREFINE.html" title="EREFINE">
+<link rel="next" href="Hlp_C_ERESX.html" title="ERESX">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="EREINF"><a name="EREINF"></a><div class="titlepage"></div><a class="indexterm" name="d0e93605"></a><a class="indexterm" name="d0e93608"></a><span class="refentrytitle"><span class="command"><strong>EREINF</strong></span></span><div class="refnamediv"><p><span class="command"><strong>EREINF</strong></span>,
+    <em class="replaceable"><code>KOffALim</code></em><br><b class="refpurpose">Generates reinforcing elements from selected existing (base) elements.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7elementsldm061600" title="Table 2.38: Elements"><span class="type">Elements</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>KOffALim</code></em></b></span></dt><dd><p>Enable or disable the limit of the angle between a <a href="../ans_elem/Hlp_E_MESH200.html" title="MESH200" class="olink"><span class="structname">MESH200</span></a>
+      element and a base element. Valid for the <a href="../ans_str/Hlp_G_STRRFDEF.html#reinfmeshinddmethod" title="mesh-independent method" class="olink">mesh-independent method</a> only.</p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>0 &#8211; Enable the angle limit (default).</td></tr><tr><td>1 &#8211; Disable the angle limit.</td></tr></table></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="d0e93678"></a><h2>Notes</h2><p><span class="command"><strong>EREINF</strong></span> generates reinforcing elements (<a href="../ans_elem/Hlp_E_REINF263.html" title="REINF263" class="olink"><span class="structname">REINF263</span></a>,
+    <a href="../ans_elem/Hlp_E_REINF264.html" title="REINF264" class="olink"><span class="structname">REINF264</span></a> and <a href="../ans_elem/Hlp_E_REINF265.html" title="REINF265" class="olink"><span class="structname">REINF265</span></a>) directly from selected
+   base elements (that is, existing standard structural elements in your model). The command scans
+   all selected base elements and generates (if necessary) a compatible reinforcing element type for
+   each base element. (You can select a combination of different base element types.)</p><p>Before issuing <span class="command"><strong>EREINF</strong></span>, first define the reinforcing geometry, material,
+   and orientation via one of two methods:</p><div class="blockquote"><blockquote class="blockquote"><p title="Mesh-Independent Method:"><b><a href="../ans_str/Hlp_G_STRRFDEF.html#reinfmeshinddmethod" title="Mesh-Independent Method:" class="olink">Mesh-Independent Method:</a>
+    &nbsp; &#8212; &nbsp;</b>Use <a href="../ans_elem/Hlp_E_MESH200.html" title="MESH200" class="olink"><span class="structname">MESH200</span></a> elements to temporarily represent the geometry of the
+     reinforcing fibers or smeared reinforcing surfaces. Define additional data including material,
+     fiber cross-section area, fiber spacing, and fiber orientation via reinforcing sections with
+     the mesh pattern (<a class="link" href="Hlp_C_SECDATA.html" title="SECDATA"><span class="command"><strong>SECDATA</strong></span></a>) and assign the sections to corresponding
+      <a href="../ans_elem/Hlp_E_MESH200.html" title="MESH200" class="olink"><span class="structname">MESH200</span></a> elements. (Predefining the reinforcing element type
+      [<a class="link" href="Hlp_C_ET.html" title="ET"><span class="command"><strong>ET</strong></span></a>] is not required.)</p><p title="Standard Method:"><b><a href="../ans_str/Hlp_G_STRRFDEF.html#reinfstandardmethod" title="Standard Method:" class="olink">Standard Method:</a>
+    &nbsp; &#8212; &nbsp;</b>Define reinforcing section types (<a class="link" href="Hlp_C_SECTYPE.html" title="SECTYPE"><span class="command"><strong>SECTYPE</strong></span></a>) with standard reinforcing
+     location patterns (<a class="link" href="Hlp_C_SECDATA.html" title="SECDATA"><span class="command"><strong>SECDATA</strong></span></a>). The standard reinforcing location input are
+     given with respect to the selected base elements; therefore, a change in the base mesh may
+     require redefining the (mesh-dependent) reinforcing section types.</p></blockquote></div><p>Standard element-definition commands (such as <a class="link" href="Hlp_C_ET.html" title="ET"><span class="command"><strong>ET</strong></span></a> and
+    <a class="link" href="Hlp_C_E.html" title="E"><span class="command"><strong>E</strong></span></a>) are not used for defining reinforcing elements.</p><p><span class="command"><strong>EREINF</strong></span> creates no new nodes. The reinforcing elements and the base elements
+   share the common nodes.</p><p>Elements generated by <span class="command"><strong>EREINF</strong></span> are not associated with the solid
+   model.</p><p>After <span class="command"><strong>EREINF</strong></span> executes, you can issue <a class="link" href="Hlp_C_ETLIST.html" title="ETLIST"><span class="command"><strong>ETLIST</strong></span></a>,
+    <a class="link" href="Hlp_C_ELIST.html" title="ELIST"><span class="command"><strong>ELIST</strong></span></a>, or <a class="link" href="Hlp_C_EPLOT.html" title="EPLOT"><span class="command"><strong>EPLOT</strong></span></a> to verify the newly created reinforcing
+   element types and elements.</p><p>Reinforcing elements do not account for any subsequent modifications made to the base
+   elements. ANSYS, Inc. recommends issuing <span class="command"><strong>EREINF</strong></span> only <span class="italic"><em>after</em></span> the base elements are finalized. If you delete or modify base elements (via
+    <a class="link" href="Hlp_C_EDELE.html" title="EDELE"><span class="command"><strong>EDELE</strong></span></a>, <a class="link" href="Hlp_C_EMODIF.html" title="EMODIF"><span class="command"><strong>EMODIF</strong></span></a>, <a class="link" href="Hlp_C_ETCHG.html" title="ETCHG"><span class="command"><strong>ETCHG</strong></span></a>,
+    <a class="link" href="Hlp_C_EMID.html" title="EMID"><span class="command"><strong>EMID</strong></span></a>, <a class="link" href="Hlp_C_EORIENT.html" title="EORIENT"><span class="command"><strong>EORIENT</strong></span></a>, <a class="link" href="Hlp_C_NUMMRG.html" title="NUMMRG"><span class="command"><strong>NUMMRG</strong></span></a>, or
+    <a class="link" href="Hlp_C_NUMCMP.html" title="NUMCMP"><span class="command"><strong>NUMCMP</strong></span></a>, for example), remove all affected reinforcing elements and reissue
+    <span class="command"><strong>EREINF</strong></span> to avoid inconsistencies.</p><p>If you define reinforcing via the <a href="../ans_str/Hlp_G_STRRFDEF.html#reinfmeshinddmethod" title="mesh-independent method" class="olink">mesh-independent method</a>, <span class="command"><strong>EREINF</strong></span>
+   creates new reinforcing sections containing details of the created reinforcing elements, then
+   applies them to all newly generated reinforcing elements. The number of new reinforcing sections
+   depends on the number of new reinforcing elements. (You can examine the properties of new
+   sections [<a class="link" href="Hlp_C_SLIST.html" title="SLIST"><span class="command"><strong>SLIST</strong></span></a>].) The program sets the ID number of the newest reinforcing
+   section to the highest section ID number in the model. After issuing <span class="command"><strong>EREINF</strong></span>,
+   the command shows the highest-numbered IDs (element type, element, and section). Do not overwrite
+   a new reinforcing section when defining subsequent sections.</p><p><span class="command"><strong>EREINF</strong></span> can generate the reinforcing elements with thermal properties if
+   the base elements are thermal solid elements (<a href="../ans_elem/Hlp_E_SOLID278.html" title="SOLID278" class="olink"><span class="structname">SOLID278</span></a> or
+    <a href="../ans_elem/Hlp_E_SOLID279.html" title="SOLID279" class="olink"><span class="structname">SOLID279</span></a>): </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>If using the <a href="../ans_str/Hlp_G_STRRFDEF.html#reinfmeshinddmethod" title="mesh-independent method" class="olink">mesh-independent method</a> for
+      defining reinforcing, apply element body-force loading (<a class="link" href="Hlp_C_BFE.html" title="BFE"><span class="command"><strong>BFE</strong></span></a>,,HGEN) or nodal
+      body-force loading (<a class="link" href="Hlp_C_BF.html" title="BF"><span class="command"><strong>BF</strong></span></a>,,HGEN) on the <a href="../ans_elem/Hlp_E_MESH200.html" title="MESH200" class="olink"><span class="structname">MESH200</span></a>
+      elements.</p></li><li class="listitem"><p>If using the <a href="../ans_str/Hlp_G_STRRFDEF.html#reinfstandardmethod" title="standard method" class="olink">standard method</a> for defining
+      reinforcing, apply element body-force loading (<a class="link" href="Hlp_C_BFE.html" title="BFE"><span class="command"><strong>BFE</strong></span></a>,,HGEN) on the
+      reinforcing members directly. (Do not apply <span class="emphasis"><em>nodal</em></span> body-force loading
+       [<a class="link" href="Hlp_C_BF.html" title="BF"><span class="command"><strong>BF</strong></span></a>,,HGEN].)</p></li></ul></div><p>If performing a subsequent structural analysis after the thermal analysis,
+    <span class="command"><strong>EREINF</strong></span> can convert the reinforcing elements for the structural analysis: </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Convert the thermal base elements to the appropriate structural element
+       (<a class="link" href="Hlp_C_ET.html" title="ET"><span class="command"><strong>ET</strong></span></a> or <a class="link" href="Hlp_C_EMODIF.html" title="EMODIF"><span class="command"><strong>EMODIF</strong></span></a>).</p></li><li class="listitem"><p>Select the reinforcing elements only.</p></li><li class="listitem"><p>Issue <span class="command"><strong>EREINF</strong></span>.</p><p><span class="emphasis"><em>Result</em></span>: The selected reinforcing elements are converted to elements
+      compatible with the converted base elements.</p></li></ol></div><p>Solution accuracy can be affected if the volume ratio between reinforcing elements and base
+   elements is high, particularly when body loading (such as heat generation) is applied via the
+   reinforcing elements. If the program detects a high volume ratio of reinforcing elements
+   generated via the <a href="../ans_str/Hlp_G_STRRFDEF.html#reinfmeshinddmethod" title="mesh-independent method" class="olink">mesh-independent method</a>, it
+   issues a warning message and saves affected base and <a href="../ans_elem/Hlp_E_MESH200.html" title="MESH200" class="olink"><span class="structname">MESH200</span></a> elements
+   (used to generate the reinforcing elements) into a component for close model inspection. Only the
+   volume of reinforcing elements created by the <span class="emphasis"><em>current</em></span>
+   <span class="command"><strong>EREINF</strong></span> command is considered in the volume-ratio calculation (that is, no
+   volume accumulation occurs over multiple <span class="command"><strong>EREINF</strong></span> commands).</p><p>For more information, see <a href="../ans_str/Hlp_G_STRREINF.html" title="Reinforcing in the Structural Analysis Guide" class="olink">Reinforcing in the <span class="olinkdocname">Structural Analysis Guide</span></a>.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e93931"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

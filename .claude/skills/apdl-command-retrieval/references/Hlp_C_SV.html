@@ -1,0 +1,52 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:19-05:00"><title>SV</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="SV">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_S_TOC.html" title="S Commands">
+<link rel="prev" href="Hlp_C_SUVECT.html" title="SUVECT">
+<link rel="next" href="Hlp_C_SVPLOT.html" title="SVPLOT">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="SV"><a name="SV"></a><div class="titlepage"></div><a class="indexterm" name="d0e279368"></a><span class="refentrytitle"><span class="command"><strong>SV</strong></span></span><div class="refnamediv"><p><span class="command"><strong>SV</strong></span>, <em class="replaceable"><code>DAMP</code></em>, <em class="replaceable"><code>SV1</code></em>, <em class="replaceable"><code>SV2</code></em>, <em class="replaceable"><code>SV3</code></em>, <em class="replaceable"><code>SV4</code></em>, <em class="replaceable"><code>SV5</code></em>, <em class="replaceable"><code>SV6</code></em>, <em class="replaceable"><code>SV7</code></em>, <em class="replaceable"><code>SV8</code></em>, <em class="replaceable"><code>SV9</code></em><br><b class="refpurpose">Defines spectrum values to be associated with frequency points.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoluspectrumjla070199" title="Table 2.51: Spectrum Options"><span class="type">Spectrum Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="SV.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>DAMP</code></em></b></span></dt><dd><p>Damping ratio for this response spectrum curve.  If the same
+as a previously defined curve, the SV values are added to the previous curve.
+ Up to four different curves may be defined, each with a different damping
+ratio.  Damping values must be input in ascending order.</p></dd><dt><span><b class="term"><em class="replaceable"><code>SV1</code></em>, <em class="replaceable"><code>SV2</code></em>, <em class="replaceable"><code>SV3</code></em>,
+. . . , <em class="replaceable"><code>SV9</code></em></b></span></dt><dd><p>Spectrum values corresponding to the frequency points [<a class="link" href="Hlp_C_FREQ.html" title="FREQ"><span class="command"><strong>FREQ</strong></span></a>].
+ Values are interpreted as defined with the <a class="link" href="Hlp_C_SVTYP.html" title="SVTYP"><span class="command"><strong>SVTYP</strong></span></a> command.
+  SV values should not be zero.  Values required outside the frequency range
+use the extreme input values.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="SV.notes"></a><h2>Notes</h2><p>Defines the spectrum values to be associated with the previously defined
+frequency points [<a class="link" href="Hlp_C_FREQ.html" title="FREQ"><span class="command"><strong>FREQ</strong></span></a>].  Applies only to the single-point
+response spectrum.  Damping has no effect on the frequency solution.  Damping
+values are used only to identify SV curves for the mode combinations calculation.
+ Only the curve with the lowest damping value is used in the initial mode
+coefficient calculation.  Use <a class="link" href="Hlp_C_STAT.html" title="STAT"><span class="command"><strong>STAT</strong></span></a> command to list current
+spectrum curve values.</p><p>Repeat <span class="command"><strong>SV</strong></span> command for additional SV points (100 maximum
+per <em class="replaceable"><code>DAMP</code></em> curve).  SV values are added to the <em class="replaceable"><code>DAMP</code></em> curve
+after the last nonzero SV value.</p><p>The interpolation method between response spectrum points and curves
+is specified using <em class="replaceable"><code>KeyInterp</code></em> in the <a class="link" href="Hlp_C_SVTYP.html" title="SVTYP"><span class="command"><strong>SVTYP</strong></span></a> command.
+It is logarithmic by default.</p><p>This command is also valid in PREP7.</p></div><div class="refsect1" title="Menu Paths"><a name="SV.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Spectrum&gt;SinglePt&gt;Spectr Values</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Spectrum&gt;SinglePt&gt;Spectr Values</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

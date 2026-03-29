@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:36:05-05:00"><title>VROTAT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="VROTAT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_V_TOC.html" title="V Commands">
+<link rel="prev" href="Hlp_C_VREAD.html" title="*VREAD">
+<link rel="next" href="Hlp_C_VSBA.html" title="VSBA">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="VROTAT"><a name="VROTAT"></a><div class="titlepage"></div><a class="indexterm" name="d0e316072"></a><span class="refentrytitle"><span class="command"><strong>VROTAT</strong></span></span><div class="refnamediv"><p><span class="command"><strong>VROTAT</strong></span>, <em class="replaceable"><code>NA1</code></em>, <em class="replaceable"><code>NA2</code></em>, <em class="replaceable"><code>NA3</code></em>, <em class="replaceable"><code>NA4</code></em>, <em class="replaceable"><code>NA5</code></em>, <em class="replaceable"><code>NA6</code></em>, <em class="replaceable"><code>PAX1</code></em>, <em class="replaceable"><code>PAX2</code></em>, <em class="replaceable"><code>ARC</code></em>, <em class="replaceable"><code>NSEG</code></em><br><b class="refpurpose">Generates cylindrical volumes by rotating an area pattern about
+an axis.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7volumesldm061600" title="Table 2.34: Volumes"><span class="type">Volumes</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="VROTAT.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>NA1</code></em>, <em class="replaceable"><code>NA2</code></em>, <em class="replaceable"><code>NA3</code></em>,
+. . . , <em class="replaceable"><code>NA6</code></em></b></span></dt><dd><p>List of areas in the pattern to be rotated (6 maximum if using
+keyboard entry).  Areas must lie to one side of, and in the plane of, the
+axis of rotation.  If <em class="replaceable"><code>NA1</code></em> = P, graphical picking
+is enabled and all remaining command fields are ignored (valid only in the
+GUI).  If <em class="replaceable"><code>NA1</code></em> = ALL, all selected areas will define
+the pattern to be rotated.  A component name may also be substituted for <em class="replaceable"><code>NA1</code></em>.</p></dd><dt><span><b class="term"><em class="replaceable"><code>PAX1</code></em>, <em class="replaceable"><code>PAX2</code></em></b></span></dt><dd><p>Keypoints defining the axis about which the area pattern is
+to be rotated.</p></dd><dt><span><b class="term"><em class="replaceable"><code>ARC</code></em></b></span></dt><dd><p>Arc length (in degrees).  Positive follows right-hand rule
+about <em class="replaceable"><code>PAX1</code></em>-<em class="replaceable"><code>PAX2 </code></em>vector.
+ Defaults to 360.</p></dd><dt><span><b class="term"><em class="replaceable"><code>NSEG</code></em></b></span></dt><dd><p>Number of volumes (8 maximum) around circumference.  Defaults
+to minimum required for 90&deg; (maximum) arcs, i.e., 4 for 360&deg;, 3 for
+270&deg;, etc.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="VROTAT.notes"></a><h2>Notes</h2><p>Generates cylindrical volumes (and their corresponding keypoints, lines,
+and areas) by rotating an area pattern (and its associated line and keypoint
+patterns) about an axis.  Keypoint patterns are generated at regular angular
+locations (based on a maximum spacing of 90&deg;).  Line patterns are generated
+at the keypoint patterns.  Arc lines are also generated to connect the keypoints
+circumferentially.  Keypoint, line, area, and volume numbers are automatically
+assigned (beginning with the lowest available values).  Adjacent lines use
+a common keypoint, adjacent areas use a common line, and adjacent volumes
+use a common area.</p><p>To generate a single volume with an arc greater than 180&deg;, <em class="replaceable"><code>NSEG</code></em> must
+be greater than or equal to 2.</p><p>If element attributes have been associated with the input area via the <a class="link" href="Hlp_C_AATT.html" title="AATT"><span class="command"><strong>AATT</strong></span></a> command,
+the opposite area generated by the <span class="command"><strong>VROTAT</strong></span> operation will
+also have those attributes (i.e., the element attributes from the input area
+are copied to the opposite area).  Note that only the area opposite the input
+area will have the same attributes as the input area; the areas adjacent to
+the input area will not.</p><p>If the given areas are meshed or belong to meshed volumes, the 2-D mesh
+can be rotated (extruded) to a 3-D mesh. See the <a href="../ans_mod/Hlp_G_ModTOC.html" title="Modeling and Meshing Guide" class="olink"><em class="citetitle">Modeling and Meshing Guide</em></a> for more information.
+ Note that the <em class="replaceable"><code>NDIV</code></em> argument on the <a class="link" href="Hlp_C_ESIZE.html" title="ESIZE"><span class="command"><strong>ESIZE</strong></span></a> command
+should be set before extruding the meshed areas.</p></div><div class="refsect1" title="Menu Paths"><a name="VROTAT.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Operate&gt;Extrude&gt;Areas&gt;About Axis</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

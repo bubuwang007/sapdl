@@ -1,0 +1,209 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:34:50-05:00"><title>SFCONTROL</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="SFCONTROL">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_S_TOC.html" title="S Commands">
+<link rel="prev" href="Hlp_C_SFCALC.html" title="SFCALC">
+<link rel="next" href="Hlp_C_SFCUM.html" title="SFCUM">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="SFCONTROL"><a name="SFCONTROL"></a><div class="titlepage"></div><a class="indexterm" name="d0e258692"></a><span class="refentrytitle">
+      <span class="command"><strong>SFCONTROL</strong></span>
+    </span><div class="refnamediv"><p>
+      <span class="command"><strong>SFCONTROL</strong></span>, <em class="replaceable"><code>KCSYS</code></em>,
+        <em class="replaceable"><code>LCOMP</code></em>, <em class="replaceable"><code>VAL1</code></em>,
+        <em class="replaceable"><code>VAL2</code></em>, <em class="replaceable"><code>VAL3</code></em>,
+        <em class="replaceable"><code>KTAPER</code></em>, <em class="replaceable"><code>KUSE</code></em>,
+        <em class="replaceable"><code>KAREA</code></em>, <em class="replaceable"><code>KPROJ</code></em>
+    <br><b class="refpurpose">Defines structural surface-load properties on selected
+      elements and nodes for subsequent loading commands.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsolufesurfldsjla070199" title="Table 2.67: FE Surface Loads"><span class="type">FE Surface Loads</span></a></span></div></div></div><div class="refclass">
+      <div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div>
+    </div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="SFCONTROL.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term">
+          <em class="replaceable"><code>KCSYS</code></em>
+        </b></span></dt><dd><p>Specifies how the load direction is determined:</p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>0 (or blank) &#8211; Use the coordinate system of an element face. A local
+              coordinate system is projected onto the face, if defined
+                (<em class="replaceable"><code>VAL1</code></em>) (default).</td></tr><tr><td>1 &#8211; Use a local coordinate system. A local coordinate system must be
+              defined and it is not projected onto the face.</td></tr><tr><td>2 &#8211; Use a custom (user-defined) vector in the global Cartesian coordinate
+              system.</td></tr></table></dd><dt><span><b class="term">
+          <em class="replaceable"><code>LCOMP</code></em>
+        </b></span></dt><dd><p>Load-component definition when <em class="replaceable"><code>KCSYS</code></em> = 0 or 1. The
+            following table shows how the component (or primary direction) is determined <a class="link" href="Hlp_C_SFCONTROL.html#SFCONTROL_fig1" title="Figure 15: Coordinate System for Load Application on the Faces of 3-D Solid and Shell Elements">based on the coordinate system</a>:</p><p>
+            </p><div class="informaltable"><table border="1" width="95%"><colgroup><col class="col1" width="25%"><col class="col2" width="25%"><col class="col3" width="25%"><col class="col4" width="25%"></colgroup><tbody><tr><td rowspan="3" align="center" valign="middle">
+                      <span class="italic"><em>LCOMP</em></span>
+                    </td><td colspan="3" align="center">
+                      <span class="bold"><strong>Direction</strong></span>
+                    </td></tr><tr><td colspan="2" align="center">
+                      <span class="italic"><em>KCSYS</em></span> = 0</td><td align="center">
+                      <span class="italic"><em>KCSYS</em></span> = 1 [<a class="xref" href="Hlp_C_SFCONTROL.html#Lcomp4">4</a>]</td></tr><tr><td align="center">
+                      <span class="italic"><em>VAL1 </em></span>= 0</td><td align="center">
+                      <span class="italic"><em>VAL1 </em></span>&gt; 10 [<a class="xref" href="Hlp_C_SFCONTROL.html#Lcomp3">3</a>]</td><td align="center">--</td></tr><tr><td align="center">
+                      <p>0</p>
+                      <p>1</p>
+                      <p>2</p>
+                    </td><td align="center">
+                      <p>Normal</p>
+                      <p>x direction [<a class="xref" href="Hlp_C_SFCONTROL.html#Lcomp1">1</a>]</p>
+                      <p>y direction [<a class="xref" href="Hlp_C_SFCONTROL.html#Lcomp1">1</a>]</p>
+                    </td><td align="center">
+                      <p>Normal</p>
+                      <p>x direction [<a class="xref" href="Hlp_C_SFCONTROL.html#Lcomp2">2</a>]</p>
+                      <p>y direction [<a class="xref" href="Hlp_C_SFCONTROL.html#Lcomp2">2</a>]</p>
+                    </td><td align="center">
+                      <p>x direction</p>
+                      <p>y direction</p>
+                      <p>z direction</p>
+                    </td></tr></tbody></table></div><p>
+            </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p><a name="Lcomp1"></a>The positive x and y directions are determined by the default surface
+                  coordinate directions. (See <a class="xref" href="Hlp_C_SFCONTROL.html#SFCONTROL_fig1" title="Figure 15: Coordinate System for Load Application on the Faces of 3-D Solid and Shell Elements">Figure&nbsp;15:&nbsp;Coordinate System for Load Application on the Faces of 3-D Solid and Shell
+        Elements</a>.</p></li><li class="listitem"><p><a name="Lcomp2"></a>The positive x and y directions are determined by the user-defined local
+                  coordinate system.</p></li><li class="listitem"><p><a name="Lcomp3"></a>
+                  <em class="replaceable"><code>VAL1</code></em> &lt; 0 is not valid. 0 &lt;
+                    <em class="replaceable"><code>VAL1</code></em> &lt; 11 is ignored.</p></li><li class="listitem"><p><a name="Lcomp4"></a>The local coordinate system is not projected onto the element face.</p></li></ol></div><p>
+          </p></dd><dt><span><b class="term">
+<em class="replaceable"><code>VAL1, VAL2, VAL3</code></em>
+        </b></span></dt><dd><p>
+<em class="replaceable"><code>KCSYS</code></em> = 0 or 1: <em class="replaceable"><code>VAL1</code></em> is the ID
+            of the local coordinate system for the load. <em class="replaceable"><code>VAL2</code></em> and
+              <em class="replaceable"><code>VAL3</code></em> are ignored.</p><p>
+<em class="replaceable"><code>KCSYS</code></em> = 2: The X, Y, and Z components of the direction
+            vector in the global Cartesian coordinate system.</p></dd><dt><span><b class="term">
+          <em class="replaceable"><code>KTAPER</code></em>
+        </b></span></dt><dd><p>Global tapered load behavior (valid for <a class="link" href="Hlp_C_SFE.html" title="SFE"><span class="command"><strong>SFE</strong></span></a> only):</p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>0 &#8211; Load does not vary (default).</td></tr><tr><td>1 &#8211; Load varies with respect to the current element locations. The
+              magnitude changes with respect to the element deformation.</td></tr><tr><td>2 &#8211; Load varies with respect to the initial element locations. The load
+              magnitude for each element remains constant throughout the solution. .</td></tr></table><p>For more information, see <a class="xref" href="Hlp_C_SFCONTROL.html#globaltaperedloads" title="Global Tapered Load Behavior (KTAPER)">"Global Tapered Load Behavior (<em class="replaceable"><code>KTAPER</code></em>)"</a>.</p></dd><dt><span><b class="term">
+          <em class="replaceable"><code>KUSE</code></em>
+        </b></span></dt><dd><p>Load direction with respect to the surface normal of the selected face:</p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>0 &#8211; Use the load as calculated (default).</td></tr><tr><td>1 &#8211; Use a positive load only (negative set to zero, valid for
+                <em class="replaceable"><code>LCOMP</code></em> = 0 and <em class="replaceable"><code>KCSYS</code></em> =
+              0).</td></tr><tr><td>2 &#8211; Use a negative load only (positive set to zero, valid for
+                <em class="replaceable"><code>LComp</code></em> = 0 and <em class="replaceable"><code>KCSYS</code></em> =
+              0).</td></tr><tr><td>3 &#8211; Applied load is not used if the surface normal is oriented in the
+              same general direction as the user-defined vector. Valid for
+                <em class="replaceable"><code>KCSYS</code></em> = 2 only.</td></tr></table></dd><dt><span><b class="term">
+          <em class="replaceable"><code>KAREA</code></em>
+        </b></span></dt><dd><p>Loaded area during large deformation:</p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>0 &#8211; Use the current (deformed) area
+              (default).</td></tr><tr><td>1 &#8211; Use the initial area.</td></tr></table></dd><dt><span><b class="term">
+          <em class="replaceable"><code>KPROJ</code></em>
+        </b></span></dt><dd><p>Vector-oriented load (<em class="replaceable"><code>KCSYS</code></em> = 2) behavior:</p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>0 &#8211; Apply the load on the full area and include the tangential component
+              (default).</td></tr><tr><td>1 &#8211; Apply the load on the projected area and include the tangential
+              component.</td></tr><tr><td>2 &#8211; Apply the load on the projected area and exclude the tangential
+              component.</td></tr></table></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="SFCONTROL.notes"></a><h2>Notes</h2><p><span class="command"><strong>SFCONTROL</strong></span> defines the properties of distributed
+      loads for all subsequent <a class="link" href="Hlp_C_SF.html" title="SF"><span class="command"><strong>SF</strong></span></a> or <a class="link" href="Hlp_C_SFE.html" title="SFE"><span class="command"><strong>SFE</strong></span></a> loading commands.
+        (<a class="link" href="Hlp_C_SFA.html" title="SFA"><span class="command"><strong>SFA</strong></span></a> and <a class="link" href="Hlp_C_SFL.html" title="SFL"><span class="command"><strong>SFL</strong></span></a> are not supported.)</p><p>The command does not support cyclic symmetry analysis and analyses in
+      which remeshing occurs (such as nonlinear mesh adaptivity, 2-D to 3-D analysis, and fracture
+      analysis).</p><p>To update a load property or properties, reissue <span class="command"><strong>SFCONTROL</strong></span> with the new
+      option(s) before issuing further <a class="link" href="Hlp_C_SF.html" title="SF"><span class="command"><strong>SF</strong></span></a> or <a class="link" href="Hlp_C_SFE.html" title="SFE"><span class="command"><strong>SFE</strong></span></a>
+      commands.</p><div class="informaltable"><table border="1" width="95%"><colgroup><col width="100%"></colgroup><tbody><tr><td>
+              <p><span class="command"><strong>SFCONTROL</strong></span> supports these structural solid, shell, and
+                coupled-field elements:</p>
+              <p>
+<a href="../ans_elem/Hlp_E_SHELL181.html" title="SHELL181" class="olink"><span class="structname">SHELL181</span></a>, <a href="../ans_elem/Hlp_E_PLANE182.html" title="PLANE182" class="olink"><span class="structname">PLANE182</span></a>,
+                  <a href="../ans_elem/Hlp_E_PLANE183.html" title="PLANE183" class="olink"><span class="structname">PLANE183</span></a>, <a href="../ans_elem/Hlp_E_SOLID185.html" title="SOLID185" class="olink"><span class="structname">SOLID185</span></a>,
+                  <a href="../ans_elem/Hlp_E_SOLID186.html" title="SOLID186" class="olink"><span class="structname">SOLID186</span></a>, <a href="../ans_elem/Hlp_E_SOLID187.html" title="SOLID187" class="olink"><span class="structname">SOLID187</span></a>,
+                  <a href="../ans_elem/Hlp_E_SOLSH190.html" title="SOLSH190" class="olink"><span class="structname">SOLSH190</span></a>, <a href="../ans_elem/Hlp_E_SHELL208.html" title="SHELL208" class="olink"><span class="structname">SHELL208</span></a>,
+                  <a href="../ans_elem/Hlp_E_SHELL209.html" title="SHELL209" class="olink"><span class="structname">SHELL209</span></a>, <a href="../ans_elem/Hlp_E_SHELL281.html" title="SHELL281" class="olink"><span class="structname">SHELL281</span></a>,
+                  <a href="../ans_elem/Hlp_E_SOLID285.html" title="SOLID285" class="olink"><span class="structname">SOLID285</span></a>, <a href="../ans_elem/Hlp_E_PLANE222.html" title="PLANE222" class="olink"><span class="structname">PLANE222</span></a>,
+                  <a href="../ans_elem/Hlp_E_PLANE223.html" title="PLANE223" class="olink"><span class="structname">PLANE223</span></a>, <a href="../ans_elem/Hlp_E_SOLID226.html" title="SOLID226" class="olink"><span class="structname">SOLID226</span></a>, and
+                  <a href="../ans_elem/Hlp_E_SOLID227.html" title="SOLID227" class="olink"><span class="structname">SOLID227</span></a>.</p>
+            </td></tr></tbody></table></div><p>To list the current set of control data, issue
+        <span class="command"><strong>SFCONTROL</strong></span>,STAT.</p><p>To reset all input values to defaults, issue
+        <span class="command"><strong>SFCONTROL</strong></span>,NONE.</p><p>When <em class="replaceable"><code>KCSYS</code></em> = 0, the positive normal load
+      acts in the negative surface normal (-<em class="replaceable"><code>z</code></em>) direction. The positive
+      tangential loads act in the positive coordinate direction. A user-defined coordinate system
+        (<em class="replaceable"><code>VAL1</code></em>) is ignored if the load is applied on an edge of a plane
+      element (<a href="../ans_elem/Hlp_E_PLANE182.html" title="PLANE182" class="olink"><span class="structname">PLANE182</span></a>, <a href="../ans_elem/Hlp_E_PLANE183.html" title="PLANE183" class="olink"><span class="structname">PLANE183</span></a>,
+        <a href="../ans_elem/Hlp_E_SHELL208.html" title="SHELL208" class="olink"><span class="structname">SHELL208</span></a>, <a href="../ans_elem/Hlp_E_SHELL209.html" title="SHELL209" class="olink"><span class="structname">SHELL209</span></a>,
+        <a href="../ans_elem/Hlp_E_PLANE222.html" title="PLANE222" class="olink"><span class="structname">PLANE222</span></a>, and <a href="../ans_elem/Hlp_E_PLANE223.html" title="PLANE223" class="olink"><span class="structname">PLANE223</span></a>).</p><p>When <em class="replaceable"><code>KCSYS</code></em> = 1, the loading direction
+      follows the positive direction of the local coordinate system. The ID of a local coordinate
+      system (<em class="replaceable"><code>VAL1</code></em>) is required.</p><p>The following figure shows how the coordinate directions are
+      determined on a face of a solid or shell element with different
+        <em class="replaceable"><code>KCSYS</code></em> and <em class="replaceable"><code>VAL1</code></em> input:</p><div class="figure"><a name="SFCONTROL_fig1"></a><p class="title"><b>Figure 15:  Coordinate System for Load Application on the Faces of 3-D Solid and Shell
+        Elements</b></p><div class="figure-contents"><div class="informaltable"><table border="1" width="95%"><colgroup><col class="col1" width="33%"><col class="col2" width="33%"><col class="col4" width="34%"></colgroup><tbody><tr><td bgcolor="#E3E3E3" align="center">
+
+
+</td><td align="center">
+                <em class="replaceable"><code>KCSYS</code></em> = 0</td><td align="center">
+                <em class="replaceable"><code>KCSYS</code></em> = 1</td></tr><tr><td align="center">
+                <em class="replaceable"><code>VAL1</code></em> = 0</td><td align="center">
+                <span class="inlinegraphic"><img src="graphics/gSFCONTROL1.png" alt="Coordinate System for Load Application on the Faces of 3-D Solid and Shell Elements"></span>&nbsp;
+              </td><td align="center">&#8211;</td></tr><tr><td align="center">
+                <em class="replaceable"><code>VAL1</code></em> &gt; 10</td><td align="center">
+                <span class="inlinegraphic"><img src="graphics/gSFCONTROL2.png" alt="Coordinate System for Load Application on the Faces of 3-D Solid and Shell Elements"></span>&nbsp;
+              </td><td align="center">
+                <span class="inlinegraphic"><img src="graphics/gSFCONTROL3.png" alt="Coordinate System for Load Application on the Faces of 3-D Solid and Shell Elements"></span>&nbsp;
+              </td></tr></tbody></table></div></div></div><br class="figure-break"><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>where:</td></tr><tr><td>z, x<sub>1</sub>, y<sub>1</sub> : normal and tangential
+        directions (default surface coordinate system)</td></tr><tr><td>z, x<sub>2</sub>, y<sub>2</sub> : normal and user-defined
+        tangential directions (user-defined surface coordinate system) </td></tr><tr><td>x<sub>3</sub>, y<sub>3</sub>, z<sub>3</sub> : x,
+        y, and z directions defined by the local coordinate system when
+          <em class="replaceable"><code>KCSYS</code></em> = 1</td></tr></table><p>When <em class="replaceable"><code>KCSYS</code></em> = 0, <span class="emphasis"><em>two</em></span>
+      coordinate systems can define the direction of the surface loads. The default direction of the
+      first tangential axis (x<sub>1</sub>) is determined by the local connectivity
+      (I-J) of a face. For example, the first tangential axis (x<sub>1</sub>) is given
+      by a unit vector directed from node J to node I on the first face (J-I-L-K) of an 8-node solid
+      element. The second tangential direction is the cross product of the two vectors
+        (<span class="inlineequation" style="&#xA;            vertical-align:-9.000000px"><img src="graphics/eqca281405-a607-4a5c-bb13-a714fb33af02.svg"></span>). This default surface coordinate system rotates with element deformation
+      (that is, z remains normal to the face and x<sub>1</sub> is determined at current
+      nodal locations). For a user-defined surface coordinate system
+        (<em class="replaceable"><code>VAL1</code></em> &gt; 10), the direction of the first tangential axes
+        (x<sub>2</sub>) is determined by the projection of the local coordinate system
+      onto the face. The tangential directions rotate if the direction of the face normal (z)
+      changes in the space. If the direction of the face normal (z) is fixed (for in-plane rotation,
+      for example), the tangential axes do not follow element deformation.</p><p>When <em class="replaceable"><code>KCSYS</code></em> = 1, the positive direction of
+      the x<sub>3</sub>, y<sub>3</sub>, and z<sub>3</sub> axes
+      follow the direction of the local coordinate system without adjustment. Therefore, they do not
+      follow element deformation.</p><p>When <em class="replaceable"><code>KCSYS</code></em> = 2, the loading direction
+      follows the positive direction of the orientation vector, defined via
+        <em class="replaceable"><code>VAL1</code></em>, <em class="replaceable"><code>VAL2</code></em>, and
+        <em class="replaceable"><code>VAL3</code></em>. The direction is calculated as <span class="inlineequation" style="&#xA;            vertical-align:-6.000000px"><img src="graphics/eqc29ea830-1fd5-4519-a701-4d541d3090d1.svg"></span>, where <span class="inlineequation" style="&#xA;            vertical-align:0.000000px"><img src="graphics/eq605552a6-8909-449a-b293-8e2ed61b9935.svg"></span>, <span class="inlineequation" style="&#xA;            vertical-align:-5.000000px"><img src="graphics/eqbe85a096-3305-4c4c-b208-b09039163bd0.svg"></span>, and <span class="inlineequation" style="&#xA;            vertical-align:0.000000px"><img src="graphics/eq4c391a67-3be1-4803-b0b6-55ff15306a90.svg"></span> are unit vectors in the global Cartesian coordinate system. The loading
+      direction is fixed and does not follow the deformation of a face of a selected element. You
+      can adjust the load magnitude (<em class="replaceable"><code>KUSE</code></em> and
+        <em class="replaceable"><code>KPROJ</code></em>).</p><p>The following figure shows the default direction of the normal (z) and tangential (x)
+      components on an edge of a 3-D shell element (<a href="../ans_elem/Hlp_E_SHELL181.html" title="SHELL181" class="olink"><span class="structname">SHELL181</span></a> or
+        <a href="../ans_elem/Hlp_E_SHELL281.html" title="SHELL281" class="olink"><span class="structname">SHELL281</span></a>):</p><div class="figure"><a name="SFCONTROL_fig2"></a><p class="title"><b>Figure 16:  Default Coordinate System of Surface Load on the Edge of a 3-D
+        Shell Element</b></p><div class="figure-contents"><div class="informalfigure"><div class="mediaobject"><span class="imagedata"><img src="graphics/gSFCONTROL4.png" alt="Default Coordinate System of Surface Load on the Edge of a 3-D Shell Element"></span></div></div></div></div><br class="figure-break"><p>If a local coordinate system is defined and <em class="replaceable"><code>KCSYS</code></em> = 0 for the
+      edge of the 3-D shell element, the tangential directions are adjusted in the plane of the
+      edge:</p><div class="figure"><a name="SFCONTROL_fig3"></a><p class="title"><b>Figure 17:  Projected Coordinate System of Surface Load on the Edge of a 3-D Shell Element</b></p><div class="figure-contents"><div class="informalfigure"><div class="mediaobject"><span class="imagedata"><img src="graphics/gSFCONTROL5.png" alt="Projected Coordinate System of Surface Load on the Edge of a 3-D Shell Element"></span></div></div></div></div><br class="figure-break"><p>The following figure shows the positive direction of the loads on the edge of a plane
+      element when <em class="replaceable"><code>KCSYS</code></em> = 0. The positive direction of the tangential
+      load is defined by the definition of the faces (J-I, K-J, L-K, I-L).</p><div class="figure"><a name="SFCONTROL_fig4"></a><p class="title"><b>Figure 18:  Positive Tangential Load on the Edge of a Plane Element</b></p><div class="figure-contents"><div class="informalfigure"><div class="mediaobject"><span class="imagedata"><img src="graphics/gSFCONTROL6.png" alt="Positive Tangential Load on the Edge of a Plane Element"></span></div></div></div></div><br class="figure-break"><p>If <em class="replaceable"><code>KCSYS</code></em> = 1 or 2, the load direction does not change and
+        <em class="replaceable"><code>KUSE</code></em> = 1 or 2 is ignored.</p><p>If <em class="replaceable"><code>KCSYS</code></em> = 1 or 2, or <em class="replaceable"><code>KTAPER</code></em> &gt; 0,
+      you cannot specify a gradient (slope) for surface loads (<a class="link" href="Hlp_C_SFGRAD.html" title="SFGRAD"><span class="command"><strong>SFGRAD</strong></span></a>) or a
+      varying surface load (<a class="link" href="Hlp_C_SFFUN.html" title="SFFUN"><span class="command"><strong>SFFUN</strong></span></a>).</p><p>This command is also valid in the PREP7 processor.</p><div class="refsect2" title="Global Tapered Load Behavior (KTAPER)"><a name="globaltaperedloads"></a><h3>Global Tapered Load Behavior (<em class="replaceable"><code>KTAPER</code></em>)</h3><p>If <em class="replaceable"><code>KTAPER</code></em> = 1, the magnitude of the load is determined by the
+          <span class="emphasis"><em>current</em></span> location of a point:</p><div class="informalequation"><a name="eq063c258f-5b22-47e4-bb9e-0e1ac953760f"></a><div><img src="graphics/eq063c258f-5b22-47e4-bb9e-0e1ac953760f.svg"></div></div><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>where:</td></tr><tr><td>
+<span class="inlineequation" style="&#xA;            vertical-align:-5.000000px"><img src="graphics/eqd35a8316-54db-445d-a49f-a24e41b50db0.svg"></span> : Values on <a class="link" href="Hlp_C_SFE.html" title="SFE"><span class="command"><strong>SFE</strong></span></a> (<em class="replaceable"><code>VAL1</code></em> ~
+            <em class="replaceable"><code>VAL4</code></em>)</td></tr><tr><td>
+<span class="inlineequation" style="&#xA;            vertical-align:-3.000000px"><img src="graphics/eq9fd6ed38-3406-4c0e-8a66-412d9c5419cc.svg"></span> : Global Cartesian coordinates at the current location of the
+          point.</td></tr></table><p>If <em class="replaceable"><code>KTAPER</code></em> = 2, the magnitude of the load is determined by the
+          <span class="emphasis"><em>initial</em></span> location of a point:</p><div class="informalequation"><a name="eq3339530f-b6e3-424e-8e7c-2176df6eafe4"></a><div><img src="graphics/eq3339530f-b6e3-424e-8e7c-2176df6eafe4.svg"></div></div><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>where:</td></tr><tr><td>
+<span class="inlineequation" style="&#xA;            vertical-align:-5.000000px"><img src="graphics/eq288dce5f-1b5c-4c9e-a1a8-f2d347e19980.svg"></span> : Values on <a class="link" href="Hlp_C_SFE.html" title="SFE"><span class="command"><strong>SFE</strong></span></a> (<em class="replaceable"><code>VAL1</code></em> ~
+            <em class="replaceable"><code>VAL4</code></em>)</td></tr><tr><td>
+<span class="inlineequation" style="&#xA;            vertical-align:-5.000000px"><img src="graphics/eqe496c857-2a2d-48ed-b870-62b172b56f6a.svg"></span> : Global Cartesian coordinates at the initial location of the
+          point.</td></tr></table><p>
+        <em class="replaceable"><code>KTAPER</code></em> is not valid for use with <a class="link" href="Hlp_C_SF.html" title="SF"><span class="command"><strong>SF</strong></span></a>.</p></div><div class="refsect2" title="Load-Stiffness Effects"><a name="d0e259525"></a><h3>Load-Stiffness Effects</h3><p>Load-stiffness effects are included in the supported elements for the real part of
+        normal load (<em class="replaceable"><code>KCSYS</code></em> = 0, <em class="replaceable"><code>LCOMP</code></em> = 0,
+          <em class="replaceable"><code>KTAPER</code></em> = 0 or 1) at the current configuration. All other load
+        properties are included in the load vector of the elements. </p><p>You can specify an unsymmetric matrix (<a class="link" href="Hlp_C_NROPT.html" title="NROPT"><span class="command"><strong>NROPT</strong></span></a>,UNSYM) for the
+        load-stiffness effects if needed.</p></div></div><div class="refsect1" title="Menu Paths"><a name="SFCONTROL.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:22-05:00"><title>NSUBST</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="NSUBST">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_N_TOC.html" title="N Commands">
+<link rel="prev" href="Hlp_C_NSTORE.html" title="NSTORE">
+<link rel="next" href="Hlp_C_NSVR.html" title="NSVR">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="NSUBST"><a name="NSUBST"></a><div class="titlepage"></div><a class="indexterm" name="d0e189572"></a><span class="refentrytitle"><span class="command"><strong>NSUBST</strong></span></span><div class="refnamediv"><p><span class="command"><strong>NSUBST</strong></span>, <em class="replaceable"><code>NSBSTP</code></em>, <em class="replaceable"><code>NSBMX</code></em>, <em class="replaceable"><code>NSBMN</code></em>, <em class="replaceable"><code>Carry</code></em><br><b class="refpurpose">Specifies the number of substeps to be taken this load
+step.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoluldstepjla070199" title="Table 2.52: Load Step Options"><span class="type">Load Step Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="NSUBST.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>NSBSTP</code></em></b></span></dt><dd><p>Number of substeps to be used for this load step (i.e.,
+the time step size or frequency increment). If automatic time stepping
+is used (<a class="link" href="Hlp_C_AUTOTS.html" title="AUTOTS"><span class="command"><strong>AUTOTS</strong></span></a>), <em class="replaceable"><code>NSBSTP</code></em> defines the size of the first substep.</p><p>If contact elements <span>(<a href="../ans_elem/Hlp_E_TARGE169.html" title="TARGE169" class="olink"><span class="structname">TARGE169</span></a>,
+                <a href="../ans_elem/Hlp_E_TARGE170.html" title="TARGE170" class="olink"><span class="structname">TARGE170</span></a>, <a href="../ans_elem/Hlp_E_CONTA172.html" title="CONTA172" class="olink"><span class="structname">CONTA172</span></a>,
+                <a href="../ans_elem/Hlp_E_CONTA174.html" title="CONTA174" class="olink"><span class="structname">CONTA174</span></a>, <a href="../ans_elem/Hlp_E_CONTA175.html" title="CONTA175" class="olink"><span class="structname">CONTA175</span></a>, or
+                <a href="../ans_elem/Hlp_E_CONTA177.html" title="CONTA177" class="olink"><span class="structname">CONTA177</span></a>)</span> are used, defaults to 1 or 20 substeps,
+            depending on the physics of the model. If none of these contact elements are used,
+            defaults to 1 substep. </p></dd><dt><span><b class="term"><em class="replaceable"><code>NSBMX</code></em></b></span></dt><dd><p>Maximum number of substeps
+to be taken (i.e., the minimum time step size) if automatic time stepping
+is used. The program automatically determines the default based on
+the physics of the model. </p></dd><dt><span><b class="term"><em class="replaceable"><code>NSBMN</code></em></b></span></dt><dd><p>Minimum number of substeps
+to be taken (i.e., the maximum time step size) if automatic time stepping
+is used. The program automatically determines the default based on
+the physics of the model.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Carry</code></em></b></span></dt><dd><p>Time step carryover key (program-determined default
+depending on the problem physics):       </p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">OFF</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Use <em class="replaceable"><code>NSBSTP</code></em> to define time step at start of each load step.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ON</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Use final time step from previous load
+step as the starting time step (if automatic time stepping is used).</p></td></tr></tbody></table></div></div><p>The program automatically
+determines the default based on the physics of the model.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="NSUBST.notes"></a><h2>Notes</h2><p>See <a class="link" href="Hlp_C_DELTIM.html" title="DELTIM"><span class="command"><strong>DELTIM</strong></span></a> for an alternative input.  It
+is recommended that all fields of this command be specified for solution
+efficiency and robustness.</p><p>When the arc-length method is active (<a class="link" href="Hlp_C_ARCLEN.html" title="ARCLEN"><span class="command"><strong>ARCLEN</strong></span></a> command), the <em class="replaceable"><code>NSBMX</code></em> and <em class="replaceable"><code>NSBMN</code></em> arguments are ignored.</p><p>Changing the number of substeps upon restarting an analysis during a
+   load step is not recommended. You should only change the number of substeps between load
+   steps.</p><p>This command is also valid in PREP7.</p></div><div class="refsect1" title="Menu Paths"><a name="NSUBST.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Analysis Type&gt;Sol'n Controls&gt;Basic</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Time/Frequenc&gt;Freq and Substeps</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Time/Frequenc&gt;HOWP and Substeps</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Time/Frequenc&gt;Time and Substeps</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Analysis Type&gt;Sol'n Controls&gt;Basic</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Time/Frequenc&gt;Freq and Substeps</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Time/Frequenc&gt;HOWP and Substeps</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Time/Frequenc&gt;Time and Substeps</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

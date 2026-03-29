@@ -1,0 +1,70 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:34:16-05:00"><title>RBE3</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="RBE3">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_R_TOC.html" title="R Commands">
+<link rel="prev" href="Hlp_C_RATIO.html" title="/RATIO">
+<link rel="next" href="Hlp_C_RCON.html" title="RCON">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="RBE3"><a name="RBE3"></a><div class="titlepage"></div><a class="indexterm" name="d0e230799"></a><span class="refentrytitle"><span class="command"><strong>RBE3</strong></span></span><div class="refnamediv"><p><span class="command"><strong>RBE3</strong></span>, <em class="replaceable"><code>Master</code></em>, <em class="replaceable"><code>DOF</code></em>, <em class="replaceable"><code>Slaves</code></em>, <em class="replaceable"><code>Wtfact</code></em><br><b class="refpurpose">Distributes the force/moment applied at the master node to a set
+ of slave nodes, taking into account the geometry of the slave nodes as well
+as weighting factors. </b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7constrainteqldm061600" title="Table 2.42: Constraint Equations"><span class="type">Constraint Equations</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="RBE3.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Master</code></em></b></span></dt><dd><p>Node at which the force/moment to be distributed will be applied. This node must be associated
+      with an element for the master node to be included in the degree-of-freedom (DOF)
+      solution.</p></dd><dt><span><b class="term"><em class="replaceable"><code>DOF</code></em></b></span></dt><dd><p>Refers to the master node DOFs to be used in constraint equations. Valid labels are: UX, UY,
+      UZ, ROTX, ROTY, ROTZ, UXYZ, RXYZ, ALL</p></dd><dt><span><b class="term"><em class="replaceable"><code>Slaves</code></em></b></span></dt><dd><p>The name of an array parameter that contains a list of slave
+nodes. Must specify the starting index number. ALL can be used for currently
+selected set of nodes. The slave nodes may not be colinear, that is, not be
+all located on the same straight line (see<span class="bold"><strong> Notes</strong></span> below).</p></dd><dt><span><b class="term"><em class="replaceable"><code>Wtfact</code></em></b></span></dt><dd><p>The name of an array parameter that contains a list of weighting
+factors corresponding to each slave node above. Must have the starting index
+number. If not specified, the weighting factor for each slave node defaults
+to 1.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="RBE3.notes"></a><h2>Notes</h2><p>The force is distributed to the slave nodes proportional to the weighting
+factors. The moment is distributed as forces to the slaves; these forces are
+proportional to the distance from the center of gravity of the slave nodes
+times the weighting factors.  Only the translational degrees of freedom of
+the slave nodes are used for constructing the constraint equations. Constraint
+equations are converted to distributed forces/moments on the slave nodes during
+solution.</p><p><span class="command"><strong>RBE3</strong></span> creates constraint equations such that the motion of the master is the
+   average of the slaves. For the rotations, a least-squares approach is used to define the "average
+   rotation" at the master from the translations of the slaves. If the slave nodes are colinear,
+   then one of the master rotations that is parallel to the colinear direction can not be determined
+   in terms of the translations of the slave nodes. Therefore, the associated moment component on
+   the master node in that direction cannot be transmitted. When this case occurs, a warning message
+   is issued and the constraint equations created by <span class="command"><strong>RBE3</strong></span> are ignored.</p><p>Applying this command to a large number of slave nodes may result in
+constraint equations with a large number of coefficients. This may significantly
+increase the peak memory required during the process of element assembly.
+If real memory or virtual memory is not available, consider reducing the number
+of slave nodes.</p><p>You can use the <a class="link" href="Hlp_C_DOFSEL.html" title="DOFSEL"><span class="command"><strong>DOFSEL</strong></span></a> command to select the degrees
+   of freedom (DOFs) of the slave nodes to be included in the resulting constraint equations. (Be
+   sure to issue <a class="link" href="Hlp_C_DOFSEL.html" title="DOFSEL"><span class="command"><strong>DOFSEL</strong></span></a>,ALL <span class="emphasis"><em>after</em></span> issuing
+    <span class="command"><strong>RBE3</strong></span>.) This capability is useful if, for example, you want to ignore radial
+   constraints in cylindrical geometries. The selected DOFs must collectively generate forces and
+   moments on the master node in all six DOFs.</p><p>As an alternative to <span class="command"><strong>RBE3</strong></span>, you can apply a similar type of constraint using
+   contact elements and the internal multipoint constraint (MPC) algorithm. For more information,
+   see <a href="../ans_ctec/Hlp_ctec_surfcon.html" title="Surface-based&#xA;    Constraints" class="olink">Surface-based
+    Constraints</a>.</p><p>This command is also valid in SOLUTION.</p></div><div class="refsect1" title="Menu Paths"><a name="RBE3.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Coupling / Ceqn&gt;Dist F/M at Mstr</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

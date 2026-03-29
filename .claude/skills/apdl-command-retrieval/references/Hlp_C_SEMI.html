@@ -1,0 +1,90 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:34:42-05:00"><title>SEMIIMPLICIT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="SEMIIMPLICIT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_S_TOC.html" title="S Commands">
+<link rel="prev" href="Hlp_C_SELTOL.html" title="SELTOL">
+<link rel="next" href="Hlp_C_SENERGY.html" title="SENERGY">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="SEMIIMPLICIT"><a name="SEMIIMPLICIT"></a><div class="titlepage"></div><a class="indexterm" name="d0e253009"></a><span class="refentrytitle"><span class="command"><strong>SEMIIMPLICIT</strong></span></span><div class="refnamediv"><p><span class="command"><strong>SEMIIMPLICIT</strong></span>, <em class="replaceable"><code>Option</code></em>,
+        <em class="replaceable"><code>Type</code></em>, <em class="replaceable"><code>Value</code></em><br><b class="refpurpose">Specifies parameters for a semi-implicit solution.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsolunonlinjla070199" title="Table 2.49: Nonlinear Options"><span class="type">Nonlinear Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="light">Premium</span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="SEMIIMPLICIT.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Option</code></em></b></span></dt><dd><p>Option to be performed:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ETOI</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Criterion for transitioning from <span>the
+                      semi-implicit solution phase to the implicit solution phase</span>.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">MSCA</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Selective mass scaling factor used during the <span>semi-implicit</span> solution phase.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">SFAC</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Safety factor for time incrementation used during the <span>semi-implicit</span> solution phase.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">AUTS</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Automatic time stepping and bisection controls used during the <span>semi-implicit</span> solution phase.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">BVIS</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Bulk viscosity controls used during the <span>semi-implicit</span> solution phase.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">EFRQ</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Output and restart file frequency used during the <span>semi-implicit</span> solution phase.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>Type</code></em></b></span></dt><dd><p>Additional input; varies depending on the <em class="replaceable"><code>Option</code></em> value.
+            See table below.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Value</code></em></b></span></dt><dd><p>Additional input; varies depending on the <em class="replaceable"><code>Option</code></em> and
+              <em class="replaceable"><code>Type</code></em> values. See table below.</p></dd></dl></div></div><div class="informaltable"><table border="1" width="95%"><colgroup><col width="72" align="center" class="col1"><col width="192" align="center" class="col2"><col width="192" align="center" class="col3"></colgroup><thead><tr><th bgcolor="#E3E3E3" align="center" valign="top"><em class="replaceable"><code>Option</code></em>
+              Label</th><th bgcolor="#E3E3E3" align="center" valign="top"><em class="replaceable"><code>Type</code></em>
+              =</th><th bgcolor="#E3E3E3" align="center" valign="top"><em class="replaceable"><code>Value</code></em>
+              =</th></tr></thead><tbody><tr><td align="left">ETOI</td><td align="left">TIME - Time to spend in the <span>semi-implicit</span> phase
+              (default)</td><td align="left">Time value (defaults to the minimum time increment specified in the
+              implicit run)</td></tr><tr><td rowspan="2" align="left">MSCA</td><td align="left">DTIM - Initial minimum stable time increment</td><td align="left">Time increment; defaults to (1e-4)*(total step time) [<a class="xref" href="Hlp_C_SEMI.html#semi_table_note1">1</a>]</td></tr><tr><td align="left">MASS - Selective mass scaling factor</td><td align="left">Scaling factor</td></tr><tr><td align="left">SFAC</td><td align="left">(not used)</td><td align="left">Safety factor (defaults to 0.9)</td></tr><tr><td rowspan="2" align="left">AUTS</td><td align="left">DSPL - Automatic time stepping and bisections control based on
+              displacement (default for all analysis types except static)</td><td align="left">Maximum allowable jump in the maximum displacement increment between
+              two substeps at which bisection will be triggered (defaults to 100)</td></tr><tr><td align="left">
+              <p>ENER - Automatic time stepping and bisections control based on energy (default
+                for static analysis)</p>
+            </td><td align="left">Maximum allowable ratio of kinetic energy to potential energy at
+              which bisectionn will be triggered (defaults to 100). For bisection to trigger, the
+              potential energy should be more than the program calculated reference value </td></tr><tr><td rowspan="5" align="left">BVIS</td><td align="left">LBVD - Linear bulk viscosity damping factor</td><td align="left">Damping factor (defaults to 1.5)</td></tr><tr><td align="left">QBVD - Quadratic bulk viscosity damping factor</td><td align="left">Damping factor (defaults to 0.06)</td></tr><tr><td align="left">RBVD - Rotational bulk viscosity damping factor</td><td align="left">Damping factor (defaults to 0.06)</td></tr><tr><td align="left">LIMI - Bulk viscosity force upper limit</td><td align="left">Upper limit percentage (general default is 0.05; for
+                <a href="../ans_elem/Hlp_E_PLANE182.html" title="PLANE182" class="olink"><span class="structname">PLANE182</span></a> and <a href="../ans_elem/Hlp_E_SOLID185.html" title="SOLID185" class="olink"><span class="structname">SOLID185</span></a> with reduced
+              integration, the default is 0.01)</td></tr><tr><td align="left">NONE - Bulk viscosity is not included</td><td align="left">(not used)</td></tr><tr><td rowspan="2" align="left">EFRQ</td><td align="left">OUTR - Solution output frequency (overwrites
+                <em class="replaceable"><code>Freq</code></em> value on <a class="link" href="Hlp_C_OUTturRES.html" title="OUTRES"><span class="command"><strong>OUTRES</strong></span></a>).
+                <span class="command"><strong>SEMIIMPLICIT</strong></span>,EFRQ,OUTR must be issued after
+                <a class="link" href="Hlp_C_OUTturRES.html" title="OUTRES"><span class="command"><strong>OUTRES</strong></span></a>. </td><td align="left">Frequency value (defaults to 100) [<a class="xref" href="Hlp_C_SEMI.html#semi_table_note2">2</a>]</td></tr><tr><td align="left">RESC - Frequency for writing restart files (overwrites
+                <em class="replaceable"><code>Frequency</code></em> value on <a class="link" href="Hlp_C_RESCONTROL.html" title="RESCONTROL"><span class="command"><strong>RESCONTROL</strong></span></a>).
+                <span class="command"><strong>SEMIIMPLICIT</strong></span>,EFRQ,RESC must be issued after
+                <a class="link" href="Hlp_C_RESCONTROL.html" title="RESCONTROL"><span class="command"><strong>RESCONTROL</strong></span></a>.</td><td align="left">Frequency value (defaults to 100) [<a class="xref" href="Hlp_C_SEMI.html#semi_table_note2">2</a>]</td></tr></tbody></table></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p><a name="semi_table_note1"></a>The default time increment (1e-4)*(total step time) is based on the total step time
+          for the load step in which the solution transitions to <span>the
+            semi-implicit phase</span>.</p></li><li class="listitem"><p><a name="semi_table_note2"></a>The frequencies specified by <em class="replaceable"><code>Option</code></em> = EFRQ are based on
+            <span class="emphasis"><em>all</em></span> substeps, starting from the beginning of the analysis and
+          spanning both the implicit and <span>semi-implicit</span>
+          solution phases. For example, during the <span>semi-implicit</span> solution phase results are written for any substep that is
+          divisible by the specified OUTR value.</p></li></ol></div></div><div class="refsect1" title="Command Default"><a name="d0e253324"></a><h2>Command Default</h2><p>By default, the semi-implicit method is not used.</p><p>If the <span class="command"><strong>SEMIIMPLICIT</strong></span> command is issued with no arguments specified, the
+      semi-implicit scheme is activated with the following defaults:</p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>The safety factor for time incrementation = 0.9.</td></tr><tr><td>The selective mass scaling factor is set such that the initial stable time increment
+          in the <span>semi-implicit</span> phase is (1e-4)*(total step time).</td></tr><tr><td>For most analysis types, bisection is triggered if the maximum displacement
+          increment increases more than 100 times that of the previous substep.</td></tr><tr><td>In a static analysis, bisection is triggered if the kinetic energy is more than 100
+          times the potential energy and the potential energy is more than the program calculated
+          reference value.</td></tr><tr><td>Bulk viscosity is included.</td></tr><tr><td>The frequency at which the results file and restart files are written during the
+            <span>semi-implicit</span> phase is every 100 substeps.</td></tr></table></div><div class="refsect1" title="Notes"><a name="SEMIIMPLICIT.notes"></a><h2>Notes</h2><p>This command triggers a <a href="../ans_adv/Hlp_G_ADVSEMI.html" title="semi-implicit solution scheme" class="olink">semi-implicit solution scheme</a>
+      in which the analysis transitions to a <span>semi-implicit</span>
+      solution method when the implicit solution method fails to converge. The command is valid only
+      in the solution processor (<a href="Hlp_C_SOLU_sl.html" title="/SOLU" class="olink"><span class="command"><strong>/SOLU</strong></span></a>) and must be defined before the first
+        <a class="link" href="Hlp_C_SOLVE.html" title="SOLVE"><span class="command"><strong>SOLVE</strong></span></a> command.</p><p>The <span class="command"><strong>SEMIIMPLICIT</strong></span> command can be used in a restart, even if the base
+      analysis did not include the command. Therefore, a problem that failed in the implicit
+      analysis can be restarted with this command so that it can transition to the <span>semi-implicit</span> method and solve further.</p><p>The <span class="command"><strong>SEMIIMPLICIT</strong></span> command can overwrite the values on some commands, as
+      described in the following table.</p><div class="informaltable"><table border="1" width="95%"><colgroup><col width="96" class="col1"><col width="288" class="col2"></colgroup><tbody><tr><td bgcolor="#E3E3E3"><span class="bold"><strong>Commands Affected by <span class="command"><strong>SEMIIMPLICIT</strong></span></strong></span></td><td bgcolor="#E3E3E3"><span class="bold"><strong>Behavior</strong></span></td></tr><tr><td><a class="link" href="Hlp_C_NSUBST.html" title="NSUBST"><span class="command"><strong>NSUBST</strong></span></a> and <a class="link" href="Hlp_C_DELTIM.html" title="DELTIM"><span class="command"><strong>DELTIM</strong></span></a></td><td>During the <span>semi-implicit</span> solution phase,
+              the time incrementation does not follow that set by the <a class="link" href="Hlp_C_NSUBST.html" title="NSUBST"><span class="command"><strong>NSUBST</strong></span></a> and
+                <a class="link" href="Hlp_C_DELTIM.html" title="DELTIM"><span class="command"><strong>DELTIM</strong></span></a> commands.</td></tr><tr><td><a class="link" href="Hlp_C_ETCONTROL.html" title="ETCONTROL"><span class="command"><strong>ETCONTROL</strong></span></a></td><td>If the <span class="command"><strong>SEMIIMPLICIT</strong></span> command is issued, the
+                <a class="link" href="Hlp_C_ETCONTROL.html" title="ETCONTROL"><span class="command"><strong>ETCONTROL</strong></span></a> command is ignored.</td></tr><tr><td><a class="link" href="Hlp_C_OUTturRES.html" title="OUTRES"><span class="command"><strong>OUTRES</strong></span></a></td><td>During the <span>semi-implicit</span> solution phase,
+              the frequency for writing results specified by the <a class="link" href="Hlp_C_OUTturRES.html" title="OUTRES"><span class="command"><strong>OUTRES</strong></span></a> command
+              is ignored, unless a negative number was specified on
+              <a class="link" href="Hlp_C_OUTturRES.html" title="OUTRES"><span class="command"><strong>OUTRES</strong></span></a>.</td></tr><tr><td><a class="link" href="Hlp_C_RESCONTROL.html" title="RESCONTROL"><span class="command"><strong>RESCONTROL</strong></span></a></td><td>During the <span>semi-implicit</span> solution phase,
+              the restart file writing frequency specified by the <a class="link" href="Hlp_C_RESCONTROL.html" title="RESCONTROL"><span class="command"><strong>RESCONTROL</strong></span></a>
+              command is ignored, unless a negative number was specified on
+                <a class="link" href="Hlp_C_RESCONTROL.html" title="RESCONTROL"><span class="command"><strong>RESCONTROL</strong></span></a>.</td></tr><tr><td><a class="link" href="Hlp_C_AUTOTS.html" title="AUTOTS"><span class="command"><strong>AUTOTS</strong></span></a></td><td>During the <span>semi-implicit</span> solution phase,
+              automatic time incrementation is on, irrespective of what was specified on
+                <a class="link" href="Hlp_C_AUTOTS.html" title="AUTOTS"><span class="command"><strong>AUTOTS</strong></span></a>.</td></tr><tr><td><a class="link" href="Hlp_C_CUTCONTROL.html" title="CUTCONTROL"><span class="command"><strong>CUTCONTROL</strong></span></a></td><td>During the <span>semi-implicit</span> solution phase,
+              the <a class="link" href="Hlp_C_CUTCONTROL.html" title="CUTCONTROL"><span class="command"><strong>CUTCONTROL</strong></span></a> command is ignored.</td></tr></tbody></table></div></div><div class="refsect1" title="Menu Paths"><a name="SEMIIMPLICIT.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

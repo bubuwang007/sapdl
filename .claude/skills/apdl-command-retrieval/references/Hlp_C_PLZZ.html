@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:51-05:00"><title>PLZZ</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="PLZZ">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_P_TOC.html" title="P Commands">
+<link rel="prev" href="Hlp_C_PLVECT.html" title="PLVECT">
+<link rel="next" href="Hlp_C_PMACRO.html" title="/PMACRO">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="PLZZ"><a name="PLZZ"></a><div class="titlepage"></div><a class="indexterm" name="d0e212665"></a><span class="refentrytitle"><span class="command"><strong>PLZZ</strong></span></span><div class="refnamediv"><p><span class="command"><strong>PLZZ</strong></span>, <em class="replaceable"><code>RotVel</code></em>, <em class="replaceable"><code>DeltaRotVel</code></em><br><b class="refpurpose">Plots the interference diagram from a cyclic modal analysis.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_7.html" title="2.7. POST1 Commands"><code class="classname">POST1</code></a>: <a class="link" href="Hlp_C_CH2_7.html#cmdpost1sppurpjla070199" title="Table 2.84: Special Purpose"><span class="type">Special Purpose</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="PLZZ.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>RotVel</code></em></b></span></dt><dd><p>Rotational speed in revolutions per minute (RPM) used
+to define the speed line. If blank, use the rotational speed (from <a class="link" href="Hlp_C_OMEGA.html" title="OMEGA"><span class="command"><strong>OMEGA</strong></span></a>) specified in the prestressing step of the linear
+perturbation analysis. If explicitly input as 0, or if the linear
+perturbation was not used, no speed lines are plotted.</p></dd><dt><span><b class="term"><em class="replaceable"><code>DeltaRotVel</code></em></b></span></dt><dd><p>Adds speed lines about the <em class="replaceable"><code>RotVel</code></em> speed line corresponding to <em class="replaceable"><code>RotVel</code></em> &plusmn; <em class="replaceable"><code>DeltaRotVel</code></em>. Only plotted if <em class="replaceable"><code>RotVel</code></em> is known.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="PLZZ.notes"></a><h2>Notes</h2><p><span class="command"><strong>PLZZ</strong></span> plots the cyclic modal frequencies as
+points on a frequency vs. harmonic index (nodal diameter) graph. If
+rotational speed (<em class="replaceable"><code>RotVel</code></em>) is provided,
+the speed line is also plotted, leading to the interference diagram
+(also known as the SAFE or ZZENF diagram). If <em class="replaceable"><code>DeltaRotVel</code></em> is also provided, two additional speed lines are plotted, enveloping
+the safe speed line itself.</p><p>For more information, see <a href="../ans_cycsym/advcycmodalans.html#cycsym_postproc_modal" title="Postprocessing a Modal Cyclic Symmetry Analysis" class="olink">Postprocessing a Modal Cyclic Symmetry Analysis</a> in the <a href="../ans_cycsym/ans_cycsym.html" title="Cyclic Symmetry Analysis Guide" class="olink"><em class="citetitle">Cyclic Symmetry Analysis Guide</em></a>.</p></div><div class="refsect1" title="Menu Paths"><a name="PLZZ.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

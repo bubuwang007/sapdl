@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:38-05:00"><title>THOPT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="THOPT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_T_TOC.html" title="T Commands">
+<link rel="prev" href="Hlp_C_THEXPAND.html" title="THEXPAND">
+<link rel="next" href="Hlp_C_TIFF.html" title="TIFF">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="THOPT"><a name="THOPT"></a><div class="titlepage"></div><a class="indexterm" name="d0e294171"></a><span class="refentrytitle"><span class="command"><strong>THOPT</strong></span></span><div class="refnamediv"><p><span class="command"><strong>THOPT</strong></span>, <em class="replaceable"><code>Refopt</code></em>, <em class="replaceable"><code>REFORMTOL</code></em>, <em class="replaceable"><code>NTABPOINTS</code></em>, <em class="replaceable"><code>TEMPMIN</code></em>, <em class="replaceable"><code>TEMPMAX</code></em>, <em class="replaceable"><code>--</code></em>, <em class="replaceable"><code>ALGO</code></em><br><b class="refpurpose">Specifies nonlinear transient thermal solution options.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoluanaoptjla070199" title="Table 2.48: Analysis Options"><span class="type">Analysis Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="THOPT.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Refopt</code></em></b></span></dt><dd><p>Matrix reform option.</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">FULL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Use the full Newton-Raphson solution
+option (default). All subsequent input values are ignored.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">QUASI</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Use a selective reform solution
+option based on <em class="replaceable"><code>REFORMTOL</code></em>.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>REFORMTOL</code></em></b></span></dt><dd><p>Property change tolerance for Matrix Reformation (.05
+default). The thermal matrices are reformed if the maximum material
+property change in an element (from the previous reform time) is greater
+than the reform tolerance. Valid only when <em class="replaceable"><code>Refopt</code></em> = QUASI.</p></dd><dt><span><b class="term"><em class="replaceable"><code>NTABPOINTS</code></em></b></span></dt><dd><p>Number of points in Fast Material Table (64 default).
+Valid only when <em class="replaceable"><code>Refopt</code></em> = QUASI.</p></dd><dt><span><b class="term"><em class="replaceable"><code>TEMPMIN</code></em></b></span></dt><dd><p>Minimum temperature for Fast Material Table. Defaults
+to the minimum temperature defined by the <a class="link" href="Hlp_C_MPTEMP.html" title="MPTEMP"><span class="command"><strong>MPTEMP</strong></span></a> command for any material property defined. Valid only when <em class="replaceable"><code>Refopt</code></em> = QUASI.</p></dd><dt><span><b class="term"><em class="replaceable"><code>TEMPMAX</code></em></b></span></dt><dd><p>Maximum temperature for Fast Material Table. Defaults
+to the maximum temperature defined by the <a class="link" href="Hlp_C_MPTEMP.html" title="MPTEMP"><span class="command"><strong>MPTEMP</strong></span></a> command for any material property defined. Valid only when <em class="replaceable"><code>Refopt</code></em> = QUASI.</p></dd><dt><span><b class="term">--</b></span></dt><dd><p>Reserved field.</p></dd><dt><span><b class="term"><em class="replaceable"><code>ALGO</code></em></b></span></dt><dd><p>Specifies which solution algorithm to apply: </p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">0</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Multipass (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Iterative.</p></td></tr></tbody></table></div></div><p>Valid only when <em class="replaceable"><code>Refopt</code></em> = QUASI.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="THOPT.notes"></a><h2>Notes</h2><p>The QUASI matrix reform option is supported by the ICCG, JCG,
+    <span>PCG,</span> and sparse solvers only (<a class="link" href="Hlp_C_EQSLV.html" title="EQSLV"><span class="command"><strong>EQSLV</strong></span></a>). The Quasi method is an
+   approximation to the FULL method and will not be as accurate when the nonlinearity is strong.
+   However, you can control the inaccuracy by using small time steps.</p><p>For <em class="replaceable"><code>Refopt</code></em> = QUASI:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Results from a restart may be different than results
+from a single run because the stiffness matrices are always recreated
+in a restart run, but may or may not be in a single run (depending
+on the behavior resulting from the <em class="replaceable"><code>REFORMTOL</code></em> setting). Additionally, results may differ between two single runs
+as well, if the matrices are reformed as a result of the <em class="replaceable"><code>REFORMTOL</code></em> setting.</p></li></ul></div><p>For more information, see <a href="../ans_the/thermsolualgors.html" title="Solution Algorithms Used in Transient Thermal Analysis" class="olink">Solution Algorithms Used in Transient Thermal Analysis</a> in the <a href="../ans_the/Hlp_G_TheTOC.html" title="Thermal Analysis Guide" class="olink"><em class="citetitle">Thermal Analysis Guide</em></a>.</p></div><div class="refsect1" title="Menu Paths"><a name="THOPT.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Analysis Type&gt;Analysis Options</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Analysis Type&gt;Analysis Options</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

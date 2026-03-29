@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:45-05:00"><title>CM</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="CM">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_C_CTOC.html" title="C Commands">
+<link rel="prev" href="Hlp_C_CLRMSHLN.html" title="CLRMSHLN">
+<link rel="next" href="Hlp_C_CMACEL.html" title="CMACEL">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="CM"><a name="CM"></a><div class="titlepage"></div><a class="indexterm" name="d0e52872"></a><span class="refentrytitle"><span class="command"><strong>CM</strong></span></span><div class="refnamediv"><p><span class="command"><strong>CM</strong></span>,
+    <em class="replaceable"><code>Cname</code></em>, <em class="replaceable"><code>Entity</code></em>,
+    <em class="replaceable"><code>--</code></em>, <em class="replaceable"><code>KOPOT</code></em><br><b class="refpurpose">Groups geometry items into a component.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_2.html" title="2.2. DATABASE Commands"><code class="classname">DATABASE</code></a>: <a class="link" href="Hlp_C_CH2_2.html#cmddatacompjla070199" title="Table 2.7: Components"><span class="type">Components</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a> 
+    <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="CM.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Cname</code></em></b></span></dt><dd><p>An alphanumeric name used to identify this component. <em class="replaceable"><code>Cname</code></em>
+      may be up to 32 characters, beginning with a letter and containing only letters, numbers, and
+      underscores. Component names beginning with an underscore (e.g., _LOOP) are reserved for use
+      by ANSYS and should be avoided. Components named &#8220;ALL,&#8221; &#8220;STAT,&#8221; and
+      &#8220;DEFA&#8221; are not permitted. Overwrites a previously defined name.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Entity</code></em></b></span></dt><dd><p>Label identifying the type of geometry items to be grouped:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">VOLU</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Volumes.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">AREA</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Areas.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">LINE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Lines.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">KP</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Keypoints.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ELEM</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Elements.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">NODE</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Nodes.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>--</code></em></b></span></dt><dd><p>Reserved for future use.</p></dd><dt><span><b class="term"><em class="replaceable"><code>KOPT</code></em></b></span></dt><dd><p>Controls how element component contents are updated during <a href="../ans_nlad/adv_meshnonlinadapt.html" title="nonlinear mesh adaptivity analysis" class="olink">nonlinear mesh adaptivity analysis</a>:</p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>0 &#8211; Component is not updated during remeshing and therefore contains only initial
+        mesh elements (default).</td></tr><tr><td>1 &#8211; Component is updated during remeshing to contain the updated elements.</td></tr></table><p>This argument is valid only for nonlinear mesh adaptivity analysis with
+       <em class="replaceable"><code>Entity</code></em> = ELEM, and for solid element components only.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="CM.notes"></a><h2>Notes</h2><p>Components may be further grouped into assemblies [<a class="link" href="Hlp_C_CMGRP.html" title="CMGRP"><span class="command"><strong>CMGRP</strong></span></a>].
+ The selected items of the specified entity type will be stored as the component.
+ Use of this component in the select command [<a class="link" href="Hlp_C_CMSEL.html" title="CMSEL"><span class="command"><strong>CMSEL</strong></span></a>] causes
+all these items to be selected at once, for convenience.</p><p>A component is a grouping of some geometric entity that can then be
+conveniently selected or unselected.  A component may be redefined by reusing
+a previous component name.  The following entity types may belong to a component:
+nodes, elements, keypoints, lines, areas, and volumes.  A component may contain
+only 1 entity type, but an individual item of any entity may belong to any
+number of components.  Once defined, the items contained in a component may
+then be easily selected or unselected [<a class="link" href="Hlp_C_CMSEL.html" title="CMSEL"><span class="command"><strong>CMSEL</strong></span></a>].  Components
+may be listed [<a class="link" href="Hlp_C_CMLIST.html" title="CMLIST"><span class="command"><strong>CMLIST</strong></span></a>], modified [<a class="link" href="Hlp_C_CMMOD.html" title="CMMOD"><span class="command"><strong>CMMOD</strong></span></a>]
+and deleted [<a class="link" href="Hlp_C_CMDELE.html" title="CMDELE"><span class="command"><strong>CMDELE</strong></span></a>].  Components may also be further grouped
+into assemblies [<a class="link" href="Hlp_C_CMGRP.html" title="CMGRP"><span class="command"><strong>CMGRP</strong></span></a>].  Other entities associated with
+the entities in a component (e.g., the lines and keypoints associated with
+areas) may be selected by the <a class="link" href="Hlp_C_ALLSEL.html" title="ALLSEL"><span class="command"><strong>ALLSEL</strong></span></a> command.</p><p>An item will be deleted from a component if it has been deleted by another
+operation (see the <a class="link" href="Hlp_C_KMODIF.html" title="KMODIF"><span class="command"><strong>KMODIF</strong></span></a> command for an example).  Components
+are automatically updated to reflect deletions of one or more of their items.
+ Components are automatically deleted and a warning message is issued if all
+their items are deleted.  Assemblies are also automatically updated to reflect
+deletions of one or more of their components or subassemblies, but are not
+deleted if all their components and subassemblies are deleted.</p><p>For <a href="../ans_nlad/adv_meshnonlinadapt.html" title="nonlinear mesh adaptivity&#xA;    analysis" class="olink">nonlinear mesh adaptivity
+    analysis</a>, an extra option is available to update the element component contents
+   automatically during the analysis, applicable in cases where the remeshing region overlaps the
+   defined solid element component region. By enabling the option, the component element boundary is
+   maintained, and the validity of the defined component is guaranteed during the entire analysis
+   run; therefore, the component can be used during both solution and postprocessing.</p><p>This command is valid in any processor.</p></div><div class="refsect1" title="Menu Paths"><a name="CM.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Utility Menu&gt;Select&gt;Comp/Assembly&gt;Create Component</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

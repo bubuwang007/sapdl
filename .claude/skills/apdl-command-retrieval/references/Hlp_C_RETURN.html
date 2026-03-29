@@ -1,0 +1,40 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:34:21-05:00"><title>*RETURN</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="*RETURN">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_R_TOC.html" title="R Commands">
+<link rel="prev" href="Hlp_C_RESWRITE.html" title="RESWRITE">
+<link rel="next" href="Hlp_C_REZONE.html" title="REZONE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="*RETURN"><a name="a-RETURN"></a><div class="titlepage"></div><a class="indexterm" name="d0e236012"></a><span class="refentrytitle"><a href="Hlp_C_RETURN.html" title="*RETURN" class="olink"><span class="command"><strong>*RETURN</strong></span></a></span><div class="refnamediv"><p><span class="command"><strong>*RETURN</strong></span>, <em class="replaceable"><code>Level</code></em><br><b class="refpurpose">Returns input stream to a higher level.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_4.html" title="2.4. APDL Commands"><code class="classname">APDL</code></a>: <a class="link" href="Hlp_C_CH2_4.html#cmdapdlproctlsjla070199" title="Table 2.22: Process Controls"><span class="type">Process Controls</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsect1" title="Argument Descriptions"><a name="a-RETURN.argdescript"></a><h2>Argument Descriptions</h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Level</code></em></b></span></dt><dd><p>Number of levels to move up from the current level.</p><div><div class="variablelist"><dl><dt><span><b class="term">Negative --&nbsp;</b></span></dt><dd><p>Move relative to current level.
+For example: *Return,-2 will go up two levels from the current level.</p></dd><dt><span><b class="term">Positive --&nbsp;</b></span></dt><dd><p>Move to absolute level. For
+example: *Return,2 will go to level 2.</p></dd></dl></div></div><p>Level 0 is the primary input file.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="a-RETURN.notes"></a><h2>Notes</h2><p>This command is used to jump to the macro call sequence, ending the
+current macro file, and returning to the line after the calling line in the
+previous file. Unlike the <a href="Hlp_C_GO_st.html" title="*GO" class="olink"><span class="command"><strong>*GO</strong></span></a> command, this command may
+be used inside <a href="Hlp_C_IF.html" title="*IF" class="olink"><span class="command"><strong>*IF</strong></span></a> or <a href="Hlp_C_DO.html" title="*DO" class="olink"><span class="command"><strong>*DO</strong></span></a> constructs.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e236104"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

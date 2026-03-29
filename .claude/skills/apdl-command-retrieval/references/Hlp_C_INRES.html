@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:44-05:00"><title>INRES</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="INRES">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_I_TOC.html" title="I Commands">
+<link rel="prev" href="Hlp_C_INQUIRE.html" title="/INQUIRE">
+<link rel="next" href="Hlp_C_INRTIA.html" title="INRTIA">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="INRES"><a name="INRES"></a><div class="titlepage"></div><a class="indexterm" name="d0e139048"></a><span class="refentrytitle"><span class="command"><strong>INRES</strong></span></span><div class="refnamediv"><p><span class="command"><strong>INRES</strong></span>, <em class="replaceable"><code>Item1</code></em>, <em class="replaceable"><code>Item2</code></em>, <em class="replaceable"><code>Item3</code></em>, <em class="replaceable"><code>Item4</code></em>, <em class="replaceable"><code>Item5</code></em>, <em class="replaceable"><code>Item6</code></em>, <em class="replaceable"><code>Item7</code></em>, <em class="replaceable"><code>Item8</code></em><br><b class="refpurpose">Identifies the data to be retrieved from the results file.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_7.html" title="2.7. POST1 Commands"><code class="classname">POST1</code></a>: <a class="link" href="Hlp_C_CH2_7.html#cmdpost1controljla070199" title="Table 2.74: Controls"><span class="type">Controls</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="INRES.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Item1</code></em>, <em class="replaceable"><code>Item2</code></em>, <em class="replaceable"><code>Item3</code></em>,
+. . . , <em class="replaceable"><code>Item8</code></em></b></span></dt><dd><p>Data to be read into the database from the results file. 
+May consist of any of the following labels:       </p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ALL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>All solution items (default).</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">BASIC</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>NSOL, RSOL, NLOAD, STRS, FGRAD, and FFLUX
+items.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">NSOL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Nodal DOF solution.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">RSOL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Nodal reaction loads.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ESOL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Element solution items (includes all of the
+following):</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">NLOAD</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Element nodal loads.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">STRS</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Element nodal stresses.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">EPEL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Element elastic strains.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">EPTH</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Element thermal, initial, and swelling strains.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">EPPL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Element plastic strains.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">EPCR</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Element creep strains.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">FGRAD</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Element nodal gradients.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">FFLUX</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Element nodal fluxes.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">MISC</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Element miscellaneous data (SMISC and NMISC).</p></td></tr></tbody></table></div></div></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="INRES.notes"></a><h2>Notes</h2><p>Identifies the type of data to be retrieved from the results file for
+placement into the database through commands such as <a class="link" href="Hlp_C_SET.html" title="SET"><span class="command"><strong>SET</strong></span></a>, <a class="link" href="Hlp_C_SUBSET.html" title="SUBSET"><span class="command"><strong>SUBSET</strong></span></a>,
+and <a class="link" href="Hlp_C_APPEND.html" title="APPEND"><span class="command"><strong>APPEND</strong></span></a>.  <span class="command"><strong>INRES</strong></span> is a companion command
+to the <a class="link" href="Hlp_C_OUTturRES.html" title="OUTRES"><span class="command"><strong>OUTRES</strong></span></a> command controlling data written to the database
+and the results file.  Since the <span class="command"><strong>INRES</strong></span> command can only
+flag data that has already been written to the results file, care should be
+taken when using the <a class="link" href="Hlp_C_OUTturRES.html" title="OUTRES"><span class="command"><strong>OUTRES</strong></span></a> command to include all data
+you wish to retrieve for postprocessing later on.</p></div><div class="refsect1" title="Menu Paths"><a name="INRES.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;General Postproc&gt;Data &amp; File Opts</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

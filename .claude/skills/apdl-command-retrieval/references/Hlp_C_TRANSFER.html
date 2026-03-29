@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:40-05:00"><title>TRANSFER</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="TRANSFER">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_T_TOC.html" title="T Commands">
+<link rel="prev" href="Hlp_C_TORUS.html" title="TORUS">
+<link rel="next" href="Hlp_C_TREAD.html" title="*TREAD">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="TRANSFER"><a name="TRANSFER"></a><div class="titlepage"></div><a class="indexterm" name="d0e296062"></a><span class="refentrytitle"><span class="command"><strong>TRANSFER</strong></span></span><div class="refnamediv"><p><span class="command"><strong>TRANSFER</strong></span>, <em class="replaceable"><code>KCNTO</code></em>, <em class="replaceable"><code>INC</code></em>, <em class="replaceable"><code>NODE1</code></em>, <em class="replaceable"><code>NODE2</code></em>, <em class="replaceable"><code>NINC</code></em><br><b class="refpurpose">Transfers a pattern of nodes to another coordinate system.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7nodesldm061600" title="Table 2.37: Nodes"><span class="type">Nodes</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div> </div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="TRANSFER.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>KCNTO</code></em></b></span></dt><dd><p>Reference number of coordinate system where the pattern
+is to be transferred.  Transfer occurs from the active coordinate
+system.</p></dd><dt><span><b class="term"><em class="replaceable"><code>INC</code></em></b></span></dt><dd><p>Increment all nodes in the given pattern by <em class="replaceable"><code>INC</code></em> to form the transferred node pattern.</p></dd><dt><span><b class="term"><em class="replaceable"><code>NODE1</code></em>, <em class="replaceable"><code>NODE2</code></em>, <em class="replaceable"><code>NINC</code></em></b></span></dt><dd><p>Transfer nodes from pattern beginning with <em class="replaceable"><code>NODE1</code></em> to <em class="replaceable"><code>NODE2</code></em> (defaults
+to <em class="replaceable"><code>NODE1</code></em>) in steps of <em class="replaceable"><code>NINC</code></em> (defaults to 1).  If <em class="replaceable"><code>NODE1</code></em> = ALL, <em class="replaceable"><code>NODE2</code></em> and <em class="replaceable"><code>NINC</code></em> are ignored
+and the pattern is all selected nodes [<a class="link" href="Hlp_C_NSEL.html" title="NSEL"><span class="command"><strong>NSEL</strong></span></a>]. 
+If <em class="replaceable"><code>NODE1</code></em> = P, graphical picking is enabled
+and all remaining command fields are ignored (valid only in the GUI).
+ A component may be substituted for <em class="replaceable"><code>NODE1</code></em> (<em class="replaceable"><code>NODE2</code></em> and <em class="replaceable"><code>NINC</code></em> are ignored).</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="TRANSFER.notes"></a><h2>Notes</h2><p>Transfers a pattern of nodes from one coordinate system to another.
+ Coordinate systems may be translated and rotated relative to each
+other.  Initial pattern may be generated in any coordinate system.
+ Coordinate values are interpreted in the active coordinate system
+and are transferred directly.</p><p>A model generated in one coordinate system may be transferred
+to another coordinate system.  The user may define several coordinate
+systems (translated and rotated from each other), generate a model
+in one coordinate system, and then repeatedly transfer the model to
+other coordinate systems.  The model may be generated in any type
+of coordinate system (Cartesian, cylindrical, etc.) and transferred
+to any other type of coordinate system.  Coordinate values (X, Y,
+Z, or R,&nbsp;&#952;, Z, or etc.) of the model being transferred
+are interpreted in the <span class="italic"><em>active</em></span> coordinate
+system type, regardless of how they were generated.  Values are transferred
+directly and are interpreted according to the type of coordinate system
+being transferred to.  For example, transferring from a Cartesian
+coordinate system to a cylindrical coordinate system (not recommended)
+would cause X = 2.0 and Y = 3.0 values to be directly interpreted
+as R = 2.0 and &#952; = 3.0 values, respectively.</p><p>This command is also valid in the <a href="Hlp_C_MAP_s.html" title="/MAP" class="olink"><span class="command"><strong>/MAP</strong></span></a> processor.</p></div><div class="refsect1" title="Menu Paths"><a name="TRANSFER.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Move / Modify&gt;Transfer Coord&gt;Nodes</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

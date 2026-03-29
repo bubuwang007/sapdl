@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:29-05:00"><title>2.14. REDUCED Order Modeling Commands</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="2.14. REDUCED Order Modeling Commands">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="aV39Sq344ctg.html" title="Chapter 2: Command Groupings">
+<link rel="prev" href="cmdsmapgroup.html" title="2.13. Mapping Processor Commands">
+<link rel="next" href="Hlp_C_CH3.html" title="Chapter 3: Command Dictionary">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="sect1" title="2.14. REDUCED Order Modeling Commands"><div class="titlepage"><div><div><div class="helpanchor"><a name="cmdgrouprom">&nbsp;</a></div><h2 class="title" style="clear: both">2.14. REDUCED Order Modeling Commands</h2></div></div></div><p>These commands are used for reduced order modeling analyses.
+The commands are grouped by functionality.</p><div class="table"><a name="cmdromsetup"></a><p class="title"><b>Table 2.102:  Setup</b></p><div class="table-contents"><table summary="Setup" border="0" width="95%"><colgroup><col width="120" class="col1"><col width="432" class="col2"><col width="48" class="col3"></colgroup><thead><tr><th colspan="3" valign="top">These commands save or resume the ROM
+       database.</th></tr></thead><tbody><tr><td valign="top"><a class="link" href="Hlp_C_RMRESUME.html" title="RMRESUME"><span class="command"><strong>RMRESUME</strong></span></a></td><td valign="top">Resumes ROM data from a file.</td><td valign="top">&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMSAVE.html" title="RMSAVE"><span class="command"><strong>RMSAVE</strong></span></a></td><td>Saves ROM data to file.</td><td>&nbsp;</td></tr></tbody></table></div></div><br class="table-break"><div class="table"><a name="cmdrompreparjjw080102"></a><p class="title"><b>Table 2.103:  Preparation</b></p><div class="table-contents"><table summary="Preparation" border="0" width="95%"><colgroup><col width="120" class="col1"><col width="432" class="col2"><col width="48" class="col3"></colgroup><thead><tr><th colspan="3" valign="top">These commands create the input files for the ROM
+       Generation Pass.</th></tr></thead><tbody><tr><td><a class="link" href="Hlp_C_RMNDISP.html" title="RMNDISP"><span class="command"><strong>RMNDISP</strong></span></a></td><td>Extracts neutral plane displacements from a
+test load or element load solution for the ROM method.</td><td>&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMNEVEC.html" title="RMNEVEC"><span class="command"><strong>RMNEVEC</strong></span></a></td><td>Extracts neutral plane eigenvectors
+from a modal analysis for the ROM method.</td><td>&nbsp;</td></tr></tbody></table></div></div><br class="table-break"><div class="table"><a name="cmdromgenpass"></a><p class="title"><b>Table 2.104:  Generation Pass</b></p><div class="table-contents"><table summary="Generation Pass" border="0" width="95%"><colgroup><col width="120" class="col1"><col width="432" class="col2"><col width="48" class="col3"></colgroup><thead><tr><th colspan="3" valign="top">These commands create a reduced order
+       model.</th></tr></thead><tbody><tr><td valign="top"><a class="link" href="Hlp_C_RMALIST.html" title="RMALIST"><span class="command"><strong>RMALIST</strong></span></a></td><td valign="top">Lists all defined master nodes for a ROM method.</td><td valign="top">&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMANL.html" title="RMANL"><span class="command"><strong>RMANL</strong></span></a></td><td>Assigns model database,
+dimensionality, and operating direction for the ROM method.</td><td>&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMASTER.html" title="RMASTER"><span class="command"><strong>RMASTER</strong></span></a></td><td>Defines master nodes
+for the ROM method.</td><td>&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMCAP.html" title="RMCAP"><span class="command"><strong>RMCAP</strong></span></a></td><td>Defines lumped capacitance pairs between conductors
+C1 and C2 for a ROM method.</td><td>&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMCLIST.html" title="RMCLIST"><span class="command"><strong>RMCLIST</strong></span></a></td><td>Lists all lumped capacitances defined.</td><td>&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMMLIST.html" title="RMMLIST"><span class="command"><strong>RMMLIST</strong></span></a></td><td>Lists all mode specifications for the
+ROM method.</td><td>&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMMRANGE.html" title="RMMRANGE"><span class="command"><strong>RMMRANGE</strong></span></a></td><td>Defines and edits various modal parameters for the ROM method.</td><td>&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMMSELECT.html" title="RMMSELECT"><span class="command"><strong>RMMSELECT</strong></span></a></td><td>Selects modes for
+the ROM method.</td><td>&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMPORDER.html" title="RMPORDER"><span class="command"><strong>RMPORDER</strong></span></a></td><td>Defines polynomial orders for ROM functions.</td><td>&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMRGENERATE.html" title="RMRGENERATE"><span class="command"><strong>RMRGENERATE</strong></span></a></td><td>Performs fitting procedure for all
+ROM functions to generate response surfaces.</td><td>&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMROPTIONS.html" title="RMROPTIONS"><span class="command"><strong>RMROPTIONS</strong></span></a></td><td>Defines options for ROM response surface
+fitting.</td><td>&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMRPLOT.html" title="RMRPLOT"><span class="command"><strong>RMRPLOT</strong></span></a></td><td>Plots response surface of ROM function or its derivatives with respect
+to the dominant mode(s).</td><td>&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMRSTATUS.html" title="RMRSTATUS"><span class="command"><strong>RMRSTATUS</strong></span></a></td><td>Prints status of response surface for ROM function.</td><td>&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMSMPLE.html" title="RMSMPLE"><span class="command"><strong>RMSMPLE</strong></span></a></td><td>Runs finite element
+solutions and obtains sample points for the ROM method.</td><td>&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMXPORT.html" title="RMXPORT"><span class="command"><strong>RMXPORT</strong></span></a></td><td>Exports ROM model to external VHDL-AMS
+simulator.</td><td>&nbsp;</td></tr></tbody></table></div></div><br class="table-break"><div class="table"><a name="cmdromusepass"></a><p class="title"><b>Table 2.105:  Use Pass</b></p><div class="table-contents"><table summary="Use Pass" border="0" width="95%"><colgroup><col width="120" class="col1"><col width="432" class="col2"><col width="48" class="col3"></colgroup><thead><tr><th colspan="3" valign="top">These commands use
+the reduced order model in an analysis.</th></tr></thead><tbody><tr><td valign="top"><a class="link" href="Hlp_C_DCVSWP.html" title="DCVSWP"><span class="command"><strong>DCVSWP</strong></span></a></td><td valign="top">Performs a DC voltage sweep on a ROM element.</td><td valign="top">&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMLVSCALE.html" title="RMLVSCALE"><span class="command"><strong>RMLVSCALE</strong></span></a></td><td>Defines element
+load vector scaling for a ROM use pass.</td><td>&nbsp;</td></tr><tr><td><a class="link" href="Hlp_C_RMUSE.html" title="RMUSE"><span class="command"><strong>RMUSE</strong></span></a></td><td>Activates ROM use pass for ROM elements.</td><td>&nbsp;</td></tr></tbody></table></div></div><br class="table-break"></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

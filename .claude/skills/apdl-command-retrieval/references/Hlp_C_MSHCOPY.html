@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:08-05:00"><title>MSHCOPY</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="MSHCOPY">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_M_TOC.html" title="M Commands">
+<link rel="prev" href="Hlp_C_MSHAPE.html" title="MSHAPE">
+<link rel="next" href="Hlp_C_MSHKEY.html" title="MSHKEY">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="MSHCOPY"><a name="MSHCOPY"></a><div class="titlepage"></div><a class="indexterm" name="d0e175855"></a><span class="refentrytitle"><span class="command"><strong>MSHCOPY</strong></span></span><div class="refnamediv"><p><span class="command"><strong>MSHCOPY</strong></span>, <em class="replaceable"><code>KEYLA</code></em>, <em class="replaceable"><code>LAPTRN</code></em>, <em class="replaceable"><code>LACOPY</code></em>, <em class="replaceable"><code>KCN</code></em>, <em class="replaceable"><code>DX</code></em>, <em class="replaceable"><code>DY</code></em>, <em class="replaceable"><code>DZ</code></em>, <em class="replaceable"><code>TOL</code></em>, <em class="replaceable"><code>LOW</code></em>, <em class="replaceable"><code>HIGH</code></em><br><b class="refpurpose">Simplifies the generation of meshes that have matching node element
+patterns on two different line groups (in 2-D) or area groups (3-D).</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7meshingldm061600" title="Table 2.36: Meshing"><span class="type">Meshing</span></a></span></div></div></div><div class="refclass"> <div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="MSHCOPY.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>KEYLA</code></em></b></span></dt><dd><p>Copy line mesh (default) if LINE, 0 or 1. Copy area mesh if
+AREA, or 2.</p></dd><dt><span><b class="term"><em class="replaceable"><code>LAPTRN</code></em></b></span></dt><dd><p>Meshed line/area to be copied, or a component name containing
+a list. If <em class="replaceable"><code>LAPTRN</code></em> = P, graphical picking is enabled
+(valid only in the GUI).</p></dd><dt><span><b class="term"><em class="replaceable"><code>LACOPY</code></em></b></span></dt><dd><p>Unmeshed line/area to get copied mesh, or a component name
+containing a list. If <em class="replaceable"><code>LACOPY</code></em> = P, graphical picking
+is enabled (valid only in the GUI).</p></dd><dt><span><b class="term"><em class="replaceable"><code>KCN</code></em></b></span></dt><dd><p>In coordinate system <em class="replaceable"><code>KCN</code></em>, <em class="replaceable"><code>LAPTRN</code></em> + <em class="replaceable"><code>DX</code></em> <em class="replaceable"><code>DY</code></em> <em class="replaceable"><code>DZ</code></em> = <em class="replaceable"><code>LACOPY</code></em>.</p></dd><dt><span><b class="term"><em class="replaceable"><code>DX</code></em>, <em class="replaceable"><code>DY</code></em>, <em class="replaceable"><code>DZ</code></em></b></span></dt><dd><p>Node location increments in the active coordinate system (DR,
+D&#952;, DZ for cylindrical, DR, D&#952;, D&#934; for spherical or toroidal).</p></dd><dt><span><b class="term"><em class="replaceable"><code>TOL</code></em></b></span></dt><dd><p>Tolerance. Defaults to 1.e--4.</p></dd><dt><span><b class="term"><em class="replaceable"><code>LOW</code></em></b></span></dt><dd><p>Name of low node component to be defined (optional).</p></dd><dt><span><b class="term"><em class="replaceable"><code>HIGH</code></em></b></span></dt><dd><p>Name of high node component to be defined (optional).</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="MSHCOPY.notes"></a><h2>Notes</h2><p>Matching meshes are used for rotational (cyclic) symmetry, or for contact
+analysis using coupling or node-to-node gap elements. See <a href="../ans_mod/Hlp_G_MOD7_8.html" title="Using CPCYC and MSHCOPY Commands" class="olink">Using CPCYC and MSHCOPY Commands</a> in
+the <a href="../ans_mod/Hlp_G_ModTOC.html" title="Modeling and Meshing Guide" class="olink"><em class="citetitle">Modeling and Meshing Guide</em></a> for more information.</p></div><div class="refsect1" title="Menu Paths"><a name="MSHCOPY.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Copy&gt;Area Mesh</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Copy&gt;Line Mesh</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

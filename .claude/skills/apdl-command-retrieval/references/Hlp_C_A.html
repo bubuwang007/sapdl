@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:30-05:00"><title>A</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="A">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_A_TOC.html" title="A Commands">
+<link rel="prev" href="Hlp_A_TOC.html" title="A Commands">
+<link rel="next" href="Hlp_C_ABBR.html" title="*ABBR">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="A"><a name="A"></a><div class="titlepage"></div><a class="indexterm" name="d0e15124"></a><span class="refentrytitle"><span class="command"><strong>A</strong></span></span><div class="refnamediv"><p><span class="command"><strong>A</strong></span>, <em class="replaceable"><code>P1</code></em>, <em class="replaceable"><code>P2</code></em>, <em class="replaceable"><code>P3</code></em>, <em class="replaceable"><code>P4</code></em>, <em class="replaceable"><code>P5</code></em>, <em class="replaceable"><code>P6</code></em>, <em class="replaceable"><code>P7</code></em>, <em class="replaceable"><code>P8</code></em>, <em class="replaceable"><code>P9</code></em>, <em class="replaceable"><code>P10</code></em>, <em class="replaceable"><code>P11</code></em>, <em class="replaceable"><code>P12</code></em>, <em class="replaceable"><code>P13</code></em>, <em class="replaceable"><code>P14</code></em>, <em class="replaceable"><code>P15</code></em>, <em class="replaceable"><code>P16</code></em>, <em class="replaceable"><code>P17</code></em>, <em class="replaceable"><code>P18</code></em><br><b class="refpurpose">Defines an area by connecting keypoints.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7areasldm061600" title="Table 2.33: Areas"><span class="type">Areas</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="A.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>P1</code></em>, <em class="replaceable"><code>P2</code></em>, <em class="replaceable"><code>P3</code></em>,
+. . . , <em class="replaceable"><code>P18</code></em></b></span></dt><dd><p>List of keypoints defining the area (18 maximum if using keyboard
+entry).  At least 3 keypoints must be entered.  If <em class="replaceable"><code>P1</code></em> =
+P, graphical picking is enabled and all remaining arguments are ignored (valid
+only in the GUI).</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="A.notes"></a><h2>Notes</h2><p>Keypoints (<em class="replaceable"><code>P1</code></em> through <em class="replaceable"><code>P18</code></em>)
+must be input in a clockwise or counterclockwise order around the area.  This
+order also determines the positive normal direction of the area according
+to the right-hand rule.  Existing lines between adjacent keypoints will be
+used; missing lines are generated "straight" in the active coordinate system
+and assigned the lowest available numbers [<a class="link" href="Hlp_C_NUMSTR.html" title="NUMSTR"><span class="command"><strong>NUMSTR</strong></span></a>].  If
+more than one line exists between two keypoints, the shorter one will be chosen.
+ If the area is to be defined with more than four keypoints, the required
+keypoints and lines must lie on a constant coordinate value in the active
+coordinate system (such as a plane or a cylinder).  Areas may be redefined
+only if not yet attached to a volume.  Solid modeling in a toroidal coordinate
+system is not recommended.</p></div><div class="refsect1" title="Menu Paths"><a name="A.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Create&gt;Areas&gt;Arbitrary&gt;Through KPs</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

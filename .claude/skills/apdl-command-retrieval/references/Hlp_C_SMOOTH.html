@@ -1,0 +1,77 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:03-05:00"><title>SMOOTH</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="SMOOTH">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_S_TOC.html" title="S Commands">
+<link rel="prev" href="Hlp_C_SMIN.html" title="SMIN">
+<link rel="next" href="Hlp_C_SMRTSIZE.html" title="SMRTSIZE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="SMOOTH"><a name="SMOOTH"></a><div class="titlepage"></div><a class="indexterm" name="d0e266968"></a><span class="refentrytitle"><span class="command"><strong>SMOOTH</strong></span></span><div class="refnamediv"><p><span class="command"><strong>SMOOTH</strong></span>, <em class="replaceable"><code>Vect1</code></em>, <em class="replaceable"><code>Vect2</code></em>, <em class="replaceable"><code>DATAP</code></em>, <em class="replaceable"><code>FITPT</code></em>, <em class="replaceable"><code>Vect3</code></em>, <em class="replaceable"><code>Vect4</code></em>, <em class="replaceable"><code>DISP</code></em><br><b class="refpurpose">Allows smoothing of noisy data and provides a graphical representation
+of the data.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_8.html" title="2.8. POST26 Commands"><code class="classname">POST26</code></a>: <a class="link" href="Hlp_C_CH2_8.html#cmdpost26sppurpjla070199" title="Table 2.92: Special Purpose"><span class="type">Special Purpose</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="SMOOTH.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Vect1</code></em></b></span></dt><dd><p>Name of the first vector that contains the noisy data set
+(i.e., independent variable). You must create and fill this vector before
+issuing <span class="command"><strong>SMOOTH</strong></span>.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Vect2</code></em></b></span></dt><dd><p>Name of the second vector that contains the dependent set
+of data.  Must be the same length as the first vector. You must create and
+fill this vector before issuing <span class="command"><strong>SMOOTH</strong></span>.</p></dd><dt><span><b class="term"><em class="replaceable"><code>DATAP</code></em></b></span></dt><dd><p>Number of data points to be fitted, starting from the beginning
+of the vector. If left blank, the entire vector will be fitted. The maximum
+number of data points is 100,000 (or greater, depending on the memory of the
+computer).</p></dd><dt><span><b class="term"><em class="replaceable"><code>FITPT</code></em></b></span></dt><dd><p>Order of the fitting curve that will be used as a smooth representation
+of the data. This number should be less than or equal to the number of the
+data points. Default (blank) is one-half the number of data points. Maximum
+number of smoothed data fitting order is the number of data points up to 50.
+ Depending on this number, the smoothed curve will be one of the following:
+    </p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Curve is the absolute average of all of the
+data points.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">2</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Curve is the least square average of all of
+the data points.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">3&nbsp;or&nbsp;more</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Curve is a polynomial of the order (n-1),
+where n is the number of data fitting order points.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>Vect3</code></em></b></span></dt><dd><p>Name of the vector that contains the smoothed data of the
+independent variable. This vector should have a length equal to or greater
+than the number of smoothed data points. In batch (command) mode, you must
+create this vector before issuing the <span class="command"><strong>SMOOTH</strong></span> command. In
+interactive mode, the GUI automatically creates this vector (if it does not
+exist). If you do not specify a vector name, the GUI will name the vector
+smth_ind.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Vect4</code></em></b></span></dt><dd><p>Name of the vector that contains the smoothed data of the
+dependent variable.  This vector must be the same length as <em class="replaceable"><code>Vect3</code></em>.
+ In batch (command) mode, you must create this vector before issuing the <span class="command"><strong>SMOOTH</strong></span> command.
+In interactive mode, the GUI automatically creates this vector (if it does
+not exist). If you do not specify a vector name, the GUI will name the vector
+smth_dep.</p></dd><dt><span><b class="term"><em class="replaceable"><code>DISP</code></em></b></span></dt><dd><p>Specifies how you want to display data. No default; you must
+specify an option.</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Unsmoothed data only</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">2</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Smoothed data only</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">3</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Both smoothed and unsmoothed data</p></td></tr></tbody></table></div></div></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="SMOOTH.notes"></a><h2>Notes</h2><p>You can control the attributes of the graph using standard ANSYS controls
+(<a href="Hlp_C_GRID.html" title="/GRID" class="olink"><span class="command"><strong>/GRID</strong></span></a>, <a href="Hlp_C_GTHK.html" title="/GTHK" class="olink"><span class="command"><strong>/GTHK</strong></span></a>, <a href="Hlp_C_COLOR.html" title="/COLOR" class="olink"><span class="command"><strong>/COLOR</strong></span></a>,
+etc.). If working interactively, these controls appear in this dialog box
+for convenience, as well as in their standard dialog boxes. You must always
+create <em class="replaceable"><code>Vect1</code></em> and <em class="replaceable"><code>Vect2</code></em> (using <a href="Hlp_C_DIM.html" title="*DIM" class="olink"><span class="command"><strong>*DIM</strong></span></a>)
+and fill these vectors before smoothing the data. If you're working interactively,
+ANSYS automatically creates <em class="replaceable"><code>Vect3</code></em> and <em class="replaceable"><code>Vect4</code></em>,
+but if you're working in batch (command) mode, you must create <em class="replaceable"><code>Vect3</code></em> and <em class="replaceable"><code>Vect4</code></em> (using <a href="Hlp_C_DIM.html" title="*DIM" class="olink"><span class="command"><strong>*DIM</strong></span></a>) before issuing <span class="command"><strong>SMOOTH</strong></span>.  <em class="replaceable"><code>Vect3</code></em> and <em class="replaceable"><code>Vect4</code></em> are
+then filled automatically by ANSYS.  In addition, ANSYS creates an additional
+TABLE type array that contains the smoothed array and the unsmoothed data
+to allow for plotting later with <a href="Hlp_C_VPLOT_st.html" title="*VPLOT" class="olink"><span class="command"><strong>*VPLOT</strong></span></a>.  Column 1 in this
+table corresponds to <em class="replaceable"><code>Vect1</code></em>, column 2 to <em class="replaceable"><code>Vect2</code></em>,
+and column 3 to <em class="replaceable"><code>Vect4</code></em>.  This array is named <em class="replaceable"><code>Vect3</code></em>_SMOOTH,
+up to a limit of 32 characters. For example, if the array name is X1, the
+table name is X1_SMOOTH.</p><p>This command is also valid in PREP7 and SOLUTION.</p></div><div class="refsect1" title="Menu Paths"><a name="SMOOTH.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

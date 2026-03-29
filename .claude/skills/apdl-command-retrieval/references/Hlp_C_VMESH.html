@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:36:01-05:00"><title>VMESH</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="VMESH">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_V_TOC.html" title="V Commands">
+<link rel="prev" href="Hlp_C_VMASK.html" title="*VMASK">
+<link rel="next" href="Hlp_C_VOFFST.html" title="VOFFST">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="VMESH"><a name="VMESH"></a><div class="titlepage"></div><a class="indexterm" name="d0e313332"></a><span class="refentrytitle"><span class="command"><strong>VMESH</strong></span></span><div class="refnamediv"><p><span class="command"><strong>VMESH</strong></span>, <em class="replaceable"><code>NV1</code></em>, <em class="replaceable"><code>NV2</code></em>, <em class="replaceable"><code>NINC</code></em><br><b class="refpurpose">Generates nodes and volume elements within volumes.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7meshingldm061600" title="Table 2.36: Meshing"><span class="type">Meshing</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="VMESH.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>NV1</code></em>, <em class="replaceable"><code>NV2</code></em>, <em class="replaceable"><code>NINC</code></em></b></span></dt><dd><p>Mesh volumes from <em class="replaceable"><code>NV1</code></em> to <em class="replaceable"><code>NV2 </code></em>(defaults
+to <em class="replaceable"><code>NV1</code></em>) in steps of <em class="replaceable"><code>NINC </code></em>(defaults
+to 1).  If <em class="replaceable"><code>NV1</code></em> = ALL, <em class="replaceable"><code>NV2</code></em> and <em class="replaceable"><code>NINC</code></em> are
+ignored and all selected volumes [<a class="link" href="Hlp_C_VSEL.html" title="VSEL"><span class="command"><strong>VSEL</strong></span></a>] are meshed.  If <em class="replaceable"><code>NV1</code></em> =
+P, graphical picking is enabled and all remaining command fields are ignored
+(valid only in the GUI).  A component name may also be substituted for <em class="replaceable"><code>NV1</code></em> (<em class="replaceable"><code>NV2</code></em> and <em class="replaceable"><code>NINC</code></em> are ignored).</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="VMESH.notes"></a><h2>Notes</h2><p>Missing nodes required for the generated elements are created and assigned
+the lowest available numbers [<a class="link" href="Hlp_C_NUMSTR.html" title="NUMSTR"><span class="command"><strong>NUMSTR</strong></span></a>].  During a batch
+run and if elements already exist, a mesh abort will write an alternative
+database file (<span class="filename"><strong>File.DBE</strong></span>) for possible recovery.</p><p>Tetrahedral mesh expansion [<a class="link" href="Hlp_C_MOPT.html" title="MOPT"><span class="command"><strong>MOPT</strong></span></a>,TETEXPND,<em class="replaceable"><code>Value</code></em>]
+is supported for both the <span class="command"><strong>VMESH</strong></span> and <a class="link" href="Hlp_C_FVMESH.html" title="FVMESH"><span class="command"><strong>FVMESH</strong></span></a> commands.</p></div><div class="refsect1" title="Menu Paths"><a name="VMESH.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Meshing&gt;Mesh&gt;Volumes&gt;Free</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Meshing&gt;Mesh&gt;Volumes&gt;Mapped&gt;4 to 6 sided</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

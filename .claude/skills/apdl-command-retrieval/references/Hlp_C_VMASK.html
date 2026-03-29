@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:36:01-05:00"><title>*VMASK</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="*VMASK">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_V_TOC.html" title="V Commands">
+<link rel="prev" href="Hlp_C_VLSCALE.html" title="VLSCALE">
+<link rel="next" href="Hlp_C_VMESH.html" title="VMESH">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="*VMASK"><a name="a-VMASK"></a><div class="titlepage"></div><a class="indexterm" name="d0e313212"></a><span class="refentrytitle"><a href="Hlp_C_VMASK.html" title="*VMASK" class="olink"><span class="command"><strong>*VMASK</strong></span></a> </span><div class="refnamediv"><p><span class="command"><strong>*VMASK</strong></span>, <em class="replaceable"><code>Par</code></em><br><b class="refpurpose">Specifies an array parameter as a masking vector.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_4.html" title="2.4. APDL Commands"><code class="classname">APDL</code></a>: <a class="link" href="Hlp_C_CH2_4.html#cmdapdlarrayparajla070199" title="Table 2.21: Array Parameters"><span class="type">Array Parameters</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsect1" title="Argument Descriptions"><a name="a-VMASK.argdescript"></a><h2>Argument Descriptions</h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Par</code></em></b></span></dt><dd><p>Name of the mask parameter.  The starting subscript must also
+be specified.</p></dd></dl></div></div></div><div class="refsect1" title="Command Default"><a name="a-VMASK.default"></a><h2>Command Default</h2><p>No mask parameter specified (use true for all operations).</p></div><div class="refsect1" title="Notes"><a name="a-VMASK.notes"></a><h2>Notes</h2><p>Specifies the name of the parameter whose values are to be checked for
+each resulting row operation.  The mask vector usually contains only 0 (for
+false) and 1 (for true) values.  For each row operation the corresponding
+mask vector value is checked.  A true value allows the operation to be done.
+ A false value skips the operation (and retains the previous results).  A
+mask vector can be created from direct input, such as M(1) = 1,0,0,1,1,0,1;
+or from the DATA function of the <a href="Hlp_C_VFILL.html" title="*VFILL" class="olink"><span class="command"><strong>*VFILL</strong></span></a> command.  The NOT
+function of the <a href="Hlp_C_VFUN.html" title="*VFUN" class="olink"><span class="command"><strong>*VFUN</strong></span></a> command can be used to reverse the
+logical sense of the mask vector.  The logical compare operations (LT, LE,
+EQ, NE, GE, and GT) of the <a href="Hlp_C_VOPER.html" title="*VOPER" class="olink"><span class="command"><strong>*VOPER</strong></span></a> command also produce
+a mask vector by operating on two other vectors.  Any numeric vector can be
+used as a mask vector since the actual interpretation assumes values less
+than 0.0 are 0.0 (false) and values greater than 0.0 are 1.0 (true).  If the
+mask vector is not specified (or has fewer values than the result vector),
+true (1.0) values are assumed for the unspecified values.  Another skip control
+may be input with <em class="replaceable"><code>NINC</code></em> on the <a href="Hlp_C_VLEN.html" title="*VLEN" class="olink"><span class="command"><strong>*VLEN</strong></span></a> command.
+ If both are present, operations occur only when both are true.  The mask
+setting is <span class="italic"><em>reset</em></span> to the default (no mask)
+after each <span class="bold"><strong>*V<em class="replaceable"><code>XX</code></em></strong></span> or <span class="bold"><strong>*M<em class="replaceable"><code>XX</code></em></strong></span> operation.
+ Use <a href="Hlp_C_VSTAT.html" title="*VSTAT" class="olink"><span class="command"><strong>*VSTAT</strong></span></a> to list settings.</p><p>This command is valid in any processor.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e313322"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Utility Menu&gt;Parameters&gt;Array Operations&gt;Operation Settings</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:01-05:00"><title>MDAMP</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="MDAMP">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_M_TOC.html" title="M Commands">
+<link rel="prev" href="Hlp_C_MCHECK.html" title="MCHECK">
+<link rel="next" href="Hlp_C_MDELE.html" title="MDELE">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="MDAMP"><a name="MDAMP"></a><div class="titlepage"></div><a class="indexterm" name="d0e164077"></a><span class="refentrytitle"><span class="command"><strong>MDAMP</strong></span></span><div class="refnamediv"><p><span class="command"><strong>MDAMP</strong></span>, <em class="replaceable"><code>STLOC</code></em>, <em class="replaceable"><code>V1</code></em>, <em class="replaceable"><code>V2</code></em>, <em class="replaceable"><code>V3</code></em>, <em class="replaceable"><code>V4</code></em>, <em class="replaceable"><code>V5</code></em>, <em class="replaceable"><code>V6</code></em><br><b class="refpurpose">Defines the damping ratios as a function of mode.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoludynoptjla070199" title="Table 2.50: Dynamic Options"><span class="type">Dynamic Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="MDAMP.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>STLOC</code></em></b></span></dt><dd><p>Starting location in table for entering data.  For
+example, if <em class="replaceable"><code>STLOC</code></em> = 1, data input in the <em class="replaceable"><code>V1</code></em> field applies to the first constant in the table.
+ If <em class="replaceable"><code>STLOC</code></em> = 7, data input in the <em class="replaceable"><code>V1</code></em> field applies to the seventh constant in the table,
+etc.  Defaults to the last location filled + 1.</p></dd><dt><span><b class="term"><em class="replaceable"><code>V1</code></em>, <em class="replaceable"><code>V2</code></em>, <em class="replaceable"><code>V3</code></em>, . . . , <em class="replaceable"><code>V6</code></em></b></span></dt><dd><p>Data assigned to six locations starting with <em class="replaceable"><code>STLOC</code></em>.  If a value is already in this location, it
+will be redefined.  Blank values for <em class="replaceable"><code>V2</code></em> to <em class="replaceable"><code>V6</code></em> leave the corresponding previous
+value unchanged.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="MDAMP.notes"></a><h2>Notes</h2><p>Defines the damping ratios as a function of mode. Table position corresponds to mode number.
+   These ratios are added to the <a class="link" href="Hlp_C_DMPRAT.html" title="DMPRAT"><span class="command"><strong>DMPRAT</strong></span></a> value, if defined. Use the
+    <a class="link" href="Hlp_C_STAT.html" title="STAT"><span class="command"><strong>STAT</strong></span></a> command to list current values. This command applies to
+   mode-superposition harmonic (<a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,HARMIC), mode-superposition linear
+   transient dynamic (<a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,TRANS), and spectrum
+   (<a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,SPECTR) analyses. Repeat the <span class="command"><strong>MDAMP</strong></span> command for
+   additional constants (10000 maximum).</p><p><span class="command"><strong>MDAMP</strong></span> can also be defined in a substructure analysis
+   that uses component mode synthesis. The damping ratios are added on the diagonal of the reduced
+   damping matrix, as explained in <a href="../ans_thry/thy_anproc6.html#anpcms" title="Component Mode Synthesis (CMS)" class="olink">Component Mode Synthesis (CMS)</a>. </p><p>This command is also valid in PREP7.</p></div><div class="refsect1" title="Menu Paths"><a name="MDAMP.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Time/Frequenc&gt;Damping</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Time/Frequenc&gt;Damping</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

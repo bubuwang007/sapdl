@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:02-05:00"><title>EMSEL</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="EMSEL">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_E_TOC.html" title="E Commands">
+<link rel="prev" href="Hlp_C_EMORE.html" title="EMORE">
+<link rel="next" href="Hlp_C_EMSYM.html" title="EMSYM">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="EMSEL"><a name="EMSEL"></a><div class="titlepage"></div><a class="indexterm" name="d0e89992"></a><a class="indexterm" name="d0e89995"></a><span class="refentrytitle"><span class="command"><strong>EMSEL</strong></span></span><div class="refnamediv"><p><span class="command"><strong>EMSEL</strong></span>,
+    <em class="replaceable"><code>Type</code></em>,<em class="replaceable"><code>--</code></em>, <em class="replaceable"><code>--</code></em>,
+    <em class="replaceable"><code>VMIN</code></em>, <em class="replaceable"><code>VMAX</code></em>,
+    <em class="replaceable"><code>VINC</code></em><br><b class="refpurpose">Selects a group of <a href="../ans_str/Hlp_G_STRREINF.html" title="reinforcing" class="olink">reinforcing</a> members via a
+   predefined global identifier.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7elementsldm061600" title="Table 2.38: Elements"><span class="type">Elements</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Type</code></em></b></span></dt><dd><p>Specifies the selection type for the reinforcing elements:</p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>S &#8211; Select a new set (default).</td></tr><tr><td>A &#8211; Select an additional set and add it to the current set.</td></tr><tr><td>U &#8211; Unselect a set from the current set.</td></tr><tr><td>ALL &#8211; Restore the full set.</td></tr><tr><td>STAT &#8211; Display the current selection status.</td></tr></table><p>The following arguments are valid only when <em class="replaceable"><code>Type</code></em> = S, A, or
+      U:</p></dd><dt><span><b class="term"><em class="replaceable"><code>--</code></em></b></span></dt><dd><p>Reserved for future use.</p></dd><dt><span><b class="term"><em class="replaceable"><code>--</code></em></b></span></dt><dd><p>Reserved for future use.</p></dd><dt><span><b class="term"><em class="replaceable"><code>VMIN</code></em></b></span></dt><dd><p>Minimum value of a group-identifier range.</p></dd><dt><span><b class="term"><em class="replaceable"><code>VMAX</code></em></b></span></dt><dd><p>Maximum value of global identifier range. Default = VMIN for input values.</p></dd><dt><span><b class="term"><em class="replaceable"><code>VINC</code></em></b></span></dt><dd><p>Value increment within the specified range. Default = 1. </p></dd></dl></div></div></div><div class="refsect1" title="Command Default"><a name="d0e90122"></a><h2>Command Default</h2><p>All global identifiers are selected.</p></div><div class="refsect1" title="Notes"><a name="d0e90127"></a><h2>Notes</h2><div class="sidebar" title="Understanding Reinforcing Member Groups"><div class="titlepage"><div><div><p class="title"><b>Understanding Reinforcing Member Groups</b></p></div></div></div><p>When using the <a href="../ans_str/Hlp_G_STRRFDEF.html#reinfmeshinddmethod" title="mesh-independent method" class="olink">mesh-independent method</a> for
+    defining reinforcing, the global identifier for a set of <a href="../ans_elem/Hlp_E_MESH200.html" title="MESH200" class="olink"><span class="structname">MESH200</span></a>
+    elements (specified via <a class="link" href="Hlp_C_EGID.html" title="EGID"><span class="command"><strong>EGID</strong></span></a>) is transferred from the
+     <a href="../ans_elem/Hlp_E_MESH200.html" title="MESH200" class="olink"><span class="structname">MESH200</span></a> elements to the reinforcing members (individual reinforcings)
+    when the reinforcing elements (REINF<em class="replaceable"><code>nnn</code></em>) are generated
+     (<a class="link" href="Hlp_C_EREINF.html" title="EREINF"><span class="command"><strong>EREINF</strong></span></a>).</p></div><p>The <span class="command"><strong>EMSEL</strong></span> command selects groups of reinforcing members (individual
+   reinforcings) via specified global identifiers.</p><div class="example"><a name="d0e90162"></a><p class="title"><b>Example 6:  Selecting Reinforcing Member Groups</b></p><div class="example-contents"><p>The following command selects a new group of reinforcing members based on global
+    identifiers 1 through 7:</p><pre class="programlisting">EMSEL,S,,,1,7</pre></div></div><br class="example-break"><p><em class="replaceable"><code>VMIN</code></em>, <em class="replaceable"><code>VMAX</code></em>, and
+    <em class="replaceable"><code>VINC</code></em> are positive integer values.</p><p>This command is valid in PREP7 and POST1.</p><p>For more information about using this command in a mesh-independent reinforcing analysis,
+   see <a href="../ans_str/Hlp_G_STRRFDEF.html#reinfgroups" title="Selecting and Displaying Groups of Reinforcing Members in the Structural Analysis Guide" class="olink">Selecting and Displaying Groups of Reinforcing Members in the <span class="olinkdocname">Structural Analysis Guide</span></a>.</p><div class="informaltable"><table border="1" width="95%"><colgroup><col width="100%"></colgroup><tbody><tr><td>
+       <p>The <span class="command"><strong>EMSEL</strong></span> command is valid only for the reinforcing elements
+        generated via the mesh-independent method for defining reinforcing. </p>
+       <p>When using the <a href="../ans_str/Hlp_G_STRRFDEF.html#reinfstandardmethod" title="standard method" class="olink">standard method</a> for
+        defining reinforcing, you can use the <a class="link" href="Hlp_C_LAYER.html" title="LAYER"><span class="command"><strong>LAYER</strong></span></a> command to select reinforcing
+        members in POST1. (The <a class="link" href="Hlp_C_LAYER.html" title="LAYER"><span class="command"><strong>LAYER</strong></span></a> command is not valid in PREP7.)</p>
+      </td></tr></tbody></table></div></div><div class="refsect1" title="Menu Paths"><a name="d0e90211"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

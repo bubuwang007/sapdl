@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:33:10-05:00"><title>NANG</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="NANG">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_N_TOC.html" title="N Commands">
+<link rel="prev" href="Hlp_C_N.html" title="N">
+<link rel="next" href="Hlp_C_NAXIS.html" title="NAXIS">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="NANG"><a name="NANG"></a><div class="titlepage"></div><a class="indexterm" name="d0e178062"></a><span class="refentrytitle"><span class="command"><strong>NANG</strong></span></span><div class="refnamediv"><p><span class="command"><strong>NANG</strong></span>, <em class="replaceable"><code>NODE</code></em>, <em class="replaceable"><code>X1</code></em>, <em class="replaceable"><code>X2</code></em>, <em class="replaceable"><code>X3</code></em>, <em class="replaceable"><code>Y1</code></em>, <em class="replaceable"><code>Y2</code></em>, <em class="replaceable"><code>Y3</code></em>, <em class="replaceable"><code>Z1</code></em>, <em class="replaceable"><code>Z2</code></em>, <em class="replaceable"><code>Z3</code></em><br><b class="refpurpose">Rotates a nodal coordinate system by direction cosines.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7nodesldm061600" title="Table 2.37: Nodes"><span class="type">Nodes</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="NANG.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>NODE</code></em></b></span></dt><dd><p>Rotate coordinate system of this node.</p></dd><dt><span><b class="term"><em class="replaceable"><code>X1</code></em>, <em class="replaceable"><code>X2</code></em>, <em class="replaceable"><code>X3</code></em></b></span></dt><dd><p>Global X, Y, Z components of a unit vector in new nodal X
+direction.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Y1</code></em>, <em class="replaceable"><code>Y2</code></em>, <em class="replaceable"><code>Y3</code></em></b></span></dt><dd><p>Global X, Y, Z components of a unit vector in new nodal Y
+direction.</p></dd><dt><span><b class="term"><em class="replaceable"><code>Z1</code></em>, <em class="replaceable"><code>Z2</code></em>, <em class="replaceable"><code>Z3</code></em></b></span></dt><dd><p>Global X, Y, Z components of a unit vector in new nodal Z
+direction.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="NANG.notes"></a><h2>Notes</h2><p>Rotates a nodal coordinate system to the orientation specified by the
+X, Y and Z direction cosines.  Existing rotation specifications on the node
+are redefined.  If only two of the three unit vectors are specified, the third
+is defined according to the right hand rule.  It is the responsibility of
+the user to ensure that input direction cosines are orthogonal in a right-handed
+system.</p><p>See the <a class="link" href="Hlp_C_NMODIF.html" title="NMODIF"><span class="command"><strong>NMODIF</strong></span></a>, <a class="link" href="Hlp_C_NROTAT.html" title="NROTAT"><span class="command"><strong>NROTAT</strong></span></a>,
+and <a class="link" href="Hlp_C_NORA.html" title="NORA"><span class="command"><strong>NORA</strong></span></a> commands for other rotation options.</p></div><div class="refsect1" title="Menu Paths"><a name="NANG.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Create&gt;Nodes&gt;RotateNode&gt;By Vectors</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;Move / Modify&gt;RotateNode&gt;By Vectors</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

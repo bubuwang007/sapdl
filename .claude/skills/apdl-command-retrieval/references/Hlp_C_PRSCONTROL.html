@@ -1,0 +1,66 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:34:06-05:00"><title>PRSCONTROL</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="PRSCONTROL">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_P_TOC.html" title="P Commands">
+<link rel="prev" href="Hlp_C_PRRSOL.html" title="PRRSOL">
+<link rel="next" href="Hlp_C_PRSECT.html" title="PRSECT">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="PRSCONTROL"><a name="PRSCONTROL"></a><div class="titlepage"></div><a class="indexterm" name="d0e222615"></a><span class="refentrytitle"><span class="command"><strong>PRSCONTROL</strong></span></span><div class="refnamediv"><p><span class="command"><strong>PRSCONTROL</strong></span>, <em class="replaceable"><code>Key</code></em><br><b class="refpurpose">Specifies whether to include pressure load stiffness in
+the element stiffness formation.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoluanaoptjla070199" title="Table 2.48: Analysis Options"><span class="type">Analysis Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a> 
+    <span class="bold"><strong>DesignSpace</strong></span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="PRSCONTROL.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Key</code></em></b></span></dt><dd><p>Pressure load stiffness key. In general, use the default
+setting. Use a non-default setting only if you encounter convergence
+difficulties. Pressure load stiffness is automatically included when
+using eigenvalue buckling analyses (<a class="link" href="Hlp_C_ANTYPE.html" title="ANTYPE"><span class="command"><strong>ANTYPE</strong></span></a>,BUCKLE),
+equivalent to <em class="replaceable"><code>Key</code></em> = INCP. For all other
+types of analyses, valid arguments for <em class="replaceable"><code>Key</code></em> are:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">NOPL</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Pressure load stiffness not included
+for any elements.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">(blank)&nbsp;(default)</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Include pressure load stiffness for elements <a href="../ans_elem/Hlp_E_SURF153.html" title="SURF153" class="olink"><span class="structname">SURF153</span></a>,
+                                            <a href="../ans_elem/Hlp_E_SURF154.html" title="SURF154" class="olink"><span class="structname">SURF154</span></a>,
+                                            <a href="../ans_elem/Hlp_E_SURF156.html" title="SURF156" class="olink"><span class="structname">SURF156</span></a>,
+                                            <a href="../ans_elem/Hlp_E_SURF159.html" title="SURF159" class="olink"><span class="structname">SURF159</span></a>,
+                                            <a href="../ans_elem/Hlp_E_SHELL181.html" title="SHELL181" class="olink"><span class="structname">SHELL181</span></a>,
+                                            <a href="../ans_elem/Hlp_E_PLANE182.html" title="PLANE182" class="olink"><span class="structname">PLANE182</span></a>,
+                                            <a href="../ans_elem/Hlp_E_PLANE183.html" title="PLANE183" class="olink"><span class="structname">PLANE183</span></a>,
+                                            <a href="../ans_elem/Hlp_E_SOLID185.html" title="SOLID185" class="olink"><span class="structname">SOLID185</span></a>,
+                                            <a href="../ans_elem/Hlp_E_SOLID186.html" title="SOLID186" class="olink"><span class="structname">SOLID186</span></a>,
+                                            <a href="../ans_elem/Hlp_E_SOLID187.html" title="SOLID187" class="olink"><span class="structname">SOLID187</span></a>,
+                                            <a href="../ans_elem/Hlp_E_SOLSH190.html" title="SOLSH190" class="olink"><span class="structname">SOLSH190</span></a>,
+                                            <a href="../ans_elem/Hlp_E_BEAM188.html" title="BEAM188" class="olink"><span class="structname">BEAM188</span></a>,
+                                            <a href="../ans_elem/Hlp_E_BEAM189.html" title="BEAM189" class="olink"><span class="structname">BEAM189</span></a>,
+                                            <a href="../ans_elem/Hlp_E_FOLLW201.html" title="FOLLW201" class="olink"><span class="structname">FOLLW201</span></a>,
+                                            <a href="../ans_elem/Hlp_E_SHELL208.html" title="SHELL208" class="olink"><span class="structname">SHELL208</span></a>,
+                                            <a href="../ans_elem/Hlp_E_SHELL209.html" title="SHELL209" class="olink"><span class="structname">SHELL209</span></a>,
+                                            <a href="../ans_elem/Hlp_E_SOLID272.html" title="SOLID272" class="olink"><span class="structname">SOLID272</span></a>,
+                                            <a href="../ans_elem/Hlp_E_SOLID273.html" title="SOLID273" class="olink"><span class="structname">SOLID273</span></a>,
+                                            <a href="../ans_elem/Hlp_E_SHELL281.html" title="SHELL281" class="olink"><span class="structname">SHELL281</span></a>,
+                                            <a href="../ans_elem/Hlp_E_SOLID285.html" title="SOLID285" class="olink"><span class="structname">SOLID285</span></a>,
+                                            <a href="../ans_elem/Hlp_E_PIPE288.html" title="PIPE288" class="olink"><span class="structname">PIPE288</span></a>,
+                                            <a href="../ans_elem/Hlp_E_PIPE289.html" title="PIPE289" class="olink"><span class="structname">PIPE289</span></a>, and
+                                            <a href="../ans_elem/Hlp_E_ELBOW290.html" title="ELBOW290" class="olink"><span class="structname">ELBOW290</span></a>.</p></td></tr></tbody></table></div></div></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="PRSCONTROL.notes"></a><h2>Notes</h2><p>This command is rarely needed. The default settings are recommended
+for most analyses.</p></div><div class="refsect1" title="Menu Paths"><a name="PRSCONTROL.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>This command cannot be accessed from a menu.</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

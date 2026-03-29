@@ -1,0 +1,57 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:35:42-05:00"><title>TSRES</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="TSRES">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_T_TOC.html" title="T Commands">
+<link rel="prev" href="Hlp_C_TSPEC.html" title="/TSPEC">
+<link rel="next" href="Hlp_C_TUNIF.html" title="TUNIF">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="TSRES"><a name="TSRES"></a><div class="titlepage"></div><a class="indexterm" name="d0e298411"></a><span class="refentrytitle"><span class="command"><strong>TSRES</strong></span></span><div class="refnamediv"><p><span class="command"><strong>TSRES</strong></span>, <em class="replaceable"><code>Array</code></em><br><b class="refpurpose">Defines an array of key times at which the time-stepping strategy
+changes.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsoluldstepjla070199" title="Table 2.52: Load Step Options"><span class="type">Load Step Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="TSRES.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Array</code></em></b></span></dt><dd><p>Identifies an <em class="replaceable"><code>N</code></em>x1x1
+array parameter containing the key times at which the heat transfer time-stepping
+strategy changes (the time step is reset to the initial time step based on <a class="link" href="Hlp_C_DELTIM.html" title="DELTIM"><span class="command"><strong>DELTIM</strong></span></a> or <a class="link" href="Hlp_C_NSUBST.html" title="NSUBST"><span class="command"><strong>NSUBST</strong></span></a> settings).
+ The array name must be enclosed by % signs (e.g., %<em class="replaceable"><code>array</code></em>%).
+ See <a href="Hlp_C_DIM.html" title="*DIM" class="olink"><span class="command"><strong>*DIM</strong></span></a> for more information on array parameters.</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="TSRES.notes"></a><h2>Notes</h2><p>Time values in the array parameter must be in ascending order and must
+not exceed the time at the end of the load step as defined on the <a class="link" href="Hlp_C_TIME.html" title="TIME"><span class="command"><strong>TIME</strong></span></a> command.
+The time increment between time points in the array list must be larger than
+the initial time step defined on the <a class="link" href="Hlp_C_DELTIM.html" title="DELTIM"><span class="command"><strong>DELTIM</strong></span></a> or <a class="link" href="Hlp_C_NSUBST.html" title="NSUBST"><span class="command"><strong>NSUBST</strong></span></a> command.
+ Time values must also fall between the beginning and ending time values of
+the load step.  For multiple load step problems, you must either change the
+parameter values to fall between the beginning and ending time values of the
+load step or reissue the command with a new array parameter.  To clear the
+array parameter specification, issue <span class="command"><strong>TSRES</strong></span>,ERASE.  Results
+can be output at the requested time points if the array or time values in
+the array are also specified in the <a class="link" href="Hlp_C_OUTturRES.html" title="OUTRES"><span class="command"><strong>OUTRES</strong></span></a> command using <em class="replaceable"><code>FREQ</code></em>=%<em class="replaceable"><code>array</code></em>%.
+ Use this command to reset the time-stepping strategy within a load step.
+You may need to reset the time-stepping strategy when using tabular time-varying
+boundary conditions.</p><p>See <a href="../ans_the/Hlp_G_THE2.html" title="Steady-State&#xA;Thermal Analysis" class="olink">Steady-State
+Thermal Analysis</a> of the <a href="../ans_the/Hlp_G_TheTOC.html" title="Thermal Analysis Guide" class="olink"><em class="citetitle">Thermal Analysis Guide</em></a>  for more information on applying
+boundary conditions via tabular input.  See <a href="../ans_the/Hlp_G_THE3.html" title="Transient&#xA;Thermal Analysis" class="olink">Transient
+Thermal Analysis</a> of the <a href="../ans_the/Hlp_G_TheTOC.html" title="Thermal Analysis Guide" class="olink"><em class="citetitle">Thermal Analysis Guide</em></a> for more information
+on defining the key time array.</p></div><div class="refsect1" title="Menu Paths"><a name="TSRES.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Time/Frequenc&gt;Time - Time Step</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Time/Frequenc&gt;Time and Substeps</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Time/Frequenc&gt;Time - Time Step</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Time/Frequenc&gt;Time and Substeps</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

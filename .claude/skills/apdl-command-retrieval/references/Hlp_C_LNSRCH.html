@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:55-05:00"><title>LNSRCH</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="LNSRCH">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_L_TOC.html" title="L Commands">
+<link rel="prev" href="Hlp_C_LMESH.html" title="LMESH">
+<link rel="next" href="Hlp_C_LOCAL.html" title="LOCAL">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="LNSRCH"><a name="LNSRCH"></a><div class="titlepage"></div><a class="indexterm" name="d0e155261"></a><span class="refentrytitle"><span class="command"><strong>LNSRCH</strong></span></span><div class="refnamediv"><p><span class="command"><strong>LNSRCH</strong></span>,
+    <em class="replaceable"><code>Key</code></em>, <em class="replaceable"><code>LSTOL</code></em>,
+    <em class="replaceable"><code>LStrun</code></em><br><b class="refpurpose">Activates a line search to be used with Newton-Raphson.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_6.html" title="2.6. SOLUTION Commands"><code class="classname">SOLUTION</code></a>: <a class="link" href="Hlp_C_CH2_6.html#cmdsolunonlinjla070199" title="Table 2.49: Nonlinear Options"><span class="type">Nonlinear Options</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a> 
+   <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="LNSRCH.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>Key</code></em></b></span></dt><dd><p>Line search key:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">OFF</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Do not use a line search.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">ON</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Use a line search.  Note, adaptive
+descent is suppressed when <span class="command"><strong>LNSRCH</strong></span> is on unless
+explicitly requested on the <a class="link" href="Hlp_C_NROPT.html" title="NROPT"><span class="command"><strong>NROPT</strong></span></a> command.   <span class="italic"><em>Having line search on and adaptive descent on at the
+same time is not recommended.</em></span></p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">AUTO</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>The program automatically switches
+line searching ON and OFF between substeps of a load step as needed.
+ This option is recommended.</p></td></tr></tbody></table></div></div></dd><dt><span><b class="term"><em class="replaceable"><code>LSTOL</code></em></b></span></dt><dd><p>Line search convergence tolerance (default = 0.5).</p></dd><dt><span><b class="term"><em class="replaceable"><code>LStrun</code></em></b></span></dt><dd><p>Truncation key for the line search parameter. Default = OFF, meaning no truncation. To
+            activation truncation, input the number of digits to use after the decimal point for the
+            line search parameter. (See <a href="../ans_thry/thy_tool10.html#eltlinesearc" title="Line Search in the Theory Reference" class="olink">Line Search in the <span class="olinkdocname">Theory Reference</span></a> for more information.)</p></dd></dl></div></div></div><div class="refsect1" title="Command Default"><a name="LNSRCH.default"></a><h2>Command Default</h2><p>Line search off, unless contact elements are present.</p></div><div class="refsect1" title="Notes"><a name="LNSRCH.notes"></a><h2>Notes</h2><p>Activates a line search to be used with the Newton-Raphson method [<a class="link" href="Hlp_C_NROPT.html" title="NROPT"><span class="command"><strong>NROPT</strong></span></a>].
+      Line search is an alternative to adaptive descent (see <a href="../ans_thry/thy_tool10.html#eltlinesearc" title="Line Search in the Theory Reference" class="olink">Line Search in the <span class="olinkdocname">Theory Reference</span></a>).</p><p><span class="command"><strong>LNSRCH</strong></span>,AUTO can be very efficient for problems
+in which <span class="command"><strong>LNSRCH</strong></span> is needed at only certain substeps.</p><p>You cannot use line search [<span class="command"><strong>LNSRCH</strong></span>], automatic
+time stepping [<a class="link" href="Hlp_C_AUTOTS.html" title="AUTOTS"><span class="command"><strong>AUTOTS</strong></span></a>], or the DOF solution predictor
+[<a class="link" href="Hlp_C_PRED.html" title="PRED"><span class="command"><strong>PRED</strong></span></a>] with the arc-length method [<a class="link" href="Hlp_C_ARCLEN.html" title="ARCLEN"><span class="command"><strong>ARCLEN</strong></span></a>, <a class="link" href="Hlp_C_ARCTRM.html" title="ARCTRM"><span class="command"><strong>ARCTRM</strong></span></a>]. If you activate the arc-length method
+after you set <span class="command"><strong>LNSRCH</strong></span>, <a class="link" href="Hlp_C_AUTOTS.html" title="AUTOTS"><span class="command"><strong>AUTOTS</strong></span></a>, or <a class="link" href="Hlp_C_PRED.html" title="PRED"><span class="command"><strong>PRED</strong></span></a>, a warning message appears. If you choose
+to proceed with the arc-length method, the program disables your line
+search, automatic time stepping, and DOF predictor settings, and the
+time step size is controlled by the arc-length method internally.</p><p>This command is also valid in PREP7.</p></div><div class="refsect1" title="Menu Paths"><a name="LNSRCH.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Analysis Type&gt;Sol'n Controls&gt;Nonlinear</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Loads&gt;Load Step Opts&gt;Nonlinear&gt;Line Search</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Analysis Type&gt;Sol'n Controls&gt;Nonlinear</strong></span></td></tr><tr><td><span class="guimenu"><strong>Main Menu&gt;Solution&gt;Load Step Opts&gt;Nonlinear&gt;Line Search</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

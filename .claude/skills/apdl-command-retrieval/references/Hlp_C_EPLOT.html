@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:32:04-05:00"><title>EPLOT</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="EPLOT">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_E_TOC.html" title="E Commands">
+<link rel="prev" href="Hlp_C_EORIENT.html" title="EORIENT">
+<link rel="next" href="Hlp_C_EQSLV.html" title="EQSLV">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="EPLOT"><a name="EPLOT"></a><div class="titlepage"></div><a class="indexterm" name="d0e92550"></a><span class="refentrytitle"><span class="command"><strong>EPLOT</strong></span></span><div class="refnamediv"><p><span class="command"><strong>EPLOT</strong></span><br><b class="refpurpose">Produces an element display.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7elementsldm061600" title="Table 2.38: Elements"><span class="type">Elements</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsect1" title="Notes"><a name="EPLOT.notes"></a><h2>Notes</h2><p>Produces an element display of the selected elements.
+In full graphics, only those elements faces with all of their corresponding
+nodes selected are plotted. In PowerGraphics, all element faces of the selected
+element set are plotted irrespective of the nodes selected. However, for both
+full graphics and PowerGraphics, adjacent or otherwise duplicated faces of
+3-D solid elements will not be displayed in an attempt to eliminate plotting
+of interior facets. See the <a class="link" href="Hlp_C_DSYS.html" title="DSYS"><span class="command"><strong>DSYS</strong></span></a> command for display coordinate
+system issues.</p><p>This command will display curvature in midside node elements when PowerGraphics
+is activated [<a href="Hlp_C_GRAPHICS.html" title="/GRAPHICS" class="olink"><span class="command"><strong>/GRAPHICS</strong></span></a>,POWER] and <a href="Hlp_C_EFACET.html" title="/EFACET" class="olink"><span class="command"><strong>/EFACET</strong></span></a>,2
+or <a href="Hlp_C_EFACET.html" title="/EFACET" class="olink"><span class="command"><strong>/EFACET</strong></span></a>,4 are enabled.  (To display curvature, two facets
+per edge is recommended [<a href="Hlp_C_EFACET.html" title="/EFACET" class="olink"><span class="command"><strong>/EFACET</strong></span></a>,2]).  When you specify <a href="Hlp_C_EFACET.html" title="/EFACET" class="olink"><span class="command"><strong>/EFACET</strong></span></a>,1,
+PowerGraphics does not display midside nodes. <a href="Hlp_C_EFACET.html" title="/EFACET" class="olink"><span class="command"><strong>/EFACET</strong></span></a> has
+no effect on <span class="command"><strong>EPLOT</strong></span> for non-midside node elements.</p><p>This command is valid in any processor.</p></div><div class="refsect1" title="Menu Paths"><a name="EPLOT.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Modeling&gt;CMS&gt;CMS Superelements&gt;By Picking</strong></span></td></tr><tr><td><span class="guimenu"><strong>Utility Menu&gt;Plot&gt;Elements</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

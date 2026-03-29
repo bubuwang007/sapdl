@@ -1,0 +1,52 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:34:05-05:00"><title>PRORB</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="PRORB">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_P_TOC.html" title="P Commands">
+<link rel="prev" href="Hlp_C_PROD.html" title="PROD">
+<link rel="next" href="Hlp_C_PRPATH.html" title="PRPATH">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="PRORB"><a name="PRORB"></a><div class="titlepage"></div><a class="indexterm" name="d0e221926"></a><span class="refentrytitle"><span class="command"><strong>PRORB</strong></span></span><div class="refnamediv"><p><span class="command"><strong>PRORB</strong></span>, <em class="replaceable"><code>WhrlNodKey</code></em><br><b class="refpurpose">Prints the orbital motion characteristics of a rotating
+structure</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_7.html" title="2.7. POST1 Commands"><code class="classname">POST1</code></a>: <a class="link" href="Hlp_C_CH2_7.html#cmdpost1resultjla070199" title="Table 2.75: Results"><span class="type">Results</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="light">Pro</span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>WhrlNodKey</code></em></b></span></dt><dd><p>Flag to print the whirl for each node:</p><div><div class="variablelist"><table border="0"><col align="left" valign="top"><tbody><tr valign="top"><td align="right" valign="top"><p><span><b class="term">1 (ON or YES)</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>Print the whirl for each node.</p></td></tr><tr valign="top"><td align="right" valign="top"><p><span><b class="term">0 (OFF or NO)</b></span></p></td><td valign="center"><p>&nbsp;&#8212;&nbsp;</p></td><td><p>No printout.  This value is the default.</p></td></tr></tbody></table></div></div></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="d0e221997"></a><h2>Notes</h2><p>When a structure is rotating and the Coriolis or gyroscopic effect is taken into account
+    (<a class="link" href="Hlp_C_CORIOLIS.html" title="CORIOLIS"><span class="command"><strong>CORIOLIS</strong></span></a>), nodes lying on the rotation axis generally exhibit an elliptical
+   orbital motion. The <span class="command"><strong>PRORB</strong></span> command prints out the <a href="../ans_rot/Hlp_G_ROTTERMINOLOGY.html#rottermellip" title="orbit" class="olink">orbit</a> characteristics A, B, PSI, PHI, YMAX, ZMAX, <span>and
+    Whirl</span> of each rotating node, where</p><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td>A is the semi-major axis.</td></tr><tr><td>B is the semi-minor axis.</td></tr><tr><td>PSI is the angle between local y axis and major axis.</td></tr><tr><td>PHI is the angle between initial position (t = 0) and major
+axis.</td></tr><tr><td>YMAX is the maximum displacement along local y axis.</td></tr><tr><td>ZMAX is the maximum displacement along local z axis.</td></tr><tr><td>Whirl is the direction of an orbital motion (BW for backward whirl
+    and FW for forward whirl).</td></tr></table><p>Angles PSI and PHI are in degrees and within the range of -180 through +180. </p><p>To <span class="italic"><em>display</em></span> the characteristics
+of the orbital path traversed by each node, issue the <a class="link" href="Hlp_C_PLORB.html" title="PLORB"><span class="command"><strong>PLORB</strong></span></a> command.</p><p>The <span class="command"><strong>PRORB</strong></span> command is valid for line elements (such
+   as <a href="../ans_elem/Hlp_E_BEAM188.html" title="BEAM188" class="olink"><span class="structname">BEAM188</span></a>, <a href="../ans_elem/Hlp_E_BEAM189.html" title="BEAM189" class="olink"><span class="structname">BEAM189</span></a>,
+    <a href="../ans_elem/Hlp_E_PIPE288.html" title="PIPE288" class="olink"><span class="structname">PIPE288</span></a>, and <a href="../ans_elem/Hlp_E_PIPE289.html" title="PIPE289" class="olink"><span class="structname">PIPE289</span></a>).
+    <span class="command"><strong>PRORB</strong></span> is not supported for beam elements with the warping degree of freedom
+   activated.</p><p>Your model must also involve a rotational velocity
+    (<a class="link" href="Hlp_C_OMEGA.html" title="OMEGA"><span class="command"><strong>OMEGA</strong></span></a> or <a class="link" href="Hlp_C_CMOMEGA.html" title="CMOMEGA"><span class="command"><strong>CMOMEGA</strong></span></a>) with Coriolis enabled
+    (<a class="link" href="Hlp_C_CORIOLIS.html" title="CORIOLIS"><span class="command"><strong>CORIOLIS</strong></span></a>).</p><p>Because orbit data is written in the database, a <a class="link" href="Hlp_C_SET.html" title="SET"><span class="command"><strong>SET</strong></span></a>
+   command must be issued after the <span class="command"><strong>PRORB</strong></span> command to ensure proper output for
+   subsequent postprocessing commands. </p><p>The coordinate system for displaying nodal results must be global
+   Cartesian (<a class="link" href="Hlp_C_RSYS.html" title="RSYS"><span class="command"><strong>RSYS</strong></span></a>,<em class="replaceable"><code>KCN</code></em> = 0). <span class="command"><strong>PRORB</strong></span>
+   is not supported if nodes are rotated in a cylindrical coordinate system.</p></div><div class="refsect1" title="Menu Paths"><a name="d0e222100"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;General Postproc&gt;Rotor Dynamics&gt;Plot orbit</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="date" content="2019-12-02T18:31:31-05:00"><title>ACLEAR</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><meta name="vcmSys-typeName" content="ANSYS Online HTML Documentation"><meta name="language" content="en"><meta name="status" content="Final"><meta name="external" content="Y"><meta name="pub_desc" content="Describes all commands, in alphabetical order. It is the definitive reference for correct command usage, providing associated menu paths, product applicability, and usage notes.">
+<meta name="book_id" content="ansys.cmd.dict">
+	<meta name="internal_version" content="20.1">
+<meta name="build_type" content="viewer"><meta name="documentTitle" content="ACLEAR">
+<meta name="help_format" content="documentation">
+<meta name="fam_icon" content="fam_structural">
+<meta name="item_order" content="50">
+<meta name="manualTitle" content="Command Reference">
+<meta name="manualtitleabbrev" content="Command Reference">
+<meta name="physicstype" content="Multiphysics">
+<meta name="prodnamefull" content="Mechanical APDL">
+	<meta name="productVersion" content="2020 R1">
+	<link rel="home" href="Hlp_C_CmdTOC.html" title="Command Reference">
+<link rel="up" href="Hlp_A_TOC.html" title="A Commands">
+<link rel="prev" href="Hlp_C_ACEL.html" title="ACEL">
+<link rel="next" href="Hlp_C_ADAMS.html" title="ADAMS">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="../css/ansys_viewer_doc.css" rel="stylesheet" type="text/css" media="all">
+			<script type="text/javascript"><!--
+	function toggleElementDisplay (id) {
+	var elem = document.getElementById(id);
+	if (elem.style.display != "block") {
+		elem.style.display = "block";
+	} else {
+		elem.style.display = "none";
+	}
+	}
+	//--></script>
+	</head><body class="mainbody"><div><article class="main-content"><div class="small-12 cell"><div class="refentry" title="ACLEAR"><a name="ACLEAR"></a><div class="titlepage"></div><a class="indexterm" name="d0e17253"></a><span class="refentrytitle"><span class="command"><strong>ACLEAR</strong></span></span><div class="refnamediv"><p><span class="command"><strong>ACLEAR</strong></span>, <em class="replaceable"><code>NA1</code></em>, <em class="replaceable"><code>NA2</code></em>, <em class="replaceable"><code>NINC</code></em><br><b class="refpurpose">Deletes nodes and area elements associated with selected areas.</b><div class="refclass"><div class=""><div class="application"><span class="application"><a class="link" href="Hlp_C_CH2_5.html" title="2.5. PREP7 Commands"><code class="classname">PREP7</code></a>: <a class="link" href="Hlp_C_CH2_5.html#cmdprep7meshingldm061600" title="Table 2.36: Meshing"><span class="type">Meshing</span></a></span></div></div></div><div class="refclass"><div class=""><div class="application"><span class="application"><a href="Hlp_C_CH1_2_1.html#aIcomd24mcm" title="Valid Products:" class="olink">Valid Products:</a>  <span class="light">DesignSpace</span> | <span class="bold"><strong>Pro</strong></span> | <span class="bold"><strong>Premium</strong></span> | <span class="bold"><strong>Enterprise</strong></span> | <span class="bold"><strong>PrepPost</strong></span> | <span class="bold"><strong>Solver</strong></span> | <span class="light">AS add-on</span></span></div></div></div></p></div><div class="refsynopsisdiv" title="Synopsis"><a name="ACLEAR.argdescript"></a><h2></h2><div><div class="variablelist"><dl><dt><span><b class="term"><em class="replaceable"><code>NA1</code></em>, <em class="replaceable"><code>NA2</code></em>, <em class="replaceable"><code>NINC</code></em></b></span></dt><dd><p>Delete mesh for areas <em class="replaceable"><code>NA1</code></em> to <em class="replaceable"><code>NA2</code></em> (defaults
+to <em class="replaceable"><code>NA1</code></em>) in steps of <em class="replaceable"><code>NINC</code></em> (defaults
+to 1).  If <em class="replaceable"><code>NA1</code></em> = ALL, <em class="replaceable"><code>NA2</code></em> and <em class="replaceable"><code>NINC</code></em> are
+ignored and the mesh for all selected areas [<a class="link" href="Hlp_C_ASEL.html" title="ASEL"><span class="command"><strong>ASEL</strong></span></a>] is deleted.
+ If <em class="replaceable"><code>NA1</code></em> = P, graphical picking is enabled and all
+remaining arguments are ignored (valid only in the GUI).  A component name
+may also be substituted for <em class="replaceable"><code>NA1</code></em> (<em class="replaceable"><code>NA2</code></em> and <em class="replaceable"><code>NINC</code></em> are
+ignored).</p></dd></dl></div></div></div><div class="refsect1" title="Notes"><a name="ACLEAR.notes"></a><h2>Notes</h2><p>Deletes <span class="italic"><em>all</em></span> nodes and area elements
+associated with selected areas (regardless of whether the nodes or elements
+are selected).  Nodes shared by adjacent meshed areas and nodes associated
+with non-area elements will not be deleted.  Attributes assigned as a result
+of <a class="link" href="Hlp_C_AATT.html" title="AATT"><span class="command"><strong>AATT</strong></span></a> are maintained.  In the program's response to the
+command, if an area, line, or keypoint is tallied as "cleared," it means either
+its node or element reference was deleted.</p><p>This command is also valid for <a href="../ans_nlad/Hlp_G_ADVREZ.html" title="rezoning" class="olink">rezoning</a>.
+When issued during rezoning (after the <a class="link" href="Hlp_C_REMESH.html" title="REMESH"><span class="command"><strong>REMESH</strong></span></a>,START command
+and before the <a class="link" href="Hlp_C_REMESH.html" title="REMESH"><span class="command"><strong>REMESH</strong></span></a>,FINISH command), <span class="command"><strong>ACLEAR</strong></span> clears
+only the area generated by the <a class="link" href="Hlp_C_AREMESH.html" title="AREMESH"><span class="command"><strong>AREMESH</strong></span></a> command.</p></div><div class="refsect1" title="Menu Paths"><a name="ACLEAR.menupath"></a><h2>Menu Paths</h2><table border="0" width="100%" summary="Simple list" class="simplelist"><tr><td><span class="guimenu"><strong>Main Menu&gt;Preprocessor&gt;Meshing&gt;Clear&gt;Areas</strong></span></td></tr></table></div></div></div><footer class="corp_foot"><p class="legalfooter" align="center"><small><i>Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.</i></small></p><p class="legalfooter"><small><i>Release 2020 R1 - &copy; ANSYS, Inc. All rights reserved.</i></small></p></footer></article></div><footer>
+<script src="../css/js/foundation.min.js"></script>
+<script src="../css/ansys_doc_viewer.js"></script>
+</footer></body></html>
