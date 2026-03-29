@@ -4,6 +4,7 @@ from .command_node import CommandNode
 from .function_call_node import FunctionCallNode
 from .literal_node import NumberLiteral, StringLiteral
 from .macro_call_node import MacroCallNode
+from .block_node import BlockNode
 
 from .number_parameter_node import NumberParameterNode
 
@@ -20,4 +21,5 @@ __all__ = [
     "NumberLiteral",
     "StringLiteral",
     "NumberParameterNode",
+    "BlockNode",
 ] + controflow_nodes.__all__
