@@ -42,6 +42,23 @@ class NumberParameter(ApdlObject):
     def __lshift__(self, other):
         self.assign(other)
 
+    # ==================== 输出 ====================
+
+    def output(self, key=None, format="ES20.12E3"):
+        import os
+
+        key = self.name if key is None else key
+        p = os.path.join(self.mac.output_path, str(key))
+        with self.mac.files.open(p) as f:
+            f.write(self, format=format)
+        self.mac.add_output(key, type="NumberParameter")
+
+    @classmethod
+    def parse(cls, path):
+        with open(path, "r", encoding="u8") as f:
+            value = float(f.read().strip())
+        return value
+
     # ==================== 一元运算 ====================
 
     def __neg__(self) -> NegNode:

@@ -6,6 +6,7 @@
 from functools import cached_property
 from sapdl.custom import Custom
 from .math import Math
+from .files import Files
 
 
 class BuiltIn:
@@ -18,3 +19,7 @@ class BuiltIn:
     @cached_property
     def custom(self) -> Custom:
         return Custom(self)
+
+    @cached_property
+    def files(self) -> Files:
+        return Files(self)

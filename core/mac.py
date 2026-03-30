@@ -45,6 +45,13 @@ class Mac(Commands, BuiltIn):
         return self._workdir
 
     @property
+    def output_path(self) -> str:
+        path = os.path.join(self.workdir, f"output")
+        if not os.path.exists(path):
+            os.makedirs(path)
+        return path
+
+    @property
     def cached(self) -> dict:
         """缓存数据（YAML 持久化）
 
@@ -93,6 +100,11 @@ class Mac(Commands, BuiltIn):
         """
         cached = self.cached
         cached.setdefault("macs", []).append(mac_name)
+        self.cached = cached
+
+    def add_output(self, name, type):
+        cached = self.cached
+        cached.setdefault("outputs", {})[name] = type
         self.cached = cached
 
     def import_mac(self, mac: type[Mac], *args, **kwargs) -> None:

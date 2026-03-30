@@ -21,6 +21,7 @@ class Commands(APDLCommands, Controlflows, ObjectsDefine):
 
     def __init__(self):
         """初始化 Commands 实例"""
+        ObjectsDefine.__init__(self)
         self.body = Body()
         self.symbol_table = SymbolTable()
 

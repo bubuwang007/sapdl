@@ -4,5 +4,6 @@
 """
 
 from .built_in import BuiltIn
+from .files_obj import *
 
-__all__ = ["BuiltIn"]
+__all__ = ["BuiltIn"] + files_obj.__all__

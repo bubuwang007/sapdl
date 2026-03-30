@@ -199,11 +199,11 @@ class Format:
         """Fortran format string, e.g. ``'(F10.4)'``."""
         if self._n == 1:
             if self._code in ("I", "A"):
-                return f"({self._code}{self._width})"
-            return f"({self._code}{self._width}.{self._prec})"
+                return f"{self._code}{self._width}"
+            return f"{self._code}{self._width}.{self._prec}"
         if self._code in ("I", "A"):
-            return f"({self._n}{self._code}{self._width})"
-        return f"({self._n}{self._code}{self._width}.{self._prec})"
+            return f"{self._n}{self._code}{self._width}"
+        return f"{self._n}{self._code}{self._width}.{self._prec}"
 
     def __call__(self) -> str:
         """Shorthand for ``str(self)``."""
@@ -266,26 +266,12 @@ class File:
         append: bool = False,
         mac=None,
     ):
-        self._fname = fname
-        self._ext = ext
+        self._fname = f"'{str(fname)}'"
+        self._ext = f"'{str(ext)}'" if ext else ""
         self._mode = mode
         self._append = append
         self._closed = False
-        self._format: Optional[str] = None
         self.mac = mac
-
-    @property
-    def format(self) -> Optional[str]:
-        """Format specification for ``*VWRITE`` or ``*VREAD``.
-
-        Accepts a plain Fortran format string (e.g. ``'(F10.4)'``) or a
-        ``Format`` object, which is automatically converted via ``str()``.
-        """
-        return self._format
-
-    @format.setter
-    def format(self, value: Union[str, Format]) -> None:
-        self._format = str(value) if isinstance(value, Format) else value
 
     @property
     def closed(self) -> bool:
@@ -312,17 +298,22 @@ class File:
                 f"Unsupported mode: '{self._mode}' (only 'w' is supported)"
             )
         loc = "APPEND" if self._append else ""
+        self.block = BlockNode()
+        self.mac.body.add(self.block)
+        self.block.start = CommandNode(f"*CFOPEN,{self._fname},{self._ext},,{loc}")
+        self.pre_body = self.mac.body
+        self.mac.body = self.block.body
 
-        self.mac.body.add(CommandNode(f"*CFOPEN,{self._fname},{self._ext},,{loc}"))
         return self
 
     def close(self) -> None:
         """Closes the file with ``*CFCLOS``."""
         if not self._closed:
-            self._run("*CFCLOS,")
+            self.block.end = CommandNode("*CFCLOS,")
+            self.mac.body = self.pre_body
             self._closed = True
 
-    def write(self, *values: Union[str, float, int]) -> None:
+    def write(self, *values, format) -> None:
         """Writes values to the file using ``*VWRITE``.
 
         The format must be set beforehand via the ``format`` property::
@@ -344,30 +335,13 @@ class File:
             raise ValueError("I/O operation on closed file")
         if self._mode != "w":
             raise ValueError(f"File not open for writing (mode='{self._mode}')")
-        if not self._format:
-            raise ValueError("format must be set before writing")
-        vals = ",".join(str(v) for v in values) if values else ""
-        self._run(f"*VWRITE,{vals}")
-        self._run(self._format)
+        vals = (str(v) for v in values)
+        self.mac.vwrite(*vals)
+        self.mac.run(f"({str(format)})")
 
-    def writelines(self, lines: List[str]) -> None:
-        """Writes each string in ``lines`` as a separate line.
-
-        The format must be set beforehand. Each string is written with a
-        single ``*VWRITE`` call.
-
-        Parameters
-        ----------
-        lines : list of str
-            Strings to write, one per line.
-
-        Raises
-        ------
-        ValueError
-            If format is not set or file is not open for writing.
-        """
-        for line in lines:
-            self.write(line)
+    def wirte_str(self, string: str) -> None:
+        self.mac.vwrite()
+        self.mac.run(f"('{string}')")
 
     def __enter__(self) -> "File":
         """Enters the context, opens the file."""

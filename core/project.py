@@ -45,6 +45,7 @@ class Project:
         if main is None:
             main = Mac()
         self.main = main
+        main._workdir = self.workdir
 
         main.add_block_comment("Project Initialization")
         main.cwd(self.workdir)
@@ -122,3 +123,16 @@ class Project:
         使用配置的启动器运行生成的 APDL 文件。
         """
         self.launcher.run_file(self.generate())
+
+    def parse_output(self):
+        import os
+        import yaml
+
+        with open(self.cached_path, "r", encoding="u8") as f:
+            outputs = yaml.safe_load(f)["outputs"]
+        output_path = self.main.output_path
+        res = {}
+        for key, value in outputs.items():
+            v = self.main.objects[value].parse(os.path.join(output_path, str(key)))
+            res[key] = v
+        return res

@@ -1,10 +1,17 @@
 from __future__ import annotations
 
+from .args import Args
 from .number_parameter import NumberParameter
 
 
 class ObjectsDefine:
     _var_index: int = 0
+    objects = {
+        "NumberParameter": NumberParameter,
+    }
+
+    def __init__(self):
+        self.args = Args()
 
     def next_id(self):
         self._var_index += 1

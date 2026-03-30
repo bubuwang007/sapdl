@@ -15,7 +15,7 @@ class BlockNode(Node):
     def apdl(self, indent_level: int) -> list[str]:
         ret = []
         ret.append(self.start.apdl(indent_level))
-        ret.extend(self.body.apdl(indent_level))
+        ret.extend(self.body.apdl(indent_level+1))
         ret.append(self.end.apdl(indent_level))
         return ret
 
