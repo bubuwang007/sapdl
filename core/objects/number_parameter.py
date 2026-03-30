@@ -1,5 +1,5 @@
 from .apdl_object import ApdlObject
-from sapdl.core.ast.number_parameter_nodes.arith_nodes import (
+from sapdl.core.ast import (
     AddNode,
     DivNode,
     MulNode,
@@ -7,7 +7,7 @@ from sapdl.core.ast.number_parameter_nodes.arith_nodes import (
     PowNode,
     SubNode,
 )
-from sapdl.core.ast.number_parameter_nodes.comparison_nodes import (
+from sapdl.core.ast import (
     EQNode,
     GENode,
     GTNode,
@@ -26,8 +26,8 @@ class NumberParameter(ApdlObject):
 
     def delete(self):
         self._delete()
-        self._alive = False
         self.mac.symbol_table.remove(self.name)
+        self._alive = False
 
     def _delete(self):
         from sapdl.core.ast import NumberDeleteNode, NumberParameterNode

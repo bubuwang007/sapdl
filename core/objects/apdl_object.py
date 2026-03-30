@@ -16,8 +16,6 @@ class ApdlObject:
 
     @property
     def name(self) -> str:
-        if not self._alive:
-            raise RuntimeError(f"Object {self._name} is not alive.")
         return self._name
 
     def __str__(self):
