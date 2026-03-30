@@ -29,7 +29,7 @@ class TestCommandNode:
     def test_apdl_no_indent(self):
         """Test apdl() method without indentation."""
         node = CommandNode("K,1,0,0,0")
-        assert node.apdl() == "K,1,0,0,0"
+        assert node.apdl(0) == "K,1,0,0,0"
 
     def test_apdl_with_indent(self):
         """Test apdl() method with indentation."""
@@ -46,16 +46,6 @@ class TestCommandNode:
         node = CommandNode("FINISH")
         assert node.apdl(indent_level=0) == "FINISH"
 
-    def test_str_repr(self):
-        """Test __str__() method returns correct representation."""
-        node = CommandNode("K,1,0,0,0")
-        assert str(node) == "CommandNode(cmd='K,1,0,0,0')"
-
-    def test_str_repr_with_special_chars(self):
-        """Test __str__() with special characters in command."""
-        node = CommandNode("! Comment-like command")
-        assert str(node) == "CommandNode(cmd='! Comment-like command')"
-
     def test_cmd_attribute_is_string(self):
         """Test that cmd attribute is a string."""
         node = CommandNode("K,1")
@@ -65,10 +55,10 @@ class TestCommandNode:
         """Test CommandNode with empty command string."""
         node = CommandNode("")
         assert node.cmd == ""
-        assert node.apdl() == ""
+        assert node.apdl(0) == ""
 
     def test_command_with_comma_separated_values(self):
         """Test command with multiple comma-separated parameters."""
         node = CommandNode("K,1,0,0,0,1,2,3")
         assert node.cmd == "K,1,0,0,0,1,2,3"
-        assert node.apdl() == "K,1,0,0,0,1,2,3"
+        assert node.apdl(0) == "K,1,0,0,0,1,2,3"

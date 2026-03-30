@@ -1,3 +1,4 @@
+from .number_parameter_node import NumberParameterNode
 from .arith_nodes import *
 from .comparison_nodes import *
 from .number_arith_node import NumberArithNode
@@ -9,6 +10,7 @@ __all__ = (
     comparison_nodes.__all__
     + arith_nodes.__all__
     + [
+        "NumberParameterNode",
         "NumberArithNode",
         "NumberAssignNode",
         "NumberComparisonNode",

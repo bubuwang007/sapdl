@@ -1,5 +1,5 @@
 from __future__ import annotations
-from .base import Node
+from ..base import Node
 
 
 class NumberParameterNode(Node):

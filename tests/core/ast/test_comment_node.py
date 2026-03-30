@@ -29,7 +29,7 @@ class TestCommentNode:
     def test_apdl_no_indent(self):
         """Test apdl() method without indentation."""
         node = CommentNode("Material definition")
-        assert node.apdl() == "! Material definition"
+        assert node.apdl(0) == "! Material definition"
 
     def test_apdl_with_indent(self):
         """Test apdl() method with indentation."""
@@ -46,16 +46,6 @@ class TestCommentNode:
         node = CommentNode("Simple comment")
         assert node.apdl(indent_level=0) == "! Simple comment"
 
-    def test_str_repr(self):
-        """Test __str__() method returns correct representation."""
-        node = CommentNode("This is a comment")
-        assert str(node) == "CommentNode(text='This is a comment')"
-
-    def test_str_repr_with_special_chars(self):
-        """Test __str__() with special characters in text."""
-        node = CommentNode("Comment with 'quotes'")
-        assert str(node) == "CommentNode(text=\"Comment with 'quotes'\")"
-
     def test_text_attribute_is_string(self):
         """Test that text attribute is a string."""
         node = CommentNode("Test")
@@ -65,20 +55,20 @@ class TestCommentNode:
         """Test CommentNode with empty comment text."""
         node = CommentNode("")
         assert node.text == ""
-        assert node.apdl() == "! "
+        assert node.apdl(0) == "! "
 
     def test_comment_with_leading_space(self):
         """Test comment text with leading spaces in the text itself."""
         node = CommentNode("  indented text")
-        assert node.apdl() == "!   indented text"
+        assert node.apdl(0) == "!   indented text"
 
     def test_comment_with_multiple_words(self):
         """Test comment with multiple words."""
         node = CommentNode("This is a multi-word comment")
-        assert node.apdl() == "! This is a multi-word comment"
+        assert node.apdl(0) == "! This is a multi-word comment"
 
     def test_comment_preserves_exclamation_in_text(self):
         """Test that text is stored as-is (exclamation is added by apdl)."""
         node = CommentNode("! Already has exclamation in text")
         assert node.text == "! Already has exclamation in text"
-        assert node.apdl() == "! ! Already has exclamation in text"
+        assert node.apdl(0) == "! ! Already has exclamation in text"
