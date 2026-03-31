@@ -1,3 +1,4 @@
+from contextlib import contextmanager
 from .if_block import IfBlock
 from .do_block import DoBlock
 from .do_while_block import DoWhileBlock
@@ -14,6 +15,14 @@ class Controlflows:
 
     def do_while(self, condition):
         return DoWhileBlock(self, condition)
+
+    @contextmanager
+    def while_block(self, condition):
+        with DoWhileBlock(self, self.NumberParameter(value=1)):
+            yield self
+            with IfBlock(self) as b:
+                with b.if_(condition):
+                    self.break_()
 
     def range(self, start, end, step=1, var=None):
         with DoBlock(self, var, start, end, step) as i:

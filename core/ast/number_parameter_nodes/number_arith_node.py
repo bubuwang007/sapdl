@@ -16,6 +16,9 @@ class NumberArithNode(Node):
         self.right = right
         self.type = "expr"
 
+    def __str__(self):
+        return self.apdl(0)
+
     # ==================== 二元运算 ====================
 
     def __add__(self, other) -> "AddNode":

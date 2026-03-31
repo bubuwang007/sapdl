@@ -4,6 +4,7 @@ from .args import Args
 from .number_parameter import NumberParameter
 from .array1 import Array1
 
+
 class ObjectsDefine:
     _var_index: int = 0
     objects = {
@@ -37,3 +38,8 @@ class ObjectsDefine:
         array = Array1(self, name=name)._new(length)
         self.symbol_table.define(name, type=Array1, scope=scope, obj=array)
         return array
+
+    def array1(self, data, name=None):
+        arr = self.Array1(len(data), name=name)
+        arr.fill(data)
+        return arr

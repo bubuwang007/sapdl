@@ -151,7 +151,7 @@ class GUILauncher(Launcher):
         return True
 
     def waiting(
-        self, resfile: str, timeout: float = 60.0, interval: float = 0.5
+        self, resfile: str, timeout: float = 1e10, interval: float = 0.5
     ) -> bool:
         """Wait for a result file to be created.
 

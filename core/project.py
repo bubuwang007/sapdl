@@ -128,6 +128,9 @@ class Project:
         import os
         import yaml
 
+        if not os.path.exists(self.cached_path):
+            return {}
+
         with open(self.cached_path, "r", encoding="u8") as f:
             outputs = yaml.safe_load(f)["outputs"]
         output_path = self.main.output_path
