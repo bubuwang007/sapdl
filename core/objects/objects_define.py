@@ -8,6 +8,7 @@ class ObjectsDefine:
     _var_index: int = 0
     objects = {
         "NumberParameter": NumberParameter,
+        "Array1": Array1,
     }
 
     def __init__(self):

@@ -28,7 +28,10 @@ class DoBlock:
             mac: Mac 容器实例。
         """
         self.mac = mac
-        self.var = var
+        if var is not None:
+            self.var = self.mac.NumberParameter(value=None, name=f"{var}")
+        else:
+            self.var = self.mac.NumberParameter(value=None)
         self.start = start
         self.end = end
         self.step = step

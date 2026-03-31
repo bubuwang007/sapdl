@@ -17,7 +17,9 @@ class NumberComparisonNode(Node):
         self.type = "expr"
 
     def apdl(self, _: int) -> str:
-        return f"{self.left},{self.operator},{self.right}"
+        left = self.left.apdl(0) if hasattr(self.left, "apdl") else str(self.left)
+        right = self.right.apdl(0) if hasattr(self.right, "apdl") else str(self.right)
+        return f"{left},{self.operator},{right}"
 
     def __str__(self):
         return self.apdl(0)

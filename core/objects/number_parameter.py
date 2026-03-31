@@ -42,6 +42,9 @@ class NumberParameter(ApdlObject):
     def __lshift__(self, other):
         self.assign(other)
 
+    def to_range(self):
+        yield from self.mac.range(1, self, 1)
+
     # ==================== 输出 ====================
 
     def output(self, key=None, format="ES20.12E3"):
