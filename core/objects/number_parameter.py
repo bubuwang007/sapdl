@@ -6,14 +6,15 @@ from sapdl.core.ast import (
     NegNode,
     PowNode,
     SubNode,
-)
-from sapdl.core.ast import (
     EQNode,
     GENode,
     GTNode,
     LENode,
     LTNode,
     NENode,
+    NumberAssignNode,
+    NumberDeleteNode,
+    NumberParameterNode,
 )
 
 
@@ -30,13 +31,11 @@ class NumberParameter(ApdlObject):
         self._alive = False
 
     def _delete(self):
-        from sapdl.core.ast import NumberDeleteNode, NumberParameterNode
-
         self.mac.body.add(NumberDeleteNode(NumberParameterNode(self)))
 
     def assign(self, value):
-        from sapdl.core.ast import NumberAssignNode, NumberParameterNode
-
+        if not self._alive:
+            raise RuntimeError(f"Cannot assign to deleted NumberParameter '{self.name}'.")
         self.mac.body.add(NumberAssignNode(NumberParameterNode(self), value))
 
     def __lshift__(self, other):

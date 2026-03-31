@@ -3,7 +3,7 @@
 导出 APDL 内置数学函数。
 """
 
-from sapdl.core.ast import FunctionCallNode, Array1Node, Array1FuncRetArray1Node
+from sapdl.core.ast import FunctionCallNode, Array1Node
 
 
 class Math:
@@ -134,101 +134,3 @@ class Math:
     def large_int(x, y) -> FunctionCallNode:
         """大整数 LARGEINT"""
         return FunctionCallNode("LARGEINT", x, y)
-
-
-class Array1Math:
-    """Array1 数学函数封装
-
-    提供 Array1 数组的数学函数，返回 Array1FuncRetArray1Node。
-    """
-
-    @staticmethod
-    def sqrt(arr) -> Array1FuncRetArray1Node:
-        """平方根 SQRT"""
-        return Array1FuncRetArray1Node("SQRT", Array1Node(arr))
-
-    @staticmethod
-    def abs(arr) -> Array1FuncRetArray1Node:
-        """绝对值 ABS"""
-        return Array1FuncRetArray1Node("ABS", Array1Node(arr))
-
-    @staticmethod
-    def exp(arr) -> Array1FuncRetArray1Node:
-        """指数函数 EXP"""
-        return Array1FuncRetArray1Node("EXP", Array1Node(arr))
-
-    @staticmethod
-    def log(arr) -> Array1FuncRetArray1Node:
-        """自然对数 LOG"""
-        return Array1FuncRetArray1Node("LOG", Array1Node(arr))
-
-    @staticmethod
-    def log10(arr) -> Array1FuncRetArray1Node:
-        """常用对数 LOG10"""
-        return Array1FuncRetArray1Node("LOG10", Array1Node(arr))
-
-    @staticmethod
-    def sin(arr) -> Array1FuncRetArray1Node:
-        """正弦 SIN"""
-        return Array1FuncRetArray1Node("SIN", Array1Node(arr))
-
-    @staticmethod
-    def cos(arr) -> Array1FuncRetArray1Node:
-        """余弦 COS"""
-        return Array1FuncRetArray1Node("COS", Array1Node(arr))
-
-    @staticmethod
-    def tan(arr) -> Array1FuncRetArray1Node:
-        """正切 TAN"""
-        return Array1FuncRetArray1Node("TAN", Array1Node(arr))
-
-    @staticmethod
-    def asin(arr) -> Array1FuncRetArray1Node:
-        """反正弦 ASIN"""
-        return Array1FuncRetArray1Node("ASIN", Array1Node(arr))
-
-    @staticmethod
-    def acos(arr) -> Array1FuncRetArray1Node:
-        """反余弦 ACOS"""
-        return Array1FuncRetArray1Node("ACOS", Array1Node(arr))
-
-    @staticmethod
-    def atan(arr) -> Array1FuncRetArray1Node:
-        """反正切 ATAN"""
-        return Array1FuncRetArray1Node("ATAN", Array1Node(arr))
-
-    @staticmethod
-    def sinh(arr) -> Array1FuncRetArray1Node:
-        """双曲正弦 SINH"""
-        return Array1FuncRetArray1Node("SINH", Array1Node(arr))
-
-    @staticmethod
-    def cosh(arr) -> Array1FuncRetArray1Node:
-        """双曲余弦 COSH"""
-        return Array1FuncRetArray1Node("COSH", Array1Node(arr))
-
-    @staticmethod
-    def tanh(arr) -> Array1FuncRetArray1Node:
-        """双曲正切 TANH"""
-        return Array1FuncRetArray1Node("TANH", Array1Node(arr))
-
-    @staticmethod
-    def nint(arr) -> Array1FuncRetArray1Node:
-        """四舍五入 NINT"""
-        return Array1FuncRetArray1Node("NINT", Array1Node(arr))
-
-    @staticmethod
-    def not_(arr) -> Array1FuncRetArray1Node:
-        """逻辑非 NOT"""
-        return Array1FuncRetArray1Node("NOT", Array1Node(arr))
-
-    @staticmethod
-    def sort(arr, reverse=False) -> Array1FuncRetArray1Node:
-        """排序 SORT"""
-        func = "DSORT" if reverse else "ASORT"
-        return Array1FuncRetArray1Node(func, Array1Node(arr))
-
-    @staticmethod
-    def copy(arr) -> Array1FuncRetArray1Node:
-        """复制 COPY"""
-        return Array1FuncRetArray1Node("COPY", Array1Node(arr))

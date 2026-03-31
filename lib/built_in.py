@@ -5,7 +5,7 @@
 
 from functools import cached_property
 from sapdl.custom import Custom
-from .math import Math, Array1Math
+from .math import Math
 from .files import Files
 
 
@@ -15,11 +15,6 @@ class BuiltIn:
     def math(self) -> Math:
         """数学函数库"""
         return Math
-
-    @cached_property
-    def array1_math(self) -> Array1Math:
-        """Array1 数学函数库"""
-        return Array1Math
 
     @cached_property
     def custom(self) -> Custom:

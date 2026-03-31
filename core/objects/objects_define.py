@@ -3,6 +3,7 @@ from __future__ import annotations
 from .args import Args
 from .number_parameter import NumberParameter
 from .array1 import Array1
+from .array2 import Array2
 
 
 class ObjectsDefine:
@@ -10,6 +11,7 @@ class ObjectsDefine:
     objects = {
         "NumberParameter": NumberParameter,
         "Array1": Array1,
+        "Array2": Array2,
     }
 
     def __init__(self):
@@ -42,4 +44,30 @@ class ObjectsDefine:
     def array1(self, data, name=None):
         arr = self.Array1(len(data), name=name)
         arr.fill(data)
+        return arr
+
+    def Array2(self, row, col, name=None):
+        if name is None:
+            name = self.next_id()
+            scope = "local"
+        else:
+            scope = "global"
+        array = Array2(self, name=name)._new(row, col)
+        self.symbol_table.define(name, type=Array2, scope=scope, obj=array)
+        return array
+
+    def array2(self, data, name=None):
+        """根据二维列表创建 Array2。
+
+        Args:
+            data: 二维列表 [[row0_col0, row0_col1, ...], [row1_col0, ...], ...]。
+            name: 数组名称。
+
+        Returns:
+            Array2: 创建的二维数组。
+        """
+        row = len(data)
+        col = len(data[0])
+        arr = self.Array2(row, col, name=name)
+        raise NotImplementedError("array2 method is not implemented yet. Please use Array2 and fill it manually for now.")
         return arr
