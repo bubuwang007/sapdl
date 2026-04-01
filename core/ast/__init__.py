@@ -11,6 +11,7 @@ from .number_parameter_nodes import *
 from .array1_nodes import *
 from .array2_nodes import *
 from .string_parameter_nodes import *
+from .string_array_nodes import *
 from .char_array_nodes import *
 
 __all__ = (
@@ -29,5 +30,6 @@ __all__ = (
     + array1_nodes.__all__
     + array2_nodes.__all__
     + string_parameter_nodes.__all__
+    + string_array_nodes.__all__
     + char_array_nodes.__all__
 )

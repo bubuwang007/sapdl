@@ -20,7 +20,7 @@ class StringParameter(ApdlObject):
         self._alive = False
 
     def _delete(self):
-        self.mac.body.add(StringDeleteNode(self))
+        self.mac.body.add(StringDeleteNode(StringParameterNode(self)))
 
     def assign(self, value):
         if not self._alive:

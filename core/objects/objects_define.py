@@ -6,6 +6,7 @@ from .string_parameter import StringParameter
 from .array1 import Array1
 from .array2 import Array2
 from .char_array import CharArray
+from .string_array import StringArray
 
 
 class ObjectsDefine:
@@ -16,6 +17,7 @@ class ObjectsDefine:
         "Array1": Array1,
         "Array2": Array2,
         "CharArray": CharArray,
+        "StringArray": StringArray,
     }
 
     def __init__(self):
@@ -68,6 +70,31 @@ class ObjectsDefine:
         char_arr = self.CharArray(len(data), name=name)
         char_arr.fill(data)
         return char_arr
+
+    def StringArray(self, length, str_length=32, name=None):
+        if name is None:
+            name = self.next_id()
+            scope = "local"
+        else:
+            scope = "global"
+        str_array = StringArray(self, name=name)._new(length, str_length)
+        self.symbol_table.define(name, type=StringArray, scope=scope, obj=str_array)
+        return str_array
+
+    def string_array(self, data, str_length=32, name=None):
+        """根据列表创建 StringArray。
+
+        Args:
+            data: 字符串列表。
+            str_length: 每个元素的最大字符串长度，默认 32。
+            name: 数组名称。
+
+        Returns:
+            StringArray: 创建的字符串数组。
+        """
+        str_arr = self.StringArray(len(data), str_length, name=name)
+        str_arr.fill(data)
+        return str_arr
 
     def Array1(self, length, name=None):
         if name is None:
