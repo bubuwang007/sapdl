@@ -81,7 +81,7 @@ class Array1(ApdlObject):
             yield self[i]
 
     def enumerate(self, start=1):
-        for i in self.mac.range(start, self.length):
+        for i in self.mac.range(1, self.length):
             yield i + (start - 1), self[i]
 
     # ==================== 初始化方法 ====================
@@ -275,89 +275,70 @@ class Array1(ApdlObject):
 
     # ==================== 统计数据 ====================
 
+    def _stat(self, func_name):
+        return Array1FuncRetNumberNode(
+            func_name=func_name, array_parameter=Array1Node(self)
+        )
+
     @property
     def max(self):
         """数组最大值。"""
-        return Array1FuncRetNumberNode(
-            func_name="MAX", func_type="vscfun", array_parameter=Array1Node(self)
-        )
+        return self._stat("MAX")
 
     @property
     def min(self):
         """数组最小值。"""
-        return Array1FuncRetNumberNode(
-            func_name="MIN", func_type="vscfun", array_parameter=Array1Node(self)
-        )
+        return self._stat("MIN")
 
     @property
     def argmax(self):
         """最大值的索引。"""
-        return Array1FuncRetNumberNode(
-            func_name="LMAX", func_type="vscfun", array_parameter=Array1Node(self)
-        )
+        return self._stat("LMAX")
 
     @property
     def argmin(self):
         """最小值的索引。"""
-        return Array1FuncRetNumberNode(
-            func_name="LMIN", func_type="vscfun", array_parameter=Array1Node(self)
-        )
+        return self._stat("LMIN")
 
     @property
     def first_nonzero(self):
         """第一个非零值的索引。"""
-        return Array1FuncRetNumberNode(
-            func_name="FIRST", func_type="vscfun", array_parameter=Array1Node(self)
-        )
+        return self._stat("FIRST")
 
     @property
     def last_nonzero(self):
         """最后一个非零值的索引。"""
-        return Array1FuncRetNumberNode(
-            func_name="LAST", func_type="vscfun", array_parameter=Array1Node(self)
-        )
+        return self._stat("LAST")
 
     @property
     def sum(self):
         """数组元素和。"""
-        return Array1FuncRetNumberNode(
-            func_name="SUM", func_type="vscfun", array_parameter=Array1Node(self)
-        )
+        return self._stat("SUM")
 
     @property
     def mean(self):
         """数组元素均值。"""
-        return Array1FuncRetNumberNode(
-            func_name="MEAN", func_type="vscfun", array_parameter=Array1Node(self)
-        )
+        return self._stat("MEAN")
 
     @property
     def median(self):
         """数组元素中位数。"""
-        return Array1FuncRetNumberNode(
-            func_name="MEDI", func_type="vscfun", array_parameter=Array1Node(self)
-        )
+        return self._stat("MEDI")
 
     @property
     def variance(self):
         """数组元素方差。"""
-        return Array1FuncRetNumberNode(
-            func_name="VARI", func_type="vscfun", array_parameter=Array1Node(self)
-        )
+        return self._stat("VARI")
 
     @property
     def std(self):
         """数组元素标准差。"""
-        return Array1FuncRetNumberNode(
-            func_name="STDV", func_type="vscfun", array_parameter=Array1Node(self)
-        )
+        return self._stat("STDV")
 
     @property
     def rms(self):
         """数组元素均方根。"""
-        return Array1FuncRetNumberNode(
-            func_name="RMS", func_type="vscfun", array_parameter=Array1Node(self)
-        )
+        return self._stat("RMS")
 
     # ==================== *VFUN 一元数学函数 ====================
 

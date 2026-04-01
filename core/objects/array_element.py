@@ -6,7 +6,10 @@ class ArrayElement(NumberParameter):
     def __init__(self, array, index):
         self.array = array
         self.index = index
-        self._name = f"{array.name}({index})"
+        if isinstance(index, tuple) and len(index) == 2:
+            self._name = f"{array.name}({index[0]},{index[1]})"
+        else:
+            self._name = f"{array.name}({index})"
         self.mac = array.mac
 
     def delete(self):

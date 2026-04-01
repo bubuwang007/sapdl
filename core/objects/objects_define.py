@@ -69,5 +69,21 @@ class ObjectsDefine:
         row = len(data)
         col = len(data[0])
         arr = self.Array2(row, col, name=name)
-        raise NotImplementedError("array2 method is not implemented yet. Please use Array2 and fill it manually for now.")
+        arr.fill(data)
         return arr
+
+    def array(self, data, name=None):
+        """根据 data 自动创建 Array1 或 Array2。
+
+        Args:
+            data: 一维数据创建 Array1，二维数据创建 Array2。
+            name: 数组名称。
+
+        Returns:
+            Array1 或 Array2: 根据 data 维度自动决定。
+        """
+        try:
+            data[0][0]
+            return self.array2(data, name=name)
+        except (TypeError, IndexError):
+            return self.array1(data, name=name)
