@@ -13,6 +13,7 @@ from .array2_nodes import *
 from .string_parameter_nodes import *
 from .string_array_nodes import *
 from .char_array_nodes import *
+from .table1_nodes import *
 
 __all__ = (
     [
@@ -32,4 +33,5 @@ __all__ = (
     + string_parameter_nodes.__all__
     + string_array_nodes.__all__
     + char_array_nodes.__all__
+    + table1_nodes.__all__
 )
