@@ -2,16 +2,20 @@ from __future__ import annotations
 
 from .args import Args
 from .number_parameter import NumberParameter
+from .string_parameter import StringParameter
 from .array1 import Array1
 from .array2 import Array2
+from .char_array import CharArray
 
 
 class ObjectsDefine:
     _var_index: int = 0
     objects = {
         "NumberParameter": NumberParameter,
+        "StringParameter": StringParameter,
         "Array1": Array1,
         "Array2": Array2,
+        "CharArray": CharArray,
     }
 
     def __init__(self):
@@ -30,6 +34,40 @@ class ObjectsDefine:
         num_param = NumberParameter(self, name=name)._new(value)
         self.symbol_table.define(name, type=NumberParameter, scope=scope, obj=num_param)
         return num_param
+
+    def StringParameter(self, value=None, name=None):
+        if name is None:
+            name = self.next_id()
+            scope = "local"
+        else:
+            scope = "global"
+        str_param = StringParameter(self, name=name)._new(value)
+        self.symbol_table.define(name, type=StringParameter, scope=scope, obj=str_param)
+        return str_param
+
+    def CharArray(self, length, name=None):
+        if name is None:
+            name = self.next_id()
+            scope = "local"
+        else:
+            scope = "global"
+        char_array = CharArray(self, name=name)._new(length)
+        self.symbol_table.define(name, type=CharArray, scope=scope, obj=char_array)
+        return char_array
+
+    def char_array(self, data, name=None):
+        """根据列表创建 CharArray。
+
+        Args:
+            data: 字符串列表。
+            name: 数组名称。
+
+        Returns:
+            CharArray: 创建的字符数组。
+        """
+        char_arr = self.CharArray(len(data), name=name)
+        char_arr.fill(data)
+        return char_arr
 
     def Array1(self, length, name=None):
         if name is None:

@@ -339,6 +339,35 @@ class File:
         self.mac.vwrite(*vals)
         self.mac.run(f"({str(format)})")
 
+    def write_c(self, *values, format) -> None:
+        """Writes character values to the file using ``*VWRITE`` with character format.
+
+        This is a convenience method that automatically wraps string values in
+        single quotes and uses a character format.
+
+        Parameters
+        ----------
+        *values : str
+            String values to write. Up to 19 values per call.
+        format : C Format or str
+            %I → 整数数据
+            %G → 双精度数据
+            %C → 字符串数据
+            %/ → 换行
+
+        Raises
+        ------
+        ValueError
+            If any value is not a string, format is not set, file is closed, or mode is not write.
+        """
+        if self._closed:
+            raise ValueError("I/O operation on closed file")
+        if self._mode != "w":
+            raise ValueError(f"File not open for writing (mode='{self._mode}')")
+        vals = (str(v) for v in values)
+        self.mac.vwrite(*vals)
+        self.mac.run(f"{str(format)}")
+
     def wirte_str(self, string: str) -> None:
         self.mac.vwrite()
         self.mac.run(f"('{string}')")

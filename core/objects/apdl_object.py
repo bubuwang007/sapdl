@@ -29,3 +29,6 @@ class ApdlObject:
 
     def delete(self):
         raise NotImplementedError("Subclasses must implement delete method.")
+
+    def to_string(self):
+        return f"'{self.name}'"

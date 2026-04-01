@@ -7,6 +7,7 @@ from functools import cached_property
 from sapdl.custom import Custom
 from .math import Math
 from .files import Files
+from .string import String
 
 
 class BuiltIn:
@@ -23,3 +24,8 @@ class BuiltIn:
     @cached_property
     def files(self) -> Files:
         return Files(self)
+
+    @cached_property
+    def string(self) -> String:
+        """字符串函数库"""
+        return String

@@ -505,3 +505,497 @@ class Array2(ApdlObject):
             Array1: 每列为该列最后一个非零值的行索引。
         """
         return self._stat("LAST", out=out)
+
+    # ==================== *VFUN 一元数学函数（按列） ====================
+
+    def _vfun_col(self, method_name, *args, out=None, **kwargs):
+        """通用列级一元数学函数调用。
+
+        Args:
+            method_name: Array1View 方法名。
+            *args: 位置参数。
+            out: 输出数组，默认 self。
+            **kwargs: 关键字参数。
+
+        Returns:
+            self 或 out。
+        """
+        for idx, col in self.enumerate_col():
+            out_col = out[idx] if out is not None else None
+            getattr(col, method_name)(*args, out=out_col, **kwargs)
+        return self if out is None else out
+
+    def sqrt(self, out=None):
+        """平方根 SQRT（按列）。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("sqrt", out=out)
+
+    def exp(self, out=None):
+        """指数函数 EXP（按列）。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("exp", out=out)
+
+    def log(self, out=None):
+        """自然对数 LOG（按列）。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("log", out=out)
+
+    def log10(self, out=None):
+        """常用对数 LOG10（按列）。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("log10", out=out)
+
+    def sin(self, out=None):
+        """正弦 SIN（按列）。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("sin", out=out)
+
+    def cos(self, out=None):
+        """余弦 COS（按列）。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("cos", out=out)
+
+    def tan(self, out=None):
+        """正切 TAN（按列）。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("tan", out=out)
+
+    def asin(self, out=None):
+        """反正弦 ASIN（按列）。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("asin", out=out)
+
+    def acos(self, out=None):
+        """反余弦 ACOS（按列）。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("acos", out=out)
+
+    def atan(self, out=None):
+        """反正切 ATAN（按列）。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("atan", out=out)
+
+    def sinh(self, out=None):
+        """双曲正弦 SINH（按列）。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("sinh", out=out)
+
+    def cosh(self, out=None):
+        """双曲余弦 COSH（按列）。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("cosh", out=out)
+
+    def tanh(self, out=None):
+        """双曲正切 TANH（按列）。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("tanh", out=out)
+
+    def nint(self, out=None):
+        """四舍五入 NINT（按列）。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("nint", out=out)
+
+    def not_(self, out=None):
+        """逻辑非 NOT（按列）。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("not_", out=out)
+
+    def powr(self, exponent, out=None):
+        """幂函数 PWR（按列）。
+
+        ParR = Par1 ** CON1
+
+        Args:
+            exponent: 指数 CON1。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("powr", exponent, out=out)
+
+    def comp(self, out=None):
+        """压缩 COMP（按列）。
+
+        选择性压缩数据集，"True"（*VMASK）的值被压缩写入 ParR。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("comp", out=out)
+
+    def expa(self, out=None):
+        """扩展 EXPA（按列）。
+
+        COMP 的逆操作，将数据按 *VMASK 位置展开。
+
+        Args:
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._vfun_col("expa", out=out)
+
+    # ==================== *VOPER 二元运算（按列） ====================
+
+    def _voper_col(self, method_name, other, *args, out=None, **kwargs):
+        """通用列级二元运算调用。
+
+        Args:
+            method_name: Array1View 方法名。
+            other: 右操作数。
+            *args: 位置参数。
+            out: 输出数组，默认 self。
+            **kwargs: 关键字参数。
+
+        Returns:
+            self 或 out。
+        """
+        other_col = None
+        if isinstance(other, Array2):
+            for idx, col in self.enumerate_col():
+                out_col = out[idx] if out is not None else None
+                other_col = other[idx]
+                getattr(col, method_name)(other_col, *args, out=out_col, **kwargs)
+        else:
+            for idx, col in self.enumerate_col():
+                out_col = out[idx] if out is not None else None
+                getattr(col, method_name)(other, *args, out=out_col, **kwargs)
+        return self if out is None else out
+
+    def add(self, other, out=None):
+        """加法 ADD（按列）。
+
+        ParR = Par1 + Par2
+
+        Args:
+            other: 右操作数（Array1、Array2、Array1View、标量或常量）。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("add", other, out=out)
+
+    def sub(self, other, out=None):
+        """减法 SUB（按列）。
+
+        ParR = Par1 - Par2
+
+        Args:
+            other: 右操作数（Array1、Array2、Array1View、标量或常量）。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("sub", other, out=out)
+
+    def mul(self, other, out=None):
+        """乘法 MULT（按列）。
+
+        ParR = Par1 * Par2
+
+        Args:
+            other: 右操作数（Array1、Array2、Array1View、标量或常量）。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("mul", other, out=out)
+
+    def div(self, other, out=None):
+        """除法 DIV（按列）。
+
+        ParR = Par1 / Par2（除以零结果为 0）
+
+        Args:
+            other: 右操作数（Array1、Array2、Array1View、标量或常量）。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("div", other, out=out)
+
+    def vmin(self, other, out=None):
+        """逐元素最小值 MIN（按列）。
+
+        ParR = min(Par1, Par2)，对每个元素取较小值。
+
+        Args:
+            other: 右操作数（Array1、Array2、Array1View、标量或常量）。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("vmin", other, out=out)
+
+    def vmax(self, other, out=None):
+        """逐元素最大值 MAX（按列）。
+
+        ParR = max(Par1, Par2)，对每个元素取较大值。
+
+        Args:
+            other: 右操作数（Array1、Array2、Array1View、标量或常量）。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("vmax", other, out=out)
+
+    def lt(self, other, out=None):
+        """小于比较 LT（按列）。
+
+        Par1 < Par2 时为 1.0，否则 0.0
+
+        Args:
+            other: 右操作数（Array1、Array2、Array1View、标量或常量）。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("lt", other, out=out)
+
+    def le(self, other, out=None):
+        """小于等于比较 LE（按列）。
+
+        Par1 <= Par2 时为 1.0，否则 0.0
+
+        Args:
+            other: 右操作数（Array1、Array2、Array1View、标量或常量）。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("le", other, out=out)
+
+    def eq(self, other, out=None):
+        """等于比较 EQ（按列）。
+
+        Par1 = Par2 时为 1.0，否则 0.0
+
+        Args:
+            other: 右操作数（Array1、Array2、Array1View、标量或常量）。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("eq", other, out=out)
+
+    def ne(self, other, out=None):
+        """不等于比较 NE（按列）。
+
+        Par1 != Par2 时为 1.0，否则 0.0
+
+        Args:
+            other: 右操作数（Array1、Array2、Array1View、标量或常量）。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("ne", other, out=out)
+
+    def ge(self, other, out=None):
+        """大于等于比较 GE（按列）。
+
+        Par1 >= Par2 时为 1.0，否则 0.0
+
+        Args:
+            other: 右操作数（Array1、Array2、Array1View、标量或常量）。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("ge", other, out=out)
+
+    def gt(self, other, out=None):
+        """大于比较 GT（按列）。
+
+        Par1 > Par2 时为 1.0，否则 0.0
+
+        Args:
+            other: 右操作数（Array1、Array2、Array1View、标量或常量）。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("gt", other, out=out)
+
+    def der1(self, other, out=None):
+        """一阶导数 DER1（按列）。
+
+        ParR = d(Par1) / d(Par2)
+        Par2 必须升序排列。
+
+        Args:
+            other: 自变量数组（Par2）。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("der1", other, out=out)
+
+    def der2(self, other, out=None):
+        """二阶导数 DER2（按列）。
+
+        ParR = d²(Par1) / d(Par2)²
+
+        Args:
+            other: 自变量数组（Par2）。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("der2", other, out=out)
+
+    def int1(self, other, con1=0, out=None):
+        """单积分 INT1（按列）。
+
+        ParR = ∫Par1 d(Par2)，CON1 为积分常数。
+
+        Args:
+            other: 自变量数组（Par2）。
+            con1: 积分常数。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("int1", other, con1=con1, out=out)
+
+    def int2(self, other, con1=0, con2=0, out=None):
+        """双积分 INT2（按列）。
+
+        ParR = ∫∫Par1 d(Par2)，CON1/CON2 为第一/第二积分常数。
+        若 Par1 包含加速度数据，CON1 为初速度，CON2 为初位移。
+
+        Args:
+            other: 自变量数组（Par2）。
+            con1: 第一积分常数（初速度）。
+            con2: 第二积分常数（初位移）。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("int2", other, con1=con1, con2=con2, out=out)
+
+    def atn2(self, other, out=None):
+        """二参数反正切 ATN2（按列）。
+
+        ParR = arctan(Par1/Par2)，考虑各分量符号。
+
+        Args:
+            other: 右操作数（Array1、Array2、Array1View、标量或常量）。
+            out: 输出 Array2，默认 self。
+
+        Returns:
+            self 或 out。
+        """
+        return self._voper_col("atn2", other, out=out)
